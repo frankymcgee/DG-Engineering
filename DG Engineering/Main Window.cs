@@ -1,8 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Globalization;
 
 namespace DG_Engineering
 {
@@ -22,7 +20,7 @@ namespace DG_Engineering
             await JobsTabViewer.EnsureCoreWebView2Async();
             await ScheduleViewer.EnsureCoreWebView2Async();
             await ProjectViewer.EnsureCoreWebView2Async();
-            ScheduleViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/login");
+            ScheduleViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/scheduler/timeline");
             ProgressBar_Compiler.Step = 25;
             Assignar_Tabs.TabPages.Remove(Clients_Tab);
             Assignar_Tabs.TabPages.Remove(Fieldworkers_Tab);
@@ -138,6 +136,5 @@ namespace DG_Engineering
             GC.Collect();
         }
         #endregion
-        
     }
 }

@@ -247,32 +247,38 @@ namespace DG_Engineering
                 }
                 TaskCreation(starttime,endtime,id,3,SupervisorNSUD.Value);
             }
-            //Day Shift
-            TaskCreation(starttime,endtime,id,32,LHDSUD.Value);
-            TaskCreation(starttime,endtime,id,8,BlastPntDSUD.Value);
-            TaskCreation(starttime,endtime,id,9,BMWDSUD.Value);
-            TaskCreation(starttime,endtime,id,17,MechFitterDSUD.Value);
-            TaskCreation(starttime,endtime,id,23,RiggerDSUD.Value);
-            TaskCreation(starttime,endtime,id,24,CraneDvrDSUD.Value);
-            TaskCreation(starttime,endtime,id,31,CWDSUD.Value);
-            TaskCreation(starttime,endtime,id,25,ScaffDSUD.Value);
-            TaskCreation(starttime,endtime,id,26,TADSUD.Value);
-            TaskCreation(starttime,endtime,id,14,TechnicianDSUD.Value);
-            TaskCreation(starttime,endtime,id,1,ExcavOpDSUD.Value);
-            TaskCreation(starttime,endtime,id,16,HSEQDSUD.Value);
-            //Night Shift
-            TaskCreation(starttime,endtime,id,32,LHNSUD.Value);
-            TaskCreation(starttime,endtime,id,8,BlasPntNSUD.Value);
-            TaskCreation(starttime,endtime,id,9,BMWNSUD.Value);
-            TaskCreation(starttime,endtime,id,17,MechFitterNSUD.Value);
-            TaskCreation(starttime,endtime,id,23,RiggerNSUD.Value);
-            TaskCreation(starttime,endtime,id,24,CraneDvrNSUD.Value);
-            TaskCreation(starttime,endtime,id,31,CWNSUD.Value);
-            TaskCreation(starttime,endtime,id,25,ScaffNSUD.Value);
-            TaskCreation(starttime,endtime,id,26,TANSUD.Value);
-            TaskCreation(starttime,endtime,id,14,TechnicianNSUD.Value);
-            TaskCreation(starttime,endtime,id,1,ExcavOpNSUD.Value);
-            TaskCreation(starttime,endtime,id,16,HSEQNSUD.Value);
+            if (jobname.Contains("|DS"))
+            {
+                //Day Shift
+                TaskCreation(starttime,endtime,id,32,LHDSUD.Value);
+                TaskCreation(starttime,endtime,id,8,BlastPntDSUD.Value);
+                TaskCreation(starttime,endtime,id,9,BMWDSUD.Value);
+                TaskCreation(starttime,endtime,id,17,MechFitterDSUD.Value);
+                TaskCreation(starttime,endtime,id,23,RiggerDSUD.Value);
+                TaskCreation(starttime,endtime,id,24,CraneDvrDSUD.Value);
+                TaskCreation(starttime,endtime,id,31,CWDSUD.Value);
+                TaskCreation(starttime,endtime,id,25,ScaffDSUD.Value);
+                TaskCreation(starttime,endtime,id,26,TADSUD.Value);
+                TaskCreation(starttime,endtime,id,14,TechnicianDSUD.Value);
+                TaskCreation(starttime,endtime,id,1,ExcavOpDSUD.Value);
+                TaskCreation(starttime,endtime,id,16,HSEQDSUD.Value);
+            }
+            else if (jobname.Contains("|NS"))
+            {
+                //Night Shift
+                TaskCreation(starttime,endtime,id,32,LHNSUD.Value);
+                TaskCreation(starttime,endtime,id,8,BlasPntNSUD.Value);
+                TaskCreation(starttime,endtime,id,9,BMWNSUD.Value);
+                TaskCreation(starttime,endtime,id,17,MechFitterNSUD.Value);
+                TaskCreation(starttime,endtime,id,23,RiggerNSUD.Value);
+                TaskCreation(starttime,endtime,id,24,CraneDvrNSUD.Value);
+                TaskCreation(starttime,endtime,id,31,CWNSUD.Value);
+                TaskCreation(starttime,endtime,id,25,ScaffNSUD.Value);
+                TaskCreation(starttime,endtime,id,26,TANSUD.Value);
+                TaskCreation(starttime,endtime,id,14,TechnicianNSUD.Value);
+                TaskCreation(starttime,endtime,id,1,ExcavOpNSUD.Value);
+                TaskCreation(starttime,endtime,id,16,HSEQNSUD.Value);
+            }
         }
         /// <summary>
         /// Creates the Task based on inputted Values.
@@ -303,7 +309,6 @@ namespace DG_Engineering
             restRequest.AddParameter("application/json", value, ParameterType.RequestBody);
             Console.WriteLine(restClient.Execute(restRequest).Content);
         }
-
         
     }
 }

@@ -69,6 +69,8 @@
             this.ProjectGenerationBrowserGroupBox = new System.Windows.Forms.GroupBox();
             this.ProjectViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.SimProQuoteGroup = new System.Windows.Forms.GroupBox();
+            this.QuoteJobSelection = new System.Windows.Forms.ComboBox();
+            this.QuoteJobLabel = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.DSTab = new System.Windows.Forms.TabPage();
             this.TADSUD = new System.Windows.Forms.NumericUpDown();
@@ -235,8 +237,6 @@
             this.New_Employee_Name_TextBox = new System.Windows.Forms.TextBox();
             this.New_Employee_Name_Label = new System.Windows.Forms.Label();
             this.Document_Preview_Group = new System.Windows.Forms.GroupBox();
-            this.QuoteJobLabel = new System.Windows.Forms.Label();
-            this.QuoteJobSelection = new System.Windows.Forms.ComboBox();
             this.Manual_Search_GroupBox.SuspendLayout();
             this.Job_Information_GroupBox.SuspendLayout();
             this.DocViewGroup.SuspendLayout();
@@ -688,6 +688,26 @@
             this.SimProQuoteGroup.TabIndex = 0;
             this.SimProQuoteGroup.TabStop = false;
             this.SimProQuoteGroup.Text = "Project Details";
+            // 
+            // QuoteJobSelection
+            // 
+            this.QuoteJobSelection.FormattingEnabled = true;
+            this.QuoteJobSelection.Items.AddRange(new object[] {
+            "Quote",
+            "Job"});
+            this.QuoteJobSelection.Location = new System.Drawing.Point(57, 16);
+            this.QuoteJobSelection.Name = "QuoteJobSelection";
+            this.QuoteJobSelection.Size = new System.Drawing.Size(177, 21);
+            this.QuoteJobSelection.TabIndex = 18;
+            // 
+            // QuoteJobLabel
+            // 
+            this.QuoteJobLabel.AutoSize = true;
+            this.QuoteJobLabel.Location = new System.Drawing.Point(0, 16);
+            this.QuoteJobLabel.Name = "QuoteJobLabel";
+            this.QuoteJobLabel.Size = new System.Drawing.Size(58, 13);
+            this.QuoteJobLabel.TabIndex = 17;
+            this.QuoteJobLabel.Text = "Quote/Job";
             // 
             // tabControl1
             // 
@@ -2296,26 +2316,6 @@
             this.Document_Preview_Group.TabIndex = 3;
             this.Document_Preview_Group.TabStop = false;
             this.Document_Preview_Group.Text = "Document Preview";
-            // 
-            // QuoteJobLabel
-            // 
-            this.QuoteJobLabel.AutoSize = true;
-            this.QuoteJobLabel.Location = new System.Drawing.Point(0, 16);
-            this.QuoteJobLabel.Name = "QuoteJobLabel";
-            this.QuoteJobLabel.Size = new System.Drawing.Size(58, 13);
-            this.QuoteJobLabel.TabIndex = 17;
-            this.QuoteJobLabel.Text = "Quote/Job";
-            // 
-            // QuoteJobSelection
-            // 
-            this.QuoteJobSelection.FormattingEnabled = true;
-            this.QuoteJobSelection.Items.AddRange(new object[] {
-            "Quote",
-            "Job"});
-            this.QuoteJobSelection.Location = new System.Drawing.Point(57, 16);
-            this.QuoteJobSelection.Name = "QuoteJobSelection";
-            this.QuoteJobSelection.Size = new System.Drawing.Size(177, 21);
-            this.QuoteJobSelection.TabIndex = 18;
             // 
             // MainWindow
             // 
