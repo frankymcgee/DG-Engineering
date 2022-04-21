@@ -156,9 +156,21 @@ namespace DG_Engineering
             switch (Local_Worker_Checkbox.Checked)
             {
                 case false:
-                    doc.ExportAsFixedFormat(filename + "Contract.pdf", WdExportFormat.wdExportFormatPDF);
-                    WebBrowserControl.Navigate(filename + "Contract.pdf");
-                    ReleaseComObjects(doc, word);
+                    switch (OutputTypeComboBox.Text)
+                    {
+                        case "Adobe Acrobat PDF Document":
+                            doc.ExportAsFixedFormat(filename + New_Employee_Name_TextBox.Text + " Contract.pdf", WdExportFormat.wdExportFormatPDF);
+                            RecruitmentViewer.CoreWebView2.Navigate(filename + New_Employee_Name_TextBox.Text + " Contract.pdf");
+                            ReleaseComObjects(doc, word);
+                            break;
+
+                        case "Microsoft Word Document":
+                            doc.SaveAs2(filename + New_Employee_Name_TextBox.Text + " Contract.docx");
+                            RecruitmentViewer.CoreWebView2.Navigate(filename + New_Employee_Name_TextBox.Text + " Contract.docx");
+                            ReleaseComObjects(doc, word);
+                            break;
+                    }
+                    
                     break;
                 case true:
                 {
@@ -170,42 +182,6 @@ namespace DG_Engineering
                     break;
                 }
             }
-        }
-        public string WorkingAway(string employmentcontracts)
-        {
-            string text = null;
-            object miss = System.Reflection.Missing.Value;
-            object path = employmentcontracts + "\\Local Housing Allowance.docx";
-            object readOnly = true;
-            var word = new Application();
-            var docs = word.Documents.Open(ref path, ref miss, ref readOnly,
-                ref miss, ref miss, ref miss, ref miss,
-                ref miss, ref miss, ref miss, ref miss,
-                ref miss, ref miss, ref miss, ref miss,
-                ref miss);
-
-            // Datatable to store text from Word doc
-            var dt = new System.Data.DataTable();
-            dt.Columns.Add("Text");
-
-            // Loop through each table in the document, 
-            // grab only text from cells in the first column
-            // in each table.
-            foreach (var tb in docs.Tables.Cast<Table>().Where(tb => tb.Columns.Count.Equals(1)))
-            {
-                // insert code here to get text from cells in first column
-                // and insert into datatable.
-                for (var row = 1; row <= tb.Rows.Count; row++)
-                {
-                    var cell = tb.Cell(row, 1);
-                    text = cell.Range.Text;
-                    // text now contains the content of the cell.
-                }
-            }
-
-            docs.Close();
-            word.Quit();
-            return text;
         }
     }
 }

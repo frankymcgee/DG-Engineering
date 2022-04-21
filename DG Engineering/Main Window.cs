@@ -20,6 +20,7 @@ namespace DG_Engineering
             await JobsTabViewer.EnsureCoreWebView2Async();
             await ScheduleViewer.EnsureCoreWebView2Async();
             await ProjectViewer.EnsureCoreWebView2Async();
+            await RecruitmentViewer.EnsureCoreWebView2Async();
             ScheduleViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/scheduler/timeline");
             ProgressBar_Compiler.Step = 25;
             Assignar_Tabs.TabPages.Remove(Clients_Tab);

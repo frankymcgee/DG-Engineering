@@ -39,7 +39,7 @@ namespace DG_Engineering
             var filename = Path.GetTempPath() + "Contract.pdf";
             outputDocument.Save(filename);
             // ...and start a viewer.
-            WebBrowserControl.Navigate(filename);
+            RecruitmentViewer.CoreWebView2.Navigate(filename);
             outputDocument.Close();
         }
     }

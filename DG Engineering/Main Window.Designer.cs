@@ -207,7 +207,6 @@
             this.JobPackTitle_TextBox = new System.Windows.Forms.TextBox();
             this.JobPackTitle_Label = new System.Windows.Forms.Label();
             this.Recruitment_Tab = new System.Windows.Forms.TabPage();
-            this.WebBrowserControl = new System.Windows.Forms.WebBrowser();
             this.Contract_Gen_Group = new System.Windows.Forms.GroupBox();
             this.Generate_Contract_Button = new System.Windows.Forms.Button();
             this.Job_Position_ComboBox = new System.Windows.Forms.ComboBox();
@@ -238,6 +237,9 @@
             this.New_Employee_Name_Label = new System.Windows.Forms.Label();
             this.Document_Preview_Group = new System.Windows.Forms.GroupBox();
             this.WorkingAwayCheckBox = new System.Windows.Forms.CheckBox();
+            this.OutputTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.RecruitmentViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.Manual_Search_GroupBox.SuspendLayout();
             this.Job_Information_GroupBox.SuspendLayout();
             this.DocViewGroup.SuspendLayout();
@@ -299,6 +301,8 @@
             this.Recruitment_Tab.SuspendLayout();
             this.Contract_Gen_Group.SuspendLayout();
             this.Employee_Address_GroupBox.SuspendLayout();
+            this.Document_Preview_Group.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RecruitmentViewer)).BeginInit();
             this.SuspendLayout();
             // 
             // All_Projects_ComboBox
@@ -2017,7 +2021,6 @@
             // 
             // Recruitment_Tab
             // 
-            this.Recruitment_Tab.Controls.Add(this.WebBrowserControl);
             this.Recruitment_Tab.Controls.Add(this.Contract_Gen_Group);
             this.Recruitment_Tab.Controls.Add(this.Document_Preview_Group);
             this.Recruitment_Tab.Location = new System.Drawing.Point(4, 22);
@@ -2027,16 +2030,10 @@
             this.Recruitment_Tab.Text = "Recruitment";
             this.Recruitment_Tab.UseVisualStyleBackColor = true;
             // 
-            // WebBrowserControl
-            // 
-            this.WebBrowserControl.Location = new System.Drawing.Point(375, 27);
-            this.WebBrowserControl.MinimumSize = new System.Drawing.Size(20, 20);
-            this.WebBrowserControl.Name = "WebBrowserControl";
-            this.WebBrowserControl.Size = new System.Drawing.Size(826, 579);
-            this.WebBrowserControl.TabIndex = 2;
-            // 
             // Contract_Gen_Group
             // 
+            this.Contract_Gen_Group.Controls.Add(this.label15);
+            this.Contract_Gen_Group.Controls.Add(this.OutputTypeComboBox);
             this.Contract_Gen_Group.Controls.Add(this.WorkingAwayCheckBox);
             this.Contract_Gen_Group.Controls.Add(this.Generate_Contract_Button);
             this.Contract_Gen_Group.Controls.Add(this.Job_Position_ComboBox);
@@ -2057,18 +2054,19 @@
             this.Contract_Gen_Group.Controls.Add(this.Generate_New_Employee_Pack_Button);
             this.Contract_Gen_Group.Controls.Add(this.New_Employee_Name_TextBox);
             this.Contract_Gen_Group.Controls.Add(this.New_Employee_Name_Label);
-            this.Contract_Gen_Group.Location = new System.Drawing.Point(3, 6);
+            this.Contract_Gen_Group.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Contract_Gen_Group.Location = new System.Drawing.Point(0, 0);
             this.Contract_Gen_Group.Name = "Contract_Gen_Group";
-            this.Contract_Gen_Group.Size = new System.Drawing.Size(360, 609);
+            this.Contract_Gen_Group.Size = new System.Drawing.Size(360, 639);
             this.Contract_Gen_Group.TabIndex = 1;
             this.Contract_Gen_Group.TabStop = false;
             this.Contract_Gen_Group.Text = "Contract Generation";
             // 
             // Generate_Contract_Button
             // 
-            this.Generate_Contract_Button.Location = new System.Drawing.Point(15, 426);
+            this.Generate_Contract_Button.Location = new System.Drawing.Point(15, 438);
             this.Generate_Contract_Button.Name = "Generate_Contract_Button";
-            this.Generate_Contract_Button.Size = new System.Drawing.Size(119, 23);
+            this.Generate_Contract_Button.Size = new System.Drawing.Size(328, 23);
             this.Generate_Contract_Button.TabIndex = 18;
             this.Generate_Contract_Button.Text = "Generate Contract";
             this.Generate_Contract_Button.UseVisualStyleBackColor = true;
@@ -2084,7 +2082,7 @@
             // 
             // ProgressBar_Compiler
             // 
-            this.ProgressBar_Compiler.Location = new System.Drawing.Point(14, 455);
+            this.ProgressBar_Compiler.Location = new System.Drawing.Point(12, 617);
             this.ProgressBar_Compiler.Name = "ProgressBar_Compiler";
             this.ProgressBar_Compiler.Size = new System.Drawing.Size(329, 14);
             this.ProgressBar_Compiler.TabIndex = 16;
@@ -2286,9 +2284,9 @@
             // 
             // Generate_New_Employee_Pack_Button
             // 
-            this.Generate_New_Employee_Pack_Button.Location = new System.Drawing.Point(202, 426);
+            this.Generate_New_Employee_Pack_Button.Location = new System.Drawing.Point(14, 467);
             this.Generate_New_Employee_Pack_Button.Name = "Generate_New_Employee_Pack_Button";
-            this.Generate_New_Employee_Pack_Button.Size = new System.Drawing.Size(140, 23);
+            this.Generate_New_Employee_Pack_Button.Size = new System.Drawing.Size(328, 23);
             this.Generate_New_Employee_Pack_Button.TabIndex = 12;
             this.Generate_New_Employee_Pack_Button.Text = "Generate Employee Pack";
             this.Generate_New_Employee_Pack_Button.UseVisualStyleBackColor = true;
@@ -2312,9 +2310,11 @@
             // 
             // Document_Preview_Group
             // 
-            this.Document_Preview_Group.Location = new System.Drawing.Point(369, 6);
+            this.Document_Preview_Group.Controls.Add(this.RecruitmentViewer);
+            this.Document_Preview_Group.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Document_Preview_Group.Location = new System.Drawing.Point(366, 0);
             this.Document_Preview_Group.Name = "Document_Preview_Group";
-            this.Document_Preview_Group.Size = new System.Drawing.Size(838, 606);
+            this.Document_Preview_Group.Size = new System.Drawing.Size(868, 639);
             this.Document_Preview_Group.TabIndex = 3;
             this.Document_Preview_Group.TabStop = false;
             this.Document_Preview_Group.Text = "Document Preview";
@@ -2328,6 +2328,38 @@
             this.WorkingAwayCheckBox.TabIndex = 19;
             this.WorkingAwayCheckBox.Text = "Working Away Allowance";
             this.WorkingAwayCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // OutputTypeComboBox
+            // 
+            this.OutputTypeComboBox.FormattingEnabled = true;
+            this.OutputTypeComboBox.Items.AddRange(new object[] {
+            "Adobe Acrobat PDF Document",
+            "Microsoft Word Document"});
+            this.OutputTypeComboBox.Location = new System.Drawing.Point(85, 407);
+            this.OutputTypeComboBox.Name = "OutputTypeComboBox";
+            this.OutputTypeComboBox.Size = new System.Drawing.Size(256, 21);
+            this.OutputTypeComboBox.TabIndex = 20;
+            this.OutputTypeComboBox.Text = "Adobe Acrobat PDF Document";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(13, 410);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(66, 13);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Output Type";
+            // 
+            // RecruitmentViewer
+            // 
+            this.RecruitmentViewer.CreationProperties = null;
+            this.RecruitmentViewer.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.RecruitmentViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RecruitmentViewer.Location = new System.Drawing.Point(3, 16);
+            this.RecruitmentViewer.Name = "RecruitmentViewer";
+            this.RecruitmentViewer.Size = new System.Drawing.Size(862, 620);
+            this.RecruitmentViewer.TabIndex = 0;
+            this.RecruitmentViewer.ZoomFactor = 1D;
             // 
             // MainWindow
             // 
@@ -2415,6 +2447,8 @@
             this.Contract_Gen_Group.PerformLayout();
             this.Employee_Address_GroupBox.ResumeLayout(false);
             this.Employee_Address_GroupBox.PerformLayout();
+            this.Document_Preview_Group.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.RecruitmentViewer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2527,7 +2561,6 @@
         private System.Windows.Forms.TextBox JobPackTitle_TextBox;
         private System.Windows.Forms.Label JobPackTitle_Label;
         private System.Windows.Forms.TabPage Recruitment_Tab;
-        private System.Windows.Forms.WebBrowser WebBrowserControl;
         private System.Windows.Forms.GroupBox Contract_Gen_Group;
         private System.Windows.Forms.Button Generate_Contract_Button;
         private System.Windows.Forms.ComboBox Job_Position_ComboBox;
@@ -2630,5 +2663,8 @@
         private System.Windows.Forms.ComboBox QuoteJobSelection;
         private System.Windows.Forms.Label QuoteJobLabel;
         private System.Windows.Forms.CheckBox WorkingAwayCheckBox;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox OutputTypeComboBox;
+        private Microsoft.Web.WebView2.WinForms.WebView2 RecruitmentViewer;
     }
 }

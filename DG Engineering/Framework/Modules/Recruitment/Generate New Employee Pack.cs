@@ -44,7 +44,7 @@ namespace DG_Engineering
 
             var filename = Path.GetTempPath() + New_Employee_Name_TextBox.Text + " New Starter Pack.pdf";
             outputDocument.Save(filename);
-            WebBrowserControl.Navigate(filename);
+            RecruitmentViewer.CoreWebView2.Navigate(filename);
             outputDocument.Close();
             ProgressBar_Compiler.PerformStep();
             ProgressBar_Compiler.Value = 0;
