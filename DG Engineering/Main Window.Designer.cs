@@ -208,6 +208,9 @@
             this.JobPackTitle_Label = new System.Windows.Forms.Label();
             this.Recruitment_Tab = new System.Windows.Forms.TabPage();
             this.Contract_Gen_Group = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.OutputTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.WorkingAwayCheckBox = new System.Windows.Forms.CheckBox();
             this.Generate_Contract_Button = new System.Windows.Forms.Button();
             this.Job_Position_ComboBox = new System.Windows.Forms.ComboBox();
             this.ProgressBar_Compiler = new System.Windows.Forms.ProgressBar();
@@ -236,9 +239,6 @@
             this.New_Employee_Name_TextBox = new System.Windows.Forms.TextBox();
             this.New_Employee_Name_Label = new System.Windows.Forms.Label();
             this.Document_Preview_Group = new System.Windows.Forms.GroupBox();
-            this.WorkingAwayCheckBox = new System.Windows.Forms.CheckBox();
-            this.OutputTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.RecruitmentViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.Manual_Search_GroupBox.SuspendLayout();
             this.Job_Information_GroupBox.SuspendLayout();
@@ -2021,8 +2021,8 @@
             // 
             // Recruitment_Tab
             // 
-            this.Recruitment_Tab.Controls.Add(this.Contract_Gen_Group);
             this.Recruitment_Tab.Controls.Add(this.Document_Preview_Group);
+            this.Recruitment_Tab.Controls.Add(this.Contract_Gen_Group);
             this.Recruitment_Tab.Location = new System.Drawing.Point(4, 22);
             this.Recruitment_Tab.Name = "Recruitment_Tab";
             this.Recruitment_Tab.Size = new System.Drawing.Size(1234, 639);
@@ -2061,6 +2061,37 @@
             this.Contract_Gen_Group.TabIndex = 1;
             this.Contract_Gen_Group.TabStop = false;
             this.Contract_Gen_Group.Text = "Contract Generation";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(13, 410);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(66, 13);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Output Type";
+            // 
+            // OutputTypeComboBox
+            // 
+            this.OutputTypeComboBox.FormattingEnabled = true;
+            this.OutputTypeComboBox.Items.AddRange(new object[] {
+            "Adobe Acrobat PDF Document",
+            "Microsoft Word Document"});
+            this.OutputTypeComboBox.Location = new System.Drawing.Point(85, 407);
+            this.OutputTypeComboBox.Name = "OutputTypeComboBox";
+            this.OutputTypeComboBox.Size = new System.Drawing.Size(256, 21);
+            this.OutputTypeComboBox.TabIndex = 20;
+            this.OutputTypeComboBox.Text = "Adobe Acrobat PDF Document";
+            // 
+            // WorkingAwayCheckBox
+            // 
+            this.WorkingAwayCheckBox.AutoSize = true;
+            this.WorkingAwayCheckBox.Location = new System.Drawing.Point(208, 384);
+            this.WorkingAwayCheckBox.Name = "WorkingAwayCheckBox";
+            this.WorkingAwayCheckBox.Size = new System.Drawing.Size(147, 17);
+            this.WorkingAwayCheckBox.TabIndex = 19;
+            this.WorkingAwayCheckBox.Text = "Working Away Allowance";
+            this.WorkingAwayCheckBox.UseVisualStyleBackColor = true;
             // 
             // Generate_Contract_Button
             // 
@@ -2311,44 +2342,13 @@
             // Document_Preview_Group
             // 
             this.Document_Preview_Group.Controls.Add(this.RecruitmentViewer);
-            this.Document_Preview_Group.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Document_Preview_Group.Location = new System.Drawing.Point(366, 0);
+            this.Document_Preview_Group.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Document_Preview_Group.Location = new System.Drawing.Point(360, 0);
             this.Document_Preview_Group.Name = "Document_Preview_Group";
-            this.Document_Preview_Group.Size = new System.Drawing.Size(868, 639);
+            this.Document_Preview_Group.Size = new System.Drawing.Size(874, 639);
             this.Document_Preview_Group.TabIndex = 3;
             this.Document_Preview_Group.TabStop = false;
             this.Document_Preview_Group.Text = "Document Preview";
-            // 
-            // WorkingAwayCheckBox
-            // 
-            this.WorkingAwayCheckBox.AutoSize = true;
-            this.WorkingAwayCheckBox.Location = new System.Drawing.Point(208, 384);
-            this.WorkingAwayCheckBox.Name = "WorkingAwayCheckBox";
-            this.WorkingAwayCheckBox.Size = new System.Drawing.Size(147, 17);
-            this.WorkingAwayCheckBox.TabIndex = 19;
-            this.WorkingAwayCheckBox.Text = "Working Away Allowance";
-            this.WorkingAwayCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // OutputTypeComboBox
-            // 
-            this.OutputTypeComboBox.FormattingEnabled = true;
-            this.OutputTypeComboBox.Items.AddRange(new object[] {
-            "Adobe Acrobat PDF Document",
-            "Microsoft Word Document"});
-            this.OutputTypeComboBox.Location = new System.Drawing.Point(85, 407);
-            this.OutputTypeComboBox.Name = "OutputTypeComboBox";
-            this.OutputTypeComboBox.Size = new System.Drawing.Size(256, 21);
-            this.OutputTypeComboBox.TabIndex = 20;
-            this.OutputTypeComboBox.Text = "Adobe Acrobat PDF Document";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(13, 410);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(66, 13);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "Output Type";
             // 
             // RecruitmentViewer
             // 
@@ -2357,7 +2357,7 @@
             this.RecruitmentViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RecruitmentViewer.Location = new System.Drawing.Point(3, 16);
             this.RecruitmentViewer.Name = "RecruitmentViewer";
-            this.RecruitmentViewer.Size = new System.Drawing.Size(862, 620);
+            this.RecruitmentViewer.Size = new System.Drawing.Size(868, 620);
             this.RecruitmentViewer.TabIndex = 0;
             this.RecruitmentViewer.ZoomFactor = 1D;
             // 
