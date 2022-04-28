@@ -78,7 +78,7 @@ namespace DG_Engineering
         private void AddToJobPack_Button_Click(object sender, EventArgs e)
         {
             DownloadDocumentFromUrl(
-                Static.AssignarDashboardUrl + "projects/" + Manual_Search_TextBox.Text + "/documents/",
+                Static.AssignarDashboardUrl + "projects/" + Static.ProjectNumber + "/documents/",
                 Static.JwtToken);
         }
         private void GenerateJobPack_Button_Click(object sender, EventArgs e)
