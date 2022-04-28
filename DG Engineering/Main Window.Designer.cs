@@ -2021,8 +2021,8 @@
             // 
             // Recruitment_Tab
             // 
-            this.Recruitment_Tab.Controls.Add(this.Contract_Gen_Group);
             this.Recruitment_Tab.Controls.Add(this.Document_Preview_Group);
+            this.Recruitment_Tab.Controls.Add(this.Contract_Gen_Group);
             this.Recruitment_Tab.Location = new System.Drawing.Point(4, 22);
             this.Recruitment_Tab.Name = "Recruitment_Tab";
             this.Recruitment_Tab.Size = new System.Drawing.Size(1234, 639);
@@ -2342,10 +2342,10 @@
             // Document_Preview_Group
             // 
             this.Document_Preview_Group.Controls.Add(this.RecruitmentViewer);
-            this.Document_Preview_Group.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Document_Preview_Group.Location = new System.Drawing.Point(366, 0);
+            this.Document_Preview_Group.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Document_Preview_Group.Location = new System.Drawing.Point(360, 0);
             this.Document_Preview_Group.Name = "Document_Preview_Group";
-            this.Document_Preview_Group.Size = new System.Drawing.Size(868, 639);
+            this.Document_Preview_Group.Size = new System.Drawing.Size(874, 639);
             this.Document_Preview_Group.TabIndex = 3;
             this.Document_Preview_Group.TabStop = false;
             this.Document_Preview_Group.Text = "Document Preview";
@@ -2357,7 +2357,7 @@
             this.RecruitmentViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RecruitmentViewer.Location = new System.Drawing.Point(3, 16);
             this.RecruitmentViewer.Name = "RecruitmentViewer";
-            this.RecruitmentViewer.Size = new System.Drawing.Size(862, 620);
+            this.RecruitmentViewer.Size = new System.Drawing.Size(868, 620);
             this.RecruitmentViewer.TabIndex = 0;
             this.RecruitmentViewer.ZoomFactor = 1D;
             // 
