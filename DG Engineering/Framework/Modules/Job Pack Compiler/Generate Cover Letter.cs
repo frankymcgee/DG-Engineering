@@ -1,6 +1,10 @@
 ﻿using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using DG_Engineering.Framework.Global.Assignar;
 using Microsoft.Office.Interop.Word;
+using Newtonsoft.Json;
+using RestSharp;
 using Application = Microsoft.Office.Interop.Word.Application;
 
 namespace DG_Engineering
@@ -47,8 +51,16 @@ namespace DG_Engineering
             doc.Close(false);
             word.Quit();
             ReleaseComObjects(doc, word);
-            DownloadJobDocuments(Static.AssignarDashboardUrl + "projects/" + Manual_Search_TextBox.Text + "/documents/",
-                Static.JwtToken);
+            // Find all documents in Project
+            var projectidsearch = AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + JobPackNo_TextBox.Text,
+                Static.JwtToken, Method.GET);
+            var projectnumberresult = JsonConvert.DeserializeObject<ProjectSearch.Root>(projectidsearch);
+            foreach (var a in projectnumberresult.Data)
+            {
+                Static.ProjectNumber = a.Id;
+                DownloadJobDocuments(Static.AssignarDashboardUrl + "projects/" + Static.ProjectNumber + "/documents/",
+                    Static.JwtToken);
+            }
             JobDocuments_ListBox.Items.Add(Filestep + ". Job Pack Cover");
             MessageBox.Show(@"Completed", @"Cover for Pack Completed");
         }

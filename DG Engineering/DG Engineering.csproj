@@ -143,6 +143,7 @@
     <Compile Include="Framework\Global\Assignar\GET Requests.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Framework\Global\Assignar\JSON Classes\Project Search.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Orders.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\ProjectPost.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Clients.cs" />
