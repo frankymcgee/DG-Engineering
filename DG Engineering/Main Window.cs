@@ -42,6 +42,10 @@ namespace DG_Engineering
         }
         #endregion
         #region Jobs
+        private void PushToJobPackButton_Click(object sender, EventArgs e)
+        {
+            PushToJobPack();
+        }
         private void Job_Search_Button_Click(object sender, EventArgs e)
         {
             DownloadProjectInformation(Static.AssignarDashboardUrl + "projects/" + Manual_Search_TextBox.Text,
@@ -139,5 +143,7 @@ namespace DG_Engineering
             GC.Collect();
         }
         #endregion
+
+        
     }
 }

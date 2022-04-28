@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Net;
 using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar;
@@ -41,6 +42,7 @@ namespace DG_Engineering
                 MessageBox.Show(@"Project Created in Assignar. Please upload the Documents that are required into the Project.", @"Success");
                 DownloadAllProjects(Static.AssignarDashboardUrl + "projects/", Static.JwtToken);
                 ProjectViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/projects/detail/" + ProjectId + "/documents");
+                Process.Start(Output + "Files/");
             }
             else
             {
