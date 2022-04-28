@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using Microsoft.Office.Interop.Word;
 
 namespace DG_Engineering
@@ -30,6 +29,7 @@ namespace DG_Engineering
 
             if (doc == null) return;
             doc.Activate();
+            ProgressBar_Compiler.PerformStep();
             doc.BuiltInDocumentProperties["Company"].Value = "De Wet and Green Engineering PTY LTD";
             //Custom Fields Replacement
             foreach (Field myMergeField in doc.Fields)
@@ -152,7 +152,7 @@ namespace DG_Engineering
                         break;
                 }
             }
-
+            ProgressBar_Compiler.PerformStep();
             switch (Local_Worker_Checkbox.Checked)
             {
                 case false:

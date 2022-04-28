@@ -25,6 +25,8 @@ namespace DG_Engineering
             ProgressBar_Compiler.Step = 25;
             Assignar_Tabs.TabPages.Remove(Clients_Tab);
             Assignar_Tabs.TabPages.Remove(Fieldworkers_Tab);
+            Assignar_Tabs.TabPages.Remove(Jobs_Tab);
+            Assignar_Tabs.TabPages.Remove(DocumentGen_Tab);
             DownloadAllProjects(Static.AssignarDashboardUrl + "projects/", Static.JwtToken);
             DownloadRoleDescriptions(Static.AssignarDashboardUrl + "tasks/", Static.JwtToken);
         }

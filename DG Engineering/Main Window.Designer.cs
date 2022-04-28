@@ -208,6 +208,9 @@
             this.JobPackTitle_Label = new System.Windows.Forms.Label();
             this.Recruitment_Tab = new System.Windows.Forms.TabPage();
             this.Contract_Gen_Group = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.OutputTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.WorkingAwayCheckBox = new System.Windows.Forms.CheckBox();
             this.Generate_Contract_Button = new System.Windows.Forms.Button();
             this.Job_Position_ComboBox = new System.Windows.Forms.ComboBox();
             this.ProgressBar_Compiler = new System.Windows.Forms.ProgressBar();
@@ -236,9 +239,6 @@
             this.New_Employee_Name_TextBox = new System.Windows.Forms.TextBox();
             this.New_Employee_Name_Label = new System.Windows.Forms.Label();
             this.Document_Preview_Group = new System.Windows.Forms.GroupBox();
-            this.WorkingAwayCheckBox = new System.Windows.Forms.CheckBox();
-            this.OutputTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.RecruitmentViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.Manual_Search_GroupBox.SuspendLayout();
             this.Job_Information_GroupBox.SuspendLayout();
@@ -640,7 +640,7 @@
             this.SimProSync_Tab.Name = "SimProSync_Tab";
             this.SimProSync_Tab.Size = new System.Drawing.Size(1234, 639);
             this.SimProSync_Tab.TabIndex = 8;
-            this.SimProSync_Tab.Text = "SimPro To Assignar";
+            this.SimProSync_Tab.Text = "Project Creation";
             this.SimProSync_Tab.UseVisualStyleBackColor = true;
             // 
             // ProjectGenerationBrowserGroupBox
@@ -2062,6 +2062,37 @@
             this.Contract_Gen_Group.TabStop = false;
             this.Contract_Gen_Group.Text = "Contract Generation";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(13, 410);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(66, 13);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Output Type";
+            // 
+            // OutputTypeComboBox
+            // 
+            this.OutputTypeComboBox.FormattingEnabled = true;
+            this.OutputTypeComboBox.Items.AddRange(new object[] {
+            "Adobe Acrobat PDF Document",
+            "Microsoft Word Document"});
+            this.OutputTypeComboBox.Location = new System.Drawing.Point(85, 407);
+            this.OutputTypeComboBox.Name = "OutputTypeComboBox";
+            this.OutputTypeComboBox.Size = new System.Drawing.Size(256, 21);
+            this.OutputTypeComboBox.TabIndex = 20;
+            this.OutputTypeComboBox.Text = "Adobe Acrobat PDF Document";
+            // 
+            // WorkingAwayCheckBox
+            // 
+            this.WorkingAwayCheckBox.AutoSize = true;
+            this.WorkingAwayCheckBox.Location = new System.Drawing.Point(208, 384);
+            this.WorkingAwayCheckBox.Name = "WorkingAwayCheckBox";
+            this.WorkingAwayCheckBox.Size = new System.Drawing.Size(147, 17);
+            this.WorkingAwayCheckBox.TabIndex = 19;
+            this.WorkingAwayCheckBox.Text = "Working Away Allowance";
+            this.WorkingAwayCheckBox.UseVisualStyleBackColor = true;
+            // 
             // Generate_Contract_Button
             // 
             this.Generate_Contract_Button.Location = new System.Drawing.Point(15, 438);
@@ -2318,37 +2349,6 @@
             this.Document_Preview_Group.TabIndex = 3;
             this.Document_Preview_Group.TabStop = false;
             this.Document_Preview_Group.Text = "Document Preview";
-            // 
-            // WorkingAwayCheckBox
-            // 
-            this.WorkingAwayCheckBox.AutoSize = true;
-            this.WorkingAwayCheckBox.Location = new System.Drawing.Point(208, 384);
-            this.WorkingAwayCheckBox.Name = "WorkingAwayCheckBox";
-            this.WorkingAwayCheckBox.Size = new System.Drawing.Size(147, 17);
-            this.WorkingAwayCheckBox.TabIndex = 19;
-            this.WorkingAwayCheckBox.Text = "Working Away Allowance";
-            this.WorkingAwayCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // OutputTypeComboBox
-            // 
-            this.OutputTypeComboBox.FormattingEnabled = true;
-            this.OutputTypeComboBox.Items.AddRange(new object[] {
-            "Adobe Acrobat PDF Document",
-            "Microsoft Word Document"});
-            this.OutputTypeComboBox.Location = new System.Drawing.Point(85, 407);
-            this.OutputTypeComboBox.Name = "OutputTypeComboBox";
-            this.OutputTypeComboBox.Size = new System.Drawing.Size(256, 21);
-            this.OutputTypeComboBox.TabIndex = 20;
-            this.OutputTypeComboBox.Text = "Adobe Acrobat PDF Document";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(13, 410);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(66, 13);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "Output Type";
             // 
             // RecruitmentViewer
             // 
