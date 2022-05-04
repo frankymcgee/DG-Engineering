@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using Microsoft.Web.WebView2.Core;
 
 namespace DG_Engineering
 {
@@ -17,10 +18,11 @@ namespace DG_Engineering
         #region Main Window Load
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-            await JobsTabViewer.EnsureCoreWebView2Async();
-            await ScheduleViewer.EnsureCoreWebView2Async();
-            await ProjectViewer.EnsureCoreWebView2Async();
-            await RecruitmentViewer.EnsureCoreWebView2Async();
+            var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
+            await JobsTabViewer.EnsureCoreWebView2Async(environment);
+            await ScheduleViewer.EnsureCoreWebView2Async(environment);
+            await ProjectViewer.EnsureCoreWebView2Async(environment);
+            await RecruitmentViewer.EnsureCoreWebView2Async(environment);
             ScheduleViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/scheduler/timeline");
             ProgressBar_Compiler.Step = 25;
             Assignar_Tabs.TabPages.Remove(Clients_Tab);
