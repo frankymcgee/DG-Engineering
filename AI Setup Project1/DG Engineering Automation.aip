@@ -7,14 +7,14 @@
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="AI_CURRENT_YEAR" Value="2022" ValueLocId="-"/>
     <ROW Property="AI_PACKAGING_TOOL" Value="Advanced Installer 19.4 build 4648ec91" ValueLocId="-"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DGEngineering.exe" Value="..\DG Engineering\bin\Release"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DGEngineering.exe.config" Value="..\DG Engineering\bin\Release"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DGEngineering.pdb" Value="..\DG Engineering\bin\Release"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_HtmlAgilityPack.dll" Value="..\packages\HtmlAgilityPack.1.11.39\lib\Net45"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Bcl.AsyncInterfaces.dll" Value="..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Web.WebView2.Core.dll" Value="..\packages\Microsoft.Web.WebView2.1.0.1072.54\lib\net45"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Web.WebView2.WinForms.dll" Value="..\packages\Microsoft.Web.WebView2.1.0.1072.54\lib\net45"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Web.WebView2.Wpf.dll" Value="..\packages\Microsoft.Web.WebView2.1.0.1072.54\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DGEngineering.exe" Value="..\DG Engineering\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DGEngineering.exe.config" Value="..\DG Engineering\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DGEngineering.pdb" Value="..\DG Engineering\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_HtmlAgilityPack.dll" Value="..\packages\HtmlAgilityPack.1.11.42\lib\Net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Bcl.AsyncInterfaces.dll" Value="..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Web.WebView2.Core.dll" Value="..\packages\Microsoft.Web.WebView2.1.0.1210.39\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Web.WebView2.WinForms.dll" Value="..\packages\Microsoft.Web.WebView2.1.0.1210.39\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Web.WebView2.Wpf.dll" Value="..\packages\Microsoft.Web.WebView2.1.0.1210.39\lib\net45"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Newtonsoft.Json.dll" Value="..\packages\Newtonsoft.Json.13.0.1\lib\net45"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_PdfSharp.Charting.dll" Value="..\packages\PDFsharp.1.50.5147\lib\net20"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_PdfSharp.dll" Value="..\packages\PDFsharp.1.50.5147\lib\net20"/>
@@ -22,14 +22,14 @@
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Buffers.dll" Value="..\packages\System.Buffers.4.5.1\lib\net461"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Memory.dll" Value="..\packages\System.Memory.4.5.4\lib\net461"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Numerics.Vectors.dll" Value="..\packages\System.Numerics.Vectors.4.5.0\lib\net46"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll" Value="..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Text.Encodings.Web.dll" Value="..\packages\System.Text.Encodings.Web.5.0.0\lib\net461"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Text.Json.dll" Value="..\packages\System.Text.Json.5.0.0\lib\net461"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll" Value="..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Text.Encodings.Web.dll" Value="..\packages\System.Text.Encodings.Web.6.0.0\lib\net461"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Text.Json.dll" Value="..\packages\System.Text.Json.6.0.3\lib\net461"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Threading.Tasks.Extensions.dll" Value="..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll" Value="..\packages\System.ValueTuple.4.5.0\lib\net47"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll" Value="..\DG Engineering\bin\Release\runtimes\win-x86\native"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll_1" Value="..\DG Engineering\bin\Release\runtimes\win-x64\native"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll_2" Value="..\DG Engineering\bin\Release\runtimes\win-arm64\native"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll" Value="..\DG Engineering\bin\Debug\runtimes\win-x86\native"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll_1" Value="..\DG Engineering\bin\Debug\runtimes\win-x64\native"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll_2" Value="..\DG Engineering\bin\Debug\runtimes\win-arm64\native"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DGEngineering.exe" Value="DG Engineering.exe"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DGEngineering.exe.config" Value="DG Engineering.exe.config"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DGEngineering.pdb" Value="DG Engineering.pdb"/>
@@ -62,10 +62,10 @@
     <ROW Property="ARPURLINFOABOUT" Value="https://dgengineering.com.au"/>
     <ROW Property="ARPURLUPDATEINFO" Value="https://dgengineering.com.au"/>
     <ROW Property="Manufacturer" Value="De Wet &amp; Green Engineering PTY LTD"/>
-    <ROW Property="ProductCode" Value="1033:{2A2F945E-32B0-4B9D-B659-36071AB99331} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{127223A6-CC60-4E82-883A-DF4E76A7CB33} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="DG Engineering Automation"/>
-    <ROW Property="ProductVersion" Value="1.0.1"/>
+    <ROW Property="ProductVersion" Value="1.0.2"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{BE1ABA13-D1D2-4FDA-8112-68F0203EFCAF}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>

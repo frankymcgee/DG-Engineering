@@ -11,14 +11,14 @@
     <WorkingDirectory>.</WorkingDirectory>
     <IsWindowsApplication>True</IsWindowsApplication>
     <AssemblyName>AI Setup Project1</AssemblyName>
-    <Name>AI Setup Project1</Name>
+    <Name>DG Engineering Automation</Name>
     <RootNamespace>AI Setup Project1</RootNamespace>
     <LoadFromTemplate>
     </LoadFromTemplate>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'DefaultBuild' " />
   <ItemGroup>
-    <Compile Include="AI Setup Project1.aip">
+    <Compile Include="DG Engineering Automation.aip">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

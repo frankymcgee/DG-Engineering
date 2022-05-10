@@ -1,19 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Text.Json;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DG_Engineering.Framework.Global.Assignar;
-using HtmlAgilityPack;
-using RestSharp;
 
 namespace DG_Engineering
 {
