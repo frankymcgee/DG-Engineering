@@ -55,12 +55,17 @@
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_WebView2Loader.dll_2" Value="WebView2Loader.dll"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPCONTACT" Value="support@webwire.com.au"/>
+    <ROW Property="ARPHELPLINK" Value="support@webwire.com.au"/>
+    <ROW Property="ARPHELPTELEPHONE" Value="+61893860053"/>
     <ROW Property="ARPPRODUCTICON" Value="Icon.exe" Type="8"/>
+    <ROW Property="ARPURLINFOABOUT" Value="https://dgengineering.com.au"/>
+    <ROW Property="ARPURLUPDATEINFO" Value="https://dgengineering.com.au"/>
     <ROW Property="Manufacturer" Value="De Wet &amp; Green Engineering PTY LTD"/>
-    <ROW Property="ProductCode" Value="1033:{10695072-D867-42A9-BCD2-B61C96D579C1} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{2A2F945E-32B0-4B9D-B659-36071AB99331} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="DG Engineering Automation"/>
-    <ROW Property="ProductVersion" Value="1.0.0"/>
+    <ROW Property="ProductVersion" Value="1.0.1"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{BE1ABA13-D1D2-4FDA-8112-68F0203EFCAF}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
