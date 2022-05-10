@@ -19,7 +19,9 @@ namespace DG_Engineering
 
         private static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
         {
-            MessageBox.Show(e.Exception.Message);
+            MessageBox.Show(@"Error:" + @"
+
+" + e.Exception.Message,@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }

@@ -15,6 +15,7 @@ namespace DG_Engineering
         /// <param name="basestring">Company Name from SimPro Being Referenced to</param>
         public void CompanyIdExtract(string basestring)
         {
+            ProgressBar.PerformStep();
             var lstStringsToCheck = new List<string>();
             var assignarclients =
                 AssignarConnect(Static.AssignarDashboardUrl + "clients/", Static.JwtToken, Method.GET);
@@ -36,6 +37,7 @@ namespace DG_Engineering
                     CompanyId = b.Id;
                 }
             }
+            ProgressBar.PerformStep();
         }
     }
 }

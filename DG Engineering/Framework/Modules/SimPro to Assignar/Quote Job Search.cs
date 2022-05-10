@@ -20,8 +20,9 @@ namespace DG_Engineering
             {
                 file.Delete();
             }
-            MessageLabel.Visible = true;
-            MessageLabel.Text = @"Searching";
+            StatusLabel.Visible = true;
+            ProgressBar.PerformStep();
+            StatusLabel.Text = @"Searching";
             switch (QuoteJobSelection.Text)
             {
                 case @"Quote":
@@ -33,6 +34,7 @@ namespace DG_Engineering
                     ProjectNameTextBox.Text = quoteinfo.Name;
                     ProjectAddress_TextBox.Text = quoteinfo.Site.Name;
                     ProjectPOTextBox.Text = quoteinfo.OrderNo;
+                    ProgressBar.PerformStep();
                     break;
                 }
                 case @"Job":
@@ -44,14 +46,17 @@ namespace DG_Engineering
                     ProjectNameTextBox.Text = jobinfo.Name;
                     ProjectAddress_TextBox.Text = jobinfo.Site.Name;
                     ProjectPOTextBox.Text = jobinfo.OrderNo;
+                    ProgressBar.PerformStep();
                     break;
                 }
             }
-
-            MessageLabel.Text = @"Downloading Documents";
+            
+            ProgressBar.PerformStep();
+            StatusLabel.Text = @"Downloading Documents";
             // Download Documents
             var documents = SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text + "/attachments/files/").Content;
             var result = JsonConvert.DeserializeObject<List<Documents.Root>>(documents);
+            ProgressBar.PerformStep();
             string docbyte64Search = null;
             foreach (var a in result)
             {
@@ -72,9 +77,9 @@ namespace DG_Engineering
                 var filename = docresult.Filename;
                 File.WriteAllBytes(Output + "Files/" + filename, Convert.FromBase64String(docresult.Base64Data));
             }
-
-            MessageLabel.Visible = false;
+            StatusLabel.Visible = false;
             CompanyIdExtract(SimProClient_TextBox.Text);
+            ProgressBar.Value = 0;
         }
     }
 }
