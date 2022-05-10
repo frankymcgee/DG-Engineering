@@ -40,7 +40,7 @@ namespace DG_Engineering
             SimProSearch();
         } private void PushAssignar_Button_Click(object sender, EventArgs e)
         {
-            AssignarProjectPost();
+            _ = AssignarProjectPost();
         }
         #endregion
         #region Jobs

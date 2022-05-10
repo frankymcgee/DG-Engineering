@@ -13,7 +13,7 @@ namespace DG_Engineering
         /// <summary>
         /// Search SimPro for Quote/Job from Number.
         /// </summary>
-        public async Task SimProSearch()
+        public void SimProSearch()
         {
             StatusLabel.Visible = true;
             StatusLabel.Text = @"Searching";
