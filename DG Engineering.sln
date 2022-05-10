@@ -32,8 +32,10 @@ Global
 		{CDA12107-C749-4977-A3B1-63972E13BC1C}.All|Any CPU.ActiveCfg = DefaultBuild
 		{CDA12107-C749-4977-A3B1-63972E13BC1C}.All|x86.ActiveCfg = DefaultBuild
 		{CDA12107-C749-4977-A3B1-63972E13BC1C}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{CDA12107-C749-4977-A3B1-63972E13BC1C}.Debug|Any CPU.Build.0 = DefaultBuild
 		{CDA12107-C749-4977-A3B1-63972E13BC1C}.Debug|x86.ActiveCfg = DefaultBuild
 		{CDA12107-C749-4977-A3B1-63972E13BC1C}.Release|Any CPU.ActiveCfg = DefaultBuild
+		{CDA12107-C749-4977-A3B1-63972E13BC1C}.Release|Any CPU.Build.0 = DefaultBuild
 		{CDA12107-C749-4977-A3B1-63972E13BC1C}.Release|x86.ActiveCfg = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution

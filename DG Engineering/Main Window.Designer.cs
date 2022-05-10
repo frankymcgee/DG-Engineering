@@ -338,7 +338,7 @@
             this.Manual_Search_GroupBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.Manual_Search_GroupBox.Location = new System.Drawing.Point(3, 3);
             this.Manual_Search_GroupBox.Name = "Manual_Search_GroupBox";
-            this.Manual_Search_GroupBox.Size = new System.Drawing.Size(205, 633);
+            this.Manual_Search_GroupBox.Size = new System.Drawing.Size(205, 611);
             this.Manual_Search_GroupBox.TabIndex = 3;
             this.Manual_Search_GroupBox.TabStop = false;
             this.Manual_Search_GroupBox.Text = "Manual Search";
@@ -1806,7 +1806,7 @@
             this.Jobs_Tab.Location = new System.Drawing.Point(4, 22);
             this.Jobs_Tab.Name = "Jobs_Tab";
             this.Jobs_Tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Jobs_Tab.Size = new System.Drawing.Size(1234, 639);
+            this.Jobs_Tab.Size = new System.Drawing.Size(1234, 617);
             this.Jobs_Tab.TabIndex = 1;
             this.Jobs_Tab.Text = "Jobs";
             this.Jobs_Tab.UseVisualStyleBackColor = true;
@@ -1838,7 +1838,7 @@
             this.Project_Information_GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Project_Information_GroupBox.Location = new System.Drawing.Point(208, 3);
             this.Project_Information_GroupBox.Name = "Project_Information_GroupBox";
-            this.Project_Information_GroupBox.Size = new System.Drawing.Size(1023, 633);
+            this.Project_Information_GroupBox.Size = new System.Drawing.Size(1023, 611);
             this.Project_Information_GroupBox.TabIndex = 4;
             this.Project_Information_GroupBox.TabStop = false;
             this.Project_Information_GroupBox.Text = "Project Information";
@@ -1849,7 +1849,7 @@
             this.JobsViewerGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.JobsViewerGroup.Location = new System.Drawing.Point(362, 16);
             this.JobsViewerGroup.Name = "JobsViewerGroup";
-            this.JobsViewerGroup.Size = new System.Drawing.Size(658, 614);
+            this.JobsViewerGroup.Size = new System.Drawing.Size(658, 592);
             this.JobsViewerGroup.TabIndex = 23;
             this.JobsViewerGroup.TabStop = false;
             // 
@@ -1860,7 +1860,7 @@
             this.JobsTabViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.JobsTabViewer.Location = new System.Drawing.Point(3, 16);
             this.JobsTabViewer.Name = "JobsTabViewer";
-            this.JobsTabViewer.Size = new System.Drawing.Size(652, 595);
+            this.JobsTabViewer.Size = new System.Drawing.Size(652, 573);
             this.JobsTabViewer.TabIndex = 0;
             this.JobsTabViewer.ZoomFactor = 1D;
             // 
@@ -1981,7 +1981,7 @@
             this.ProjectInfo.Dock = System.Windows.Forms.DockStyle.Left;
             this.ProjectInfo.Location = new System.Drawing.Point(3, 16);
             this.ProjectInfo.Name = "ProjectInfo";
-            this.ProjectInfo.Size = new System.Drawing.Size(359, 614);
+            this.ProjectInfo.Size = new System.Drawing.Size(359, 592);
             this.ProjectInfo.TabIndex = 22;
             this.ProjectInfo.TabStop = false;
             // 
@@ -1990,7 +1990,7 @@
             this.Schedule_Tab.Controls.Add(this.Scheduler_GroupBox);
             this.Schedule_Tab.Location = new System.Drawing.Point(4, 22);
             this.Schedule_Tab.Name = "Schedule_Tab";
-            this.Schedule_Tab.Size = new System.Drawing.Size(1234, 639);
+            this.Schedule_Tab.Size = new System.Drawing.Size(1234, 617);
             this.Schedule_Tab.TabIndex = 6;
             this.Schedule_Tab.Text = "Schedule";
             this.Schedule_Tab.UseVisualStyleBackColor = true;
@@ -2001,7 +2001,7 @@
             this.Scheduler_GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Scheduler_GroupBox.Location = new System.Drawing.Point(0, 0);
             this.Scheduler_GroupBox.Name = "Scheduler_GroupBox";
-            this.Scheduler_GroupBox.Size = new System.Drawing.Size(1234, 639);
+            this.Scheduler_GroupBox.Size = new System.Drawing.Size(1234, 617);
             this.Scheduler_GroupBox.TabIndex = 1;
             this.Scheduler_GroupBox.TabStop = false;
             this.Scheduler_GroupBox.Text = "Scheduler";
@@ -2013,7 +2013,7 @@
             this.ScheduleViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ScheduleViewer.Location = new System.Drawing.Point(3, 16);
             this.ScheduleViewer.Name = "ScheduleViewer";
-            this.ScheduleViewer.Size = new System.Drawing.Size(1228, 620);
+            this.ScheduleViewer.Size = new System.Drawing.Size(1228, 598);
             this.ScheduleViewer.TabIndex = 2;
             this.ScheduleViewer.ZoomFactor = 1D;
             // 
@@ -2030,7 +2030,7 @@
             // 
             this.Fieldworkers_Tab.Location = new System.Drawing.Point(4, 22);
             this.Fieldworkers_Tab.Name = "Fieldworkers_Tab";
-            this.Fieldworkers_Tab.Size = new System.Drawing.Size(1234, 639);
+            this.Fieldworkers_Tab.Size = new System.Drawing.Size(1234, 617);
             this.Fieldworkers_Tab.TabIndex = 3;
             this.Fieldworkers_Tab.Text = "Fieldworkers";
             this.Fieldworkers_Tab.UseVisualStyleBackColor = true;

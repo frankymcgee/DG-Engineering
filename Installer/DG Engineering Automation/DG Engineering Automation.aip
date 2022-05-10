@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DOCUMENT Type="Advanced Installer" CreateVersion="19.4" version="19.4" Modules="simple" RootPath="." Language="en" Id="{BFED50EE-DFD5-4715-89C6-7211321AA5C0}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
-    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent"/>
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;FixupComponent;MsiXDiffComponent;MsixManifestEditorComponent"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
@@ -26,9 +26,6 @@
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Text.Json.dll" Value="..\..\packages\System.Text.Json.6.0.3\lib\net461"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Threading.Tasks.Extensions.dll" Value="..\..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll" Value="..\..\packages\System.ValueTuple.4.5.0\lib\net47"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll" Value="..\..\DG Engineering\bin\Release\runtimes\win-x86\native"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll_1" Value="..\..\DG Engineering\bin\Release\runtimes\win-x64\native"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll_2" Value="..\..\DG Engineering\bin\Release\runtimes\win-arm64\native"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DGEngineering.exe" Value="DG Engineering.exe"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DGEngineering.exe.config" Value="DG Engineering.exe.config"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_HtmlAgilityPack.dll" Value="HtmlAgilityPack.dll"/>
@@ -48,13 +45,14 @@
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Text.Json.dll" Value="System.Text.Json.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Tasks.Extensions.dll" Value="System.Threading.Tasks.Extensions.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll" Value="System.ValueTuple.dll"/>
-    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_WebView2Loader.dll" Value="WebView2Loader.dll"/>
-    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_WebView2Loader.dll_1" Value="WebView2Loader.dll"/>
-    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_WebView2Loader.dll_2" Value="WebView2Loader.dll"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPCONTACT" Value="support@webwire.com.au"/>
+    <ROW Property="ARPHELPLINK" Value="https://webwire.com.au"/>
+    <ROW Property="ARPHELPTELEPHONE" Value="+61893860053"/>
     <ROW Property="ARPPRODUCTICON" Value="Icon.exe" Type="8"/>
     <ROW Property="ARPURLINFOABOUT" Value="https://dgengineering.com.au"/>
+    <ROW Property="ARPURLUPDATEINFO" Value="https://dgengineering.com.au"/>
     <ROW Property="Manufacturer" Value="De Wet &amp; Green Engineering PTY LTD"/>
     <ROW Property="ProductCode" Value="1033:{E11DD924-14F4-436F-ABAE-8B9F86A5B69A} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
@@ -74,11 +72,9 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="DGEngineering_Dir" Directory_Parent="APPDIR" DefaultDir="DGENGI~1|DG Engineering"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
-    <ROW Directory="native_1_Dir" Directory_Parent="winx64_Dir" DefaultDir="native"/>
-    <ROW Directory="native_2_Dir" Directory_Parent="winarm64_Dir" DefaultDir="native"/>
-    <ROW Directory="native_Dir" Directory_Parent="winx86_Dir" DefaultDir="native"/>
     <ROW Directory="runtimes_Dir" Directory_Parent="DGEngineering_Dir" DefaultDir="runtimes"/>
     <ROW Directory="winarm64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="WIN-AR~1|win-arm64"/>
     <ROW Directory="winx64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win-x64"/>
@@ -86,13 +82,13 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{A821D958-008F-4139-9D96-BECD5B520339}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="DGEngineering_ContentOutput_runtimes_winarm64_native" ComponentId="{1BC7A446-FB8C-464B-9789-F1C3FE93008F}" Directory_="native_2_Dir" Attributes="256" KeyPath="WebView2Loader.dll_2"/>
-    <ROW Component="DGEngineering_ContentOutput_runtimes_winx64_native" ComponentId="{CCBBABE9-1D7A-47D0-B7C7-7455EC702B96}" Directory_="native_1_Dir" Attributes="256" KeyPath="WebView2Loader.dll_1"/>
-    <ROW Component="DGEngineering_ContentOutput_runtimes_winx86_native" ComponentId="{29C08150-A2BD-45B2-A38C-12F76E5E8E4C}" Directory_="native_Dir" Attributes="0" KeyPath="WebView2Loader.dll"/>
     <ROW Component="DGEngineering_PrimaryOutput" ComponentId="{6C3D3D8A-6CBB-493D-9DA1-6B8517A799E3}" Directory_="DGEngineering_Dir" Attributes="0" KeyPath="DGEngineering.exe"/>
-    <ROW Component="DGEngineering_References" ComponentId="{446E61BB-FC9E-40A1-BE08-A0CFF3F1B511}" Directory_="DGEngineering_Dir" Attributes="0" KeyPath="System.ValueTuple.dll"/>
+    <ROW Component="DGEngineering_References" ComponentId="{35BBCFF2-A8E5-4A80-A53D-39CD3C96D718}" Directory_="DGEngineering_Dir" Attributes="0" KeyPath="System.ValueTuple.dll"/>
     <ROW Component="ProductInformation" ComponentId="{5782C2F4-DD12-4519-BF31-E9F0780251F4}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{E4897E70-B1E8-445B-B037-C8D3D770B435}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="winarm64" ComponentId="{331A3A6A-A9DD-49B1-BCF4-157CFF5341BD}" Directory_="winarm64_Dir" Attributes="0"/>
+    <ROW Component="winx64" ComponentId="{B8ABB715-A9F5-4EE6-8A29-FCD45062D501}" Directory_="winx64_Dir" Attributes="0"/>
+    <ROW Component="winx86" ComponentId="{1BEF9EDC-4C6B-4BA5-A7BB-58B5BF92E358}" Directory_="winx86_Dir" Attributes="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -118,9 +114,6 @@
     <ROW File="System.Text.Json.dll" Component_="DGEngineering_References" FileName="SYSTEM~7.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Text.Json.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Text.Json.dll&gt;" SelfReg="false"/>
     <ROW File="System.Threading.Tasks.Extensions.dll" Component_="DGEngineering_References" FileName="SYSTEM~8.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Tasks.Extensions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Threading.Tasks.Extensions.dll&gt;" SelfReg="false"/>
     <ROW File="System.ValueTuple.dll" Component_="DGEngineering_References" FileName="SYSTEM~9.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.ValueTuple.dll&gt;" SelfReg="false"/>
-    <ROW File="WebView2Loader.dll" Component_="DGEngineering_ContentOutput_runtimes_winx86_native" FileName="WEBVIE~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_WebView2Loader.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_WebView2Loader.dll&gt;" SelfReg="false"/>
-    <ROW File="WebView2Loader.dll_1" Component_="DGEngineering_ContentOutput_runtimes_winx64_native" FileName="WEBVIE~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_WebView2Loader.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_WebView2Loader.dll_1&gt;" SelfReg="false"/>
-    <ROW File="WebView2Loader.dll_2" Component_="DGEngineering_ContentOutput_runtimes_winarm64_native" FileName="WEBVIE~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_WebView2Loader.dll_2]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_WebView2Loader.dll_2&gt;" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
     <ROW Name="AI_APPPATH_PERBUILD_DGEngineering.exe" Path="[|AI_PROPPATH_DIR_PERBUILD_DGEngineering.exe]\[|AI_PROPPATH_FILENAME_PERBUILD_DGEngineering.exe]" Type="2" Content="0"/>
@@ -142,9 +135,6 @@
     <ROW Name="AI_APPPATH_PERBUILD_System.Text.Json.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Text.Json.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Text.Json.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_System.Threading.Tasks.Extensions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Threading.Tasks.Extensions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Tasks.Extensions.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_System.ValueTuple.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll]" Type="2" Content="0"/>
-    <ROW Name="AI_APPPATH_PERBUILD_WebView2Loader.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_WebView2Loader.dll]" Type="2" Content="0"/>
-    <ROW Name="AI_APPPATH_PERBUILD_WebView2Loader.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_WebView2Loader.dll_1]" Type="2" Content="0"/>
-    <ROW Name="AI_APPPATH_PERBUILD_WebView2Loader.dll_2" Path="[|AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll_2]\[|AI_PROPPATH_FILENAME_PERBUILD_WebView2Loader.dll_2]" Type="2" Content="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -201,6 +191,9 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
     <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+    <ROW Directory_="winx86_Dir" Component_="winx86" ManualDelete="false"/>
+    <ROW Directory_="winx64_Dir" Component_="winx64" ManualDelete="false"/>
+    <ROW Directory_="winarm64_Dir" Component_="winarm64" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
@@ -221,10 +214,10 @@
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
     <ROW Feature_="MainFeature" Component_="DGEngineering_PrimaryOutput"/>
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="winx64"/>
+    <ROW Feature_="MainFeature" Component_="winarm64"/>
+    <ROW Feature_="MainFeature" Component_="winx86"/>
     <ROW Feature_="MainFeature" Component_="DGEngineering_References"/>
-    <ROW Feature_="MainFeature" Component_="DGEngineering_ContentOutput_runtimes_winx86_native"/>
-    <ROW Feature_="MainFeature" Component_="DGEngineering_ContentOutput_runtimes_winx64_native"/>
-    <ROW Feature_="MainFeature" Component_="DGEngineering_ContentOutput_runtimes_winarm64_native"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Icon.exe" SourcePath="..\..\DG Engineering\Icon.ico" Index="0"/>
@@ -258,6 +251,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="DGEngineering" Directory_="SHORTCUTDIR" Name="DGENGI~1|DG Engineering" Component_="DGEngineering_PrimaryOutput" Target="[#DGEngineering.exe]" Hotkey="0" IconIndex="0" ShowCmd="1"/>
+    <ROW Shortcut="DGEngineering_1" Directory_="DesktopFolder" Name="DGENGI~1|DG Engineering" Component_="DGEngineering_PrimaryOutput" Target="[#DGEngineering.exe]" Hotkey="0" IconIndex="0" ShowCmd="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
@@ -286,8 +280,5 @@
     <ROW ProjectId="{eaffca2d-1ed3-4241-9b97-6d67bee64f5f}" ProjectName="DG Engineering" OutputGroup="References" OutputFile="System.Text.Json.dll"/>
     <ROW ProjectId="{eaffca2d-1ed3-4241-9b97-6d67bee64f5f}" ProjectName="DG Engineering" OutputGroup="References" OutputFile="System.Threading.Tasks.Extensions.dll"/>
     <ROW ProjectId="{eaffca2d-1ed3-4241-9b97-6d67bee64f5f}" ProjectName="DG Engineering" OutputGroup="References" OutputFile="System.ValueTuple.dll"/>
-    <ROW ProjectId="{eaffca2d-1ed3-4241-9b97-6d67bee64f5f}" ProjectName="DG Engineering" OutputGroup="ContentOutput" OutputFile="WebView2Loader.dll"/>
-    <ROW ProjectId="{eaffca2d-1ed3-4241-9b97-6d67bee64f5f}" ProjectName="DG Engineering" OutputGroup="ContentOutput" OutputFile="WebView2Loader.dll_1"/>
-    <ROW ProjectId="{eaffca2d-1ed3-4241-9b97-6d67bee64f5f}" ProjectName="DG Engineering" OutputGroup="ContentOutput" OutputFile="WebView2Loader.dll_2"/>
   </COMPONENT>
 </DOCUMENT>
