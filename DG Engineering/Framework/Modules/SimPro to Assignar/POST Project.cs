@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Net;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar.ProjectPost;
 using Newtonsoft.Json;
@@ -12,8 +13,10 @@ namespace DG_Engineering
         /// <summary>
         /// POST Project from SimPro to Assignar.
         /// </summary>
-        public void AssignarProjectPost()
+        public async Task AssignarProjectPost()
         {
+            StatusLabel.Visible = true;
+            StatusLabel.Text = @"Creating Project";
             ProjectStartDate.Format = DateTimePickerFormat.Custom;
             ProjectStartDate.CustomFormat = @"yyyy-MM-dd";
             ProjectEndDate.Format = DateTimePickerFormat.Custom;
@@ -31,12 +34,21 @@ namespace DG_Engineering
             if (restResponse.StatusCode == HttpStatusCode.OK)
             {
                 ProjectId = JsonConvert.DeserializeObject<ProjectPost.Root>(restResponse.Content).Data.Id;
+                
+                StatusLabel.Text = @"Creating Job: Mobilisation|DS";
                 AssignarJobPost("Mobilisation|DS");
+                StatusLabel.Text = @"Creating Job: Mobilisation|NS";
                 AssignarJobPost("Mobilisation|NS");
+                StatusLabel.Text = @"Creating Job: Work|DS";
                 AssignarJobPost("Work|DS");
+                StatusLabel.Text = @"Creating Job: Work|NS";
                 AssignarJobPost("Work|NS");
+                StatusLabel.Text = @"Creating Job: DeMobilisation|DS";
                 AssignarJobPost("DeMobilisation|DS");
+                StatusLabel.Text = @"Creating Job: DeMobilisation|NS";
                 AssignarJobPost("DeMobilisation|NS");
+                StatusLabel.Visible = false;
+                await SimProDocDownload();
                 MessageBox.Show(@"Project Created in Assignar. Please upload the Documents that are required into the Project.", @"Success");
                 DownloadAllProjects(Static.AssignarDashboardUrl + "projects/", Static.JwtToken);
                 ProjectViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/projects/detail/" + ProjectId + "/documents");

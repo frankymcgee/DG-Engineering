@@ -245,6 +245,9 @@
     <Compile Include="Framework\Modules\SimPro to Assignar\Create Task in Job.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Framework\Modules\SimPro to Assignar\SimPro Document Download.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Framework\Modules\SimPro to Assignar\POST Job.cs">
       <SubType>Form</SubType>
     </Compile>

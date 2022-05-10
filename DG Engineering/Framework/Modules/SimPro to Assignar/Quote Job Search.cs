@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 using DG_Engineering.Framework.Global.SimPro;
 using Newtonsoft.Json;
 
@@ -11,8 +13,10 @@ namespace DG_Engineering
         /// <summary>
         /// Search SimPro for Quote/Job from Number.
         /// </summary>
-        public void SimProSearch()
+        public async Task SimProSearch()
         {
+            StatusLabel.Visible = true;
+            StatusLabel.Text = @"Searching";
             Directory.CreateDirectory(Output + "Files");
             var di = new DirectoryInfo(Output + "Files");
             var files = di.GetFiles();
@@ -20,9 +24,7 @@ namespace DG_Engineering
             {
                 file.Delete();
             }
-            StatusLabel.Visible = true;
             ProgressBar.PerformStep();
-            StatusLabel.Text = @"Searching";
             switch (QuoteJobSelection.Text)
             {
                 case @"Quote":
@@ -50,35 +52,11 @@ namespace DG_Engineering
                     break;
                 }
             }
-            
+            CompanyIdExtract(SimProClient_TextBox.Text);
             ProgressBar.PerformStep();
-            StatusLabel.Text = @"Downloading Documents";
-            // Download Documents
             var documents = SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text + "/attachments/files/").Content;
             var result = JsonConvert.DeserializeObject<List<Documents.Root>>(documents);
-            ProgressBar.PerformStep();
-            string docbyte64Search = null;
-            foreach (var a in result)
-            {
-                switch (QuoteJobSelection.Text)
-                {
-                    case @"Quote":
-                        docbyte64Search =
-                            SimProConnect(SimProUrl + "quotes/" + SimProQuoteText.Text + "/attachments/files/" + a.ID + "?display=Base64").Content;
-                        break;
-
-                    case @"Job":
-                        docbyte64Search =
-                            SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text + "/attachments/files/" + a.ID + "?display=Base64").Content;
-                        break;
-                }
-                if (docbyte64Search == null) continue;
-                var docresult = JsonConvert.DeserializeObject<DocumentBase64.Root>(docbyte64Search);
-                var filename = docresult.Filename;
-                File.WriteAllBytes(Output + "Files/" + filename, Convert.FromBase64String(docresult.Base64Data));
-            }
-            StatusLabel.Visible = false;
-            CompanyIdExtract(SimProClient_TextBox.Text);
+            StatusLabel.Text = @"Found " + result.Count + @" Documents.";
             ProgressBar.Value = 0;
         }
     }

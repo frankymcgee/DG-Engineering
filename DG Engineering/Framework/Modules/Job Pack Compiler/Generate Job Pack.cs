@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using DG_Engineering.Framework.Global.Assignar;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
 
@@ -11,6 +12,8 @@ namespace DG_Engineering
         /// </summary>
         private void CombineJobPackFiles()
         {
+            StatusLabel.Visible = true;
+            StatusLabel.Text = @"Combining Information. Please Wait...";
             // Get some file names
             var files = GetFiles(Path.GetTempPath() + "Job Pack Generator\\");
             // Open the output document
@@ -31,7 +34,8 @@ namespace DG_Engineering
                     outputDocument.AddPage(page);
                 }
             }
-
+            
+            StatusLabel.Text = @"Saving Document";
             // Save the document...
             var filename = Path.GetTempPath() + JobPackNo_TextBox.Text + " Job Pack.pdf";
             FileUploadName = JobPackNo_TextBox.Text + " Job Pack.pdf";
@@ -41,6 +45,7 @@ namespace DG_Engineering
             outputDocument.Close();
             //Deletes the Generator Folder including anything inside.
             Directory.Delete(Path.GetTempPath() + "Job Pack Generator\\", true);
+            StatusLabel.Visible = false;
         }
     }
 }

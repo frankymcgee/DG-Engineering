@@ -1,4 +1,5 @@
-﻿using DG_Engineering.Framework.Global.Assignar;
+﻿using System.Linq;
+using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -18,7 +19,8 @@ namespace DG_Engineering
             if (project == null) return;
             foreach (var a in project.Data)
             {
-                JobDocuments_ComboBox.Items.Add(a.Label);
+                StatusLabel.Text = @"Adding " + a.Document.Name;
+                JobDocuments_ComboBox.Items.Add(a.Document.Name);
             }
         }
     }

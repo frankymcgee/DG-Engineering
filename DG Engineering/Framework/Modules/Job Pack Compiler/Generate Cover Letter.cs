@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar;
 using Microsoft.Office.Interop.Word;
@@ -16,9 +15,12 @@ namespace DG_Engineering
         /// </summary>
         public void Cover_Letter_Format()
         {
+            StatusLabel.Visible = true;
+            StatusLabel.Text = @"Creating Cover Letter";
             var word = new Application();
             var doc = word.Documents.Add(CoverLetterPath);
             doc.Activate();
+            StatusLabel.Text = @"Generating Information";
             foreach (FormField field in doc.FormFields)
             {
                 switch (field.Name)
@@ -46,14 +48,15 @@ namespace DG_Engineering
 
             var output = Path.Combine(Path.GetTempPath(), "Job Pack Generator\\");
             Directory.CreateDirectory(output);
+            StatusLabel.Text = @"Exporting Cover Letter";
             doc.ExportAsFixedFormat(output + +Filestep + ". Job Pack Cover.pdf",
                 WdExportFormat.wdExportFormatPDF);
             doc.Close(false);
             word.Quit();
             ReleaseComObjects(doc, word);
+            StatusLabel.Text = @"Searching for available Documents";
             // Find all documents in Project
-            var projectidsearch = AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + JobPackNo_TextBox.Text,
-                Static.JwtToken, Method.GET);
+            var projectidsearch = AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + JobPackNo_TextBox.Text, Static.JwtToken, Method.GET);
             var projectnumberresult = JsonConvert.DeserializeObject<ProjectSearch.Root>(projectidsearch);
             foreach (var a in projectnumberresult.Data)
             {
@@ -61,6 +64,8 @@ namespace DG_Engineering
                 DownloadJobDocuments(Static.AssignarDashboardUrl + "projects/" + Static.ProjectNumber + "/documents/",
                     Static.JwtToken);
             }
+
+            StatusLabel.Visible = false;
             JobDocuments_ListBox.Items.Add(Filestep + ". Job Pack Cover");
             MessageBox.Show(@"Completed", @"Cover for Pack Completed");
         }
