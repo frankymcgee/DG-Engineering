@@ -52,7 +52,7 @@ namespace DG_Engineering.Framework.Global.SimPro
         public object Month { get; set; }
 
         [JsonProperty("Percent")]
-        public int Percent { get; set; }
+        public double Percent { get; set; }
     }
 
     public class Total
@@ -70,10 +70,10 @@ namespace DG_Engineering.Framework.Global.SimPro
         public double Estimate { get; set; }
 
         [JsonProperty("Revised")]
-        public int Revised { get; set; }
+        public double Revised { get; set; }
 
         [JsonProperty("Revized")]
-        public int Revized { get; set; }
+        public double Revized { get; set; }
     }
 
     public class MaterialsCost
@@ -82,10 +82,10 @@ namespace DG_Engineering.Framework.Global.SimPro
         public double Estimate { get; set; }
 
         [JsonProperty("Revised")]
-        public int Revised { get; set; }
+        public double Revised { get; set; }
 
         [JsonProperty("Revized")]
-        public int Revized { get; set; }
+        public double Revized { get; set; }
     }
 
     public class Labor
@@ -94,58 +94,58 @@ namespace DG_Engineering.Framework.Global.SimPro
         public double Estimate { get; set; }
 
         [JsonProperty("Revised")]
-        public int Revised { get; set; }
+        public double Revised { get; set; }
 
         [JsonProperty("Revized")]
-        public int Revized { get; set; }
+        public double Revized { get; set; }
     }
 
     public class LaborHours
     {
         [JsonProperty("Estimate")]
-        public int Estimate { get; set; }
+        public double Estimate { get; set; }
 
         [JsonProperty("Revised")]
-        public int Revised { get; set; }
+        public double Revised { get; set; }
 
         [JsonProperty("Revized")]
-        public int Revized { get; set; }
+        public double Revized { get; set; }
     }
 
     public class PlantAndEquipment
     {
         [JsonProperty("Estimate")]
-        public int Estimate { get; set; }
+        public double Estimate { get; set; }
 
         [JsonProperty("Revised")]
-        public int Revised { get; set; }
+        public double Revised { get; set; }
 
         [JsonProperty("Revized")]
-        public int Revized { get; set; }
+        public double Revized { get; set; }
     }
 
     public class PlantAndEquipmentHours
     {
         [JsonProperty("Estimate")]
-        public int Estimate { get; set; }
+        public double Estimate { get; set; }
 
         [JsonProperty("Revised")]
-        public int Revised { get; set; }
+        public double Revised { get; set; }
 
         [JsonProperty("Revized")]
-        public int Revized { get; set; }
+        public double Revized { get; set; }
     }
 
     public class Overhead
     {
         [JsonProperty("Estimate")]
-        public int Estimate { get; set; }
+        public double Estimate { get; set; }
 
         [JsonProperty("Revised")]
-        public int Revised { get; set; }
+        public double Revised { get; set; }
 
         [JsonProperty("Revized")]
-        public int Revized { get; set; }
+        public double Revized { get; set; }
     }
 
     public class ResourcesCost
@@ -175,10 +175,10 @@ namespace DG_Engineering.Framework.Global.SimPro
         public double Estimate { get; set; }
 
         [JsonProperty("Revised")]
-        public int Revised { get; set; }
+        public double Revised { get; set; }
 
         [JsonProperty("Revized")]
-        public int Revized { get; set; }
+        public double Revized { get; set; }
     }
 
     public class ResourcesMarkup
@@ -196,13 +196,13 @@ namespace DG_Engineering.Framework.Global.SimPro
     public class Adjusted
     {
         [JsonProperty("Estimate")]
-        public int Estimate { get; set; }
+        public double Estimate { get; set; }
 
         [JsonProperty("Revised")]
-        public int Revised { get; set; }
+        public double Revised { get; set; }
 
         [JsonProperty("Revized")]
-        public int Revized { get; set; }
+        public double Revized { get; set; }
     }
 
     public class GrossProfitLoss
@@ -211,10 +211,10 @@ namespace DG_Engineering.Framework.Global.SimPro
         public double Estimate { get; set; }
 
         [JsonProperty("Revised")]
-        public int Revised { get; set; }
+        public double Revised { get; set; }
 
         [JsonProperty("Revized")]
-        public int Revized { get; set; }
+        public double Revized { get; set; }
     }
 
     public class GrossMargin
@@ -223,10 +223,10 @@ namespace DG_Engineering.Framework.Global.SimPro
         public double Estimate { get; set; }
 
         [JsonProperty("Revised")]
-        public int Revised { get; set; }
+        public double Revised { get; set; }
 
         [JsonProperty("Revized")]
-        public int Revized { get; set; }
+        public double Revized { get; set; }
     }
 
     public class NettProfitLoss
@@ -235,10 +235,10 @@ namespace DG_Engineering.Framework.Global.SimPro
         public double Estimate { get; set; }
 
         [JsonProperty("Revised")]
-        public int Revised { get; set; }
+        public double Revised { get; set; }
 
         [JsonProperty("Revized")]
-        public int Revized { get; set; }
+        public double Revized { get; set; }
     }
 
     public class NettMargin
@@ -247,10 +247,10 @@ namespace DG_Engineering.Framework.Global.SimPro
         public double Estimate { get; set; }
 
         [JsonProperty("Revised")]
-        public int Revised { get; set; }
+        public double Revised { get; set; }
 
         [JsonProperty("Revized")]
-        public int Revized { get; set; }
+        public double Revized { get; set; }
     }
 
     public class Totals
@@ -271,16 +271,16 @@ namespace DG_Engineering.Framework.Global.SimPro
         public Adjusted Adjusted { get; set; }
 
         [JsonProperty("MembershipDiscount")]
-        public int MembershipDiscount { get; set; }
+        public double MembershipDiscount { get; set; }
 
         [JsonProperty("Discount")]
-        public int Discount { get; set; }
+        public double Discount { get; set; }
 
         [JsonProperty("STCs")]
-        public int STCs { get; set; }
+        public double STCs { get; set; }
 
         [JsonProperty("VEECs")]
-        public int VEECs { get; set; }
+        public double VEECs { get; set; }
 
         [JsonProperty("GrossProfitLoss")]
         public GrossProfitLoss GrossProfitLoss { get; set; }
@@ -340,10 +340,10 @@ namespace DG_Engineering.Framework.Global.SimPro
         public bool VEECsEligible { get; set; }
 
         [JsonProperty("STCValue")]
-        public int STCValue { get; set; }
+        public double STCValue { get; set; }
 
         [JsonProperty("VEECValue")]
-        public int VEECValue { get; set; }
+        public double VEECValue { get; set; }
     }
 
     public class Root
@@ -397,7 +397,7 @@ namespace DG_Engineering.Framework.Global.SimPro
         public object DueDate { get; set; }
 
         [JsonProperty("ValidityDays")]
-        public int ValidityDays { get; set; }
+        public double ValidityDays { get; set; }
 
         [JsonProperty("OrderNo")]
         public string OrderNo { get; set; }
@@ -418,7 +418,7 @@ namespace DG_Engineering.Framework.Global.SimPro
         public string CustomerStage { get; set; }
 
         [JsonProperty("JobNo")]
-        public int JobNo { get; set; }
+        public double JobNo { get; set; }
 
         [JsonProperty("IsVariation")]
         public bool IsVariation { get; set; }
