@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +14,7 @@ namespace DG_Engineering
         /// <summary>
         /// POST Project from SimPro to Assignar.
         /// </summary>
-        public async Task AssignarProjectPost()
+        public void AssignarProjectPost()
         {
             StatusLabel.Visible = true;
             StatusLabel.Text = @"Creating Project";
@@ -47,18 +48,16 @@ namespace DG_Engineering
                 AssignarJobPost("DeMobilisation|DS");
                 StatusLabel.Text = @"Creating Job: DeMobilisation|NS";
                 AssignarJobPost("DeMobilisation|NS");
-                StatusLabel.Visible = false;
-                await SimProDocDownload();
-                MessageBox.Show(@"Project Created in Assignar. Please upload the Documents that are required into the Project.", @"Success");
+                SimProDocDownload();
+                MessageBox.Show(@"Project Created in Assignar. Documents have been automatically uploaded. Please add any more as necessary", @"Success");
                 DownloadAllProjects(Static.AssignarDashboardUrl + "projects/", Static.JwtToken);
                 ProjectViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/projects/detail/" + ProjectId + "/documents");
-                Process.Start(Output + "Files/");
+                StatusLabel.Visible = false;
             }
             else
             {
-                MessageBox.Show(@"Whoops! An Error has occurred trying to create your Project. Please try again.", @"Error");
+                MessageBox.Show(@"Whoops! An Error has occurred trying to create your Project. It either already exists or has incorrect information. Please try again.", @"Error");
             }
         }
-        
     }
 }

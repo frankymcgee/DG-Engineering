@@ -17,7 +17,7 @@ namespace DG_Engineering
         {
             if (string.IsNullOrEmpty(All_Projects_ComboBox.Text))
             {
-                var jobsearch = AssignarConnect(url, token, Method.GET);
+                var jobsearch = AssignarConnect(url, token, Method.GET,null);
                 var jobs = JsonConvert.DeserializeObject<Jobs.Root>(jobsearch);
                 if (jobs == null) return;
                 Job_List_ComboBox.Items.Clear();
@@ -34,7 +34,7 @@ namespace DG_Engineering
             else
             {
                 //Manual_Search_TextBox.Text = All_Projects_ComboBox.Text.Split(Convert.ToChar("-"))[0];
-                var jobsearch = AssignarConnect(url, token, Method.GET);
+                var jobsearch = AssignarConnect(url, token, Method.GET,null);
                 var jobs = JsonConvert.DeserializeObject<Jobs.Root>(jobsearch);
                 if (jobs == null) return;
                 Job_List_ComboBox.Items.Clear();

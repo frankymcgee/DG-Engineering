@@ -46,8 +46,7 @@ namespace DG_Engineering
             }
             else
             {
-                
-                _ = AssignarProjectPost();
+                AssignarProjectPost();
             }
         }
         #endregion
@@ -152,8 +151,7 @@ namespace DG_Engineering
         {
             GC.Collect();
         }
-        #endregion
 
-        
+        #endregion
     }
 }

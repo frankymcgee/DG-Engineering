@@ -13,7 +13,7 @@ namespace DG_Engineering
         /// <param name="token">LoginForm.JwtToken</param>
         private void DownloadRoleDescriptions(string url, string token)
         {
-            var tasksearch = AssignarConnect(url, token, Method.GET);
+            var tasksearch = AssignarConnect(url, token, Method.GET,null);
             var tasks = JsonConvert.DeserializeObject<Roles.Root>(tasksearch);
             if (tasks == null) return;
             foreach (var a in tasks.Data)

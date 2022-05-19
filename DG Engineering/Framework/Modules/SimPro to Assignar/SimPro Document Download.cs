@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar;
@@ -15,7 +16,7 @@ namespace DG_Engineering
 {
     public partial class MainWindow
     {
-        private Task SimProDocDownload()
+        private void SimProDocDownload()
         {
             StatusLabel.Visible = true;
             StatusLabel.Text = @"Downloading Documents";
@@ -43,11 +44,38 @@ namespace DG_Engineering
                 var docresult = JsonConvert.DeserializeObject<DocumentBase64.Root>(docbyte64Search);
                 var filename = docresult.Filename;
                 File.WriteAllBytes(Output + "Files/" + filename, Convert.FromBase64String(docresult.Base64Data));
+                StatusLabel.Text = @"Uploading " + docresult.Filename + @" to the Project.";
+                AssignarDocUploadPost(Path.Combine(Output,"files",filename),filename);
             }
 
             StatusLabel.Visible = false;
             Process.Start(Output + "Files/");
-            return Task.CompletedTask;
+        }
+        
+
+        private void AssignarDocUploadPost(string filename,string file)
+        {
+            var filerequest = "{\r\n  \"filename\": \"" + file + "\"\r\n}";
+            var request = AssignarConnect(Static.AssignarDashboardUrl + "upload-urls/project-document", Static.JwtToken,Method.POST,filerequest);
+            var response = JsonConvert.DeserializeObject<ProjectDocument.Root>(request);
+            var uploadurl = response.Url;
+            var uploadpath = response.Path;
+            AssignarPut(uploadurl,filename);
+            var body = @"{
+" + "\n" +
+                       @"""document_id"": 10,
+" + "\n" +
+                       @"""label"": """ + file +  @""",
+" + "\n" +
+                       @"""comments"": ""Uploaded from SimPro"",
+" + "\n" +
+                       @"""active"": true,
+" + "\n" +
+                       @"""attachment"": """ + uploadpath + @"""
+" + "\n" +
+                       @"}";
+            AssignarConnect(Static.AssignarDashboardUrl + "projects/" + ProjectId + "/documents", Static.JwtToken, Method.POST, body);
+
         }
     }
 }

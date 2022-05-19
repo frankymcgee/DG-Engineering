@@ -14,7 +14,7 @@ namespace DG_Engineering
         /// <param name="token">LoginForm.JwtToken</param>
         private void DownloadAllProjects(string url, string token)
         {
-            var projectsearch = AssignarConnect(url, token, Method.GET);
+            var projectsearch = AssignarConnect(url, token, Method.GET,null);
             var project = JsonConvert.DeserializeObject<Projects.Project>(projectsearch);
             if (project == null) return;
             foreach (var a in project.Data.Where(a => a.Active))

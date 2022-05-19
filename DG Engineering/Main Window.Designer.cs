@@ -590,7 +590,7 @@
             this.DocViewGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DocViewGroup.Location = new System.Drawing.Point(0, 0);
             this.DocViewGroup.Name = "DocViewGroup";
-            this.DocViewGroup.Size = new System.Drawing.Size(819, 639);
+            this.DocViewGroup.Size = new System.Drawing.Size(819, 617);
             this.DocViewGroup.TabIndex = 0;
             this.DocViewGroup.TabStop = false;
             this.DocViewGroup.Text = "Document Viewer";
@@ -601,7 +601,7 @@
             this.DocumentGeneratorViewer.Location = new System.Drawing.Point(3, 16);
             this.DocumentGeneratorViewer.MinimumSize = new System.Drawing.Size(20, 20);
             this.DocumentGeneratorViewer.Name = "DocumentGeneratorViewer";
-            this.DocumentGeneratorViewer.Size = new System.Drawing.Size(813, 620);
+            this.DocumentGeneratorViewer.Size = new System.Drawing.Size(813, 598);
             this.DocumentGeneratorViewer.TabIndex = 0;
             // 
             // PushToJobPack_Button
@@ -661,6 +661,7 @@
             // 
             // ProjectViewer
             // 
+            this.ProjectViewer.AllowExternalDrop = true;
             this.ProjectViewer.CreationProperties = null;
             this.ProjectViewer.DefaultBackgroundColor = System.Drawing.Color.White;
             this.ProjectViewer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1484,7 +1485,7 @@
             // Generate_Button
             // 
             this.Generate_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Generate_Button.Location = new System.Drawing.Point(3, 613);
+            this.Generate_Button.Location = new System.Drawing.Point(3, 591);
             this.Generate_Button.Name = "Generate_Button";
             this.Generate_Button.Size = new System.Drawing.Size(405, 23);
             this.Generate_Button.TabIndex = 2;
@@ -1510,7 +1511,7 @@
             this.DocPropertiesGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DocPropertiesGroup.Location = new System.Drawing.Point(0, 0);
             this.DocPropertiesGroup.Name = "DocPropertiesGroup";
-            this.DocPropertiesGroup.Size = new System.Drawing.Size(411, 639);
+            this.DocPropertiesGroup.Size = new System.Drawing.Size(411, 617);
             this.DocPropertiesGroup.TabIndex = 0;
             this.DocPropertiesGroup.TabStop = false;
             this.DocPropertiesGroup.Text = "Document Properties";
@@ -1528,7 +1529,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.DocViewGroup);
-            this.splitContainer1.Size = new System.Drawing.Size(1234, 639);
+            this.splitContainer1.Size = new System.Drawing.Size(1234, 617);
             this.splitContainer1.SplitterDistance = 411;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -1537,7 +1538,7 @@
             this.DocumentGen_Tab.Controls.Add(this.splitContainer1);
             this.DocumentGen_Tab.Location = new System.Drawing.Point(4, 22);
             this.DocumentGen_Tab.Name = "DocumentGen_Tab";
-            this.DocumentGen_Tab.Size = new System.Drawing.Size(1234, 639);
+            this.DocumentGen_Tab.Size = new System.Drawing.Size(1234, 617);
             this.DocumentGen_Tab.TabIndex = 7;
             this.DocumentGen_Tab.Text = "Document Generator";
             this.DocumentGen_Tab.UseVisualStyleBackColor = true;
@@ -1855,6 +1856,7 @@
             // 
             // JobsTabViewer
             // 
+            this.JobsTabViewer.AllowExternalDrop = true;
             this.JobsTabViewer.CreationProperties = null;
             this.JobsTabViewer.DefaultBackgroundColor = System.Drawing.Color.White;
             this.JobsTabViewer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2008,6 +2010,7 @@
             // 
             // ScheduleViewer
             // 
+            this.ScheduleViewer.AllowExternalDrop = true;
             this.ScheduleViewer.CreationProperties = null;
             this.ScheduleViewer.DefaultBackgroundColor = System.Drawing.Color.White;
             this.ScheduleViewer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2021,7 +2024,7 @@
             // 
             this.Clients_Tab.Location = new System.Drawing.Point(4, 22);
             this.Clients_Tab.Name = "Clients_Tab";
-            this.Clients_Tab.Size = new System.Drawing.Size(1234, 639);
+            this.Clients_Tab.Size = new System.Drawing.Size(1234, 617);
             this.Clients_Tab.TabIndex = 2;
             this.Clients_Tab.Text = "Clients";
             this.Clients_Tab.UseVisualStyleBackColor = true;
@@ -2059,6 +2062,7 @@
             // 
             // RecruitmentViewer
             // 
+            this.RecruitmentViewer.AllowExternalDrop = true;
             this.RecruitmentViewer.CreationProperties = null;
             this.RecruitmentViewer.DefaultBackgroundColor = System.Drawing.Color.White;
             this.RecruitmentViewer.Dock = System.Windows.Forms.DockStyle.Fill;

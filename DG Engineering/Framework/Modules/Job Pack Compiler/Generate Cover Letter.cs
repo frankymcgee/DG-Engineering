@@ -56,7 +56,7 @@ namespace DG_Engineering
             ReleaseComObjects(doc, word);
             StatusLabel.Text = @"Searching for available Documents";
             // Find all documents in Project
-            var projectidsearch = AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + JobPackNo_TextBox.Text, Static.JwtToken, Method.GET);
+            var projectidsearch = AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + JobPackNo_TextBox.Text, Static.JwtToken, Method.GET,null);
             var projectnumberresult = JsonConvert.DeserializeObject<ProjectSearch.Root>(projectidsearch);
             foreach (var a in projectnumberresult.Data)
             {

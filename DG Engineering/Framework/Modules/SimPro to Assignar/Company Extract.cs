@@ -18,7 +18,7 @@ namespace DG_Engineering
             ProgressBar.PerformStep();
             var lstStringsToCheck = new List<string>();
             var assignarclients =
-                AssignarConnect(Static.AssignarDashboardUrl + "clients/", Static.JwtToken, Method.GET);
+                AssignarConnect(Static.AssignarDashboardUrl + "clients/", Static.JwtToken, Method.GET,null);
             var clientlist = JsonConvert.DeserializeObject<Clients.Root>(assignarclients);
             if (clientlist != null) lstStringsToCheck.AddRange(clientlist.Data.Select(a => a.Name));
             var resultset = lstStringsToCheck.ToDictionary(stringtoTest => stringtoTest,

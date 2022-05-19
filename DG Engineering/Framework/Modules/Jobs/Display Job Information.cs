@@ -15,7 +15,7 @@ namespace DG_Engineering
         /// <param name="token">LoginForm.JwtToken</param>
         private void DownloadJobInformation(string url, string token)
         {
-            var jobsearch = AssignarConnect(url, token, Method.GET);
+            var jobsearch = AssignarConnect(url, token, Method.GET,null);
             var jobinfo = JsonConvert.DeserializeObject<JobInfo.Root>(jobsearch);
             if (jobinfo == null) return;
             Job_Number_TextBox.Text = jobinfo.Data.Id.ToString();

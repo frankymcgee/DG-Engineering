@@ -16,7 +16,7 @@ namespace DG_Engineering
         /// <param name="token">The JWT retrieved for the Auth API.</param>
         private void DownloadProjectInformation(string url, string token)
         {
-            var jobsearch = AssignarConnect(url, token, Method.GET);
+            var jobsearch = AssignarConnect(url, token, Method.GET,null);
             var project = JsonConvert.DeserializeObject<ProjectNumber.Project>(jobsearch);
             Debug.Assert(project != null, nameof(project) + " != null");
             var coords = project.Data.AddressGeo.Coordinates.ToArray();
