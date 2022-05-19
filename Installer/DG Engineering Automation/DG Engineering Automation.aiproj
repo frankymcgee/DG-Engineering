@@ -27,7 +27,7 @@
       <Name>DG Engineering</Name>
       <Project>{eaffca2d-1ed3-4241-9b97-6d67bee64f5f}</Project>
       <Private>True</Private>
-      <OutputsToImport>PrimaryOutput;References;LocalizedResourcesOutput</OutputsToImport>
+      <OutputsToImport>PrimaryOutput;References;LocalizedResourcesOutput;ContentOutput;DocumentationOutput;SymbolsOutput;ComTypeLibraryOutput</OutputsToImport>
     </ProjectReference>
   </ItemGroup>
   <Target Name="Build">

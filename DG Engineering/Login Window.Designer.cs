@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginWindow));
             this.SaveLoginInfo = new System.Windows.Forms.CheckBox();
             this.ClientID_TextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.ResetPasswordLink = new System.Windows.Forms.LinkLabel();
             this.Login_Button = new System.Windows.Forms.Button();
             this.Password_TextBox = new System.Windows.Forms.TextBox();
@@ -55,22 +54,13 @@
             // ClientID_TextBox
             // 
             this.ClientID_TextBox.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientID_TextBox.Location = new System.Drawing.Point(75, 249);
+            this.ClientID_TextBox.Location = new System.Drawing.Point(75, 206);
             this.ClientID_TextBox.Name = "ClientID_TextBox";
             this.ClientID_TextBox.Size = new System.Drawing.Size(341, 33);
             this.ClientID_TextBox.TabIndex = 9;
+            this.ClientID_TextBox.Text = "dgengineering";
             this.ClientID_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(196, 213);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 33);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Client ID";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ClientID_TextBox.Visible = false;
             // 
             // ResetPasswordLink
             // 
@@ -154,7 +144,6 @@
             this.ClientSize = new System.Drawing.Size(491, 565);
             this.Controls.Add(this.SaveLoginInfo);
             this.Controls.Add(this.ClientID_TextBox);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.ResetPasswordLink);
             this.Controls.Add(this.Login_Button);
             this.Controls.Add(this.Password_TextBox);
@@ -177,7 +166,6 @@
 
         private System.Windows.Forms.CheckBox SaveLoginInfo;
         private System.Windows.Forms.TextBox ClientID_TextBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel ResetPasswordLink;
         private System.Windows.Forms.Button Login_Button;
         private System.Windows.Forms.TextBox Password_TextBox;

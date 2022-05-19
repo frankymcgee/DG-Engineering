@@ -40,7 +40,15 @@ namespace DG_Engineering
             SimProSearch();
         } private void PushAssignar_Button_Click(object sender, EventArgs e)
         {
-            _ = AssignarProjectPost();
+            if (ProjectPOTextBox.Text == @"MISSING PO NUMBER")
+            {
+                MessageBox.Show(@"PLEASE ADD PROJECT PO NUMBER",@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            else
+            {
+                
+                _ = AssignarProjectPost();
+            }
         }
         #endregion
         #region Jobs
