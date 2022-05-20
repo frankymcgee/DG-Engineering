@@ -58,6 +58,7 @@ namespace DG_Engineering
             // Find all documents in Project
             var projectidsearch = AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + JobPackNo_TextBox.Text, Static.JwtToken, Method.GET,null);
             var projectnumberresult = JsonConvert.DeserializeObject<ProjectSearch.Root>(projectidsearch);
+            StatusLabel.Text = @"Found " + projectnumberresult.Count + @" Documents.";
             foreach (var a in projectnumberresult.Data)
             {
                 Static.ProjectNumber = a.Id;

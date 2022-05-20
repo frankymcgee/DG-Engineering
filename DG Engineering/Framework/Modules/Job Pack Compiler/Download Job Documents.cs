@@ -19,8 +19,8 @@ namespace DG_Engineering
             if (project == null) return;
             foreach (var a in project.Data)
             {
-                StatusLabel.Text = @"Adding " + a.Document.Name;
-                JobDocuments_ComboBox.Items.Add(a.Document.Name);
+                StatusLabel.Text = @"Adding " + a.Label + @" to the List.";
+                JobDocuments_ComboBox.Items.Add(a.Label);
             }
         }
     }
