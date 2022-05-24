@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using Microsoft.Office.Interop.Word;
 
 namespace DG_Engineering
@@ -13,7 +14,17 @@ namespace DG_Engineering
         /// <param name="employmentcontracts">Path to the Employment Contract Templates</param>
         private void GenerateNewEmployeeContract(string employmenttype, string employmentcontracts)
         {
+            switch (RepresentativeComboBox.Text)
+            {
+                    case "Damien Voigt":
+                    Signature = Path.Combine(Signpath, @"damien.png");
+                    break;
+                    case "Leigh Wright":
+                    Signature = Path.Combine(Signpath, @"leigh.png");
+                    break;
+            }
             var filename = Path.GetTempPath();
+            var signRanges = new System.Collections.Generic.List<Range>();
             JobDescriptionExtract();
             var word = new Application();
             Document doc = null;
@@ -23,7 +34,7 @@ namespace DG_Engineering
                     doc = word.Documents.Add(employmentcontracts + "\\HR-EMP-001 Casual Employment Agreement.dotx");
                     break;
                 case @"Full-Time Employment":
-                    doc = word.Documents.Add(employmentcontracts + "\\HR-EMP-001 Full-Time Agreement.dotx");
+                    doc = word.Documents.Add(employmentcontracts + "\\HR-EMP-002 Full-Time Agreement.dotx");
                     break;
             }
 
@@ -31,8 +42,26 @@ namespace DG_Engineering
             doc.Activate();
             ProgressBar_Compiler.PerformStep();
             doc.BuiltInDocumentProperties["Company"].Value = "De Wet and Green Engineering PTY LTD";
-            //Custom Fields Replacement
-            foreach (Field myMergeField in doc.Fields)
+            //signature Search
+            foreach (var s in doc.InlineShapes.Cast<InlineShape>()
+                         .Where(s => s.Type == WdInlineShapeType.wdInlineShapePicture)
+                         .Where(s => s.AlternativeText == "Signature"))
+            {
+                signRanges.Add(s.Range);
+                var signheight = s.Height;
+                var signwidth = s.Width;
+                s.Delete();
+                //Signature Replacement
+                foreach (var ils in signRanges.Select(r =>
+                             r.InlineShapes.AddPicture(Path.Combine(Signature), ref _missing, ref _missing,
+                                 ref _missing)))
+                {
+                    ils.Height = signheight;
+                    ils.Width = signwidth;
+                }
+            }
+                //Custom Fields Replacement
+                foreach (Field myMergeField in doc.Fields)
             {
                 var rngFieldCode = myMergeField.Code;
                 var fieldText = rngFieldCode.Text;
@@ -69,7 +98,7 @@ namespace DG_Engineering
                             break;
                         case "payratetype":
                             myMergeField.Select();
-                            word.Selection.TypeText("Pay Rate");
+                            word.Selection.TypeText("Pay Rate\t");
                             break;
                     }
                 }
@@ -79,6 +108,22 @@ namespace DG_Engineering
             {
                 switch (field.Name)
                 {
+                    case "DGE_Position":
+                        if(RepresentativeComboBox.Text == @"Damien Voigt")
+                        {
+                            field.Range.Text = @"Operation Manager";
+                        }
+                        else if (RepresentativeComboBox.Text == @"Leigh Wright")
+                        {
+                            field.Range.Text = @"General Manager";
+                        }
+                        break;
+                        case "DGE_Name":
+                            field.Range.Text = RepresentativeComboBox.Text;
+                        break;
+                        case "Date_Signed":
+                            field.Range.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                        break;
                     case "Full_Name":
                         field.Range.Text = New_Employee_Name_TextBox.Text;
                         break;
@@ -113,7 +158,7 @@ namespace DG_Engineering
                                 field.Range.Text = Employee_Base_Rate_TextBox.Text + " Flat Rate / Hr";
                                 break;
                             case @"Full-Time Employment":
-                                field.Range.Text = Employee_Base_Rate_TextBox.Text + " / Hr";
+                                field.Range.Text = Employee_Base_Rate_TextBox.Text + " / Hr\t";
                                 break;
                         }
                         
@@ -148,6 +193,10 @@ namespace DG_Engineering
                                 120 plus hours per fortnight		Extra: $ 9.00 per hour
 
                                 *All leave, public holidays and training excluded.";
+                        }
+                        else
+                        {
+                            field.Range.Text = @" ";
                         }
                         break;
                 }
