@@ -7,9 +7,9 @@
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="AI_CURRENT_YEAR" Value="2022" ValueLocId="-"/>
     <ROW Property="AI_PACKAGING_TOOL" Value="Advanced Installer 19.4 build 4648ec91" ValueLocId="-"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DGEngineering.exe" Value="..\..\DG Engineering\bin\Release"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DGEngineering.exe.config" Value="..\..\DG Engineering\bin\Release"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DGEngineering.pdb" Value="..\..\DG Engineering\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DGEngineering.exe" Value="..\..\DG Engineering\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DGEngineering.exe.config" Value="..\..\DG Engineering\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DGEngineering.pdb" Value="..\..\DG Engineering\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_HtmlAgilityPack.dll" Value="..\..\packages\HtmlAgilityPack.1.11.42\lib\Net45"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Bcl.AsyncInterfaces.dll" Value="..\..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Web.WebView2.Core.dll" Value="..\..\packages\Microsoft.Web.WebView2.1.0.1210.39\lib\net45"/>
@@ -27,9 +27,9 @@
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Text.Json.dll" Value="..\..\packages\System.Text.Json.6.0.3\lib\net461"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Threading.Tasks.Extensions.dll" Value="..\..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll" Value="..\..\packages\System.ValueTuple.4.5.0\lib\net47"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll" Value="..\..\DG Engineering\bin\Release\runtimes\win-x86\native"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll_1" Value="..\..\DG Engineering\bin\Release\runtimes\win-x64\native"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll_2" Value="..\..\DG Engineering\bin\Release\runtimes\win-arm64\native"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll" Value="..\..\DG Engineering\bin\Debug\runtimes\win-x86\native"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll_1" Value="..\..\DG Engineering\bin\Debug\runtimes\win-x64\native"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebView2Loader.dll_2" Value="..\..\DG Engineering\bin\Debug\runtimes\win-arm64\native"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DGEngineering.exe" Value="DG Engineering.exe"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DGEngineering.exe.config" Value="DG Engineering.exe.config"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DGEngineering.pdb" Value="DG Engineering.pdb"/>
@@ -65,10 +65,10 @@
     <ROW Property="ARPURLUPDATEINFO" Value="https://dgengineering.com.au"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="De Wet &amp; Green Engineering PTY LTD"/>
-    <ROW Property="ProductCode" Value="1033:{8DC0A3EC-C54C-4043-BB1D-848988BE2AA1} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{10F9AEC4-5825-484A-8D62-318A1FB59DCD} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="DG Engineering Automation"/>
-    <ROW Property="ProductVersion" Value="1.0.6"/>
+    <ROW Property="ProductVersion" Value="1.0.7"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{4593A287-7B98-4B2C-A561-12AFAF0F93AA}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>

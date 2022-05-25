@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using DG_Engineering.Framework.Global.SimPro;
 using Microsoft.Office.Interop.Word;
 
 namespace DG_Engineering
@@ -14,6 +15,7 @@ namespace DG_Engineering
         /// <param name="employmentcontracts">Path to the Employment Contract Templates</param>
         private void GenerateNewEmployeeContract(string employmenttype, string employmentcontracts)
         {
+            StatusLabel.Visible = true;
             switch (RepresentativeComboBox.Text)
             {
                     case "Damien Voigt":
@@ -28,6 +30,7 @@ namespace DG_Engineering
             JobDescriptionExtract();
             var word = new Application();
             Document doc = null;
+            StatusLabel.Text = @"Generating Contract";
             switch (employmenttype)
             {
                 case @"Casual Employment":
@@ -41,6 +44,7 @@ namespace DG_Engineering
             if (doc == null) return;
             doc.Activate();
             ProgressBar_Compiler.PerformStep();
+            StatusLabel.Text = @"Filling in information";
             doc.BuiltInDocumentProperties["Company"].Value = "De Wet and Green Engineering PTY LTD";
             //signature Search
             foreach (var s in doc.InlineShapes.Cast<InlineShape>()
@@ -202,6 +206,7 @@ namespace DG_Engineering
                 }
             }
             ProgressBar_Compiler.PerformStep();
+            StatusLabel.Text = @"Exporting Contract";
             switch (Local_Worker_Checkbox.Checked)
             {
                 case false:
