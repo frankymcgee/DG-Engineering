@@ -1,5 +1,18 @@
 ;aiu;
 
+[1.1.0 Update]
+Name = DG Engineering Automation
+ProductVersion = 1.1.0
+URL = https://dgengineering.com.au/downloads/Automation_v1.1.0.msi
+Size = 3654144
+SHA256 = C407E3493AB8707BCA2956900198BD3A1A34D775CE66E5145140CE6D7D1E66B8
+MD5 = 70476ac7eb181660ce78fd62df397022
+ServerFileName = Automation_v1.1.0.msi
+RegistryKey = HKUD\Software\De Wet & Green Engineering PTY LTD\DG Engineering Automation\Version
+Version = 1.1.0
+Depends = 1.0.9 Update
+Replaces = 1.0.9 Update
+
 [1.0.9 Update]
 Name = DG Engineering Automation
 ProductVersion = 1.0.9

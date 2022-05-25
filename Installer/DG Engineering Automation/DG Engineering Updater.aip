@@ -42,6 +42,17 @@
     <ROW Section="1.0.9 Update" Key="Version" Value="1.0.9" ValueLocId="-"/>
     <ROW Section="1.0.9 Update" Key="Depends" Value="1.0.8 Update" ValueLocId="-"/>
     <ROW Section="1.0.9 Update" Key="Replaces" Value="1.0.8 Update" ValueLocId="-"/>
+    <ROW Section="1.1.0 Update" Key="Name" Value="DG Engineering Automation"/>
+    <ROW Section="1.1.0 Update" Key="ProductVersion" Value="1.1.0" ValueLocId="-"/>
+    <ROW Section="1.1.0 Update" Key="URL" Value="https://dgengineering.com.au/downloads/Automation_v1.1.0.msi" ValueLocId="-"/>
+    <ROW Section="1.1.0 Update" Key="Size" Value="DG Engineering Automation-SetupFiles\Automation_v1.1.0.msi" ValueLocId="-"/>
+    <ROW Section="1.1.0 Update" Key="SHA256" Value="DG Engineering Automation-SetupFiles\Automation_v1.1.0.msi" ValueLocId="-"/>
+    <ROW Section="1.1.0 Update" Key="MD5" Value="DG Engineering Automation-SetupFiles\Automation_v1.1.0.msi" ValueLocId="-"/>
+    <ROW Section="1.1.0 Update" Key="ServerFileName" Value="Automation_v1.1.0.msi" ValueLocId="-"/>
+    <ROW Section="1.1.0 Update" Key="RegistryKey" Value="HKUD\Software\De Wet &amp; Green Engineering PTY LTD\DG Engineering Automation\Version" ValueLocId="-"/>
+    <ROW Section="1.1.0 Update" Key="Version" Value="1.1.0" ValueLocId="-"/>
+    <ROW Section="1.1.0 Update" Key="Depends" Value="1.0.9 Update" ValueLocId="-"/>
+    <ROW Section="1.1.0 Update" Key="Replaces" Value="1.0.9 Update" ValueLocId="-"/>
     <ATTRIBUTE name="OutputFileName" value="Updater.txt"/>
   </COMPONENT>
 </DOCUMENT>
