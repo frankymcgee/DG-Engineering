@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="19.4" version="19.4" Modules="update" RootPath="." Language="en" Id="{CCFDC0CA-8DA5-4C2F-94A8-A01B9643A628}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="TilesComponent;ActSyncAppComponent;AutorunComponent;CPLAppletComponent;GameUxComponent;SilverlightSlnComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;aiu-ue.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;aiu-ue_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.UpdaterEditorComponent">
+    <ROW Section="1.0.7 Update" Key="Name" Value="DG Engineering Automation"/>
+    <ROW Section="1.0.7 Update" Key="ProductVersion" Value="1.0.7" ValueLocId="-"/>
+    <ROW Section="1.0.7 Update" Key="URL" Value="https://dgengineering.com.au/downloads/DG Engineering Automation v1.0.7.msi" ValueLocId="-"/>
+    <ROW Section="1.0.7 Update" Key="Size" Value="DG Engineering Automation-SetupFiles\DG Engineering Automation v1.0.7.msi" ValueLocId="-"/>
+    <ROW Section="1.0.7 Update" Key="SHA256" Value="DG Engineering Automation-SetupFiles\DG Engineering Automation v1.0.7.msi" ValueLocId="-"/>
+    <ROW Section="1.0.7 Update" Key="MD5" Value="DG Engineering Automation-SetupFiles\DG Engineering Automation v1.0.7.msi" ValueLocId="-"/>
+    <ROW Section="1.0.7 Update" Key="ServerFileName" Value="DG Engineering Automation v1.0.7.msi" ValueLocId="-"/>
+    <ROW Section="1.0.7 Update" Key="Flags" Value="Critical" ValueLocId="-"/>
+    <ROW Section="1.0.7 Update" Key="RegistryKey" Value="HKUD\Software\De Wet &amp; Green Engineering PTY LTD\DG Engineering Automation\Version" ValueLocId="-"/>
+    <ROW Section="1.0.7 Update" Key="Version" Value="1.0.7" ValueLocId="-"/>
+    <ROW Section="1.0.8 Update" Key="Name" Value="DG Engineering Automation"/>
+    <ROW Section="1.0.8 Update" Key="ProductVersion" Value="1.0.8" ValueLocId="-"/>
+    <ROW Section="1.0.8 Update" Key="URL" Value="https://dgengineering.com.au/downloads/DG Engineering Automation v1.0.8.msi" ValueLocId="-"/>
+    <ROW Section="1.0.8 Update" Key="Size" Value="DG Engineering Automation-SetupFiles\DG Engineering Automation v1.0.8.msi" ValueLocId="-"/>
+    <ROW Section="1.0.8 Update" Key="SHA256" Value="DG Engineering Automation-SetupFiles\DG Engineering Automation v1.0.8.msi" ValueLocId="-"/>
+    <ROW Section="1.0.8 Update" Key="MD5" Value="DG Engineering Automation-SetupFiles\DG Engineering Automation v1.0.8.msi" ValueLocId="-"/>
+    <ROW Section="1.0.8 Update" Key="ServerFileName" Value="DG Engineering Automation v1.0.8.msi" ValueLocId="-"/>
+    <ROW Section="1.0.8 Update" Key="Flags" Value="Critical" ValueLocId="-"/>
+    <ROW Section="1.0.8 Update" Key="RegistryKey" Value="HKUD\Software\De Wet &amp; Green Engineering PTY LTD\DG Engineering Automation\Version" ValueLocId="-"/>
+    <ROW Section="1.0.8 Update" Key="Version" Value="1.0.8" ValueLocId="-"/>
+    <ROW Section="1.0.8 Update" Key="Depends" Value="1.0.7 Update" ValueLocId="-"/>
+    <ROW Section="1.0.8 Update" Key="Replaces" Value="1.0.7 Update" ValueLocId="-"/>
+    <ROW Section="1.0.9 Update" Key="Name" Value="DG Engineering Automation"/>
+    <ROW Section="1.0.9 Update" Key="ProductVersion" Value="1.0.9" ValueLocId="-"/>
+    <ROW Section="1.0.9 Update" Key="URL" Value="https://dgengineering.com.au/downloads/DG Engineering Automation v1.0.9.msi" ValueLocId="-"/>
+    <ROW Section="1.0.9 Update" Key="Size" Value="DG Engineering Automation-SetupFiles\DG Engineering Automation v1.0.9.msi" ValueLocId="-"/>
+    <ROW Section="1.0.9 Update" Key="SHA256" Value="DG Engineering Automation-SetupFiles\DG Engineering Automation v1.0.9.msi" ValueLocId="-"/>
+    <ROW Section="1.0.9 Update" Key="MD5" Value="DG Engineering Automation-SetupFiles\DG Engineering Automation v1.0.9.msi" ValueLocId="-"/>
+    <ROW Section="1.0.9 Update" Key="ServerFileName" Value="DG Engineering Automation v1.0.9.msi" ValueLocId="-"/>
+    <ROW Section="1.0.9 Update" Key="Flags" Value="Critical" ValueLocId="-"/>
+    <ROW Section="1.0.9 Update" Key="RegistryKey" Value="HKUD\Software\De Wet &amp; Green Engineering PTY LTD\DG Engineering Automation\Version" ValueLocId="-"/>
+    <ROW Section="1.0.9 Update" Key="Version" Value="1.0.9" ValueLocId="-"/>
+    <ROW Section="1.0.9 Update" Key="Depends" Value="1.0.8 Update" ValueLocId="-"/>
+    <ROW Section="1.0.9 Update" Key="Replaces" Value="1.0.8 Update" ValueLocId="-"/>
+    <ATTRIBUTE name="OutputFileName" value="Updater.txt"/>
+  </COMPONENT>
+</DOCUMENT>

@@ -211,6 +211,8 @@
             this.Document_Preview_Group = new System.Windows.Forms.GroupBox();
             this.RecruitmentViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.Contract_Gen_Group = new System.Windows.Forms.GroupBox();
+            this.RepresentativeComboBox = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.OutputTypeComboBox = new System.Windows.Forms.ComboBox();
             this.WorkingAwayCheckBox = new System.Windows.Forms.CheckBox();
@@ -242,10 +244,9 @@
             this.New_Employee_Name_TextBox = new System.Windows.Forms.TextBox();
             this.New_Employee_Name_Label = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.VersionLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.RepresentativeComboBox = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.Manual_Search_GroupBox.SuspendLayout();
             this.Job_Information_GroupBox.SuspendLayout();
             this.DocViewGroup.SuspendLayout();
@@ -2108,6 +2109,27 @@
             this.Contract_Gen_Group.TabStop = false;
             this.Contract_Gen_Group.Text = "Contract Generation";
             // 
+            // RepresentativeComboBox
+            // 
+            this.RepresentativeComboBox.FormattingEnabled = true;
+            this.RepresentativeComboBox.Items.AddRange(new object[] {
+            "Damien Voigt",
+            "Leight Wright"});
+            this.RepresentativeComboBox.Location = new System.Drawing.Point(16, 420);
+            this.RepresentativeComboBox.Name = "RepresentativeComboBox";
+            this.RepresentativeComboBox.Size = new System.Drawing.Size(329, 21);
+            this.RepresentativeComboBox.TabIndex = 23;
+            this.RepresentativeComboBox.Text = "Damien Voigt";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(14, 404);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(105, 13);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "DGE Representative";
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -2388,6 +2410,7 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.VersionLabel,
             this.StatusLabel,
             this.ProgressBar});
             this.statusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
@@ -2396,6 +2419,12 @@
             this.statusStrip1.Size = new System.Drawing.Size(1242, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // VersionLabel
+            // 
+            this.VersionLabel.Name = "VersionLabel";
+            this.VersionLabel.Size = new System.Drawing.Size(48, 17);
+            this.VersionLabel.Text = "Version:";
             // 
             // StatusLabel
             // 
@@ -2410,27 +2439,6 @@
             this.ProgressBar.Name = "ProgressBar";
             this.ProgressBar.Size = new System.Drawing.Size(500, 16);
             this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            // 
-            // RepresentativeComboBox
-            // 
-            this.RepresentativeComboBox.FormattingEnabled = true;
-            this.RepresentativeComboBox.Items.AddRange(new object[] {
-            "Damien Voigt",
-            "Leight Wright"});
-            this.RepresentativeComboBox.Location = new System.Drawing.Point(16, 420);
-            this.RepresentativeComboBox.Name = "RepresentativeComboBox";
-            this.RepresentativeComboBox.Size = new System.Drawing.Size(329, 21);
-            this.RepresentativeComboBox.TabIndex = 23;
-            this.RepresentativeComboBox.Text = "Damien Voigt";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(14, 404);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(105, 13);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "DGE Representative";
             // 
             // MainWindow
             // 
@@ -2747,5 +2755,6 @@
         private System.Windows.Forms.ToolStripProgressBar ProgressBar;
         private System.Windows.Forms.ComboBox RepresentativeComboBox;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ToolStripStatusLabel VersionLabel;
     }
 }
