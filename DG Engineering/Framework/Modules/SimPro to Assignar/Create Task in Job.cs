@@ -37,7 +37,7 @@ namespace DG_Engineering
             restRequest.AddHeader("Authorization", Static.JwtToken);
             var value = "{\n  \"task_id\": " + taskid + ",\n  \"task_quantity\": " + quantity + ",\n  \"active\": true,\n  \"req_machines\": true,\n  \"start_time\": " + starttime + ",\n  \"end_time\": " + endtime + ",\n}";
             restRequest.AddParameter("application/json", value, ParameterType.RequestBody);
-            Console.WriteLine(restClient.Execute(restRequest).Content);
-        }
+            _ = restClient.Execute(restRequest).Content;
+         }
     }
 }

@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using DG_Engineering.Framework.Global.SimPro;
+using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
 
 namespace DG_Engineering
@@ -43,7 +44,7 @@ namespace DG_Engineering
                 case @"Job":
                 {
                     var jobs = SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text).Content;
-                    var jobinfo = JsonConvert.DeserializeObject<Jobs.Root>(jobs);
+                    var jobinfo = JsonConvert.DeserializeObject<Framework.Global.SimPro.Jobs.Root>(jobs);
                     if (jobinfo == null) return;
                     SimProClient_TextBox.Text = jobinfo.Customer.CompanyName;
                     ProjectNameTextBox.Text = jobinfo.Name;
@@ -56,8 +57,15 @@ namespace DG_Engineering
             ProjectPOTextBox.Font = ProjectPOTextBox.Text == @"MISSING PO NUMBER" ? new Font(ProjectPOTextBox.Font, FontStyle.Bold) : new Font(ProjectPOTextBox.Font, FontStyle.Regular);
             CompanyIdExtract(SimProClient_TextBox.Text);
             ProgressBar.PerformStep();
+            ClientContact_ComboBox.Items.Clear();
+            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + SimProClient_TextBox.Text,Static.JwtToken,RestSharp.Method.GET,null);
+            var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
+            foreach (var a in contactsresult.Data)
+            {
+                ClientContact_ComboBox.Items.Add(a.FirstName + " " + a.LastName + "-" + a.JobTitle);
+            }
             var documents = SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text + "/attachments/files/").Content;
-            var result = JsonConvert.DeserializeObject<List<Documents.Root>>(documents);
+            var result = JsonConvert.DeserializeObject<List<Framework.Global.SimPro.Documents.Root>>(documents);
             StatusLabel.Text = @"Found " + result.Count + @" Documents.";
             ProgressBar.Value = 0;
         }

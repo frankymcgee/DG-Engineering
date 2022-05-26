@@ -4,6 +4,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar.ProjectPost;
+using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -35,8 +36,7 @@ namespace DG_Engineering
             if (restResponse.StatusCode == HttpStatusCode.OK)
             {
                 ProjectId = JsonConvert.DeserializeObject<ProjectPost.Root>(restResponse.Content).Data.Id;
-                
-                StatusLabel.Text = @"Creating Job: Mobilisation|DS";
+                ClientAddToProject(ProjectId.ToString());
                 AssignarJobPost("Mobilisation|DS");
                 StatusLabel.Text = @"Creating Job: Mobilisation|NS";
                 AssignarJobPost("Mobilisation|NS");
@@ -53,11 +53,27 @@ namespace DG_Engineering
                 DownloadAllProjects(Static.AssignarDashboardUrl + "projects/", Static.JwtToken);
                 ProjectViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/projects/detail/" + ProjectId + "/documents");
                 StatusLabel.Visible = false;
+                ProgressBar.Value = 0;
             }
             else
             {
                 MessageBox.Show(@"Whoops! An Error has occurred trying to create your Project. It either already exists or has incorrect information. Please try again.", @"Error");
             }
+        }
+        public void ClientAddToProject(string projectid)
+        {
+            var contact_id = 0;
+            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + SimProClient_TextBox.Text, Static.JwtToken, RestSharp.Method.GET, null);
+            var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
+            foreach (var a in contactsresult.Data)
+            {
+                if (a.FirstName == ClientContact_ComboBox.Text.Split(" ".ToCharArray())[0] && ClientContact_ComboBox.Text.Split(" ".ToCharArray())[1].Contains(a.LastName))
+                {
+                    contact_id = a.Id;
+                }
+            }
+            var body = "{\n \"project_id\":" + projectid + ",\n  \"contact_id\":" + contact_id + "\n}";
+            _ = AssignarConnect(Static.AssignarDashboardUrl + "projects/" + projectid + "/contacts", Static.JwtToken, Method.POST, body);
         }
     }
 }

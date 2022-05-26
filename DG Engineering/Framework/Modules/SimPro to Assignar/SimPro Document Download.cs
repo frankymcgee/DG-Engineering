@@ -47,11 +47,8 @@ namespace DG_Engineering
                 StatusLabel.Text = @"Uploading " + docresult.Filename + @" to the Project.";
                 AssignarDocUploadPost(Path.Combine(Output,"files",filename),filename);
             }
-
             StatusLabel.Visible = false;
-            Process.Start(Output + "Files/");
-        }
-        
+        }       
 
         private void AssignarDocUploadPost(string filename,string file)
         {
@@ -75,7 +72,6 @@ namespace DG_Engineering
 " + "\n" +
                        @"}";
             AssignarConnect(Static.AssignarDashboardUrl + "projects/" + ProjectId + "/documents", Static.JwtToken, Method.POST, body);
-
         }
     }
 }
