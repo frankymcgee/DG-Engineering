@@ -65,10 +65,10 @@
     <ROW Property="ARPURLUPDATEINFO" Value="https://dgengineering.com.au"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="De Wet &amp; Green Engineering PTY LTD"/>
-    <ROW Property="ProductCode" Value="1033:{90035340-8635-4194-816C-3CDF96162FEA} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{EBF9A32A-F1B4-43F5-9FF5-6E8F36AEC666} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="DG Engineering Automation"/>
-    <ROW Property="ProductVersion" Value="1.2.0"/>
+    <ROW Property="ProductVersion" Value="1.2.010"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{4593A287-7B98-4B2C-A561-12AFAF0F93AA}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -272,7 +272,7 @@
     <ROW IniFile="ApplicationVersion" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="ApplicationVersion" Value="[ProductVersion]" Action="0" Component_="updater.exe"/>
     <ROW IniFile="CheckFrequency" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="CheckFrequency" Value="1" Action="0" Component_="updater.exe"/>
     <ROW IniFile="CompanyName" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="CompanyName" Value="[Manufacturer]" Action="0" Component_="updater.exe"/>
-    <ROW IniFile="DefaultCommandLine" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="DefaultCommandLine" Value="/silentall" Action="0" Component_="updater.exe"/>
+    <ROW IniFile="DefaultCommandLine" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="DefaultCommandLine" Value="/silentall -nofreqcheck" Action="0" Component_="updater.exe"/>
     <ROW IniFile="DownloadsFolder" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="DownloadsFolder" Value="[CommonAppDataFolder][Manufacturer]\[ProductName]\updates\" Action="0" Component_="updater.exe"/>
     <ROW IniFile="Flags" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="Flags" Value="NoDisableAutoCheck|PerMachine|ShowConfigOptionsButton" Action="0" Component_="updater.exe"/>
     <ROW IniFile="ID" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="ID" Value="[UpgradeCode]" Action="0" Component_="updater.exe"/>

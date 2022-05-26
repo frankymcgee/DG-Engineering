@@ -222,6 +222,9 @@
     <Compile Include="Framework\Modules\ON LOAD\Download All Projects.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Framework\Modules\ON LOAD\Download Client List.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Framework\Modules\ON LOAD\Download Role Descriptions.cs">
       <SubType>Form</SubType>
     </Compile>

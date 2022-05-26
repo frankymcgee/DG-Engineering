@@ -18,7 +18,7 @@ namespace DG_Engineering
         #region Main Window Load
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-            VersionLabel.Text = @"Version 1.2.0";
+            VersionLabel.Text = @"Version 1.2.010";
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
             await JobsTabViewer.EnsureCoreWebView2Async(environment);
             await ScheduleViewer.EnsureCoreWebView2Async(environment);
@@ -32,7 +32,8 @@ namespace DG_Engineering
             Assignar_Tabs.TabPages.Remove(DocumentGen_Tab);
             DownloadAllProjects(Static.AssignarDashboardUrl + "projects/", Static.JwtToken);
             DownloadRoleDescriptions(Static.AssignarDashboardUrl + "tasks/", Static.JwtToken);
-        }
+            DownloadClientList(Static.AssignarDashboardUrl + "clients/", Static.JwtToken);
+        }        
         #endregion
         #region Modules
         #region SimPro to Assignar

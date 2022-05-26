@@ -1,5 +1,32 @@
 ;aiu;
 
+[1.2.010 Update]
+Name = DG Engineering Automation v1.2.010
+ProductVersion = 1.2.010
+URL = https://dgengineering.com.au/downloads/Automation_v1.2.010.msi
+Size = 3855360
+SHA256 = 9EA2F9ACCAD7000F554D75DB80D6C16339BB95A9D26B9A064D3660ECD14878EF
+MD5 = 87d488e06b6a26b4b8d16cd2880dbb62
+ServerFileName = Automation_v1.2.010.msi
+RegistryKey = HKUD\Software\De Wet & Green Engineering PTY LTD\DG Engineering Automation\Version
+Version = 1.2.010
+Replaces = All
+
+[1.2.001 Update]
+Name = DG Engineering Automation v1.2.001
+ProductVersion = 1.2.001
+URL = https://dgengineering.com.au/downloads/Automation_v1.2.001.msi
+Size = 3855360
+SHA256 = FE0C73766A7783F88EF0A6530200324E6B91BC1DD907B5F13531B448630F1928
+MD5 = e532317637d51b5ae241a9326d261fd6
+ServerFileName = Automation_v1.2.001.msi
+RegistryKey = HKUD\Software\De Wet & Green Engineering PTY LTD\DG Engineering Automation\Version
+Version = 1.2.001
+Description = • Added Auto Updating Feature on Workstation Unlock
+Description1 = • Added Auto Downloading of Clients and Auto Sorting of Disciplines
+Description2 = Added "Active" flag to both to ensure only active Clients and Disciplines are displayed
+Replaces = All
+
 [1.2.0 Update]
 Name = DG Engineering Automation
 ProductVersion = 1.2.0
