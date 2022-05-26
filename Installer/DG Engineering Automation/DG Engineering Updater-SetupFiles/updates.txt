@@ -1,5 +1,55 @@
 ;aiu;
 
+[1.2.0 Update]
+Name = DG Engineering Automation
+ProductVersion = 1.2.0
+URL = https://dgengineering.com.au/downloads/Automation_v1.2.0.msi
+Size = 3854336
+SHA256 = 9FFA9B3FCA62BAA2D752E0ED1966C73E98B75A0F87E51048BC823EE30D5F139B
+MD5 = 969e88809f15acea05e5af6412ceb3a1
+ServerFileName = Automation_v1.2.0.msi
+RegistryKey = HKUD\Software\De Wet & Green Engineering PTY LTD\DG Engineering Automation\Version
+Version = 1.2.0
+Replaces = All
+
+[1.1.9 Update]
+Name = DG Engineering Automation v1.1.9
+ProductVersion = 1.1.9
+URL = https://dgengineering.com.au/downloads/Automation_v1.1.9.msi
+Size = 3854336
+SHA256 = 53F4435F547A9020406570F4488E21C82DFA3963A37B09244C1B58431B35F8FB
+MD5 = 5edf58284eaed390d71632a9935a9f3a
+ServerFileName = Automation_v1.1.9.msi
+RegistryKey = HKUD\Software\De Wet & Green Engineering PTY LTD\DG Engineering Automation\Version
+Version = 1.1.9
+Replaces = 1.1.8 Update
+
+[1.1.8 Update]
+Name = DG Engineering Automation v1.1.8
+ProductVersion = 1.1.8
+URL = https://dgengineering.com.au/downloads/Automation_v1.1.8.msi
+Size = 3656192
+SHA256 = B1609F3AE78208524832F24EDE7E99E844FDBAA8FE4E0FE895C21D705DFF7BED
+MD5 = 81c1d8109f340c32e585ac8099f36b5c
+ServerFileName = Automation_v1.1.8.msi
+RegistryKey = HKUD\Software\De Wet & Green Engineering PTY LTD\DG Engineering Automation\Version
+Version = 1.1.8
+Depends = 1.17 Update
+Replaces = 1.17 Update
+
+[1.17 Update]
+Name = DG Engineering Automation
+ProductVersion = 1.1.7
+URL = https://dgengineering.com.au/downloads/Automation_v1.1.7.msi
+Size = 3656192
+SHA256 = 803B88272748F8F933006CD478C0BFC210216C614267137B36AD30D350585ED6
+MD5 = 170153b3d68bf3bff9609a6d9fdba8bb
+ServerFileName = Automation_v1.1.7.msi
+RegistryKey = HKUD\Software\De Wet & Green Engineering PTY LTD\DG Engineering Automation\Version
+Version = 1.1.7
+Depends = 1.1.6 Update
+Replaces = 1.1.6 Update
+
 [1.1.6 Update]
 Name = DG Engineering Automation
 ProductVersion = 1.1.6

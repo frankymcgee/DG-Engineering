@@ -39,7 +39,7 @@ namespace DG_Engineering
         private static readonly string Picturepath = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"),
             "DG Engineering\\DG Engineering HUB - Business Support\\New Folder Structure\\Corporate\\Logos\\");
         private static readonly string Signpath = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"),
-            "DG Engineering\\DG Engineering HUB - Business Support\\New Folder Structure\\Corporate\\Signatures\\");
+            "DG Engineering\\DG Engineering HUB - Human Resources\\2. Automation\\Signatures\\");
         
         public static string SimProUrl = "https://dwg.simprosuite.com/api/v1.0/companies/2/";
         public string FileUploadName;
