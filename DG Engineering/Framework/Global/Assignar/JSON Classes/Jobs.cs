@@ -109,13 +109,13 @@ namespace DG_Engineering.Framework.Global.Assignar
         public string Comments { get; set; }
 
         [JsonProperty("date_created")]
-        public DateTime DateCreated { get; set; }
+        public string DateCreated { get; set; }
 
         [JsonProperty("created_by_id")]
         public int? CreatedById { get; set; }
 
         [JsonProperty("modified_time")]
-        public DateTime ModifiedTime { get; set; }
+        public string ModifiedTime { get; set; }
 
         [JsonProperty("modified_by")]
         public string ModifiedBy { get; set; }

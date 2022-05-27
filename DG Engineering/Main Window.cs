@@ -18,8 +18,11 @@ namespace DG_Engineering
         #region Main Window Load
         private async void MainWindow_Load(object sender, EventArgs e)
         {
+            VersionLabel.Text = @"Version 1.2.012";
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
             await JobsTabViewer.EnsureCoreWebView2Async(environment);
+            await AdminJobViewer.EnsureCoreWebView2Async(environment);
+            await AdminViewer.EnsureCoreWebView2Async(environment);
             await ScheduleViewer.EnsureCoreWebView2Async(environment);
             await ProjectViewer.EnsureCoreWebView2Async(environment);
             await RecruitmentViewer.EnsureCoreWebView2Async(environment);
@@ -31,7 +34,8 @@ namespace DG_Engineering
             Assignar_Tabs.TabPages.Remove(DocumentGen_Tab);
             DownloadAllProjects(Static.AssignarDashboardUrl + "projects/", Static.JwtToken);
             DownloadRoleDescriptions(Static.AssignarDashboardUrl + "tasks/", Static.JwtToken);
-        }
+            DownloadClientList(Static.AssignarDashboardUrl + "clients/", Static.JwtToken);
+        }        
         #endregion
         #region Modules
         #region SimPro to Assignar
@@ -77,14 +81,16 @@ namespace DG_Engineering
                 Static.JwtToken);
         }
         #endregion
-        #region Schedule
-        #endregion
-        #region Clients
-        #endregion
-        #region Fieldworkers
-        #endregion
-        #region Job Pack Compiler
-        private void GenerateCover_Button_Click(object sender, EventArgs e)
+        #region Administration
+    #endregion
+    #region Schedule
+    #endregion
+    #region Clients
+    #endregion
+    #region Fieldworkers
+    #endregion
+    #region Job Pack Compiler
+    private void GenerateCover_Button_Click(object sender, EventArgs e)
         {
             Cover_Letter_Format();
         }
@@ -153,5 +159,28 @@ namespace DG_Engineering
         }
 
         #endregion
+
+        private void AdminProjButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(AdminJobNumber.Text))
+            {
+                MessageBox.Show(@"PLEASE ADD PROJECT NUMBER", @"Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                AdminProjSearch();
+            }
+        }
+
+        private void AdminProjSearch()
+        {
+            AdminProjectInformation(Static.AssignarDashboardUrl + "projects?external_id=" + AdminJobNumber.Text, Static.JwtToken);
+        }
+
+        private void AdminDispJobInfo_Click(object sender, EventArgs e)
+        {
+            AdminJobNo.Text = AdminJobComboBox.Text.Split(" | ".ToCharArray())[0];
+            AdminDownloadJobInformation(Static.AssignarDashboardUrl + "orders/" + AdminJobNo.Text, Static.JwtToken);
+        }
     }
 }

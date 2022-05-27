@@ -69,6 +69,9 @@
             this.ProjectGenerationBrowserGroupBox = new System.Windows.Forms.GroupBox();
             this.ProjectViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.SimProQuoteGroup = new System.Windows.Forms.GroupBox();
+            this.ClientContact_ComboBox = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.SimProClient_TextBox = new System.Windows.Forms.ComboBox();
             this.PushToJobPackButton = new System.Windows.Forms.Button();
             this.QuoteJobSelection = new System.Windows.Forms.ComboBox();
             this.QuoteJobLabel = new System.Windows.Forms.Label();
@@ -142,7 +145,6 @@
             this.PushAssignar_Button = new System.Windows.Forms.Button();
             this.ProjectNameTextBox = new System.Windows.Forms.TextBox();
             this.ProjectNameLabel = new System.Windows.Forms.Label();
-            this.SimProClient_TextBox = new System.Windows.Forms.TextBox();
             this.SimProClient = new System.Windows.Forms.Label();
             this.SimProQuoteSearch = new System.Windows.Forms.Button();
             this.SimProQuoteText = new System.Windows.Forms.TextBox();
@@ -211,6 +213,8 @@
             this.Document_Preview_Group = new System.Windows.Forms.GroupBox();
             this.RecruitmentViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.Contract_Gen_Group = new System.Windows.Forms.GroupBox();
+            this.RepresentativeComboBox = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.OutputTypeComboBox = new System.Windows.Forms.ComboBox();
             this.WorkingAwayCheckBox = new System.Windows.Forms.CheckBox();
@@ -242,10 +246,34 @@
             this.New_Employee_Name_TextBox = new System.Windows.Forms.TextBox();
             this.New_Employee_Name_Label = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.VersionLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.RepresentativeComboBox = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.Admin_Tab = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.AdminJobNumber = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.AdminProjButton = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.AdminJobPO = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.AdminJobEnd = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.AdminJobStart = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.AdminJobLoc = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.AdminJobDesc = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.AdminJobNo = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.AdminDispJobInfo = new System.Windows.Forms.Button();
+            this.AdminJobComboBox = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.AdminViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.AdminProjName = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.AdminJobViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.Manual_Search_GroupBox.SuspendLayout();
             this.Job_Information_GroupBox.SuspendLayout();
             this.DocViewGroup.SuspendLayout();
@@ -310,6 +338,11 @@
             this.Contract_Gen_Group.SuspendLayout();
             this.Employee_Address_GroupBox.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.Admin_Tab.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AdminViewer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdminJobViewer)).BeginInit();
             this.SuspendLayout();
             // 
             // All_Projects_ComboBox
@@ -675,6 +708,9 @@
             // 
             // SimProQuoteGroup
             // 
+            this.SimProQuoteGroup.Controls.Add(this.ClientContact_ComboBox);
+            this.SimProQuoteGroup.Controls.Add(this.label17);
+            this.SimProQuoteGroup.Controls.Add(this.SimProClient_TextBox);
             this.SimProQuoteGroup.Controls.Add(this.PushToJobPackButton);
             this.SimProQuoteGroup.Controls.Add(this.QuoteJobSelection);
             this.SimProQuoteGroup.Controls.Add(this.QuoteJobLabel);
@@ -690,7 +726,6 @@
             this.SimProQuoteGroup.Controls.Add(this.PushAssignar_Button);
             this.SimProQuoteGroup.Controls.Add(this.ProjectNameTextBox);
             this.SimProQuoteGroup.Controls.Add(this.ProjectNameLabel);
-            this.SimProQuoteGroup.Controls.Add(this.SimProClient_TextBox);
             this.SimProQuoteGroup.Controls.Add(this.SimProClient);
             this.SimProQuoteGroup.Controls.Add(this.SimProQuoteSearch);
             this.SimProQuoteGroup.Controls.Add(this.SimProQuoteText);
@@ -702,6 +737,31 @@
             this.SimProQuoteGroup.TabIndex = 0;
             this.SimProQuoteGroup.TabStop = false;
             this.SimProQuoteGroup.Text = "Project Details";
+            // 
+            // ClientContact_ComboBox
+            // 
+            this.ClientContact_ComboBox.FormattingEnabled = true;
+            this.ClientContact_ComboBox.Location = new System.Drawing.Point(5, 294);
+            this.ClientContact_ComboBox.Name = "ClientContact_ComboBox";
+            this.ClientContact_ComboBox.Size = new System.Drawing.Size(231, 21);
+            this.ClientContact_ComboBox.TabIndex = 22;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(35, 278);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(161, 13);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "Client-Signed Timesheet Contact";
+            // 
+            // SimProClient_TextBox
+            // 
+            this.SimProClient_TextBox.FormattingEnabled = true;
+            this.SimProClient_TextBox.Location = new System.Drawing.Point(3, 99);
+            this.SimProClient_TextBox.Name = "SimProClient_TextBox";
+            this.SimProClient_TextBox.Size = new System.Drawing.Size(231, 21);
+            this.SimProClient_TextBox.TabIndex = 20;
             // 
             // PushToJobPackButton
             // 
@@ -735,9 +795,11 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tabControl1.Controls.Add(this.DSTab);
             this.tabControl1.Controls.Add(this.NSTab);
             this.tabControl1.Location = new System.Drawing.Point(3, 321);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(231, 217);
@@ -1269,15 +1331,16 @@
             // 
             // ProjectEndDate
             // 
-            this.ProjectEndDate.Location = new System.Drawing.Point(3, 295);
+            this.ProjectEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ProjectEndDate.Location = new System.Drawing.Point(156, 256);
             this.ProjectEndDate.Name = "ProjectEndDate";
-            this.ProjectEndDate.Size = new System.Drawing.Size(231, 20);
+            this.ProjectEndDate.Size = new System.Drawing.Size(78, 20);
             this.ProjectEndDate.TabIndex = 15;
             // 
             // ProjectEndDateLabel
             // 
             this.ProjectEndDateLabel.AutoSize = true;
-            this.ProjectEndDateLabel.Location = new System.Drawing.Point(0, 279);
+            this.ProjectEndDateLabel.Location = new System.Drawing.Point(146, 240);
             this.ProjectEndDateLabel.Name = "ProjectEndDateLabel";
             this.ProjectEndDateLabel.Size = new System.Drawing.Size(88, 13);
             this.ProjectEndDateLabel.TabIndex = 14;
@@ -1285,9 +1348,10 @@
             // 
             // ProjectStartDate
             // 
+            this.ProjectStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.ProjectStartDate.Location = new System.Drawing.Point(3, 256);
             this.ProjectStartDate.Name = "ProjectStartDate";
-            this.ProjectStartDate.Size = new System.Drawing.Size(231, 20);
+            this.ProjectStartDate.Size = new System.Drawing.Size(78, 20);
             this.ProjectStartDate.TabIndex = 13;
             // 
             // ProjectStartDateLabel
@@ -1358,13 +1422,6 @@
             this.ProjectNameLabel.Size = new System.Drawing.Size(71, 13);
             this.ProjectNameLabel.TabIndex = 5;
             this.ProjectNameLabel.Text = "Project Name";
-            // 
-            // SimProClient_TextBox
-            // 
-            this.SimProClient_TextBox.Location = new System.Drawing.Point(3, 100);
-            this.SimProClient_TextBox.Name = "SimProClient_TextBox";
-            this.SimProClient_TextBox.Size = new System.Drawing.Size(231, 20);
-            this.SimProClient_TextBox.TabIndex = 4;
             // 
             // SimProClient
             // 
@@ -1550,6 +1607,7 @@
             this.Assignar_Tabs.Controls.Add(this.SimProSync_Tab);
             this.Assignar_Tabs.Controls.Add(this.Job_Pack_tab);
             this.Assignar_Tabs.Controls.Add(this.Jobs_Tab);
+            this.Assignar_Tabs.Controls.Add(this.Admin_Tab);
             this.Assignar_Tabs.Controls.Add(this.Schedule_Tab);
             this.Assignar_Tabs.Controls.Add(this.Clients_Tab);
             this.Assignar_Tabs.Controls.Add(this.Fieldworkers_Tab);
@@ -2108,6 +2166,27 @@
             this.Contract_Gen_Group.TabStop = false;
             this.Contract_Gen_Group.Text = "Contract Generation";
             // 
+            // RepresentativeComboBox
+            // 
+            this.RepresentativeComboBox.FormattingEnabled = true;
+            this.RepresentativeComboBox.Items.AddRange(new object[] {
+            "Damien Voigt",
+            "Leight Wright"});
+            this.RepresentativeComboBox.Location = new System.Drawing.Point(16, 420);
+            this.RepresentativeComboBox.Name = "RepresentativeComboBox";
+            this.RepresentativeComboBox.Size = new System.Drawing.Size(329, 21);
+            this.RepresentativeComboBox.TabIndex = 23;
+            this.RepresentativeComboBox.Text = "Damien Voigt";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(14, 404);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(105, 13);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "DGE Representative";
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -2388,6 +2467,7 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.VersionLabel,
             this.StatusLabel,
             this.ProgressBar});
             this.statusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
@@ -2396,6 +2476,12 @@
             this.statusStrip1.Size = new System.Drawing.Size(1242, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // VersionLabel
+            // 
+            this.VersionLabel.Name = "VersionLabel";
+            this.VersionLabel.Size = new System.Drawing.Size(48, 17);
+            this.VersionLabel.Text = "Version:";
             // 
             // StatusLabel
             // 
@@ -2411,26 +2497,245 @@
             this.ProgressBar.Size = new System.Drawing.Size(500, 16);
             this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
-            // RepresentativeComboBox
+            // Admin_Tab
             // 
-            this.RepresentativeComboBox.FormattingEnabled = true;
-            this.RepresentativeComboBox.Items.AddRange(new object[] {
-            "Damien Voigt",
-            "Leight Wright"});
-            this.RepresentativeComboBox.Location = new System.Drawing.Point(16, 420);
-            this.RepresentativeComboBox.Name = "RepresentativeComboBox";
-            this.RepresentativeComboBox.Size = new System.Drawing.Size(329, 21);
-            this.RepresentativeComboBox.TabIndex = 23;
-            this.RepresentativeComboBox.Text = "Damien Voigt";
+            this.Admin_Tab.Controls.Add(this.AdminViewer);
+            this.Admin_Tab.Controls.Add(this.groupBox1);
+            this.Admin_Tab.Location = new System.Drawing.Point(4, 22);
+            this.Admin_Tab.Name = "Admin_Tab";
+            this.Admin_Tab.Size = new System.Drawing.Size(1234, 617);
+            this.Admin_Tab.TabIndex = 9;
+            this.Admin_Tab.Text = "Administration";
+            this.Admin_Tab.UseVisualStyleBackColor = true;
             // 
-            // label16
+            // groupBox1
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(14, 404);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(105, 13);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "DGE Representative";
+            this.groupBox1.Controls.Add(this.AdminJobViewer);
+            this.groupBox1.Controls.Add(this.AdminProjName);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.AdminJobNumber);
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.AdminProjButton);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(353, 617);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Manual Search";
+            // 
+            // AdminJobNumber
+            // 
+            this.AdminJobNumber.Location = new System.Drawing.Point(120, 50);
+            this.AdminJobNumber.Name = "AdminJobNumber";
+            this.AdminJobNumber.Size = new System.Drawing.Size(100, 20);
+            this.AdminJobNumber.TabIndex = 2;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(113, 34);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(117, 13);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Search Project Number";
+            // 
+            // AdminProjButton
+            // 
+            this.AdminProjButton.Location = new System.Drawing.Point(131, 76);
+            this.AdminProjButton.Name = "AdminProjButton";
+            this.AdminProjButton.Size = new System.Drawing.Size(75, 23);
+            this.AdminProjButton.TabIndex = 0;
+            this.AdminProjButton.Text = "Search";
+            this.AdminProjButton.UseVisualStyleBackColor = true;
+            this.AdminProjButton.Click += new System.EventHandler(this.AdminProjButton_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.AdminJobPO);
+            this.groupBox2.Controls.Add(this.label20);
+            this.groupBox2.Controls.Add(this.AdminJobEnd);
+            this.groupBox2.Controls.Add(this.label21);
+            this.groupBox2.Controls.Add(this.AdminJobStart);
+            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.AdminJobLoc);
+            this.groupBox2.Controls.Add(this.label23);
+            this.groupBox2.Controls.Add(this.AdminJobDesc);
+            this.groupBox2.Controls.Add(this.label24);
+            this.groupBox2.Controls.Add(this.AdminJobNo);
+            this.groupBox2.Controls.Add(this.label25);
+            this.groupBox2.Controls.Add(this.AdminDispJobInfo);
+            this.groupBox2.Controls.Add(this.AdminJobComboBox);
+            this.groupBox2.Controls.Add(this.label26);
+            this.groupBox2.Location = new System.Drawing.Point(6, 151);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(340, 215);
+            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Job Information";
+            // 
+            // AdminJobPO
+            // 
+            this.AdminJobPO.Location = new System.Drawing.Point(9, 189);
+            this.AdminJobPO.Name = "AdminJobPO";
+            this.AdminJobPO.Size = new System.Drawing.Size(325, 20);
+            this.AdminJobPO.TabIndex = 17;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 173);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(62, 13);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "PO Number";
+            // 
+            // AdminJobEnd
+            // 
+            this.AdminJobEnd.Location = new System.Drawing.Point(123, 150);
+            this.AdminJobEnd.Name = "AdminJobEnd";
+            this.AdminJobEnd.Size = new System.Drawing.Size(105, 20);
+            this.AdminJobEnd.TabIndex = 15;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(120, 134);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(52, 13);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "End Date";
+            // 
+            // AdminJobStart
+            // 
+            this.AdminJobStart.Location = new System.Drawing.Point(9, 150);
+            this.AdminJobStart.Name = "AdminJobStart";
+            this.AdminJobStart.Size = new System.Drawing.Size(105, 20);
+            this.AdminJobStart.TabIndex = 13;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 134);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(55, 13);
+            this.label22.TabIndex = 12;
+            this.label22.Text = "Start Date";
+            // 
+            // AdminJobLoc
+            // 
+            this.AdminJobLoc.Location = new System.Drawing.Point(9, 111);
+            this.AdminJobLoc.Name = "AdminJobLoc";
+            this.AdminJobLoc.Size = new System.Drawing.Size(325, 20);
+            this.AdminJobLoc.TabIndex = 11;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 95);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(68, 13);
+            this.label23.TabIndex = 10;
+            this.label23.Text = "Job Location";
+            // 
+            // AdminJobDesc
+            // 
+            this.AdminJobDesc.Location = new System.Drawing.Point(80, 72);
+            this.AdminJobDesc.Name = "AdminJobDesc";
+            this.AdminJobDesc.Size = new System.Drawing.Size(254, 20);
+            this.AdminJobDesc.TabIndex = 9;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(77, 56);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(80, 13);
+            this.label24.TabIndex = 8;
+            this.label24.Text = "Job Description";
+            // 
+            // AdminJobNo
+            // 
+            this.AdminJobNo.Location = new System.Drawing.Point(9, 72);
+            this.AdminJobNo.Name = "AdminJobNo";
+            this.AdminJobNo.Size = new System.Drawing.Size(63, 20);
+            this.AdminJobNo.TabIndex = 7;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 56);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(64, 13);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Job Number";
+            // 
+            // AdminDispJobInfo
+            // 
+            this.AdminDispJobInfo.Location = new System.Drawing.Point(203, 30);
+            this.AdminDispJobInfo.Name = "AdminDispJobInfo";
+            this.AdminDispJobInfo.Size = new System.Drawing.Size(131, 23);
+            this.AdminDispJobInfo.TabIndex = 5;
+            this.AdminDispJobInfo.Text = "Display Job Info";
+            this.AdminDispJobInfo.UseVisualStyleBackColor = true;
+            this.AdminDispJobInfo.Click += new System.EventHandler(this.AdminDispJobInfo_Click);
+            // 
+            // AdminJobComboBox
+            // 
+            this.AdminJobComboBox.FormattingEnabled = true;
+            this.AdminJobComboBox.Location = new System.Drawing.Point(9, 32);
+            this.AdminJobComboBox.Name = "AdminJobComboBox";
+            this.AdminJobComboBox.Size = new System.Drawing.Size(188, 21);
+            this.AdminJobComboBox.TabIndex = 4;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 16);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(60, 13);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "Select Job:";
+            // 
+            // AdminViewer
+            // 
+            this.AdminViewer.AllowExternalDrop = true;
+            this.AdminViewer.CreationProperties = null;
+            this.AdminViewer.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.AdminViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdminViewer.Location = new System.Drawing.Point(353, 0);
+            this.AdminViewer.Name = "AdminViewer";
+            this.AdminViewer.Size = new System.Drawing.Size(881, 617);
+            this.AdminViewer.TabIndex = 5;
+            this.AdminViewer.ZoomFactor = 1D;
+            // 
+            // AdminProjName
+            // 
+            this.AdminProjName.Location = new System.Drawing.Point(28, 119);
+            this.AdminProjName.Name = "AdminProjName";
+            this.AdminProjName.Size = new System.Drawing.Size(291, 20);
+            this.AdminProjName.TabIndex = 23;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(25, 103);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(71, 13);
+            this.label18.TabIndex = 22;
+            this.label18.Text = "Project Name";
+            // 
+            // AdminJobViewer
+            // 
+            this.AdminJobViewer.AllowExternalDrop = true;
+            this.AdminJobViewer.CreationProperties = null;
+            this.AdminJobViewer.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.AdminJobViewer.Location = new System.Drawing.Point(6, 372);
+            this.AdminJobViewer.Name = "AdminJobViewer";
+            this.AdminJobViewer.Size = new System.Drawing.Size(340, 239);
+            this.AdminJobViewer.TabIndex = 24;
+            this.AdminJobViewer.ZoomFactor = 1D;
             // 
             // MainWindow
             // 
@@ -2523,6 +2828,13 @@
             this.Employee_Address_GroupBox.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.Admin_Tab.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AdminViewer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdminJobViewer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2572,7 +2884,6 @@
         private System.Windows.Forms.Button PushAssignar_Button;
         private System.Windows.Forms.TextBox ProjectNameTextBox;
         private System.Windows.Forms.Label ProjectNameLabel;
-        private System.Windows.Forms.TextBox SimProClient_TextBox;
         private System.Windows.Forms.Label SimProClient;
         private System.Windows.Forms.Button SimProQuoteSearch;
         private System.Windows.Forms.TextBox SimProQuoteText;
@@ -2747,5 +3058,34 @@
         private System.Windows.Forms.ToolStripProgressBar ProgressBar;
         private System.Windows.Forms.ComboBox RepresentativeComboBox;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ToolStripStatusLabel VersionLabel;
+        private System.Windows.Forms.ComboBox SimProClient_TextBox;
+        private System.Windows.Forms.ComboBox ClientContact_ComboBox;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TabPage Admin_Tab;
+        private Microsoft.Web.WebView2.WinForms.WebView2 AdminViewer;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox AdminJobPO;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox AdminJobEnd;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox AdminJobStart;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox AdminJobLoc;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox AdminJobDesc;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox AdminJobNo;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button AdminDispJobInfo;
+        private System.Windows.Forms.ComboBox AdminJobComboBox;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox AdminJobNumber;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button AdminProjButton;
+        private System.Windows.Forms.TextBox AdminProjName;
+        private System.Windows.Forms.Label label18;
+        private Microsoft.Web.WebView2.WinForms.WebView2 AdminJobViewer;
     }
 }

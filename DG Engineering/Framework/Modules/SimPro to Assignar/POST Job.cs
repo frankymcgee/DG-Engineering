@@ -14,7 +14,8 @@ namespace DG_Engineering
         /// <param name="jobname">Job Name i.e. Mobilisation|DS</param>
         public void AssignarJobPost(string jobname)
         {
-	        ProjectStartDate.Format = DateTimePickerFormat.Custom;
+            StatusLabel.Text = @"Creating Job: " + jobname;
+            ProjectStartDate.Format = DateTimePickerFormat.Custom;
             ProjectStartDate.CustomFormat = @"yyyy-MM-dd";
 	        ProjectEndDate.Format = DateTimePickerFormat.Custom;
             ProjectEndDate.CustomFormat = @"yyyy-MM-dd";
@@ -31,12 +32,13 @@ namespace DG_Engineering
                                 ",\n  \"client_id\": " + CompanyId +
                                 ",\n  \"order_owner\": 114," +
                                 "\n  \"project_id\": " + ProjectId +
-                                ",\n  \"project_id\": " + ProjectId +
+                                ",\n  \"location\": " + ProjectAddress_TextBox.Text +
                                 ",\n  \"job_description\": " + jobname +
                                 ",\n  \"start_time\": \"\"" +
                                 ",\n  \"shift_duration\": \"\"" +
                                 ",\n  \"start_date\": " + ProjectStartDate.Text + 
                                 ",\n  \"end_date\": " + ProjectEndDate.Text +
+                                ",\n  \"comments\": " + "Job Number is: " + SimProQuoteText.Text +
                                 ",\n  \"status_id\": 5" +
                                 ",\n  \"type_id\": 1" +
                                 ",\n  \"supplier_id\": null" +
@@ -58,6 +60,7 @@ namespace DG_Engineering
             string starttime = null;
             string endtime = null;
             var id = JsonConvert.DeserializeObject<OrderResp.Root>(restResponse.Content).Data.Id;
+            ClientAddToJob(id.ToString());
             switch (jobname)
             {
                 case "Mobilisation|DS":
@@ -243,6 +246,21 @@ namespace DG_Engineering
                 TaskCreation(starttime,endtime,id,1,ExcavOpNSUD.Value);
                 TaskCreation(starttime,endtime,id,16,HSEQNSUD.Value);
             }
+        }
+        public void ClientAddToJob(string orderid)
+        {
+            var contact_id = 0;
+            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + SimProClient_TextBox.Text, Static.JwtToken, RestSharp.Method.GET, null);
+            var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
+            foreach (var a in contactsresult.Data)
+            {
+                if (a.FirstName == ClientContact_ComboBox.Text.Split(" ".ToCharArray())[0] && ClientContact_ComboBox.Text.Split(" ".ToCharArray())[1].Contains(a.LastName))
+                {
+                    contact_id = a.Id;
+                }
+            }
+            var body = "{\n \"order_id\":" + orderid + ",\n  \"contact_id\":" + contact_id + "\n}";
+            var request = AssignarConnect(Static.AssignarDashboardUrl + "orders/" + orderid + "/contacts", Static.JwtToken, Method.POST, body);
         }
     }
 }

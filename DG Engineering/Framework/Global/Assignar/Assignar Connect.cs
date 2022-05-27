@@ -55,7 +55,6 @@ namespace DG_Engineering
             var pTo = url.IndexOf("&X-Amz-Algorithm");
             var contenttype = url.Substring(pFrom, pTo - pFrom);
             var fixedtype = System.Web.HttpUtility.UrlDecode(contenttype);
-            Console.WriteLine(fixedtype);
             var bytes = File.ReadAllBytes(body);
             var file = Convert.ToBase64String(bytes);
             var client = new RestClient(url)
@@ -65,8 +64,7 @@ namespace DG_Engineering
             var request = new RestRequest(Method.PUT);
             request.AddHeader("Content-Type", "\"" + fixedtype + "\"");
             request.AddParameter("\"" + fixedtype + "\"", "\"" + file + "\"", ParameterType.RequestBody);
-            var response = client.Execute(request);
-            Console.WriteLine(response.StatusDescription);
+            client.Execute(request);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar;
@@ -45,6 +46,30 @@ namespace DG_Engineering
             Job_Start_TextBox.Clear();
             Job_End_TextBox.Clear();
             Job_Po_TextBox.Clear();
+        }
+        /// <summary>
+        /// Downloads Specific Project Information
+        /// </summary>
+        /// <param name="url">The URL of Assignar i.e., https://api.assignar.com.au/v2/projects and the Project Number.</param>
+        /// <param name="token">The JWT retrieved for the Auth API.</param>
+        private void AdminProjectInformation(string url, string token)
+        {
+            string order = null;
+            var jobsearch = AssignarConnect(url, token, Method.GET, null);
+            var project = JsonConvert.DeserializeObject<Projectinfo.Root>(jobsearch);
+            Debug.Assert(project != null, nameof(project) + " != null");
+            foreach (var a in project.Data)
+            {
+                AdminProjName.Text = a.Name;
+                order = a.Id.ToString();
+            }
+            AdminJobNo.Clear();
+            AdminJobDesc.Clear();
+            AdminJobLoc.Clear();
+            AdminJobStart.Clear();
+            AdminJobEnd.Clear();
+            AdminJobPO.Clear();
+            AdminDownloadAllJobs(Static.AssignarDashboardUrl + "orders?project_id=" + order, token);
         }
     }
 }

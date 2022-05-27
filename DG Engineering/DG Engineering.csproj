@@ -143,6 +143,8 @@
     <Compile Include="Framework\Global\Assignar\Assignar Connect.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Framework\Global\Assignar\JSON Classes\Contacts.cs" />
+    <Compile Include="Framework\Global\Assignar\JSON Classes\Admin Job Info.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Project Document.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Project Search.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Orders.cs" />
@@ -152,6 +154,7 @@
     <Compile Include="Framework\Global\Assignar\JSON Classes\Job Info.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Jobs.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Project Number.cs" />
+    <Compile Include="Framework\Global\Assignar\JSON Classes\Individual Project.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Projects.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Roles.cs" />
     <Compile Include="Framework\Global\Assignar\Token Request.cs">
@@ -220,6 +223,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Modules\ON LOAD\Download All Projects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Framework\Modules\ON LOAD\Download Client List.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Modules\ON LOAD\Download Role Descriptions.cs">

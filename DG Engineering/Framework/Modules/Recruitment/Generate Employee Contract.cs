@@ -16,6 +16,7 @@ namespace DG_Engineering
         private void GenerateNewEmployeeContract(string employmenttype, string employmentcontracts)
         {
             StatusLabel.Visible = true;
+            StatusLabel.Text = @"Generating Employee Contract";
             switch (RepresentativeComboBox.Text)
             {
                     case "Damien Voigt":
@@ -44,7 +45,7 @@ namespace DG_Engineering
             if (doc == null) return;
             doc.Activate();
             ProgressBar_Compiler.PerformStep();
-            StatusLabel.Text = @"Filling in information";
+            StatusLabel.Text = @"Digitally Signing Contract";
             doc.BuiltInDocumentProperties["Company"].Value = "De Wet and Green Engineering PTY LTD";
             //signature Search
             foreach (var s in doc.InlineShapes.Cast<InlineShape>()
@@ -56,16 +57,15 @@ namespace DG_Engineering
                 var signwidth = s.Width;
                 s.Delete();
                 //Signature Replacement
-                foreach (var ils in signRanges.Select(r =>
-                             r.InlineShapes.AddPicture(Path.Combine(Signature), ref _missing, ref _missing,
-                                 ref _missing)))
+                foreach (var ils in signRanges.Select(r => r.InlineShapes.AddPicture(Signature, ref _missing, ref _missing, ref _missing)))
                 {
                     ils.Height = signheight;
                     ils.Width = signwidth;
                 }
             }
-                //Custom Fields Replacement
-                foreach (Field myMergeField in doc.Fields)
+            StatusLabel.Text = @"Filling in Fields";
+            //Custom Fields Replacement
+            foreach (Field myMergeField in doc.Fields)
             {
                 var rngFieldCode = myMergeField.Code;
                 var fieldText = rngFieldCode.Text;
@@ -107,6 +107,8 @@ namespace DG_Engineering
                     }
                 }
             }
+
+            StatusLabel.Text = @"Inputting Data into Contract";
             //FormField Replacement
             foreach (FormField field in doc.FormFields)
             {
@@ -206,7 +208,7 @@ namespace DG_Engineering
                 }
             }
             ProgressBar_Compiler.PerformStep();
-            StatusLabel.Text = @"Exporting Contract";
+            StatusLabel.Text = @"Exporting Employee Contract";
             switch (Local_Worker_Checkbox.Checked)
             {
                 case false:
@@ -236,6 +238,8 @@ namespace DG_Engineering
                     break;
                 }
             }
+
+            StatusLabel.Visible = false;
         }
     }
 }

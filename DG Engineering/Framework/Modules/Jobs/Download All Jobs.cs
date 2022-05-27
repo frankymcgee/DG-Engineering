@@ -50,5 +50,21 @@ namespace DG_Engineering
                 }
             }
         }
+        /// <summary>
+        /// Downloads a List of All Active Jobs in a Project in Assignar
+        /// </summary>
+        /// <param name="url">LoginForm.AssignarDashboardUrl + "projects/" + Manual_Search_TextBox.Text</param>
+        /// <param name="token">LoginForm.JwtToken</param>
+        public void AdminDownloadAllJobs(string url, string token)
+        {
+                var jobsearch = AssignarConnect(url, token, Method.GET, null);
+                var jobs = JsonConvert.DeserializeObject<Jobs.Root>(jobsearch);
+                if (jobs == null) return;
+                AdminJobComboBox.Items.Clear();
+                foreach (var a in jobs.Data)
+                {                
+                    AdminJobComboBox.Items.Add(a.Id + " | " +a.JobDescription);
+                }            
+        }
     }
 }
