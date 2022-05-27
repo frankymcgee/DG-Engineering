@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using DG_Engineering.Framework.Global.SimPro;
 using Microsoft.Office.Interop.Word;
 
 namespace DG_Engineering
@@ -30,6 +31,7 @@ namespace DG_Engineering
             JobDescriptionExtract();
             var word = new Application();
             Document doc = null;
+            StatusLabel.Text = @"Generating Contract";
             switch (employmenttype)
             {
                 case @"Casual Employment":
