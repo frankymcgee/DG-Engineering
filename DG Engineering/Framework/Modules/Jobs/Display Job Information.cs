@@ -30,5 +30,25 @@ namespace DG_Engineering
             var lng = coords[1];
             DisplayJobLocation(lat, lng);
         }
+        /// <summary>
+        /// Displays Job Information
+        /// </summary>
+        /// <param name="url">LoginForm.AssignarDashboardUrl + "orders/" + Job_List_ComboBox.Text.Split(Convert.ToChar("-"))[0]</param>
+        /// <param name="token">LoginForm.JwtToken</param>
+        private void AdminDownloadJobInformation(string url, string token)
+        {
+            var jobsearch = AssignarConnect(url, token, Method.GET, null);
+            var jobinfo = JsonConvert.DeserializeObject<AdminJobInfo.Root>(jobsearch);
+            AdminJobDesc.Text = jobinfo.Data.JobDescription.ToString();
+            AdminJobLoc.Text = jobinfo.Data.Location.ToString();
+            AdminJobStart.Text = DateTime.Parse(jobinfo.Data.StartDate).ToString("dd-MM-yyyy");
+            AdminJobEnd.Text = DateTime.Parse(jobinfo.Data.EndDate).ToString("dd-MM-yyyy");
+            AdminJobPO.Text = jobinfo.Data.PoNumber;
+            if (!jobinfo.Data.Geolocation.Coordinates.Any()) return;
+            var coords = jobinfo.Data.Geolocation.Coordinates.ToArray();
+            var lat = coords[0];
+            var lng = coords[1];
+            AdminViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/orders/detail/" + AdminJobNo.Text + "/journal");
+        }
     }
 }

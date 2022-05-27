@@ -32,12 +32,13 @@ namespace DG_Engineering
                                 ",\n  \"client_id\": " + CompanyId +
                                 ",\n  \"order_owner\": 114," +
                                 "\n  \"project_id\": " + ProjectId +
-                                ",\n  \"project_id\": " + ProjectId +
+                                ",\n  \"location\": " + ProjectAddress_TextBox.Text +
                                 ",\n  \"job_description\": " + jobname +
                                 ",\n  \"start_time\": \"\"" +
                                 ",\n  \"shift_duration\": \"\"" +
                                 ",\n  \"start_date\": " + ProjectStartDate.Text + 
                                 ",\n  \"end_date\": " + ProjectEndDate.Text +
+                                ",\n  \"comments\": " + "Job Number is: " + SimProQuoteText.Text +
                                 ",\n  \"status_id\": 5" +
                                 ",\n  \"type_id\": 1" +
                                 ",\n  \"supplier_id\": null" +
