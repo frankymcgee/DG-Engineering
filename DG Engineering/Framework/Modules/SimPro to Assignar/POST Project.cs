@@ -30,7 +30,22 @@ namespace DG_Engineering
             var restRequest = new RestRequest(Method.POST);
             restRequest.AddHeader("Content-Type", "application/json");
             restRequest.AddHeader("Authorization", Static.JwtToken);
-            var value = "{\n  \"active\": true,\n  \"client_id\": " + CompanyId + ",\n  \"name\": " + ProjectNameTextBox.Text + ",\n  \"address\": " + ProjectAddress_TextBox.Text + ",\n  \"external_id\": " + SimProQuoteText.Text + ",\n  \"start_date\": " + ProjectStartDate.Text + ",\n  \"end_date\": " + ProjectEndDate.Text + ",\n  \"tags\": [\n            {\n                \"tag_id\": 7,\n                \"name\": \"DGE\",\n                \"description\": \"Project for DGE\",\n                \"color\": \"#f44336\"\n            }\n        ]\n}";
+            var value =@"{" +
+                        "\n  \"active\": true" +
+                        ",\n  \"client_id\": " + CompanyId +
+                        ",\n  \"name\": " + ProjectNameTextBox.Text +
+                        ",\n  \"address\": " + ProjectAddress_TextBox.Text +
+                        ",\n  \"external_id\": " + SimProQuoteText.Text + 
+                        ",\n  \"start_date\": " + ProjectStartDate.Text + 
+                        ",\n  \"end_date\": " + ProjectEndDate.Text + 
+                        ",\n  \"tags\": [" +
+                        "\n            {" +
+                        "\n                \"tag_id\": 7" +
+                        ",\n                \"name\": \"DGE\"," +
+                        "\n                \"description\": \"Project for DGE\"," +
+                        "\n                \"color\": \"#f44336\"" +
+                        "\n            }\n" +
+                        "        ]\n}";
             restRequest.AddParameter("application/json", value, ParameterType.RequestBody);
             var restResponse = restClient.Execute(restRequest);
             if (restResponse.StatusCode == HttpStatusCode.OK)

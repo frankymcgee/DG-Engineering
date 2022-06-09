@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
@@ -30,9 +31,10 @@ namespace DG_Engineering
                                 ""active"": true,
                                 ""po_number"": " + ProjectPOTextBox.Text +
                                 ",\n  \"client_id\": " + CompanyId +
-                                ",\n  \"order_owner\": 114," +
+                                ",\n  \"order_owner\": 186," +
                                 "\n  \"project_id\": " + ProjectId +
                                 ",\n  \"location\": " + ProjectAddress_TextBox.Text +
+                                ",\n  \"location2\": " + ProjectAddress_TextBox.Text +
                                 ",\n  \"job_description\": " + jobname +
                                 ",\n  \"start_time\": \"\"" +
                                 ",\n  \"shift_duration\": \"\"" +
@@ -217,50 +219,51 @@ namespace DG_Engineering
             if (jobname.Contains("|DS"))
             {
                 //Day Shift
-                TaskCreation(starttime,endtime,id,32,LHDSUD.Value);
-                TaskCreation(starttime,endtime,id,8,BlastPntDSUD.Value);
-                TaskCreation(starttime,endtime,id,9,BMWDSUD.Value);
-                TaskCreation(starttime,endtime,id,17,MechFitterDSUD.Value);
-                TaskCreation(starttime,endtime,id,23,RiggerDSUD.Value);
-                TaskCreation(starttime,endtime,id,24,CraneDvrDSUD.Value);
-                TaskCreation(starttime,endtime,id,31,CWDSUD.Value);
-                TaskCreation(starttime,endtime,id,25,ScaffDSUD.Value);
-                TaskCreation(starttime,endtime,id,26,TADSUD.Value);
-                TaskCreation(starttime,endtime,id,14,TechnicianDSUD.Value);
-                TaskCreation(starttime,endtime,id,1,ExcavOpDSUD.Value);
-                TaskCreation(starttime,endtime,id,16,HSEQDSUD.Value);
+                TaskCreation("06:00","18:00",id,32,LHDSUD.Value);
+                TaskCreation("06:00","18:00",id,8,BlastPntDSUD.Value);
+                TaskCreation("06:00","18:00",id,9,BMWDSUD.Value);
+                TaskCreation("06:00","18:00",id,17,MechFitterDSUD.Value);
+                TaskCreation("06:00","18:00",id,23,RiggerDSUD.Value);
+                TaskCreation("06:00","18:00",id,24,CraneDvrDSUD.Value);
+                TaskCreation("06:00","18:00",id,31,CWDSUD.Value);
+                TaskCreation("06:00","18:00",id,25,ScaffDSUD.Value);
+                TaskCreation("06:00","18:00",id,26,TADSUD.Value);
+                TaskCreation("06:00","18:00",id,14,TechnicianDSUD.Value);
+                TaskCreation("06:00","18:00",id,1,ExcavOpDSUD.Value);
+                TaskCreation("06:00","18:00",id,16,HSEQDSUD.Value);
             }
             else if (jobname.Contains("|NS"))
             {
                 //Night Shift
-                TaskCreation(starttime,endtime,id,32,LHNSUD.Value);
-                TaskCreation(starttime,endtime,id,8,BlasPntNSUD.Value);
-                TaskCreation(starttime,endtime,id,9,BMWNSUD.Value);
-                TaskCreation(starttime,endtime,id,17,MechFitterNSUD.Value);
-                TaskCreation(starttime,endtime,id,23,RiggerNSUD.Value);
-                TaskCreation(starttime,endtime,id,24,CraneDvrNSUD.Value);
-                TaskCreation(starttime,endtime,id,31,CWNSUD.Value);
-                TaskCreation(starttime,endtime,id,25,ScaffNSUD.Value);
-                TaskCreation(starttime,endtime,id,26,TANSUD.Value);
-                TaskCreation(starttime,endtime,id,14,TechnicianNSUD.Value);
-                TaskCreation(starttime,endtime,id,1,ExcavOpNSUD.Value);
-                TaskCreation(starttime,endtime,id,16,HSEQNSUD.Value);
+                TaskCreation("18:00","06:00",id,32,LHNSUD.Value);
+                TaskCreation("18:00","06:00",id,8,BlasPntNSUD.Value);
+                TaskCreation("18:00","06:00",id,9,BMWNSUD.Value);
+                TaskCreation("18:00","06:00",id,17,MechFitterNSUD.Value);
+                TaskCreation("18:00","06:00",id,23,RiggerNSUD.Value);
+                TaskCreation("18:00","06:00",id,24,CraneDvrNSUD.Value);
+                TaskCreation("18:00","06:00",id,31,CWNSUD.Value);
+                TaskCreation("18:00","06:00",id,25,ScaffNSUD.Value);
+                TaskCreation("18:00","06:00",id,26,TANSUD.Value);
+                TaskCreation("18:00","06:00",id,14,TechnicianNSUD.Value);
+                TaskCreation("18:00","06:00",id,1,ExcavOpNSUD.Value);
+                TaskCreation("18:00","06:00",id,16,HSEQNSUD.Value);
             }
         }
         public void ClientAddToJob(string orderid)
         {
-            var contact_id = 0;
-            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + SimProClient_TextBox.Text, Static.JwtToken, RestSharp.Method.GET, null);
+            var contactId = 0;
+            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + SimProClient_TextBox.Text, Static.JwtToken, Method.GET, null);
             var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
-            foreach (var a in contactsresult.Data)
-            {
-                if (a.FirstName == ClientContact_ComboBox.Text.Split(" ".ToCharArray())[0] && ClientContact_ComboBox.Text.Split(" ".ToCharArray())[1].Contains(a.LastName))
+            if (contactsresult != null)
+                foreach (var a in contactsresult.Data.Where(a =>
+                             a.FirstName == ClientContact_ComboBox.Text.Split(" ".ToCharArray())[0] &&
+                             ClientContact_ComboBox.Text.Split(" ".ToCharArray())[1].Contains(a.LastName)))
                 {
-                    contact_id = a.Id;
+                    contactId = a.Id;
                 }
-            }
-            var body = "{\n \"order_id\":" + orderid + ",\n  \"contact_id\":" + contact_id + "\n}";
-            var request = AssignarConnect(Static.AssignarDashboardUrl + "orders/" + orderid + "/contacts", Static.JwtToken, Method.POST, body);
+
+            var body = "{\n \"order_id\":" + orderid + ",\n  \"contact_id\":" + contactId + "\n}";
+            AssignarConnect(Static.AssignarDashboardUrl + "orders/" + orderid + "/contacts", Static.JwtToken, Method.POST, body);
         }
     }
 }
