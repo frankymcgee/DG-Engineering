@@ -44,11 +44,11 @@ namespace DG_Engineering
             AdminJobStart.Text = DateTime.Parse(jobinfo.Data.StartDate).ToString("dd-MM-yyyy");
             AdminJobEnd.Text = DateTime.Parse(jobinfo.Data.EndDate).ToString("dd-MM-yyyy");
             AdminJobPO.Text = jobinfo.Data.PoNumber;
-            if (!jobinfo.Data.Geolocation.Coordinates.Any()) return;
-            var coords = jobinfo.Data.Geolocation.Coordinates.ToArray();
-            var lat = coords[0];
-            var lng = coords[1];
-            AdminViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/orders/detail/" + AdminJobNo.Text + "/journal");
+            //if (!jobinfo.Data.Geolocation.Coordinates.Any()) return;
+            //var coords = jobinfo.Data.Geolocation.Coordinates.ToArray();
+            //var lat = coords[0];
+            //var lng = coords[1];
+            AdminViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/orders/detail/" + AdminJobNo.Text + "/general");
         }
     }
 }

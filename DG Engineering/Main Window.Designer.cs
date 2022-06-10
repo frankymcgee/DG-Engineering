@@ -207,7 +207,6 @@
             this.Admin_Tab = new System.Windows.Forms.TabPage();
             this.AdminViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.AdminJobViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.AdminProjName = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -332,7 +331,6 @@
             this.Admin_Tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdminViewer)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AdminJobViewer)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.Schedule_Tab.SuspendLayout();
             this.Scheduler_GroupBox.SuspendLayout();
@@ -2072,7 +2070,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.AdminJobViewer);
             this.groupBox1.Controls.Add(this.AdminProjName);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -2086,17 +2083,6 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manual Search";
-            // 
-            // AdminJobViewer
-            // 
-            this.AdminJobViewer.AllowExternalDrop = true;
-            this.AdminJobViewer.CreationProperties = null;
-            this.AdminJobViewer.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.AdminJobViewer.Location = new System.Drawing.Point(6, 372);
-            this.AdminJobViewer.Name = "AdminJobViewer";
-            this.AdminJobViewer.Size = new System.Drawing.Size(340, 239);
-            this.AdminJobViewer.TabIndex = 24;
-            this.AdminJobViewer.ZoomFactor = 1D;
             // 
             // AdminProjName
             // 
@@ -2820,7 +2806,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.AdminViewer)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AdminJobViewer)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.Schedule_Tab.ResumeLayout(false);
@@ -3086,6 +3071,5 @@
         private System.Windows.Forms.Button AdminProjButton;
         private System.Windows.Forms.TextBox AdminProjName;
         private System.Windows.Forms.Label label18;
-        private Microsoft.Web.WebView2.WinForms.WebView2 AdminJobViewer;
     }
 }

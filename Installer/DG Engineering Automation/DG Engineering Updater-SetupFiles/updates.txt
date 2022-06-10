@@ -1,5 +1,20 @@
 ;aiu;
 
+[1.2.015 Update]
+Name = DG Engineering Automation v1.2.015
+ProductVersion = 1.2.015
+URL = https://dgengineering.com.au/downloads/Automation_v1.2.015.msi
+Size = 3870208
+SHA256 = B27B82B9FE4FEFC85463AB7856A551A001EEDAC0DA255F16AA54740FEFDF7269
+MD5 = e738dc4f9178e1a0beefb66a2be48d88
+ServerFileName = Automation_v1.2.015.msi
+RegistryKey = HKUD\Software\De Wet & Green Engineering PTY LTD\DG Engineering Automation\Version
+Version = 1.2.015
+Description = • Version 1.2.015
+Description1 = • Fixed Error with Instance not set
+Description2 = • Changed Job Display information to first tab instead of Journal Tab
+Replaces = All
+
 [1.2.014 Update]
 Name = DG Engineering Automation v1.2.014
 ProductVersion = 1.2.014
