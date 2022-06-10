@@ -62,6 +62,7 @@ namespace DG_Engineering
             {
                 AdminProjName.Text = a.Name;
                 order = a.Id.ToString();
+                Static.AssignarInternalNumber = order;
             }
             AdminJobNo.Clear();
             AdminJobDesc.Clear();

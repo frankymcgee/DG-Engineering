@@ -15,6 +15,7 @@ namespace DG_Engineering
         public static string AssignarDashboardUrl = "https://api.assignar.com.au/v2/";
         public static string JwtToken;
         public static int ProjectNumber;
+        public static string AssignarInternalNumber;
         public static bool IsLoggedIn { get; set; }
         public static string ClientId;
         public static string UserName;

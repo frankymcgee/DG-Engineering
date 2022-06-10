@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
+using Newtonsoft.Json;
 
 namespace DG_Engineering
 {
@@ -175,12 +178,41 @@ namespace DG_Engineering
         private void AdminProjSearch()
         {
             AdminProjectInformation(Static.AssignarDashboardUrl + "projects?external_id=" + AdminJobNumber.Text, Static.JwtToken);
+            var url = @"https://dashboard.assignar.com.au/v1/#!/projects/detail/" + Static.AssignarInternalNumber + @"/edit";
+            Console.WriteLine(url);
+            AdminViewer.CoreWebView2.Navigate(url);
         }
 
         private void AdminDispJobInfo_Click(object sender, EventArgs e)
         {
             AdminJobNo.Text = AdminJobComboBox.Text.Split(" | ".ToCharArray())[0];
             AdminDownloadJobInformation(Static.AssignarDashboardUrl + "orders/" + AdminJobNo.Text, Static.JwtToken);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //ConvertCsvFileToJsonObject("C:\\Users\\seann\\OneDrive - DG Engineering (1)\\Desktop\\test.csv");
+        }
+        public string ConvertCsvFileToJsonObject(string path) 
+        {
+            var lines = File.ReadAllLines(path);
+
+            var csv = lines.Select(line => line.Split(',')).ToList();
+
+            var properties = lines[0].Split(',');
+
+            var listObjResult = new List<Dictionary<string, string>>();
+
+            for (var i = 1; i < lines.Length; i++)
+            {
+                var objResult = new Dictionary<string, string>();
+                for (var j = 0; j < properties.Length; j++)
+                    objResult.Add(properties[j], csv[i][j]);
+
+                listObjResult.Add(objResult);
+            }
+            Console.WriteLine(JsonConvert.SerializeObject(listObjResult));
+            return JsonConvert.SerializeObject(listObjResult); 
         }
     }
 }
