@@ -21,7 +21,7 @@ namespace DG_Engineering
         #region Main Window Load
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-            VersionLabel.Text = @"Version 1.2.015  |    ";
+            VersionLabel.Text = @"Version 1.2.016  |    ";
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
             await JobsTabViewer.EnsureCoreWebView2Async(environment);
             await AdminViewer.EnsureCoreWebView2Async(environment);
@@ -212,6 +212,11 @@ namespace DG_Engineering
             }
             Console.WriteLine(JsonConvert.SerializeObject(listObjResult));
             return JsonConvert.SerializeObject(listObjResult); 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            SimProDocDownload();
         }
     }
 }

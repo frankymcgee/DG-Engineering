@@ -57,7 +57,10 @@ namespace DG_Engineering
             var response = JsonConvert.DeserializeObject<ProjectDocument.Root>(request);
             var uploadurl = response.Url;
             var uploadpath = response.Path;
-            AssignarPut(uploadurl,filename);
+            var bytes = File.ReadAllBytes(filename);
+            var wc = new WebClient();
+            wc.UploadData(response.Url, "PUT", bytes);
+            //AssignarPut(uploadurl,filename);
             var body = @"{
 " + "\n" +
                        @"""document_id"": 10,
@@ -71,6 +74,12 @@ namespace DG_Engineering
                        @"""attachment"": """ + uploadpath + @"""
 " + "\n" +
                        @"}";
+            var projectrequest = AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + SimProQuoteText.Text, Static.JwtToken, Method.GET, null);
+            var projectresponse = JsonConvert.DeserializeObject<ProjectSearch.Root>(projectrequest);
+            foreach (var a in projectresponse.Data)
+            {
+                ProjectId = a.Id;
+            }
             AssignarConnect(Static.AssignarDashboardUrl + "projects/" + ProjectId + "/documents", Static.JwtToken, Method.POST, body);
         }
     }

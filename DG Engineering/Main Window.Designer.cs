@@ -273,6 +273,7 @@
             this.VersionLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.button1 = new System.Windows.Forms.Button();
             this.Manual_Search_GroupBox.SuspendLayout();
             this.Job_Information_GroupBox.SuspendLayout();
             this.DocViewGroup.SuspendLayout();
@@ -706,10 +707,11 @@
             // 
             // SimProQuoteGroup
             // 
+            this.SimProQuoteGroup.Controls.Add(this.button1);
+            this.SimProQuoteGroup.Controls.Add(this.PushToJobPackButton);
             this.SimProQuoteGroup.Controls.Add(this.ClientContact_ComboBox);
             this.SimProQuoteGroup.Controls.Add(this.label17);
             this.SimProQuoteGroup.Controls.Add(this.SimProClient_TextBox);
-            this.SimProQuoteGroup.Controls.Add(this.PushToJobPackButton);
             this.SimProQuoteGroup.Controls.Add(this.QuoteJobSelection);
             this.SimProQuoteGroup.Controls.Add(this.QuoteJobLabel);
             this.SimProQuoteGroup.Controls.Add(this.tabControl1);
@@ -763,12 +765,14 @@
             // 
             // PushToJobPackButton
             // 
-            this.PushToJobPackButton.Location = new System.Drawing.Point(8, 540);
+            this.PushToJobPackButton.BackColor = System.Drawing.Color.Transparent;
+            this.PushToJobPackButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.PushToJobPackButton.Location = new System.Drawing.Point(7, 321);
             this.PushToJobPackButton.Name = "PushToJobPackButton";
-            this.PushToJobPackButton.Size = new System.Drawing.Size(223, 23);
+            this.PushToJobPackButton.Size = new System.Drawing.Size(108, 23);
             this.PushToJobPackButton.TabIndex = 19;
-            this.PushToJobPackButton.Text = "Push to Job Pack Creation";
-            this.PushToJobPackButton.UseVisualStyleBackColor = true;
+            this.PushToJobPackButton.Text = "Push to Job Pack";
+            this.PushToJobPackButton.UseVisualStyleBackColor = false;
             this.PushToJobPackButton.Click += new System.EventHandler(this.PushToJobPackButton_Click);
             // 
             // QuoteJobSelection
@@ -796,7 +800,7 @@
             this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tabControl1.Controls.Add(this.DSTab);
             this.tabControl1.Controls.Add(this.NSTab);
-            this.tabControl1.Location = new System.Drawing.Point(3, 321);
+            this.tabControl1.Location = new System.Drawing.Point(3, 356);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -2723,6 +2727,16 @@
             this.ProgressBar.Size = new System.Drawing.Size(500, 16);
             this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(124, 321);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Download Docs";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3071,5 +3085,6 @@
         private System.Windows.Forms.Button AdminProjButton;
         private System.Windows.Forms.TextBox AdminProjName;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button button1;
     }
 }

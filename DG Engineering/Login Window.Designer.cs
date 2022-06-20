@@ -61,6 +61,7 @@
             this.ClientID_TextBox.Text = "dgengineering";
             this.ClientID_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ClientID_TextBox.Visible = false;
+            this.ClientID_TextBox.TextChanged += new System.EventHandler(this.ClientID_TextBox_TextChanged);
             // 
             // ResetPasswordLink
             // 
