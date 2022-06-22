@@ -28,11 +28,13 @@ namespace DG_Engineering
 	        restRequest.AddHeader("Content-Type", "application/json");
 	        restRequest.AddHeader("Authorization", Static.JwtToken);
 	        var value = @"{
-                                ""active"": true,
-                                ""po_number"": " + ProjectPOTextBox.Text +
+                                ""active"": true" +
+                                ",\n  \"job_number\": " + SimProQuoteText.Text +
+                                ",\n  \"po_number\": " + ProjectPOTextBox.Text +
                                 ",\n  \"client_id\": " + CompanyId +
-                                ",\n  \"order_owner\": 186," +
-                                "\n  \"project_id\": " + ProjectId +
+                                ",\n  \"client_id\": " + CompanyId +
+                                ",\n  \"order_owner\": 186" +
+                                ",\n  \"project_id\": " + ProjectId +
                                 ",\n  \"location\": " + ProjectAddress_TextBox.Text +
                                 ",\n  \"location2\": " + ProjectAddress_TextBox.Text +
                                 ",\n  \"job_description\": " + jobname +

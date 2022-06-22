@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
+using System.Net.Mail;
 using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
 using RestSharp;
@@ -19,7 +21,7 @@ namespace DG_Engineering
         #region Main Window Load
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-            VersionLabel.Text = @"Version 1.2.016  |    ";
+            VersionLabel.Text = @"Version 1.2.017  |    ";
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
             await JobsTabViewer.EnsureCoreWebView2Async(environment);
             await AdminViewer.EnsureCoreWebView2Async(environment);
@@ -64,7 +66,12 @@ namespace DG_Engineering
             else
             {
                 AssignarProjectPost();
+                SendEmail();
             }
+        }
+        private void DownloadDocButton_Click(object sender, EventArgs e)
+        {
+            SimProDocDownload();
         }
         #endregion
         #region Jobs
@@ -121,13 +128,13 @@ namespace DG_Engineering
             AdminDownloadJobInformation(Static.AssignarDashboardUrl + "orders/" + AdminJobNo.Text, Static.JwtToken);
         }
         #endregion
-    #region Schedule
+        #region Schedule
     #endregion
-    #region Clients
+        #region Clients
     #endregion
-    #region Fieldworkers
+        #region Fieldworkers
     #endregion
-    #region Job Pack Compiler
+        #region Job Pack Compiler
     private void GenerateCover_Button_Click(object sender, EventArgs e)
         {
             Cover_Letter_Format();
@@ -197,5 +204,32 @@ namespace DG_Engineering
         }
 
         #endregion
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //ConvertCsvFileToJsonObject("C:\\Users\\seann\\OneDrive - DG Engineering (1)\\Desktop\\test.csv");
+        }
+        public string ConvertCsvFileToJsonObject(string path) 
+        {
+            var lines = File.ReadAllLines(path);
+
+            var csv = lines.Select(line => line.Split(',')).ToList();
+
+            var properties = lines[0].Split(',');
+
+            var listObjResult = new List<Dictionary<string, string>>();
+
+            for (var i = 1; i < lines.Length; i++)
+            {
+                var objResult = new Dictionary<string, string>();
+                for (var j = 0; j < properties.Length; j++)
+                    objResult.Add(properties[j], csv[i][j]);
+
+                listObjResult.Add(objResult);
+            }
+            Console.WriteLine(JsonConvert.SerializeObject(listObjResult));
+            return JsonConvert.SerializeObject(listObjResult); 
+        }
     }
 }

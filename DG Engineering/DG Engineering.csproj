@@ -176,7 +176,10 @@
     <Compile Include="Framework\Global\Release COM Object.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Global\SimPro\SimPro Connect.cs">
+    <Compile Include="Framework\Global\Send Email.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Framework\Global\SimPro\Connect.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Global\SimPro\JSON Classes\Document Base64.cs" />
