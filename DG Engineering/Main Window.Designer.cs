@@ -73,8 +73,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.SimProClient_TextBox = new System.Windows.Forms.ComboBox();
             this.PushToJobPackButton = new System.Windows.Forms.Button();
-            this.QuoteJobSelection = new System.Windows.Forms.ComboBox();
-            this.QuoteJobLabel = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.DSTab = new System.Windows.Forms.TabPage();
             this.TADSUD = new System.Windows.Forms.NumericUpDown();
@@ -273,6 +271,8 @@
             this.VersionLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.QuoteJobSelection = new System.Windows.Forms.ComboBox();
+            this.QuoteJobLabel = new System.Windows.Forms.Label();
             this.Manual_Search_GroupBox.SuspendLayout();
             this.Job_Information_GroupBox.SuspendLayout();
             this.DocViewGroup.SuspendLayout();
@@ -770,26 +770,6 @@
             this.PushToJobPackButton.Text = "Push to Job Pack Creation";
             this.PushToJobPackButton.UseVisualStyleBackColor = true;
             this.PushToJobPackButton.Click += new System.EventHandler(this.PushToJobPackButton_Click);
-            // 
-            // QuoteJobSelection
-            // 
-            this.QuoteJobSelection.FormattingEnabled = true;
-            this.QuoteJobSelection.Items.AddRange(new object[] {
-            "Quote",
-            "Job"});
-            this.QuoteJobSelection.Location = new System.Drawing.Point(57, 16);
-            this.QuoteJobSelection.Name = "QuoteJobSelection";
-            this.QuoteJobSelection.Size = new System.Drawing.Size(177, 21);
-            this.QuoteJobSelection.TabIndex = 18;
-            // 
-            // QuoteJobLabel
-            // 
-            this.QuoteJobLabel.AutoSize = true;
-            this.QuoteJobLabel.Location = new System.Drawing.Point(0, 16);
-            this.QuoteJobLabel.Name = "QuoteJobLabel";
-            this.QuoteJobLabel.Size = new System.Drawing.Size(58, 13);
-            this.QuoteJobLabel.TabIndex = 17;
-            this.QuoteJobLabel.Text = "Quote/Job";
             // 
             // tabControl1
             // 
@@ -2723,6 +2703,28 @@
             this.ProgressBar.Size = new System.Drawing.Size(500, 16);
             this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
+            // QuoteJobSelection
+            // 
+            this.QuoteJobSelection.FormattingEnabled = true;
+            this.QuoteJobSelection.Items.AddRange(new object[] {
+            "Quote",
+            "Job"});
+            this.QuoteJobSelection.Location = new System.Drawing.Point(57, 16);
+            this.QuoteJobSelection.Name = "QuoteJobSelection";
+            this.QuoteJobSelection.Size = new System.Drawing.Size(177, 21);
+            this.QuoteJobSelection.TabIndex = 18;
+            this.QuoteJobSelection.Visible = false;
+            // 
+            // QuoteJobLabel
+            // 
+            this.QuoteJobLabel.AutoSize = true;
+            this.QuoteJobLabel.Location = new System.Drawing.Point(0, 16);
+            this.QuoteJobLabel.Name = "QuoteJobLabel";
+            this.QuoteJobLabel.Size = new System.Drawing.Size(58, 13);
+            this.QuoteJobLabel.TabIndex = 17;
+            this.QuoteJobLabel.Text = "Quote/Job";
+            this.QuoteJobLabel.Visible = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3031,8 +3033,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown BlasPntNSUD;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox QuoteJobSelection;
-        private System.Windows.Forms.Label QuoteJobLabel;
         private System.Windows.Forms.CheckBox WorkingAwayCheckBox;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox OutputTypeComboBox;
@@ -3071,5 +3071,7 @@
         private System.Windows.Forms.Button AdminProjButton;
         private System.Windows.Forms.TextBox AdminProjName;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox QuoteJobSelection;
+        private System.Windows.Forms.Label QuoteJobLabel;
     }
 }

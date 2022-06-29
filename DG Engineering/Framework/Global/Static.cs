@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,14 @@ namespace DG_Engineering
     {
         public static string AssignarAuthUrl = "https://auth.assignar.com.au/login";
         public static string AssignarDashboardUrl = "https://api.assignar.com.au/v2/";
+        public static string MyobClientID = "43112a28-1d90-4a9e-97a2-0c5f40f25aef";
+        public static string MyobSecretKey = "oOO87NlUi6aYxB35VkqeG8om";
+        public static string companyfileuri = "https://arl2.api.myob.com/accountright";
+        public static string companyfileguid = "c678516e-095e-485a-ae1e-dd1d04c37461";
+        public static string refreshtoken =
+            "SobO!IAAAAAAavxGiVWYRIxQvHAvyA4rbAmo0TDdWYxsfLTeWx21TwQAAAAHUZ0IQI-tstojHHS4RepUeoSLMKQ_CDD_tDF7JKxLZMC4LEY8zkOjc7i08S4tJd9Bqo-qMKfhwvQneu1f6k50elK13MZmU591eZGYsZ0MpyJyqFhx-05A97bSw1ydWt8hvTtNHHUvlLSPMgjFs1ETfYITcT0wXT9ckDKHSPD_mEqhTHCD2ZLbM4uTPDY1LWqekp75lzItP7grkhdRg7ybs84pyUtFEWJBAeRCnLUerfz_BlDecn_IOmx8t7A4oXYQ";
+
+        public static string AccessToken;
         public static string JwtToken;
         public static int ProjectNumber;
         public static string AssignarInternalNumber;

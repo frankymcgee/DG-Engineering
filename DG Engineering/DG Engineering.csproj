@@ -161,14 +161,22 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Global\Assignar\JSON Classes\Login.cs" />
+    <Compile Include="Framework\Global\MYOB\JSON Classes\Quotes JSON.cs" />
+    <Compile Include="Framework\Global\MYOB\MYOB Connect.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Framework\Global\Get Files.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Global\Levenshtein Distance Algo.cs" />
+    <Compile Include="Framework\Global\MYOB\JSON Classes\Refresh Token JSON.cs" />
+    <Compile Include="Framework\Global\MYOB\Refresh Myob Token.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Framework\Global\Release COM Object.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Global\SimPro\Connect.cs">
+    <Compile Include="Framework\Global\SimPro\SimPro Connect.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Global\SimPro\JSON Classes\Document Base64.cs" />
@@ -250,6 +258,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Modules\SimPro to Assignar\Create Task in Job.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Framework\Modules\SimPro to Assignar\MYOB Search.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Modules\SimPro to Assignar\SimPro Document Download.cs">

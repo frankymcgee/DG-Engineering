@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
-using Newtonsoft.Json;
+using RestSharp;
 
 namespace DG_Engineering
 {
@@ -21,7 +19,7 @@ namespace DG_Engineering
         #region Main Window Load
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-            VersionLabel.Text = @"Version 1.2.015  |    ";
+            VersionLabel.Text = @"Version 1.2.016  |    ";
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
             await JobsTabViewer.EnsureCoreWebView2Async(environment);
             await AdminViewer.EnsureCoreWebView2Async(environment);
@@ -37,14 +35,27 @@ namespace DG_Engineering
             DownloadAllProjects(Static.AssignarDashboardUrl + "projects/", Static.JwtToken);
             DownloadRoleDescriptions(Static.AssignarDashboardUrl + "tasks/", Static.JwtToken);
             DownloadClientList(Static.AssignarDashboardUrl + "clients/", Static.JwtToken);
-        }        
+            RefreshMyob();
+            MyobConnect(Static.companyfileuri + "/" + Static.companyfileguid + "/Sale/Quote", Method.GET);
+            var timer = new System.Timers.Timer();
+            timer.Interval = 1200000;
+            timer.Elapsed += OnTimedEvent;
+            timer.AutoReset = true;
+            timer.Enabled = true;
+        }
+        private static void OnTimedEvent(object source, System.Timers.ElapsedEventArgs e)
+        {
+            RefreshMyob();
+        }
         #endregion
         #region Modules
         #region SimPro to Assignar
         private void SimProQuoteSearch_Click(object sender, EventArgs e)
         {
-            SimProSearch();
-        } private void PushAssignar_Button_Click(object sender, EventArgs e)
+            //SimProSearch();
+            MyobSearch();
+        } 
+        private void PushAssignar_Button_Click(object sender, EventArgs e)
         {
             if (ProjectPOTextBox.Text == @"MISSING PO NUMBER")
             {
@@ -84,7 +95,32 @@ namespace DG_Engineering
         }
         #endregion
         #region Administration
-    #endregion
+        private void AdminProjButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(AdminJobNumber.Text))
+            {
+                MessageBox.Show(@"PLEASE ADD PROJECT NUMBER", @"Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                AdminProjSearch();
+            }
+        }
+
+        private void AdminProjSearch()
+        {
+            AdminProjectInformation(Static.AssignarDashboardUrl + "projects?external_id=" + AdminJobNumber.Text, Static.JwtToken);
+            var url = @"https://dashboard.assignar.com.au/v1/#!/projects/detail/" + Static.AssignarInternalNumber + @"/edit";
+            Console.WriteLine(url);
+            AdminViewer.CoreWebView2.Navigate(url);
+        }
+
+        private void AdminDispJobInfo_Click(object sender, EventArgs e)
+        {
+            AdminJobNo.Text = AdminJobComboBox.Text.Split(" | ".ToCharArray())[0];
+            AdminDownloadJobInformation(Static.AssignarDashboardUrl + "orders/" + AdminJobNo.Text, Static.JwtToken);
+        }
+        #endregion
     #region Schedule
     #endregion
     #region Clients
@@ -161,57 +197,5 @@ namespace DG_Engineering
         }
 
         #endregion
-
-        private void AdminProjButton_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(AdminJobNumber.Text))
-            {
-                MessageBox.Show(@"PLEASE ADD PROJECT NUMBER", @"Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                AdminProjSearch();
-            }
-        }
-
-        private void AdminProjSearch()
-        {
-            AdminProjectInformation(Static.AssignarDashboardUrl + "projects?external_id=" + AdminJobNumber.Text, Static.JwtToken);
-            var url = @"https://dashboard.assignar.com.au/v1/#!/projects/detail/" + Static.AssignarInternalNumber + @"/edit";
-            Console.WriteLine(url);
-            AdminViewer.CoreWebView2.Navigate(url);
-        }
-
-        private void AdminDispJobInfo_Click(object sender, EventArgs e)
-        {
-            AdminJobNo.Text = AdminJobComboBox.Text.Split(" | ".ToCharArray())[0];
-            AdminDownloadJobInformation(Static.AssignarDashboardUrl + "orders/" + AdminJobNo.Text, Static.JwtToken);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //ConvertCsvFileToJsonObject("C:\\Users\\seann\\OneDrive - DG Engineering (1)\\Desktop\\test.csv");
-        }
-        public string ConvertCsvFileToJsonObject(string path) 
-        {
-            var lines = File.ReadAllLines(path);
-
-            var csv = lines.Select(line => line.Split(',')).ToList();
-
-            var properties = lines[0].Split(',');
-
-            var listObjResult = new List<Dictionary<string, string>>();
-
-            for (var i = 1; i < lines.Length; i++)
-            {
-                var objResult = new Dictionary<string, string>();
-                for (var j = 0; j < properties.Length; j++)
-                    objResult.Add(properties[j], csv[i][j]);
-
-                listObjResult.Add(objResult);
-            }
-            Console.WriteLine(JsonConvert.SerializeObject(listObjResult));
-            return JsonConvert.SerializeObject(listObjResult); 
-        }
     }
 }
