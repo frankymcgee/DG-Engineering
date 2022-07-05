@@ -27,33 +27,14 @@ namespace DG_Engineering
                 file.Delete();
             }
             ProgressBar.PerformStep();
-            switch (QuoteJobSelection.Text)
-            {
-                case @"Quote":
-                {
-                    var quotes = SimProConnect(SimProUrl + "quotes/" + SimProQuoteText.Text).Content;
-                    var quoteinfo = JsonConvert.DeserializeObject<Quotes.Root>(quotes);
-                    if (quoteinfo == null) return;
-                    SimProClient_TextBox.Text = quoteinfo.Customer.CompanyName;
-                    ProjectNameTextBox.Text = quoteinfo.Name;
-                    ProjectAddress_TextBox.Text = quoteinfo.Site.Name;
-                    ProjectPOTextBox.Text = string.IsNullOrEmpty(quoteinfo.OrderNo) ? @"MISSING PO NUMBER" : quoteinfo.OrderNo;
-                    ProgressBar.PerformStep();
-                    break;
-                }
-                case @"Job":
-                {
-                    var jobs = SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text).Content;
-                    var jobinfo = JsonConvert.DeserializeObject<Framework.Global.SimPro.Jobs.Root>(jobs);
-                    if (jobinfo == null) return;
-                    SimProClient_TextBox.Text = jobinfo.Customer.CompanyName;
-                    ProjectNameTextBox.Text = jobinfo.Name;
-                    ProjectAddress_TextBox.Text = jobinfo.Site.Name;
-                    ProjectPOTextBox.Text = string.IsNullOrEmpty(jobinfo.OrderNo) ?@"MISSING PO NUMBER": jobinfo.OrderNo;
-                    ProgressBar.PerformStep();
-                    break;
-                }
-            }
+            var jobs = SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text).Content;
+            var jobinfo = JsonConvert.DeserializeObject<Framework.Global.SimPro.Jobs.Root>(jobs);
+            if (jobinfo == null) return;
+            SimProClient_TextBox.Text = jobinfo.Customer.CompanyName;
+            ProjectNameTextBox.Text = jobinfo.Name;
+            ProjectAddress_TextBox.Text = jobinfo.Site.Name;
+            ProjectPOTextBox.Text = string.IsNullOrEmpty(jobinfo.OrderNo) ?@"MISSING PO NUMBER": jobinfo.OrderNo;
+            ProgressBar.PerformStep();
             ProjectPOTextBox.Font = ProjectPOTextBox.Text == @"MISSING PO NUMBER" ? new Font(ProjectPOTextBox.Font, FontStyle.Bold) : new Font(ProjectPOTextBox.Font, FontStyle.Regular);
             CompanyIdExtract(SimProClient_TextBox.Text);
             ProgressBar.PerformStep();

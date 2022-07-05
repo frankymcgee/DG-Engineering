@@ -161,6 +161,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Global\Assignar\JSON Classes\Login.cs" />
+    <Compile Include="Framework\Global\MYOB\JSON Classes\Company Files List JSON.cs" />
+    <Compile Include="Framework\Global\MYOB\JSON Classes\Specific Customer JSON.cs" />
+    <Compile Include="Framework\Global\MYOB\JSON Classes\Jobs JSON.cs" />
     <Compile Include="Framework\Global\MYOB\JSON Classes\Quotes JSON.cs" />
     <Compile Include="Framework\Global\MYOB\MYOB Connect.cs">
       <SubType>Form</SubType>
@@ -170,7 +173,10 @@
     </Compile>
     <Compile Include="Framework\Global\Levenshtein Distance Algo.cs" />
     <Compile Include="Framework\Global\MYOB\JSON Classes\Refresh Token JSON.cs" />
-    <Compile Include="Framework\Global\MYOB\Refresh Myob Token.cs">
+    <Compile Include="Framework\Global\MYOB\MYOB Get Access Token.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Framework\Global\MYOB\MYOB Refresh Token.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Global\Release COM Object.cs">
@@ -275,7 +281,7 @@
     <Compile Include="Framework\Modules\SimPro to Assignar\Push to Job Pack Creation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\SimPro to Assignar\Quote Job Search.cs">
+    <Compile Include="Framework\Modules\SimPro to Assignar\Job Search.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login Window.cs">
@@ -290,6 +296,12 @@
     <Compile Include="Main Window.Designer.cs">
       <DependentUpon>Main Window.cs</DependentUpon>
     </Compile>
+    <Compile Include="MYOB Access.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MYOB Access.Designer.cs">
+      <DependentUpon>MYOB Access.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login Window.resx">
@@ -297,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main Window.resx">
       <DependentUpon>Main Window.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MYOB Access.resx">
+      <DependentUpon>MYOB Access.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

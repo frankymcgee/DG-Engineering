@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using System.Windows.Forms;
 
+// ReSharper disable once CheckNamespace
 namespace DG_Engineering
 {
     public partial class LoginWindow
@@ -36,9 +37,16 @@ namespace DG_Engineering
                     //the Assignar Form in the Main Method
                     Static.IsLoggedIn = true;
                     Hide();
+                    var myobform = new MyobAccess();
                     var assignarForm = new MainWindow();
+                    myobform.FormClosed += (s, args) =>
+                    {
+                        MainWindow.MyobGetAccessToken();
+                        assignarForm.Show();
+                    };
+                    myobform.Show();
                     assignarForm.Closed += (s, args) => Close();
-                    assignarForm.Show();
+                    //assignarForm.Show();
                 }
                 else
                 {

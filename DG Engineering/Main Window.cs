@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
 using RestSharp;
+using Timer = System.Timers.Timer;
 
 namespace DG_Engineering
 {
@@ -35,13 +36,15 @@ namespace DG_Engineering
             DownloadAllProjects(Static.AssignarDashboardUrl + "projects/", Static.JwtToken);
             DownloadRoleDescriptions(Static.AssignarDashboardUrl + "tasks/", Static.JwtToken);
             DownloadClientList(Static.AssignarDashboardUrl + "clients/", Static.JwtToken);
-            RefreshMyob();
-            MyobConnect(Static.companyfileuri + "/" + Static.companyfileguid + "/Sale/Quote", Method.GET);
-            var timer = new System.Timers.Timer();
-            timer.Interval = 1200000;
+            var timer = new Timer
+            {
+                AutoReset = true,
+                Enabled = true,
+                Interval = 1200000,
+                Site = null,
+                SynchronizingObject = null
+            };
             timer.Elapsed += OnTimedEvent;
-            timer.AutoReset = true;
-            timer.Enabled = true;
         }
         private static void OnTimedEvent(object source, System.Timers.ElapsedEventArgs e)
         {

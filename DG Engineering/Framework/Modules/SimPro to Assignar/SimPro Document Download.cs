@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
-using System.Security.Policy;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar;
 using DG_Engineering.Framework.Global.SimPro;
 using Newtonsoft.Json;
 using RestSharp;
 using Documents = DG_Engineering.Framework.Global.SimPro.Documents;
 
+// ReSharper disable once CheckNamespace
 namespace DG_Engineering
 {
     public partial class MainWindow
@@ -24,29 +22,19 @@ namespace DG_Engineering
             var documents = SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text + "/attachments/files/").Content;
             var result = JsonConvert.DeserializeObject<List<Documents.Root>>(documents);
             ProgressBar.PerformStep();
-            string docbyte64Search = null;
-            foreach (var a in result)
-            {
-                StatusLabel.Text = @"Downloading " + a.Filename;
-                switch (QuoteJobSelection.Text)
+            string docbyte64Search;
+            if (result != null)
+                foreach (var a in result)
                 {
-                    case @"Quote":
-                        docbyte64Search =
-                            SimProConnect(SimProUrl + "quotes/" + SimProQuoteText.Text + "/attachments/files/" + a.ID + "?display=Base64").Content;
-                        break;
-
-                    case @"Job":
-                        docbyte64Search =
-                            SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text + "/attachments/files/" + a.ID + "?display=Base64").Content;
-                        break;
+                    StatusLabel.Text = @"Downloading " + a.Filename;
+                    docbyte64Search = SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text + "/attachments/files/" + a.ID + "?display=Base64").Content;
+                    var docresult = JsonConvert.DeserializeObject<DocumentBase64.Root>(docbyte64Search);
+                    var filename = docresult?.Filename;
+                    File.WriteAllBytes(Output + "Files/" + filename, Convert.FromBase64String(docresult?.Base64Data ?? string.Empty));
+                    StatusLabel.Text = @"Uploading " + docresult?.Filename + @" to the Project.";
+                    AssignarDocUploadPost(Path.Combine(Output, "files", filename ?? string.Empty), filename);
                 }
-                if (docbyte64Search == null) continue;
-                var docresult = JsonConvert.DeserializeObject<DocumentBase64.Root>(docbyte64Search);
-                var filename = docresult.Filename;
-                File.WriteAllBytes(Output + "Files/" + filename, Convert.FromBase64String(docresult.Base64Data));
-                StatusLabel.Text = @"Uploading " + docresult.Filename + @" to the Project.";
-                AssignarDocUploadPost(Path.Combine(Output,"files",filename),filename);
-            }
+
             StatusLabel.Visible = false;
         }       
 
@@ -55,11 +43,10 @@ namespace DG_Engineering
             var filerequest = "{\r\n  \"filename\": \"" + file + "\"\r\n}";
             var request = AssignarConnect(Static.AssignarDashboardUrl + "upload-urls/project-document", Static.JwtToken,Method.POST,filerequest);
             var response = JsonConvert.DeserializeObject<ProjectDocument.Root>(request);
-            var uploadurl = response.Url;
-            var uploadpath = response.Path;
+            var uploadpath = response?.Path;
             var bytes = File.ReadAllBytes(filename);
             var wc = new WebClient();
-            wc.UploadData(response.Url, "PUT", bytes);
+            wc.UploadData(response?.Url ?? string.Empty, "PUT", bytes);
             //AssignarPut(uploadurl,filename);
             var body = @"{
 " + "\n" +
@@ -76,6 +63,7 @@ namespace DG_Engineering
                        @"}";
             var projectrequest = AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + SimProQuoteText.Text, Static.JwtToken, Method.GET, null);
             var projectresponse = JsonConvert.DeserializeObject<ProjectSearch.Root>(projectrequest);
+            Debug.Assert(projectresponse?.Data != null, "projectresponse?.Data != null");
             foreach (var a in projectresponse.Data)
             {
                 ProjectId = a.Id;

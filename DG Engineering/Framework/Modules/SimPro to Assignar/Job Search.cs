@@ -3,10 +3,12 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using DG_Engineering.Framework.Global.Assignar;
+using DG_Engineering.Framework.Global.MYOB;
 using Newtonsoft.Json;
 using RestSharp;
-using Quotes = DG_Engineering.Framework.Global.MYOB.Quotes;
+using Jobs = DG_Engineering.Framework.Global.MYOB.Jobs;
 
+// ReSharper disable once CheckNamespace
 namespace DG_Engineering
 {
     public partial class MainWindow
@@ -25,18 +27,26 @@ namespace DG_Engineering
             {
                 file.Delete();
             }
+            
             ProgressBar.PerformStep();
-            var quotes = MyobConnect(Static.companyfileuri + "/"+ Static.companyfileguid + "/Sale/Order", Method.GET).Content;
-            var quoteinfo = JsonConvert.DeserializeObject<Quotes.Item>(quotes);
-            if (quoteinfo?.Number != null)
-                foreach (var dummy in quoteinfo.Number.Where(a => quoteinfo.Number == SimProQuoteText.Text))
+            var jobsearch = MyobConnect(Static.Companyfileuri + "/"+ Static.Companyfileguid + "/GeneralLedger/Job", Method.GET).Content;
+            var jobsearchresult = JsonConvert.DeserializeObject<Jobs.Item>(jobsearch);
+            if (jobsearchresult != null)
+                foreach (var dummy in jobsearchresult.Number.Where(a => jobsearchresult.Number == SimProQuoteText.Text))
                 {
-                    SimProClient_TextBox.Text = quoteinfo.Customer.Name;
-                    ProjectNameTextBox.Text = quoteinfo.JournalMemo;
-                    ProjectAddress_TextBox.Text = quoteinfo.Customer.Name;
-                    ProjectPOTextBox.Text = string.IsNullOrEmpty(quoteinfo.CustomerPurchaseOrderNumber)
-                        ? @"MISSING PO NUMBER"
-                        : quoteinfo.CustomerPurchaseOrderNumber;
+                    var customerId = jobsearchresult.LinkedCustomer.DisplayId;
+                    var customersearch = MyobConnect(Static.Companyfileuri + "/"+ Static.Companyfileguid + "/Contact/Customer?$filter=DisplayID eq \'" + customerId + "\'", Method.GET).Content;
+                    var customersearchresult = JsonConvert.DeserializeObject <Customer.Item>(customersearch);
+                    if (customersearchresult?.Addresses != null)
+                    {
+                        foreach (var a in customersearchresult.Addresses)
+                        {
+                            ProjectAddress_TextBox.Items.Add(a.Street + ", " + a.City + ", " + a.State);
+                        }
+                    }
+                    SimProClient_TextBox.Text = jobsearchresult.LinkedCustomer.Name;
+                    ProjectNameTextBox.Text = jobsearchresult.Name;
+                    ProjectPOTextBox.Text = @"MISSING PO NUMBER";
                     ProjectPOTextBox.Font = ProjectPOTextBox.Text == @"MISSING PO NUMBER"
                         ? new Font(ProjectPOTextBox.Font, FontStyle.Bold)
                         : new Font(ProjectPOTextBox.Font, FontStyle.Regular);

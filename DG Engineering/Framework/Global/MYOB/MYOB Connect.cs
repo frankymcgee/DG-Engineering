@@ -14,13 +14,13 @@ namespace DG_Engineering
                     Timeout = -1
                 };
                 var request = new RestRequest(method);
-                request.AddHeader("x-myobapi-key", Static.MyobClientID);
+                request.AddHeader("x-myobapi-key", Static.MyobClientId);
                 request.AddHeader("x-myobapi-version", "v2");
                 request.AddHeader("Accept-Encoding", "gzip,deflate");
                 request.AddHeader("Authorization", "Bearer " + Static.AccessToken);
                 if (client.Execute(request).StatusCode == HttpStatusCode.Forbidden)
                 {
-                    RefreshMyob();
+                    MyobGetAccessToken();
                 }
                 else
                 {
