@@ -162,6 +162,7 @@
     </Compile>
     <Compile Include="Framework\Global\Assignar\JSON Classes\Login.cs" />
     <Compile Include="Framework\Global\MYOB\JSON Classes\Company Files List JSON.cs" />
+    <Compile Include="Framework\Global\MYOB\JSON Classes\Job JSON.cs" />
     <Compile Include="Framework\Global\MYOB\JSON Classes\Specific Customer JSON.cs" />
     <Compile Include="Framework\Global\MYOB\JSON Classes\Jobs JSON.cs" />
     <Compile Include="Framework\Global\MYOB\JSON Classes\Quotes JSON.cs" />

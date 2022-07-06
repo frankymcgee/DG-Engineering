@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Security.Policy;
 using System.Text;
 using System.Windows.Forms;
 using Application = Microsoft.Office.Interop.Word.Application;
@@ -8,21 +7,21 @@ using Application = Microsoft.Office.Interop.Word.Application;
 // ReSharper disable once CheckNamespace
 namespace DG_Engineering
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     public class Static
     {
-        public static string AssignarAuthUrl = "https://auth.assignar.com.au/login";
-        public static string AssignarDashboardUrl = "https://api.assignar.com.au/v2/";
-        public static string MyobClientId = "43112a28-1d90-4a9e-97a2-0c5f40f25aef";
-        public static string MyobSecretKey = "oOO87NlUi6aYxB35VkqeG8om";
-        public static string Companyfileuri = "https://arl2.api.myob.com/accountright";
-        public static string Companyfileguid = "2f384cc3-b74b-4ddc-bd30-f6699f2e9ac9";
+        public const string AssignarAuthUrl = "https://auth.assignar.com.au/login";
+        public const string AssignarDashboardUrl = "https://api.assignar.com.au/v2/";
+        public const string MyobClientId = "43112a28-1d90-4a9e-97a2-0c5f40f25aef";
+        public const string MyobSecretKey = "oOO87NlUi6aYxB35VkqeG8om";
+        public const string Companyfileuri = "https://arl2.api.myob.com/accountright";
+        public const string Companyfileguid = "2f384cc3-b74b-4ddc-bd30-f6699f2e9ac9";
         public static string Refreshtoken;
         public static string Urlcoded;
         public static string AccessToken;
         public static string JwtToken;
         public static int ProjectNumber;
         public static string AssignarInternalNumber;
-        public static bool IsLoggedIn { get; set; }
         public static string ClientId;
         public static string UserName;
         public static string Password;

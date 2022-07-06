@@ -12,8 +12,8 @@ namespace DG_Engineering
         /// <summary>
         /// Excracts Company Names from Assignar
         /// </summary>
-        /// <param name="basestring">Company Name from SimPro Being Referenced to</param>
-        public void CompanyIdExtract(string basestring)
+        /// <param name="basestring">Company Name Being Referenced to</param>
+        private void CompanyIdExtract(string basestring)
         {
             ProgressBar.PerformStep();
             var lstStringsToCheck = new List<string>();

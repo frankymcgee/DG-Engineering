@@ -27,25 +27,25 @@ namespace DG_Engineering
                 file.Delete();
             }
             ProgressBar.PerformStep();
-            var jobs = SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text).Content;
+            var jobs = SimProConnect(SimProUrl + "jobs/" + ProjectJobNumber.Text).Content;
             var jobinfo = JsonConvert.DeserializeObject<Framework.Global.SimPro.Jobs.Root>(jobs);
             if (jobinfo == null) return;
-            SimProClient_TextBox.Text = jobinfo.Customer.CompanyName;
-            ProjectNameTextBox.Text = jobinfo.Name;
-            ProjectAddress_TextBox.Text = jobinfo.Site.Name;
-            ProjectPOTextBox.Text = string.IsNullOrEmpty(jobinfo.OrderNo) ?@"MISSING PO NUMBER": jobinfo.OrderNo;
+            ProjectClient.Text = jobinfo.Customer.CompanyName;
+            ProjectName.Text = jobinfo.Name;
+            ProjectAddress.Text = jobinfo.Site.Name;
+            ProjectPONumber.Text = string.IsNullOrEmpty(jobinfo.OrderNo) ?@"MISSING PO NUMBER": jobinfo.OrderNo;
             ProgressBar.PerformStep();
-            ProjectPOTextBox.Font = ProjectPOTextBox.Text == @"MISSING PO NUMBER" ? new Font(ProjectPOTextBox.Font, FontStyle.Bold) : new Font(ProjectPOTextBox.Font, FontStyle.Regular);
-            CompanyIdExtract(SimProClient_TextBox.Text);
+            ProjectPONumber.Font = ProjectPONumber.Text == @"MISSING PO NUMBER" ? new Font(ProjectPONumber.Font, FontStyle.Bold) : new Font(ProjectPONumber.Font, FontStyle.Regular);
+            CompanyIdExtract(ProjectClient.Text);
             ProgressBar.PerformStep();
-            ClientContact_ComboBox.Items.Clear();
-            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + SimProClient_TextBox.Text,Static.JwtToken,RestSharp.Method.GET,null);
+            ClientContact.Items.Clear();
+            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text,Static.JwtToken,RestSharp.Method.GET,null);
             var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
             foreach (var a in contactsresult.Data)
             {
-                ClientContact_ComboBox.Items.Add(a.FirstName + " " + a.LastName + "-" + a.JobTitle);
+                ClientContact.Items.Add(a.FirstName + " " + a.LastName + "-" + a.JobTitle);
             }
-            var documents = SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text + "/attachments/files/").Content;
+            var documents = SimProConnect(SimProUrl + "jobs/" + ProjectJobNumber.Text + "/attachments/files/").Content;
             var result = JsonConvert.DeserializeObject<List<Framework.Global.SimPro.Documents.Root>>(documents);
             StatusLabel.Text = @"Found " + result.Count + @" Documents.";
             ProgressBar.Value = 0;

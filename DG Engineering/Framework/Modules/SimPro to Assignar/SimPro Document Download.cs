@@ -19,7 +19,7 @@ namespace DG_Engineering
             StatusLabel.Visible = true;
             StatusLabel.Text = @"Downloading Documents";
             // Download Documents
-            var documents = SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text + "/attachments/files/").Content;
+            var documents = SimProConnect(SimProUrl + "jobs/" + ProjectJobNumber.Text + "/attachments/files/").Content;
             var result = JsonConvert.DeserializeObject<List<Documents.Root>>(documents);
             ProgressBar.PerformStep();
             string docbyte64Search;
@@ -27,7 +27,7 @@ namespace DG_Engineering
                 foreach (var a in result)
                 {
                     StatusLabel.Text = @"Downloading " + a.Filename;
-                    docbyte64Search = SimProConnect(SimProUrl + "jobs/" + SimProQuoteText.Text + "/attachments/files/" + a.ID + "?display=Base64").Content;
+                    docbyte64Search = SimProConnect(SimProUrl + "jobs/" + ProjectJobNumber.Text + "/attachments/files/" + a.ID + "?display=Base64").Content;
                     var docresult = JsonConvert.DeserializeObject<DocumentBase64.Root>(docbyte64Search);
                     var filename = docresult?.Filename;
                     File.WriteAllBytes(Output + "Files/" + filename, Convert.FromBase64String(docresult?.Base64Data ?? string.Empty));
@@ -61,7 +61,7 @@ namespace DG_Engineering
                        @"""attachment"": """ + uploadpath + @"""
 " + "\n" +
                        @"}";
-            var projectrequest = AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + SimProQuoteText.Text, Static.JwtToken, Method.GET, null);
+            var projectrequest = AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + ProjectJobNumber.Text, Static.JwtToken, Method.GET, null);
             var projectresponse = JsonConvert.DeserializeObject<ProjectSearch.Root>(projectrequest);
             Debug.Assert(projectresponse?.Data != null, "projectresponse?.Data != null");
             foreach (var a in projectresponse.Data)

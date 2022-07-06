@@ -69,9 +69,10 @@
             this.ProjectGenerationBrowserGroupBox = new System.Windows.Forms.GroupBox();
             this.ProjectViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.SimProQuoteGroup = new System.Windows.Forms.GroupBox();
-            this.ClientContact_ComboBox = new System.Windows.Forms.ComboBox();
+            this.ProjectAddress = new System.Windows.Forms.ComboBox();
+            this.ClientContact = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.SimProClient_TextBox = new System.Windows.Forms.ComboBox();
+            this.ProjectClient = new System.Windows.Forms.ComboBox();
             this.PushToJobPackButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.DSTab = new System.Windows.Forms.TabPage();
@@ -136,15 +137,15 @@
             this.ProjectEndDateLabel = new System.Windows.Forms.Label();
             this.ProjectStartDate = new System.Windows.Forms.DateTimePicker();
             this.ProjectStartDateLabel = new System.Windows.Forms.Label();
-            this.ProjectPOTextBox = new System.Windows.Forms.TextBox();
+            this.ProjectPONumber = new System.Windows.Forms.TextBox();
             this.ProjectPOLabel = new System.Windows.Forms.Label();
             this.ProjectAddress_Label = new System.Windows.Forms.Label();
             this.PushAssignar_Button = new System.Windows.Forms.Button();
-            this.ProjectNameTextBox = new System.Windows.Forms.TextBox();
+            this.ProjectName = new System.Windows.Forms.TextBox();
             this.ProjectNameLabel = new System.Windows.Forms.Label();
             this.SimProClient = new System.Windows.Forms.Label();
-            this.SimProQuoteSearch = new System.Windows.Forms.Button();
-            this.SimProQuoteText = new System.Windows.Forms.TextBox();
+            this.JobNumberSearch = new System.Windows.Forms.Button();
+            this.ProjectJobNumber = new System.Windows.Forms.TextBox();
             this.QuoteSearch_Label = new System.Windows.Forms.Label();
             this.VehicleComboBox = new System.Windows.Forms.ComboBox();
             this.VehicleLabel = new System.Windows.Forms.Label();
@@ -270,7 +271,7 @@
             this.VersionLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.ProjectAddress_TextBox = new System.Windows.Forms.ComboBox();
+            this.Address_upd_Button = new System.Windows.Forms.Button();
             this.Manual_Search_GroupBox.SuspendLayout();
             this.Job_Information_GroupBox.SuspendLayout();
             this.DocViewGroup.SuspendLayout();
@@ -704,25 +705,26 @@
             // 
             // SimProQuoteGroup
             // 
-            this.SimProQuoteGroup.Controls.Add(this.ProjectAddress_TextBox);
-            this.SimProQuoteGroup.Controls.Add(this.ClientContact_ComboBox);
+            this.SimProQuoteGroup.Controls.Add(this.Address_upd_Button);
+            this.SimProQuoteGroup.Controls.Add(this.ProjectAddress);
+            this.SimProQuoteGroup.Controls.Add(this.ClientContact);
             this.SimProQuoteGroup.Controls.Add(this.label17);
-            this.SimProQuoteGroup.Controls.Add(this.SimProClient_TextBox);
+            this.SimProQuoteGroup.Controls.Add(this.ProjectClient);
             this.SimProQuoteGroup.Controls.Add(this.PushToJobPackButton);
             this.SimProQuoteGroup.Controls.Add(this.tabControl1);
             this.SimProQuoteGroup.Controls.Add(this.ProjectEndDate);
             this.SimProQuoteGroup.Controls.Add(this.ProjectEndDateLabel);
             this.SimProQuoteGroup.Controls.Add(this.ProjectStartDate);
             this.SimProQuoteGroup.Controls.Add(this.ProjectStartDateLabel);
-            this.SimProQuoteGroup.Controls.Add(this.ProjectPOTextBox);
+            this.SimProQuoteGroup.Controls.Add(this.ProjectPONumber);
             this.SimProQuoteGroup.Controls.Add(this.ProjectPOLabel);
             this.SimProQuoteGroup.Controls.Add(this.ProjectAddress_Label);
             this.SimProQuoteGroup.Controls.Add(this.PushAssignar_Button);
-            this.SimProQuoteGroup.Controls.Add(this.ProjectNameTextBox);
+            this.SimProQuoteGroup.Controls.Add(this.ProjectName);
             this.SimProQuoteGroup.Controls.Add(this.ProjectNameLabel);
             this.SimProQuoteGroup.Controls.Add(this.SimProClient);
-            this.SimProQuoteGroup.Controls.Add(this.SimProQuoteSearch);
-            this.SimProQuoteGroup.Controls.Add(this.SimProQuoteText);
+            this.SimProQuoteGroup.Controls.Add(this.JobNumberSearch);
+            this.SimProQuoteGroup.Controls.Add(this.ProjectJobNumber);
             this.SimProQuoteGroup.Controls.Add(this.QuoteSearch_Label);
             this.SimProQuoteGroup.Dock = System.Windows.Forms.DockStyle.Left;
             this.SimProQuoteGroup.Location = new System.Drawing.Point(0, 0);
@@ -732,13 +734,21 @@
             this.SimProQuoteGroup.TabStop = false;
             this.SimProQuoteGroup.Text = "Project Details";
             // 
-            // ClientContact_ComboBox
+            // ProjectAddress
             // 
-            this.ClientContact_ComboBox.FormattingEnabled = true;
-            this.ClientContact_ComboBox.Location = new System.Drawing.Point(5, 294);
-            this.ClientContact_ComboBox.Name = "ClientContact_ComboBox";
-            this.ClientContact_ComboBox.Size = new System.Drawing.Size(231, 21);
-            this.ClientContact_ComboBox.TabIndex = 22;
+            this.ProjectAddress.FormattingEnabled = true;
+            this.ProjectAddress.Location = new System.Drawing.Point(3, 178);
+            this.ProjectAddress.Name = "ProjectAddress";
+            this.ProjectAddress.Size = new System.Drawing.Size(231, 21);
+            this.ProjectAddress.TabIndex = 23;
+            // 
+            // ClientContact
+            // 
+            this.ClientContact.FormattingEnabled = true;
+            this.ClientContact.Location = new System.Drawing.Point(5, 294);
+            this.ClientContact.Name = "ClientContact";
+            this.ClientContact.Size = new System.Drawing.Size(231, 21);
+            this.ClientContact.TabIndex = 22;
             // 
             // label17
             // 
@@ -749,13 +759,13 @@
             this.label17.TabIndex = 21;
             this.label17.Text = "Client-Signed Timesheet Contact";
             // 
-            // SimProClient_TextBox
+            // ProjectClient
             // 
-            this.SimProClient_TextBox.FormattingEnabled = true;
-            this.SimProClient_TextBox.Location = new System.Drawing.Point(3, 99);
-            this.SimProClient_TextBox.Name = "SimProClient_TextBox";
-            this.SimProClient_TextBox.Size = new System.Drawing.Size(231, 21);
-            this.SimProClient_TextBox.TabIndex = 20;
+            this.ProjectClient.FormattingEnabled = true;
+            this.ProjectClient.Location = new System.Drawing.Point(3, 99);
+            this.ProjectClient.Name = "ProjectClient";
+            this.ProjectClient.Size = new System.Drawing.Size(144, 21);
+            this.ProjectClient.TabIndex = 20;
             // 
             // PushToJobPackButton
             // 
@@ -1337,12 +1347,12 @@
             this.ProjectStartDateLabel.TabIndex = 12;
             this.ProjectStartDateLabel.Text = "Project Start Date";
             // 
-            // ProjectPOTextBox
+            // ProjectPONumber
             // 
-            this.ProjectPOTextBox.Location = new System.Drawing.Point(3, 217);
-            this.ProjectPOTextBox.Name = "ProjectPOTextBox";
-            this.ProjectPOTextBox.Size = new System.Drawing.Size(231, 20);
-            this.ProjectPOTextBox.TabIndex = 11;
+            this.ProjectPONumber.Location = new System.Drawing.Point(3, 217);
+            this.ProjectPONumber.Name = "ProjectPONumber";
+            this.ProjectPONumber.Size = new System.Drawing.Size(231, 20);
+            this.ProjectPONumber.TabIndex = 11;
             // 
             // ProjectPOLabel
             // 
@@ -1374,12 +1384,12 @@
             this.PushAssignar_Button.UseVisualStyleBackColor = true;
             this.PushAssignar_Button.Click += new System.EventHandler(this.PushAssignar_Button_Click);
             // 
-            // ProjectNameTextBox
+            // ProjectName
             // 
-            this.ProjectNameTextBox.Location = new System.Drawing.Point(3, 139);
-            this.ProjectNameTextBox.Name = "ProjectNameTextBox";
-            this.ProjectNameTextBox.Size = new System.Drawing.Size(231, 20);
-            this.ProjectNameTextBox.TabIndex = 6;
+            this.ProjectName.Location = new System.Drawing.Point(3, 139);
+            this.ProjectName.Name = "ProjectName";
+            this.ProjectName.Size = new System.Drawing.Size(231, 20);
+            this.ProjectName.TabIndex = 6;
             // 
             // ProjectNameLabel
             // 
@@ -1399,22 +1409,22 @@
             this.SimProClient.TabIndex = 3;
             this.SimProClient.Text = "Client Name";
             // 
-            // SimProQuoteSearch
+            // JobNumberSearch
             // 
-            this.SimProQuoteSearch.Location = new System.Drawing.Point(159, 58);
-            this.SimProQuoteSearch.Name = "SimProQuoteSearch";
-            this.SimProQuoteSearch.Size = new System.Drawing.Size(75, 23);
-            this.SimProQuoteSearch.TabIndex = 2;
-            this.SimProQuoteSearch.Text = "Search";
-            this.SimProQuoteSearch.UseVisualStyleBackColor = true;
-            this.SimProQuoteSearch.Click += new System.EventHandler(this.SimProQuoteSearch_Click);
+            this.JobNumberSearch.Location = new System.Drawing.Point(159, 58);
+            this.JobNumberSearch.Name = "JobNumberSearch";
+            this.JobNumberSearch.Size = new System.Drawing.Size(75, 23);
+            this.JobNumberSearch.TabIndex = 2;
+            this.JobNumberSearch.Text = "Search";
+            this.JobNumberSearch.UseVisualStyleBackColor = true;
+            this.JobNumberSearch.Click += new System.EventHandler(this.JobNumberSearch_Click);
             // 
-            // SimProQuoteText
+            // ProjectJobNumber
             // 
-            this.SimProQuoteText.Location = new System.Drawing.Point(6, 32);
-            this.SimProQuoteText.Name = "SimProQuoteText";
-            this.SimProQuoteText.Size = new System.Drawing.Size(228, 20);
-            this.SimProQuoteText.TabIndex = 1;
+            this.ProjectJobNumber.Location = new System.Drawing.Point(6, 32);
+            this.ProjectJobNumber.Name = "ProjectJobNumber";
+            this.ProjectJobNumber.Size = new System.Drawing.Size(228, 20);
+            this.ProjectJobNumber.TabIndex = 1;
             // 
             // QuoteSearch_Label
             // 
@@ -2692,13 +2702,15 @@
             this.ProgressBar.Size = new System.Drawing.Size(500, 16);
             this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
-            // ProjectAddress_TextBox
+            // Address_upd_Button
             // 
-            this.ProjectAddress_TextBox.FormattingEnabled = true;
-            this.ProjectAddress_TextBox.Location = new System.Drawing.Point(3, 178);
-            this.ProjectAddress_TextBox.Name = "ProjectAddress_TextBox";
-            this.ProjectAddress_TextBox.Size = new System.Drawing.Size(231, 21);
-            this.ProjectAddress_TextBox.TabIndex = 23;
+            this.Address_upd_Button.Location = new System.Drawing.Point(159, 97);
+            this.Address_upd_Button.Name = "Address_upd_Button";
+            this.Address_upd_Button.Size = new System.Drawing.Size(75, 23);
+            this.Address_upd_Button.TabIndex = 24;
+            this.Address_upd_Button.Text = "Address";
+            this.Address_upd_Button.UseVisualStyleBackColor = true;
+            this.Address_upd_Button.Click += new System.EventHandler(this.Address_upd_Button_Click);
             // 
             // MainWindow
             // 
@@ -2843,11 +2855,11 @@
         private System.Windows.Forms.GroupBox SimProQuoteGroup;
         private System.Windows.Forms.Label ProjectAddress_Label;
         private System.Windows.Forms.Button PushAssignar_Button;
-        private System.Windows.Forms.TextBox ProjectNameTextBox;
+        private System.Windows.Forms.TextBox ProjectName;
         private System.Windows.Forms.Label ProjectNameLabel;
         private System.Windows.Forms.Label SimProClient;
-        private System.Windows.Forms.Button SimProQuoteSearch;
-        private System.Windows.Forms.TextBox SimProQuoteText;
+        private System.Windows.Forms.Button JobNumberSearch;
+        private System.Windows.Forms.TextBox ProjectJobNumber;
         private System.Windows.Forms.Label QuoteSearch_Label;
         private System.Windows.Forms.ComboBox VehicleComboBox;
         private System.Windows.Forms.Label VehicleLabel;
@@ -2953,7 +2965,7 @@
         private System.Windows.Forms.Label ProjectEndDateLabel;
         private System.Windows.Forms.DateTimePicker ProjectStartDate;
         private System.Windows.Forms.Label ProjectStartDateLabel;
-        private System.Windows.Forms.TextBox ProjectPOTextBox;
+        private System.Windows.Forms.TextBox ProjectPONumber;
         private System.Windows.Forms.Label ProjectPOLabel;
         private System.Windows.Forms.NumericUpDown TADSUD;
         private System.Windows.Forms.Label TADS;
@@ -3018,8 +3030,8 @@
         private System.Windows.Forms.ComboBox RepresentativeComboBox;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ToolStripStatusLabel VersionLabel;
-        private System.Windows.Forms.ComboBox SimProClient_TextBox;
-        private System.Windows.Forms.ComboBox ClientContact_ComboBox;
+        private System.Windows.Forms.ComboBox ProjectClient;
+        private System.Windows.Forms.ComboBox ClientContact;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TabPage Admin_Tab;
         private Microsoft.Web.WebView2.WinForms.WebView2 AdminViewer;
@@ -3045,6 +3057,7 @@
         private System.Windows.Forms.Button AdminProjButton;
         private System.Windows.Forms.TextBox AdminProjName;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox ProjectAddress_TextBox;
+        private System.Windows.Forms.ComboBox ProjectAddress;
+        private System.Windows.Forms.Button Address_upd_Button;
     }
 }

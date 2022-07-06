@@ -1,7 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using DG_Engineering.Framework.Global.Assignar;
+using DG_Engineering.Framework.Global.MYOB;
 using Microsoft.Web.WebView2.Core;
+using Newtonsoft.Json;
 using RestSharp;
 using Timer = System.Timers.Timer;
 
@@ -20,7 +24,7 @@ namespace DG_Engineering
         #region Main Window Load
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-            VersionLabel.Text = @"Version 1.2.016  |    ";
+            VersionLabel.Text = @"Version 1.2.019  |    ";
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
             await JobsTabViewer.EnsureCoreWebView2Async(environment);
             await AdminViewer.EnsureCoreWebView2Async(environment);
@@ -52,21 +56,60 @@ namespace DG_Engineering
         }
         #endregion
         #region Modules
-        #region SimPro to Assignar
-        private void SimProQuoteSearch_Click(object sender, EventArgs e)
+        #region Project Creation
+        private void JobNumberSearch_Click(object sender, EventArgs e)
         {
-            //SimProSearch();
             MyobSearch();
-        } 
+        }
         private void PushAssignar_Button_Click(object sender, EventArgs e)
         {
-            if (ProjectPOTextBox.Text == @"MISSING PO NUMBER")
+            if (ProjectPONumber.Text == @"MISSING PO NUMBER")
             {
                 MessageBox.Show(@"PLEASE ADD PROJECT PO NUMBER",@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {
-                AssignarProjectPost();
+                if (string.IsNullOrWhiteSpace(ProjectJobNumber.Text))
+                {
+                    var dialog = MessageBox.Show(@"There is no Job Number. Continue?", "Exit",MessageBoxButtons.YesNo);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        CompanyIdExtract(ProjectClient.Text);
+                        AssignarProjectPost();
+                    }
+                    else if (dialog == DialogResult.No)
+                    {
+                    }
+                }
+                else
+                {
+                    CompanyIdExtract(ProjectClient.Text);
+                    AssignarProjectPost();
+                }
+            }
+        }
+        private void Address_upd_Button_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(ProjectClient.Text)) return;
+            var request =
+                MyobConnect(
+                        Static.Companyfileuri + "/" + Static.Companyfileguid +
+                        "/Contact/Customer?$filter=CompanyName eq \'" + ProjectClient.Text + "\'",
+                        Method.GET)
+                    .Content;
+            Console.WriteLine(request);
+            var result = JsonConvert.DeserializeObject<Customer.Root>(request);
+            ProjectAddress.Items.Clear();
+            foreach (var b in result.Items.SelectMany(a => a.Addresses))
+            {
+                ProjectAddress.Items.Add(b.Street + ", " + b.City + ", " + b.State + ", " + b.PostCode);
+            }
+            ClientContact.Items.Clear();
+            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text,Static.JwtToken,RestSharp.Method.GET,null);
+            var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
+            foreach (var a in contactsresult.Data)
+            {
+                ClientContact.Items.Add(a.FirstName + " " + a.LastName + " - " + a.JobTitle);
             }
         }
         #endregion
@@ -200,5 +243,6 @@ namespace DG_Engineering
         }
 
         #endregion
+
     }
 }

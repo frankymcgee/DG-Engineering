@@ -35,7 +35,6 @@ namespace DG_Engineering
                     // Hide This Login
                     //Set the Property to true while closing the Login Form. This Property will be checked before running
                     //the Assignar Form in the Main Method
-                    Static.IsLoggedIn = true;
                     Hide();
                     var myobform = new MyobAccess();
                     var assignarForm = new MainWindow();

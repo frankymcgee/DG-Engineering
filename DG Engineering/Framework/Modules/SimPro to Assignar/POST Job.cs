@@ -13,9 +13,9 @@ namespace DG_Engineering
         /// POST Job to Assignar
         /// </summary>
         /// <param name="jobname">Job Name i.e. Mobilisation|DS</param>
-        public void AssignarJobPost(string jobname)
+        private void AssignarJobPost(string jobname)
         {
-            StatusLabel.Text = @"Creating Job: " + jobname;
+            StatusLabel.Text = @"Creating Job:  " + jobname;
             ProjectStartDate.Format = DateTimePickerFormat.Custom;
             ProjectStartDate.CustomFormat = @"yyyy-MM-dd";
 	        ProjectEndDate.Format = DateTimePickerFormat.Custom;
@@ -29,18 +29,19 @@ namespace DG_Engineering
 	        restRequest.AddHeader("Authorization", Static.JwtToken);
 	        var value = @"{
                                 ""active"": true,
-                                ""po_number"": " + ProjectPOTextBox.Text +
+                                ""po_number"": " + ProjectPONumber.Text +
                                 ",\n  \"client_id\": " + CompanyId +
-                                ",\n  \"order_owner\": 186," +
-                                "\n  \"project_id\": " + ProjectId +
-                                ",\n  \"location\": " + ProjectAddress_TextBox.Text +
-                                ",\n  \"location2\": " + ProjectAddress_TextBox.Text +
-                                ",\n  \"job_description\": " + jobname +
+                                ",\n  \"order_owner\": 186" +
+                                ",\n  \"project_id\": " + ProjectId +
+                                ",\n  \"job_number\": \"" + ProjectJobNumber.Text + "\"" + 
+                                ",\n  \"po_number\": \"" + ProjectPONumber.Text + "\"" + 
+                                ",\n  \"location\": \"" + ProjectAddress.Text + "\"" + 
+                                ",\n  \"job_description\": \"" + jobname + "\"" + 
                                 ",\n  \"start_time\": \"\"" +
                                 ",\n  \"shift_duration\": \"\"" +
                                 ",\n  \"start_date\": " + ProjectStartDate.Text + 
                                 ",\n  \"end_date\": " + ProjectEndDate.Text +
-                                ",\n  \"comments\": " + "Job Number is: " + SimProQuoteText.Text +
+                                ",\n  \"comments\": \"" + jobname + "\"" + 
                                 ",\n  \"status_id\": 5" +
                                 ",\n  \"type_id\": 1" +
                                 ",\n  \"supplier_id\": null" +
@@ -252,12 +253,12 @@ namespace DG_Engineering
         public void ClientAddToJob(string orderid)
         {
             var contactId = 0;
-            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + SimProClient_TextBox.Text, Static.JwtToken, Method.GET, null);
+            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text, Static.JwtToken, Method.GET, null);
             var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
             if (contactsresult != null)
                 foreach (var a in contactsresult.Data.Where(a =>
-                             a.FirstName == ClientContact_ComboBox.Text.Split(" ".ToCharArray())[0] &&
-                             ClientContact_ComboBox.Text.Split(" ".ToCharArray())[1].Contains(a.LastName)))
+                             a.FirstName == ClientContact.Text.Split(" ".ToCharArray())[0] &&
+                             ClientContact.Text.Split(" ".ToCharArray())[1].Contains(a.LastName)))
                 {
                     contactId = a.Id;
                 }

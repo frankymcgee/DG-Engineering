@@ -22,7 +22,7 @@ namespace DG_Engineering
             sortList.Sort();
             foreach (var num in sortList)
             {
-                SimProClient_TextBox.Items.Add(num);
+                ProjectClient.Items.Add(num);
             }
         }
     }

@@ -11,11 +11,11 @@ namespace DG_Engineering
     {
         public void PushToJobPack()
         {
-            JobPackTitle_TextBox.Text = ProjectNameTextBox.Text;
-            JobPackClient_TextBox.Text = SimProClient_TextBox.Text;
-            JobPackSite_TextBox.Text = ProjectAddress_TextBox.Text;
-            JobPackNo_TextBox.Text = SimProQuoteText.Text;
-            JobPackPO_TextBox.Text = ProjectPOTextBox.Text;
+            JobPackTitle_TextBox.Text = ProjectName.Text;
+            JobPackClient_TextBox.Text = ProjectClient.Text;
+            JobPackSite_TextBox.Text = ProjectAddress.Text;
+            JobPackNo_TextBox.Text = ProjectJobNumber.Text;
+            JobPackPO_TextBox.Text = ProjectPONumber.Text;
             const CalendarWeekRule weekRule = CalendarWeekRule.FirstFourDayWeek;
             const DayOfWeek firstWeekDay = DayOfWeek.Monday;
             var calendar = System.Threading.Thread.CurrentThread.CurrentCulture.Calendar;
