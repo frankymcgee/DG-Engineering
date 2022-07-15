@@ -45,17 +45,7 @@ namespace DG_Engineering
                 ProjectName.Text = a.Name;
                 ProjectAddress.Text = a.Contact;
                 ProjectPONumber.Text = a.Manager.ToString();
-                if (!string.IsNullOrEmpty(a.StartDate.ToString()))
-                {
-                    
-                    ProjectStartDate.Text = a.StartDate.ToString();
-                }
-
-                if (!string.IsNullOrEmpty(a.FinishDate.ToString()))
-                {
-                    
-                    ProjectEndDate.Text = a.FinishDate.ToString();
-                }
+                
                 
             }
             CompanyIdExtract(ProjectClient.Text);
