@@ -62,6 +62,7 @@ namespace DG_Engineering
             //var documents = SimProConnect(SimProUrl + "jobs/" + ProjectJobNumber.Text + "/attachments/files/").Content;
             //var result = JsonConvert.DeserializeObject<List<Framework.Global.SimPro.Documents.Root>>(documents);
             //StatusLabel.Text = @"Found " + result?.Count + @" Documents.";
+            StatusLabel.Visible = false;
             ProgressBar.Value = 0;
         }
     }

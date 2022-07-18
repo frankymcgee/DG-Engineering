@@ -24,7 +24,7 @@ namespace DG_Engineering
         #region Main Window Load
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-            VersionLabel.Text = @"Version 1.2.020  |    ";
+            VersionLabel.Text = @"Version 1.2.021  |    ";
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
             await JobsTabViewer.EnsureCoreWebView2Async(environment);
             await AdminViewer.EnsureCoreWebView2Async(environment);
@@ -71,14 +71,29 @@ namespace DG_Engineering
             {
                 if (string.IsNullOrWhiteSpace(ProjectJobNumber.Text))
                 {
-                    var dialog = MessageBox.Show(@"There is no Job Number. Continue?", "Exit",MessageBoxButtons.YesNo);
-                    if (dialog == DialogResult.Yes)
+                    var dialog = MessageBox.Show(@"There is no Job Number. Continue?", @"Exit",MessageBoxButtons.YesNo);
+                    switch (dialog)
                     {
-                        CompanyIdExtract(ProjectClient.Text);
-                        AssignarProjectPost();
-                    }
-                    else if (dialog == DialogResult.No)
-                    {
+                        case DialogResult.Yes:
+                            CompanyIdExtract(ProjectClient.Text);
+                            AssignarProjectPost();
+                            break;
+                        case DialogResult.No:
+                            break;
+                        case DialogResult.None:
+                            break;
+                        case DialogResult.OK:
+                            break;
+                        case DialogResult.Cancel:
+                            break;
+                        case DialogResult.Abort:
+                            break;
+                        case DialogResult.Retry:
+                            break;
+                        case DialogResult.Ignore:
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
                     }
                 }
                 else
@@ -105,7 +120,7 @@ namespace DG_Engineering
                 ProjectAddress.Items.Add(b.Street + ", " + b.City + ", " + b.State + ", " + b.PostCode);
             }
             ClientContact.Items.Clear();
-            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text,Static.JwtToken,RestSharp.Method.GET,null);
+            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text,Static.JwtToken,Method.GET,null);
             var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
             foreach (var a in contactsresult.Data)
             {
@@ -243,6 +258,5 @@ namespace DG_Engineering
         }
 
         #endregion
-
     }
 }

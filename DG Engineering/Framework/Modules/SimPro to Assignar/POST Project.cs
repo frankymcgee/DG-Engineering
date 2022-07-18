@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Windows.Forms;
@@ -31,49 +32,48 @@ namespace DG_Engineering
             restRequest.AddHeader("Authorization", Static.JwtToken);
             var value =@"{" +
                         "\n  \"active\": true" +
+                        ",\n  \"id\": " + ProjectJobNumber.Text + 
                         ",\n  \"client_id\": " + CompanyId +
-                        ",\n  \"name\": \"" + ProjectName.Text + "\"" + 
+                        ",\n  \"name\": \"" + ProjectName.Text + @" - Job Number: " + ProjectJobNumber.Text +  "\"" + 
                         ",\n  \"address\": \"" + ProjectAddress.Text + "\"" + 
                         ",\n  \"external_id\": \"" + ProjectJobNumber.Text +  "\"" + 
                         ",\n  \"start_date\": " + ProjectStartDate.Text + 
                         ",\n  \"end_date\": " + ProjectEndDate.Text + 
-                        ",\n  \"tags\": [" +
-                        "\n            {" +
-                        "\n                \"tag_id\": 7" +
-                        ",\n                \"name\": \"DGE\"," +
-                        "\n                \"description\": \"Project for DGE\"," +
-                        "\n                \"color\": \"#f44336\"" +
-                        "\n            }\n" +
-                        "        ]\n}";
+                        "}";
             restRequest.AddParameter("application/json", value, ParameterType.RequestBody);
             var restResponse = restClient.Execute(restRequest);
+            Console.WriteLine(restResponse.Content);
             if (restResponse.StatusCode == HttpStatusCode.OK)
             {
                 ProjectId = JsonConvert.DeserializeObject<ProjectPost.Root>(restResponse.Content).Data.Id;
                 ClientAddToProject(ProjectId.ToString());
                 Thread.Sleep(500);
-                AssignarJobPost("Mobilisation |DS");
+                AssignarJobPost("Mobilisation |DS",ProjectJobNumber.Text + "001");
                 Thread.Sleep(500);
-                AssignarJobPost("Mobilisation |NS");
+                AssignarJobPost("Mobilisation |NS",ProjectJobNumber.Text + "002");
                 Thread.Sleep(500);
-                AssignarJobPost("Work |DS");
+                AssignarJobPost("Work |DS",ProjectJobNumber.Text + "003");
                 Thread.Sleep(500);
-                AssignarJobPost("Work |NS");
+                AssignarJobPost("Work |NS",ProjectJobNumber.Text + "004");
                 Thread.Sleep(500);
-                AssignarJobPost("DeMobilisation |DS");
+                AssignarJobPost("DeMobilisation |DS",ProjectJobNumber.Text + "005");
                 Thread.Sleep(500);
-                AssignarJobPost("DeMobilisation |NS");
+                AssignarJobPost("DeMobilisation |NS",ProjectJobNumber.Text + "006");
                 Thread.Sleep(500);
                 //SimProDocDownload();
                 MessageBox.Show(@"Project Created in Assignar. Documents have been automatically uploaded. Please add any more as necessary", @"Success");
                 DownloadAllProjects(Static.AssignarDashboardUrl + "projects/", Static.JwtToken);
-                ProjectViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/projects/detail/" + ProjectId + "/documents");
+                ProjectViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/projects/detail/" + ProjectId + "/edit");
                 StatusLabel.Visible = false;
                 ProgressBar.Value = 0;
             }
             else
             {
-                MessageBox.Show(@"Whoops! An Error has occurred trying to create your Project. It either already exists or has incorrect information. Please try again.", @"Error");
+                MessageBox.Show(@"Whoops! An Error has occurred trying to create your Project. The error is as follows:" +@"
+
+" + restResponse.Content, @"Error");
+                StatusLabel.Visible = false;
+                ProgressBar.Value = 0;
             }
         }
 

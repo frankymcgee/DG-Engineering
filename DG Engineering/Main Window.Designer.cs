@@ -69,6 +69,7 @@
             this.ProjectGenerationBrowserGroupBox = new System.Windows.Forms.GroupBox();
             this.ProjectViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.SimProQuoteGroup = new System.Windows.Forms.GroupBox();
+            this.Address_upd_Button = new System.Windows.Forms.Button();
             this.ProjectAddress = new System.Windows.Forms.ComboBox();
             this.ClientContact = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -267,11 +268,10 @@
             this.Generate_New_Employee_Pack_Button = new System.Windows.Forms.Button();
             this.New_Employee_Name_TextBox = new System.Windows.Forms.TextBox();
             this.New_Employee_Name_Label = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusBar = new System.Windows.Forms.StatusStrip();
             this.VersionLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.Address_upd_Button = new System.Windows.Forms.Button();
             this.Manual_Search_GroupBox.SuspendLayout();
             this.Job_Information_GroupBox.SuspendLayout();
             this.DocViewGroup.SuspendLayout();
@@ -339,7 +339,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.RecruitmentViewer)).BeginInit();
             this.Contract_Gen_Group.SuspendLayout();
             this.Employee_Address_GroupBox.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.StatusBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // All_Projects_ComboBox
@@ -733,6 +733,16 @@
             this.SimProQuoteGroup.TabIndex = 0;
             this.SimProQuoteGroup.TabStop = false;
             this.SimProQuoteGroup.Text = "Project Details";
+            // 
+            // Address_upd_Button
+            // 
+            this.Address_upd_Button.Location = new System.Drawing.Point(159, 97);
+            this.Address_upd_Button.Name = "Address_upd_Button";
+            this.Address_upd_Button.Size = new System.Drawing.Size(75, 23);
+            this.Address_upd_Button.TabIndex = 24;
+            this.Address_upd_Button.Text = "Address";
+            this.Address_upd_Button.UseVisualStyleBackColor = true;
+            this.Address_upd_Button.Click += new System.EventHandler(this.Address_upd_Button_Click);
             // 
             // ProjectAddress
             // 
@@ -2669,18 +2679,18 @@
             this.New_Employee_Name_Label.TabIndex = 0;
             this.New_Employee_Name_Label.Text = "Name of Employee";
             // 
-            // statusStrip1
+            // StatusBar
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.VersionLabel,
             this.StatusLabel,
             this.ProgressBar});
-            this.statusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.statusStrip1.Location = new System.Drawing.Point(0, 643);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1242, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
+            this.StatusBar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.StatusBar.Location = new System.Drawing.Point(0, 643);
+            this.StatusBar.Name = "StatusBar";
+            this.StatusBar.Size = new System.Drawing.Size(1242, 22);
+            this.StatusBar.TabIndex = 2;
+            this.StatusBar.Text = "statusStrip1";
             // 
             // VersionLabel
             // 
@@ -2702,23 +2712,13 @@
             this.ProgressBar.Size = new System.Drawing.Size(500, 16);
             this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
-            // Address_upd_Button
-            // 
-            this.Address_upd_Button.Location = new System.Drawing.Point(159, 97);
-            this.Address_upd_Button.Name = "Address_upd_Button";
-            this.Address_upd_Button.Size = new System.Drawing.Size(75, 23);
-            this.Address_upd_Button.TabIndex = 24;
-            this.Address_upd_Button.Text = "Address";
-            this.Address_upd_Button.UseVisualStyleBackColor = true;
-            this.Address_upd_Button.Click += new System.EventHandler(this.Address_upd_Button_Click);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1242, 665);
             this.Controls.Add(this.Assignar_Tabs);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.StatusBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -2807,8 +2807,8 @@
             this.Contract_Gen_Group.PerformLayout();
             this.Employee_Address_GroupBox.ResumeLayout(false);
             this.Employee_Address_GroupBox.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.StatusBar.ResumeLayout(false);
+            this.StatusBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3024,7 +3024,7 @@
         private System.Windows.Forms.ComboBox OutputTypeComboBox;
         private Microsoft.Web.WebView2.WinForms.WebView2 RecruitmentViewer;
         private System.Windows.Forms.Button PushToJobPackButton;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip StatusBar;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.ToolStripProgressBar ProgressBar;
         private System.Windows.Forms.ComboBox RepresentativeComboBox;

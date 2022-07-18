@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
 using RestSharp;
@@ -28,6 +29,7 @@ namespace DG_Engineering
             if (response.StatusCode != HttpStatusCode.OK) return response.StatusCode;
             var jwtlogin = JsonConvert.DeserializeObject<Login.Root>(response.Content);
             if (jwtlogin != null) Static.JwtToken = jwtlogin.Data.Token;
+            Console.WriteLine(response.Content);
             return response.StatusCode;
         }
     }

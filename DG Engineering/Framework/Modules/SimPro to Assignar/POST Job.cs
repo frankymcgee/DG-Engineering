@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar;
@@ -12,8 +13,9 @@ namespace DG_Engineering
         /// <summary>
         /// POST Job to Assignar
         /// </summary>
-        /// <param name="jobname">Job Name i.e. Mobilisation|DS</param>
-        private void AssignarJobPost(string jobname)
+        /// <param name="jobname">Job Name i.e., Mobilisation|DS</param>
+        /// <param name="idnumber">ID Number for the Reference i.e., 4565001</param>
+        private void AssignarJobPost(string jobname, string idnumber)
         {
             StatusLabel.Text = @"Creating Job:  " + jobname;
             ProjectStartDate.Format = DateTimePickerFormat.Custom;
@@ -27,33 +29,54 @@ namespace DG_Engineering
 	        var restRequest = new RestRequest(Method.POST);
 	        restRequest.AddHeader("Content-Type", "application/json");
 	        restRequest.AddHeader("Authorization", Static.JwtToken);
-	        var value = @"{
+            string value;
+            if (Debugger.IsAttached)
+            {
+                value = @"{
                                 ""active"": true,
                                 ""po_number"": " + ProjectPONumber.Text +
-                                ",\n  \"client_id\": " + CompanyId +
-                                ",\n  \"order_owner\": 186" +
-                                ",\n  \"project_id\": " + ProjectId +
-                                ",\n  \"job_number\": \"" + ProjectJobNumber.Text + "\"" + 
-                                ",\n  \"po_number\": \"" + ProjectPONumber.Text + "\"" + 
-                                ",\n  \"location\": \"" + ProjectAddress.Text + "\"" + 
-                                ",\n  \"job_description\": \"" + jobname + "\"" + 
-                                ",\n  \"start_time\": \"\"" +
-                                ",\n  \"shift_duration\": \"\"" +
-                                ",\n  \"start_date\": " + ProjectStartDate.Text + 
-                                ",\n  \"end_date\": " + ProjectEndDate.Text +
-                                ",\n  \"comments\": \"" + jobname + "\"" + 
-                                ",\n  \"status_id\": 5" +
-                                ",\n  \"type_id\": 1" +
-                                ",\n  \"supplier_id\": null" +
-                                ",\n  \"tags\": [" +
-                                "\n            {" +
-                                "\n                \"tag_id\": 37" +
-                                ",\n                \"name\": \"DG Engineering | KTA\"" +
-                                ",\n                \"description\": \"DG Engineering Karratha\"" +
-                                ",\n                \"color\": \"#f44336\"" +
-                                "\n            }" +
-                                "\n        ]" +
-                                "\n}";
+                            ",\n  \"id\": " + idnumber +
+                            ",\n  \"client_id\": " + CompanyId +
+                            ",\n  \"order_owner\": 41" +
+                            ",\n  \"project_id\": " + ProjectId +
+                            ",\n  \"job_number\": \"" + ProjectJobNumber.Text + "\"" + 
+                            ",\n  \"po_number\": \"" + ProjectPONumber.Text + "\"" + 
+                            ",\n  \"location\": \"" + ProjectAddress.Text + "\"" + 
+                            ",\n  \"job_description\": \"" + jobname + "\"" + 
+                            ",\n  \"start_time\": \"\"" +
+                            ",\n  \"shift_duration\": \"\"" +
+                            ",\n  \"start_date\": " + ProjectStartDate.Text + 
+                            ",\n  \"end_date\": " + ProjectEndDate.Text +
+                            ",\n  \"comments\": \"" + jobname + "\"" + 
+                            ",\n  \"status_id\": 5" +
+                            ",\n  \"type_id\": 1" +
+                            ",\n  \"supplier_id\": null" +
+                            "\n}";
+            }
+            else
+            {
+                value = @"{
+                                ""active"": true,
+                                ""po_number"": " + ProjectPONumber.Text +
+                            ",\n  \"id\": " + idnumber +
+                            ",\n  \"client_id\": " + CompanyId +
+                            ",\n  \"order_owner\": 186" +
+                            ",\n  \"project_id\": " + ProjectId +
+                            ",\n  \"job_number\": \"" + ProjectJobNumber.Text + "\"" + 
+                            ",\n  \"po_number\": \"" + ProjectPONumber.Text + "\"" + 
+                            ",\n  \"location\": \"" + ProjectAddress.Text + "\"" + 
+                            ",\n  \"job_description\": \"" + jobname + "\"" + 
+                            ",\n  \"start_time\": \"\"" +
+                            ",\n  \"shift_duration\": \"\"" +
+                            ",\n  \"start_date\": " + ProjectStartDate.Text + 
+                            ",\n  \"end_date\": " + ProjectEndDate.Text +
+                            ",\n  \"comments\": \"" + jobname + "\"" + 
+                            ",\n  \"status_id\": 5" +
+                            ",\n  \"type_id\": 1" +
+                            ",\n  \"supplier_id\": null" +
+                            "\n}";
+            }
+	        
 	        restRequest.AddParameter("application/json", value, ParameterType.RequestBody);
 	        var restResponse = restClient.Execute(restRequest);
 	        if (restResponse.StatusCode != HttpStatusCode.OK)

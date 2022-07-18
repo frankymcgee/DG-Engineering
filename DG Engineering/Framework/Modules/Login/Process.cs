@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
@@ -15,11 +16,11 @@ namespace DG_Engineering
         {
             if (!string.IsNullOrEmpty(Username_TextBox.Text) || !string.IsNullOrEmpty(Password_TextBox.Text))
             {
-                if (Request(ClientID_TextBox.Text,Username_TextBox.Text, Password_TextBox.Text) == HttpStatusCode.OK)
+                Static.ClientId = Debugger.IsAttached ? "dge_sandbox" : ClientID_TextBox.Text;
+                Static.UserName = Username_TextBox.Text;
+                Static.Password = Password_TextBox.Text;
+                if (Request(Static.ClientId,Static.UserName,Static.Password) == HttpStatusCode.OK)
                 {
-                    Static.ClientId = ClientID_TextBox.Text;
-                    Static.UserName = Username_TextBox.Text;
-                    Static.Password = Password_TextBox.Text;
                     if (SaveLoginInfo.CheckState == CheckState.Checked)
                     {
                         if (new FileInfo(Static.Cache).Length == 0)
