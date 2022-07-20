@@ -467,26 +467,6 @@
             this.PushToJobPackButton.UseVisualStyleBackColor = false;
             this.PushToJobPackButton.Click += new System.EventHandler(this.PushToJobPackButton_Click);
             // 
-            // QuoteJobSelection
-            // 
-            this.QuoteJobSelection.FormattingEnabled = true;
-            this.QuoteJobSelection.Items.AddRange(new object[] {
-            "Quote",
-            "Job"});
-            this.QuoteJobSelection.Location = new System.Drawing.Point(57, 16);
-            this.QuoteJobSelection.Name = "QuoteJobSelection";
-            this.QuoteJobSelection.Size = new System.Drawing.Size(177, 21);
-            this.QuoteJobSelection.TabIndex = 18;
-            // 
-            // QuoteJobLabel
-            // 
-            this.QuoteJobLabel.AutoSize = true;
-            this.QuoteJobLabel.Location = new System.Drawing.Point(0, 16);
-            this.QuoteJobLabel.Name = "QuoteJobLabel";
-            this.QuoteJobLabel.Size = new System.Drawing.Size(58, 13);
-            this.QuoteJobLabel.TabIndex = 17;
-            this.QuoteJobLabel.Text = "Quote/Job";
-            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
