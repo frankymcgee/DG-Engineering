@@ -1,7 +1,9 @@
-﻿using DG_Engineering.Framework.Global.Assignar;
+﻿using System.Linq;
+using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
 using RestSharp;
 
+// ReSharper disable once CheckNamespace
 namespace DG_Engineering
 {
     public partial class MainWindow
@@ -16,12 +18,11 @@ namespace DG_Engineering
             var tasksearch = AssignarConnect(url, token, Method.GET,null);
             var tasks = JsonConvert.DeserializeObject<Clients.Root>(tasksearch);
             if (tasks == null) return;
-            foreach (var a in tasks.Data)
+            var sortList = (from a in tasks.Data where a.Active select a.Name).ToList();
+            sortList.Sort();
+            foreach (var num in sortList)
             {
-                if (a.Active)
-                {
-                    SimProClient_TextBox.Items.Add(a.Name);                   
-                }                
+                ProjectClient.Items.Add(num);
             }
         }
     }

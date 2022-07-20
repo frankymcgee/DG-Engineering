@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -10,6 +11,10 @@ namespace DG_Engineering
         public LoginWindow()
         {
             InitializeComponent();
+            if (!Debugger.IsAttached)
+            {
+                Debug_Label.Visible = false;
+            }
             if (!Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)) +
                                   @"\DGE"))
             {

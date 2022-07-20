@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 
 namespace DG_Engineering.Framework.Global.Assignar.ProjectPost
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class ProjectPost
     {
         public class Data

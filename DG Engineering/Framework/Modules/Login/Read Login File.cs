@@ -11,7 +11,7 @@ namespace DG_Engineering
         /// <param name="path">Path of the File</param>
         /// <param name="linenumber">Line number to be read.</param>
         /// <returns>string value.</returns>
-        public static string ReadFile(string path, int linenumber)
+        private static string ReadFile(string path, int linenumber)
         {
             string result = null;
             try

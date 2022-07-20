@@ -9,7 +9,7 @@ namespace DG_Engineering
         /// Looks for all Files in a Directory.
         /// </summary>
         /// <returns>string[]</returns>
-        public IEnumerable<string> GetFiles(string compilepath)
+        private static IEnumerable<string> GetFiles(string compilepath)
         {
             var dirs = Directory.GetFiles(compilepath);
             return dirs;

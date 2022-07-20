@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using DG_Engineering.Framework.Global.SimPro;
 using Microsoft.Office.Interop.Word;
 
 namespace DG_Engineering
@@ -20,10 +19,10 @@ namespace DG_Engineering
             switch (RepresentativeComboBox.Text)
             {
                     case "Damien Voigt":
-                    Signature = Path.Combine(Signpath, @"damien.png");
+                    _signature = Path.Combine(SignPath, @"damien.png");
                     break;
                     case "Leigh Wright":
-                    Signature = Path.Combine(Signpath, @"leigh.png");
+                    _signature = Path.Combine(SignPath, @"leigh.png");
                     break;
             }
             var filename = Path.GetTempPath();
@@ -57,7 +56,7 @@ namespace DG_Engineering
                 var signwidth = s.Width;
                 s.Delete();
                 //Signature Replacement
-                foreach (var ils in signRanges.Select(r => r.InlineShapes.AddPicture(Signature, ref _missing, ref _missing, ref _missing)))
+                foreach (var ils in signRanges.Select(r => r.InlineShapes.AddPicture(_signature, ref _missing, ref _missing, ref _missing)))
                 {
                     ils.Height = signheight;
                     ils.Width = signwidth;
@@ -115,13 +114,14 @@ namespace DG_Engineering
                 switch (field.Name)
                 {
                     case "DGE_Position":
-                        if(RepresentativeComboBox.Text == @"Damien Voigt")
+                        switch (RepresentativeComboBox.Text)
                         {
-                            field.Range.Text = @"Operation Manager";
-                        }
-                        else if (RepresentativeComboBox.Text == @"Leigh Wright")
-                        {
-                            field.Range.Text = @"General Manager";
+                            case @"Damien Voigt":
+                                field.Range.Text = @"Operation Manager";
+                                break;
+                            case @"Leigh Wright":
+                                field.Range.Text = @"General Manager";
+                                break;
                         }
                         break;
                         case "DGE_Name":
@@ -170,13 +170,10 @@ namespace DG_Engineering
                         
                         break;
                     case "Role_Description":
-                        field.Range.Text = RetrievedText;
+                        field.Range.Text = _retrievedText;
                         break;
                     case "Working_Away":
-                        if (WorkingAwayCheckBox.Checked)
-                        {
-                            field.Range.Text =
-                                @"Local Housing Allowance*
+                        field.Range.Text = WorkingAwayCheckBox.Checked ? @"Local Housing Allowance*
                                 FIFO Working Away Allowance*:
                                 The Employer will provide for additional Allowances according to the number of hours completed per fortnight, as follows:
 
@@ -198,12 +195,7 @@ namespace DG_Engineering
                                 101 – 120 hours per fortnight		Extra: $ 7.00 per hour
                                 120 plus hours per fortnight		Extra: $ 9.00 per hour
 
-                                *All leave, public holidays and training excluded.";
-                        }
-                        else
-                        {
-                            field.Range.Text = @" ";
-                        }
+                                *All leave, public holidays and training excluded." : @" ";
                         break;
                 }
             }

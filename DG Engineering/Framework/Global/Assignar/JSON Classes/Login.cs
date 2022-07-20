@@ -1,78 +1,74 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
 namespace DG_Engineering.Framework.Global.Assignar
 {
-   public class Login
+    // ReSharper disable once ClassNeverInstantiated.Global
+    internal class Login
     {
         // Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
         public class LanguageBundle
         {
-            [JsonPropertyName("order")]
+            [JsonProperty("order")]
             public string Order { get; set; }
 
-            [JsonPropertyName("orders")]
+            [JsonProperty("orders")]
             public string Orders { get; set; }
 
-            [JsonPropertyName("competencies")]
+            [JsonProperty("competencies")]
             public string Competencies { get; set; }
 
-            [JsonPropertyName("competency")]
+            [JsonProperty("competency")]
             public string Competency { get; set; }
 
-            [JsonPropertyName("task")]
+            [JsonProperty("task")]
             public string Task { get; set; }
 
-            [JsonPropertyName("tasks")]
+            [JsonProperty("tasks")]
             public string Tasks { get; set; }
 
-            [JsonPropertyName("supplier")]
+            [JsonProperty("supplier")]
             public string Supplier { get; set; }
 
-            [JsonPropertyName("suppliers")]
+            [JsonProperty("suppliers")]
             public string Suppliers { get; set; }
         }
-
+        
         public class Subscription
         {
-            [JsonPropertyName("type")]
+            [JsonProperty("type")]
             public string Type { get; set; }
 
-            [JsonPropertyName("expiration")]
+            [JsonProperty("expiration")]
             public object Expiration { get; set; }
         }
-
+        
         public class Data
         {
-            [JsonPropertyName("language_bundle")]
+            [JsonProperty("language_bundle")]
             public LanguageBundle LanguageBundle { get; set; }
 
-            [JsonPropertyName("settings")]
+            [JsonProperty("settings")]
             public string Settings { get; set; }
 
-            [JsonPropertyName("subscription")]
+            [JsonProperty("subscription")]
             public Subscription Subscription { get; set; }
 
-            [JsonPropertyName("token")]
+            [JsonProperty("token")]
             public string Token { get; set; }
 
-            [JsonPropertyName("user")]
+            [JsonProperty("user")]
             public string User { get; set; }
         }
 
         public class Root
         {
-            [JsonPropertyName("code")]
+            [JsonProperty("code")]
             public int Code { get; set; }
 
-            [JsonPropertyName("message")]
+            [JsonProperty("message")]
             public string Message { get; set; }
 
-            [JsonPropertyName("data")]
+            [JsonProperty("data")]
             public Data Data { get; set; }
         }
 

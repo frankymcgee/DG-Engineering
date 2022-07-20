@@ -29,53 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.All_Projects_ComboBox = new System.Windows.Forms.ComboBox();
-            this.Search_All_Projects_Label = new System.Windows.Forms.Label();
-            this.Manual_Search_GroupBox = new System.Windows.Forms.GroupBox();
-            this.Manual_Search_TextBox = new System.Windows.Forms.TextBox();
-            this.All_Projects_Button = new System.Windows.Forms.Button();
-            this.Manual_Search_Project_Label = new System.Windows.Forms.Label();
-            this.Job_Search_Button = new System.Windows.Forms.Button();
-            this.Project_Po_Label = new System.Windows.Forms.Label();
-            this.Job_Po_TextBox = new System.Windows.Forms.TextBox();
-            this.Job_Po_Label = new System.Windows.Forms.Label();
-            this.Job_End_TextBox = new System.Windows.Forms.TextBox();
-            this.Job_End_Label = new System.Windows.Forms.Label();
-            this.Job_Start_TextBox = new System.Windows.Forms.TextBox();
-            this.Job_Start_Label = new System.Windows.Forms.Label();
-            this.Project_External_ID_TextBox = new System.Windows.Forms.TextBox();
-            this.External_ID_Label = new System.Windows.Forms.Label();
-            this.Postcode_TextBox = new System.Windows.Forms.TextBox();
-            this.Postcode_Label = new System.Windows.Forms.Label();
-            this.Job_Location_TextBox = new System.Windows.Forms.TextBox();
-            this.Job_Location_Label = new System.Windows.Forms.Label();
-            this.Job_Description_TextBox = new System.Windows.Forms.TextBox();
-            this.Job_Description_Label = new System.Windows.Forms.Label();
-            this.Job_Number_TextBox = new System.Windows.Forms.TextBox();
-            this.State_TextBox = new System.Windows.Forms.TextBox();
-            this.Job_Number_Label = new System.Windows.Forms.Label();
-            this.Job_List_ComboBox = new System.Windows.Forms.ComboBox();
-            this.Job_List_Label = new System.Windows.Forms.Label();
-            this.Job_Information_GroupBox = new System.Windows.Forms.GroupBox();
-            this.Display_Job_Info_button = new System.Windows.Forms.Button();
-            this.State_Label = new System.Windows.Forms.Label();
             this.DocViewGroup = new System.Windows.Forms.GroupBox();
             this.DocumentGeneratorViewer = new System.Windows.Forms.WebBrowser();
-            this.PushToJobPack_Button = new System.Windows.Forms.Button();
-            this.Project_Po_TextBox = new System.Windows.Forms.TextBox();
             this.DocTitle_Label = new System.Windows.Forms.Label();
             this.DocTitle_TextBox = new System.Windows.Forms.TextBox();
             this.SimProSync_Tab = new System.Windows.Forms.TabPage();
             this.ProjectGenerationBrowserGroupBox = new System.Windows.Forms.GroupBox();
             this.ProjectViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.SimProQuoteGroup = new System.Windows.Forms.GroupBox();
-            this.DownLoadDocsButton = new System.Windows.Forms.Button();
-            this.PushToJobPackButton = new System.Windows.Forms.Button();
-            this.ClientContact_ComboBox = new System.Windows.Forms.ComboBox();
+            this.Address_upd_Button = new System.Windows.Forms.Button();
+            this.ProjectAddress = new System.Windows.Forms.ComboBox();
+            this.ClientContact = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.SimProClient_TextBox = new System.Windows.Forms.ComboBox();
-            this.QuoteJobSelection = new System.Windows.Forms.ComboBox();
-            this.QuoteJobLabel = new System.Windows.Forms.Label();
+            this.ProjectClient = new System.Windows.Forms.ComboBox();
+            this.PushToJobPackButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.DSTab = new System.Windows.Forms.TabPage();
             this.TADSUD = new System.Windows.Forms.NumericUpDown();
@@ -139,16 +106,15 @@
             this.ProjectEndDateLabel = new System.Windows.Forms.Label();
             this.ProjectStartDate = new System.Windows.Forms.DateTimePicker();
             this.ProjectStartDateLabel = new System.Windows.Forms.Label();
-            this.ProjectPOTextBox = new System.Windows.Forms.TextBox();
+            this.ProjectPONumber = new System.Windows.Forms.TextBox();
             this.ProjectPOLabel = new System.Windows.Forms.Label();
-            this.ProjectAddress_TextBox = new System.Windows.Forms.TextBox();
             this.ProjectAddress_Label = new System.Windows.Forms.Label();
             this.PushAssignar_Button = new System.Windows.Forms.Button();
-            this.ProjectNameTextBox = new System.Windows.Forms.TextBox();
+            this.ProjectName = new System.Windows.Forms.TextBox();
             this.ProjectNameLabel = new System.Windows.Forms.Label();
             this.SimProClient = new System.Windows.Forms.Label();
-            this.SimProQuoteSearch = new System.Windows.Forms.Button();
-            this.SimProQuoteText = new System.Windows.Forms.TextBox();
+            this.JobNumberSearch = new System.Windows.Forms.Button();
+            this.ProjectJobNumber = new System.Windows.Forms.TextBox();
             this.QuoteSearch_Label = new System.Windows.Forms.Label();
             this.VehicleComboBox = new System.Windows.Forms.ComboBox();
             this.VehicleLabel = new System.Windows.Forms.Label();
@@ -188,23 +154,6 @@
             this.JobPackTitle_TextBox = new System.Windows.Forms.TextBox();
             this.JobPackTitle_Label = new System.Windows.Forms.Label();
             this.Jobs_Tab = new System.Windows.Forms.TabPage();
-            this.Project_Information_GroupBox = new System.Windows.Forms.GroupBox();
-            this.JobsViewerGroup = new System.Windows.Forms.GroupBox();
-            this.JobsTabViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.Project_Active_CheckBox = new System.Windows.Forms.CheckBox();
-            this.Suburb_TextBox = new System.Windows.Forms.TextBox();
-            this.Suburb_Label = new System.Windows.Forms.Label();
-            this.Site_Address_TextBox = new System.Windows.Forms.TextBox();
-            this.Site_Address_Label = new System.Windows.Forms.Label();
-            this.Client_Name_TextBox = new System.Windows.Forms.TextBox();
-            this.Client_Label = new System.Windows.Forms.Label();
-            this.End_Date_TextBox = new System.Windows.Forms.TextBox();
-            this.End_Date_Label = new System.Windows.Forms.Label();
-            this.Start_Date_TextBox = new System.Windows.Forms.TextBox();
-            this.Start_Date_Label = new System.Windows.Forms.Label();
-            this.Project_Name_TextBox = new System.Windows.Forms.TextBox();
-            this.Project_Name_Label = new System.Windows.Forms.Label();
-            this.ProjectInfo = new System.Windows.Forms.GroupBox();
             this.Admin_Tab = new System.Windows.Forms.TabPage();
             this.AdminViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -270,13 +219,26 @@
             this.Generate_New_Employee_Pack_Button = new System.Windows.Forms.Button();
             this.New_Employee_Name_TextBox = new System.Windows.Forms.TextBox();
             this.New_Employee_Name_Label = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusBar = new System.Windows.Forms.StatusStrip();
             this.VersionLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Manual_Search_GroupBox.SuspendLayout();
-            this.Job_Information_GroupBox.SuspendLayout();
+            this.Jobs_MyobSearch = new System.Windows.Forms.Button();
+            this.Manual_Search_Project_Label = new System.Windows.Forms.Label();
+            this.Jobs_ProjectNumber = new System.Windows.Forms.TextBox();
+            this.Manual_Search_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Jobs_SplitContainer = new System.Windows.Forms.SplitContainer();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Jobs_GenerateCover = new System.Windows.Forms.Button();
+            this.Jobs_PoNo = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.Jobs_Site = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.Jobs_Client = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.Jobs_JobName = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.Jobs_Viewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.DocViewGroup.SuspendLayout();
             this.SimProSync_Tab.SuspendLayout();
             this.ProjectGenerationBrowserGroupBox.SuspendLayout();
@@ -326,10 +288,6 @@
             this.JobDocuments_Group.SuspendLayout();
             this.CoverPageGroup.SuspendLayout();
             this.Jobs_Tab.SuspendLayout();
-            this.Project_Information_GroupBox.SuspendLayout();
-            this.JobsViewerGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.JobsTabViewer)).BeginInit();
-            this.ProjectInfo.SuspendLayout();
             this.Admin_Tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdminViewer)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -342,281 +300,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.RecruitmentViewer)).BeginInit();
             this.Contract_Gen_Group.SuspendLayout();
             this.Employee_Address_GroupBox.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.StatusBar.SuspendLayout();
+            this.Manual_Search_GroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Jobs_SplitContainer)).BeginInit();
+            this.Jobs_SplitContainer.Panel1.SuspendLayout();
+            this.Jobs_SplitContainer.Panel2.SuspendLayout();
+            this.Jobs_SplitContainer.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Jobs_Viewer)).BeginInit();
             this.SuspendLayout();
-            // 
-            // All_Projects_ComboBox
-            // 
-            this.All_Projects_ComboBox.FormattingEnabled = true;
-            this.All_Projects_ComboBox.Location = new System.Drawing.Point(8, 137);
-            this.All_Projects_ComboBox.Name = "All_Projects_ComboBox";
-            this.All_Projects_ComboBox.Size = new System.Drawing.Size(188, 21);
-            this.All_Projects_ComboBox.TabIndex = 2;
-            // 
-            // Search_All_Projects_Label
-            // 
-            this.Search_All_Projects_Label.AutoSize = true;
-            this.Search_All_Projects_Label.Location = new System.Drawing.Point(51, 121);
-            this.Search_All_Projects_Label.Name = "Search_All_Projects_Label";
-            this.Search_All_Projects_Label.Size = new System.Drawing.Size(96, 13);
-            this.Search_All_Projects_Label.TabIndex = 1;
-            this.Search_All_Projects_Label.Text = "Search All Projects";
-            // 
-            // Manual_Search_GroupBox
-            // 
-            this.Manual_Search_GroupBox.Controls.Add(this.All_Projects_ComboBox);
-            this.Manual_Search_GroupBox.Controls.Add(this.Manual_Search_TextBox);
-            this.Manual_Search_GroupBox.Controls.Add(this.Search_All_Projects_Label);
-            this.Manual_Search_GroupBox.Controls.Add(this.All_Projects_Button);
-            this.Manual_Search_GroupBox.Controls.Add(this.Manual_Search_Project_Label);
-            this.Manual_Search_GroupBox.Controls.Add(this.Job_Search_Button);
-            this.Manual_Search_GroupBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Manual_Search_GroupBox.Location = new System.Drawing.Point(3, 3);
-            this.Manual_Search_GroupBox.Name = "Manual_Search_GroupBox";
-            this.Manual_Search_GroupBox.Size = new System.Drawing.Size(205, 611);
-            this.Manual_Search_GroupBox.TabIndex = 3;
-            this.Manual_Search_GroupBox.TabStop = false;
-            this.Manual_Search_GroupBox.Text = "Manual Search";
-            // 
-            // Manual_Search_TextBox
-            // 
-            this.Manual_Search_TextBox.Location = new System.Drawing.Point(47, 51);
-            this.Manual_Search_TextBox.Name = "Manual_Search_TextBox";
-            this.Manual_Search_TextBox.Size = new System.Drawing.Size(100, 20);
-            this.Manual_Search_TextBox.TabIndex = 2;
-            // 
-            // All_Projects_Button
-            // 
-            this.All_Projects_Button.Location = new System.Drawing.Point(60, 163);
-            this.All_Projects_Button.Name = "All_Projects_Button";
-            this.All_Projects_Button.Size = new System.Drawing.Size(75, 23);
-            this.All_Projects_Button.TabIndex = 0;
-            this.All_Projects_Button.Text = "Search";
-            this.All_Projects_Button.UseVisualStyleBackColor = true;
-            this.All_Projects_Button.Click += new System.EventHandler(this.All_Projects_Button_Click);
-            // 
-            // Manual_Search_Project_Label
-            // 
-            this.Manual_Search_Project_Label.AutoSize = true;
-            this.Manual_Search_Project_Label.Location = new System.Drawing.Point(46, 35);
-            this.Manual_Search_Project_Label.Name = "Manual_Search_Project_Label";
-            this.Manual_Search_Project_Label.Size = new System.Drawing.Size(117, 13);
-            this.Manual_Search_Project_Label.TabIndex = 1;
-            this.Manual_Search_Project_Label.Text = "Search Project Number";
-            // 
-            // Job_Search_Button
-            // 
-            this.Job_Search_Button.Location = new System.Drawing.Point(58, 77);
-            this.Job_Search_Button.Name = "Job_Search_Button";
-            this.Job_Search_Button.Size = new System.Drawing.Size(75, 23);
-            this.Job_Search_Button.TabIndex = 0;
-            this.Job_Search_Button.Text = "Search";
-            this.Job_Search_Button.UseVisualStyleBackColor = true;
-            this.Job_Search_Button.Click += new System.EventHandler(this.Job_Search_Button_Click);
-            // 
-            // Project_Po_Label
-            // 
-            this.Project_Po_Label.AutoSize = true;
-            this.Project_Po_Label.Location = new System.Drawing.Point(19, 268);
-            this.Project_Po_Label.Name = "Project_Po_Label";
-            this.Project_Po_Label.Size = new System.Drawing.Size(62, 13);
-            this.Project_Po_Label.TabIndex = 19;
-            this.Project_Po_Label.Text = "PO Number";
-            // 
-            // Job_Po_TextBox
-            // 
-            this.Job_Po_TextBox.Location = new System.Drawing.Point(9, 189);
-            this.Job_Po_TextBox.Name = "Job_Po_TextBox";
-            this.Job_Po_TextBox.Size = new System.Drawing.Size(325, 20);
-            this.Job_Po_TextBox.TabIndex = 17;
-            // 
-            // Job_Po_Label
-            // 
-            this.Job_Po_Label.AutoSize = true;
-            this.Job_Po_Label.Location = new System.Drawing.Point(6, 173);
-            this.Job_Po_Label.Name = "Job_Po_Label";
-            this.Job_Po_Label.Size = new System.Drawing.Size(62, 13);
-            this.Job_Po_Label.TabIndex = 16;
-            this.Job_Po_Label.Text = "PO Number";
-            // 
-            // Job_End_TextBox
-            // 
-            this.Job_End_TextBox.Location = new System.Drawing.Point(123, 150);
-            this.Job_End_TextBox.Name = "Job_End_TextBox";
-            this.Job_End_TextBox.Size = new System.Drawing.Size(105, 20);
-            this.Job_End_TextBox.TabIndex = 15;
-            // 
-            // Job_End_Label
-            // 
-            this.Job_End_Label.AutoSize = true;
-            this.Job_End_Label.Location = new System.Drawing.Point(120, 134);
-            this.Job_End_Label.Name = "Job_End_Label";
-            this.Job_End_Label.Size = new System.Drawing.Size(52, 13);
-            this.Job_End_Label.TabIndex = 14;
-            this.Job_End_Label.Text = "End Date";
-            // 
-            // Job_Start_TextBox
-            // 
-            this.Job_Start_TextBox.Location = new System.Drawing.Point(9, 150);
-            this.Job_Start_TextBox.Name = "Job_Start_TextBox";
-            this.Job_Start_TextBox.Size = new System.Drawing.Size(105, 20);
-            this.Job_Start_TextBox.TabIndex = 13;
-            // 
-            // Job_Start_Label
-            // 
-            this.Job_Start_Label.AutoSize = true;
-            this.Job_Start_Label.Location = new System.Drawing.Point(6, 134);
-            this.Job_Start_Label.Name = "Job_Start_Label";
-            this.Job_Start_Label.Size = new System.Drawing.Size(55, 13);
-            this.Job_Start_Label.TabIndex = 12;
-            this.Job_Start_Label.Text = "Start Date";
-            // 
-            // Project_External_ID_TextBox
-            // 
-            this.Project_External_ID_TextBox.Location = new System.Drawing.Point(24, 238);
-            this.Project_External_ID_TextBox.Name = "Project_External_ID_TextBox";
-            this.Project_External_ID_TextBox.Size = new System.Drawing.Size(291, 20);
-            this.Project_External_ID_TextBox.TabIndex = 18;
-            // 
-            // External_ID_Label
-            // 
-            this.External_ID_Label.AutoSize = true;
-            this.External_ID_Label.Location = new System.Drawing.Point(21, 222);
-            this.External_ID_Label.Name = "External_ID_Label";
-            this.External_ID_Label.Size = new System.Drawing.Size(59, 13);
-            this.External_ID_Label.TabIndex = 17;
-            this.External_ID_Label.Text = "External ID";
-            // 
-            // Postcode_TextBox
-            // 
-            this.Postcode_TextBox.Location = new System.Drawing.Point(203, 199);
-            this.Postcode_TextBox.Name = "Postcode_TextBox";
-            this.Postcode_TextBox.Size = new System.Drawing.Size(63, 20);
-            this.Postcode_TextBox.TabIndex = 16;
-            // 
-            // Postcode_Label
-            // 
-            this.Postcode_Label.AutoSize = true;
-            this.Postcode_Label.Location = new System.Drawing.Point(200, 183);
-            this.Postcode_Label.Name = "Postcode_Label";
-            this.Postcode_Label.Size = new System.Drawing.Size(52, 13);
-            this.Postcode_Label.TabIndex = 15;
-            this.Postcode_Label.Text = "Postcode";
-            // 
-            // Job_Location_TextBox
-            // 
-            this.Job_Location_TextBox.Location = new System.Drawing.Point(9, 111);
-            this.Job_Location_TextBox.Name = "Job_Location_TextBox";
-            this.Job_Location_TextBox.Size = new System.Drawing.Size(325, 20);
-            this.Job_Location_TextBox.TabIndex = 11;
-            // 
-            // Job_Location_Label
-            // 
-            this.Job_Location_Label.AutoSize = true;
-            this.Job_Location_Label.Location = new System.Drawing.Point(6, 95);
-            this.Job_Location_Label.Name = "Job_Location_Label";
-            this.Job_Location_Label.Size = new System.Drawing.Size(68, 13);
-            this.Job_Location_Label.TabIndex = 10;
-            this.Job_Location_Label.Text = "Job Location";
-            // 
-            // Job_Description_TextBox
-            // 
-            this.Job_Description_TextBox.Location = new System.Drawing.Point(80, 72);
-            this.Job_Description_TextBox.Name = "Job_Description_TextBox";
-            this.Job_Description_TextBox.Size = new System.Drawing.Size(254, 20);
-            this.Job_Description_TextBox.TabIndex = 9;
-            // 
-            // Job_Description_Label
-            // 
-            this.Job_Description_Label.AutoSize = true;
-            this.Job_Description_Label.Location = new System.Drawing.Point(77, 56);
-            this.Job_Description_Label.Name = "Job_Description_Label";
-            this.Job_Description_Label.Size = new System.Drawing.Size(80, 13);
-            this.Job_Description_Label.TabIndex = 8;
-            this.Job_Description_Label.Text = "Job Description";
-            // 
-            // Job_Number_TextBox
-            // 
-            this.Job_Number_TextBox.Location = new System.Drawing.Point(9, 72);
-            this.Job_Number_TextBox.Name = "Job_Number_TextBox";
-            this.Job_Number_TextBox.Size = new System.Drawing.Size(63, 20);
-            this.Job_Number_TextBox.TabIndex = 7;
-            // 
-            // State_TextBox
-            // 
-            this.State_TextBox.Location = new System.Drawing.Point(134, 199);
-            this.State_TextBox.Name = "State_TextBox";
-            this.State_TextBox.Size = new System.Drawing.Size(63, 20);
-            this.State_TextBox.TabIndex = 14;
-            // 
-            // Job_Number_Label
-            // 
-            this.Job_Number_Label.AutoSize = true;
-            this.Job_Number_Label.Location = new System.Drawing.Point(6, 56);
-            this.Job_Number_Label.Name = "Job_Number_Label";
-            this.Job_Number_Label.Size = new System.Drawing.Size(64, 13);
-            this.Job_Number_Label.TabIndex = 6;
-            this.Job_Number_Label.Text = "Job Number";
-            // 
-            // Job_List_ComboBox
-            // 
-            this.Job_List_ComboBox.FormattingEnabled = true;
-            this.Job_List_ComboBox.Location = new System.Drawing.Point(9, 32);
-            this.Job_List_ComboBox.Name = "Job_List_ComboBox";
-            this.Job_List_ComboBox.Size = new System.Drawing.Size(188, 21);
-            this.Job_List_ComboBox.TabIndex = 4;
-            // 
-            // Job_List_Label
-            // 
-            this.Job_List_Label.AutoSize = true;
-            this.Job_List_Label.Location = new System.Drawing.Point(6, 16);
-            this.Job_List_Label.Name = "Job_List_Label";
-            this.Job_List_Label.Size = new System.Drawing.Size(60, 13);
-            this.Job_List_Label.TabIndex = 3;
-            this.Job_List_Label.Text = "Select Job:";
-            // 
-            // Job_Information_GroupBox
-            // 
-            this.Job_Information_GroupBox.Controls.Add(this.Job_Po_TextBox);
-            this.Job_Information_GroupBox.Controls.Add(this.Job_Po_Label);
-            this.Job_Information_GroupBox.Controls.Add(this.Job_End_TextBox);
-            this.Job_Information_GroupBox.Controls.Add(this.Job_End_Label);
-            this.Job_Information_GroupBox.Controls.Add(this.Job_Start_TextBox);
-            this.Job_Information_GroupBox.Controls.Add(this.Job_Start_Label);
-            this.Job_Information_GroupBox.Controls.Add(this.Job_Location_TextBox);
-            this.Job_Information_GroupBox.Controls.Add(this.Job_Location_Label);
-            this.Job_Information_GroupBox.Controls.Add(this.Job_Description_TextBox);
-            this.Job_Information_GroupBox.Controls.Add(this.Job_Description_Label);
-            this.Job_Information_GroupBox.Controls.Add(this.Job_Number_TextBox);
-            this.Job_Information_GroupBox.Controls.Add(this.Job_Number_Label);
-            this.Job_Information_GroupBox.Controls.Add(this.Display_Job_Info_button);
-            this.Job_Information_GroupBox.Controls.Add(this.Job_List_ComboBox);
-            this.Job_Information_GroupBox.Controls.Add(this.Job_List_Label);
-            this.Job_Information_GroupBox.Location = new System.Drawing.Point(13, 331);
-            this.Job_Information_GroupBox.Name = "Job_Information_GroupBox";
-            this.Job_Information_GroupBox.Size = new System.Drawing.Size(340, 277);
-            this.Job_Information_GroupBox.TabIndex = 20;
-            this.Job_Information_GroupBox.TabStop = false;
-            this.Job_Information_GroupBox.Text = "Job Information";
-            // 
-            // Display_Job_Info_button
-            // 
-            this.Display_Job_Info_button.Location = new System.Drawing.Point(203, 30);
-            this.Display_Job_Info_button.Name = "Display_Job_Info_button";
-            this.Display_Job_Info_button.Size = new System.Drawing.Size(131, 23);
-            this.Display_Job_Info_button.TabIndex = 5;
-            this.Display_Job_Info_button.Text = "Display Job Info";
-            this.Display_Job_Info_button.UseVisualStyleBackColor = true;
-            this.Display_Job_Info_button.Click += new System.EventHandler(this.Display_Job_Info_button_Click);
-            // 
-            // State_Label
-            // 
-            this.State_Label.AutoSize = true;
-            this.State_Label.Location = new System.Drawing.Point(131, 183);
-            this.State_Label.Name = "State_Label";
-            this.State_Label.Size = new System.Drawing.Size(32, 13);
-            this.State_Label.TabIndex = 13;
-            this.State_Label.Text = "State";
             // 
             // DocViewGroup
             // 
@@ -638,23 +330,6 @@
             this.DocumentGeneratorViewer.Name = "DocumentGeneratorViewer";
             this.DocumentGeneratorViewer.Size = new System.Drawing.Size(813, 598);
             this.DocumentGeneratorViewer.TabIndex = 0;
-            // 
-            // PushToJobPack_Button
-            // 
-            this.PushToJobPack_Button.Location = new System.Drawing.Point(94, 308);
-            this.PushToJobPack_Button.Name = "PushToJobPack_Button";
-            this.PushToJobPack_Button.Size = new System.Drawing.Size(163, 23);
-            this.PushToJobPack_Button.TabIndex = 18;
-            this.PushToJobPack_Button.Text = "Push to Job Pack Generator";
-            this.PushToJobPack_Button.UseVisualStyleBackColor = true;
-            this.PushToJobPack_Button.Click += new System.EventHandler(this.PushToJobPack_Button_Click);
-            // 
-            // Project_Po_TextBox
-            // 
-            this.Project_Po_TextBox.Location = new System.Drawing.Point(22, 284);
-            this.Project_Po_TextBox.Name = "Project_Po_TextBox";
-            this.Project_Po_TextBox.Size = new System.Drawing.Size(325, 20);
-            this.Project_Po_TextBox.TabIndex = 20;
             // 
             // DocTitle_Label
             // 
@@ -708,29 +383,26 @@
             // 
             // SimProQuoteGroup
             // 
-            this.SimProQuoteGroup.Controls.Add(this.button1);
-            this.SimProQuoteGroup.Controls.Add(this.PushToJobPackButton);
-            this.SimProQuoteGroup.Controls.Add(this.ClientContact_ComboBox);
+            this.SimProQuoteGroup.Controls.Add(this.Address_upd_Button);
+            this.SimProQuoteGroup.Controls.Add(this.ProjectAddress);
+            this.SimProQuoteGroup.Controls.Add(this.ClientContact);
             this.SimProQuoteGroup.Controls.Add(this.label17);
-            this.SimProQuoteGroup.Controls.Add(this.SimProClient_TextBox);
+            this.SimProQuoteGroup.Controls.Add(this.ProjectClient);
             this.SimProQuoteGroup.Controls.Add(this.PushToJobPackButton);
-            this.SimProQuoteGroup.Controls.Add(this.QuoteJobSelection);
-            this.SimProQuoteGroup.Controls.Add(this.QuoteJobLabel);
             this.SimProQuoteGroup.Controls.Add(this.tabControl1);
             this.SimProQuoteGroup.Controls.Add(this.ProjectEndDate);
             this.SimProQuoteGroup.Controls.Add(this.ProjectEndDateLabel);
             this.SimProQuoteGroup.Controls.Add(this.ProjectStartDate);
             this.SimProQuoteGroup.Controls.Add(this.ProjectStartDateLabel);
-            this.SimProQuoteGroup.Controls.Add(this.ProjectPOTextBox);
+            this.SimProQuoteGroup.Controls.Add(this.ProjectPONumber);
             this.SimProQuoteGroup.Controls.Add(this.ProjectPOLabel);
-            this.SimProQuoteGroup.Controls.Add(this.ProjectAddress_TextBox);
             this.SimProQuoteGroup.Controls.Add(this.ProjectAddress_Label);
             this.SimProQuoteGroup.Controls.Add(this.PushAssignar_Button);
-            this.SimProQuoteGroup.Controls.Add(this.ProjectNameTextBox);
+            this.SimProQuoteGroup.Controls.Add(this.ProjectName);
             this.SimProQuoteGroup.Controls.Add(this.ProjectNameLabel);
             this.SimProQuoteGroup.Controls.Add(this.SimProClient);
-            this.SimProQuoteGroup.Controls.Add(this.SimProQuoteSearch);
-            this.SimProQuoteGroup.Controls.Add(this.SimProQuoteText);
+            this.SimProQuoteGroup.Controls.Add(this.JobNumberSearch);
+            this.SimProQuoteGroup.Controls.Add(this.ProjectJobNumber);
             this.SimProQuoteGroup.Controls.Add(this.QuoteSearch_Label);
             this.SimProQuoteGroup.Dock = System.Windows.Forms.DockStyle.Left;
             this.SimProQuoteGroup.Location = new System.Drawing.Point(0, 0);
@@ -740,35 +412,31 @@
             this.SimProQuoteGroup.TabStop = false;
             this.SimProQuoteGroup.Text = "Project Details";
             // 
-            // DownLoadDocsButton
+            // Address_upd_Button
             // 
-            this.DownLoadDocsButton.Location = new System.Drawing.Point(124, 321);
-            this.DownLoadDocsButton.Name = "DownLoadDocsButton";
-            this.DownLoadDocsButton.Size = new System.Drawing.Size(110, 23);
-            this.DownLoadDocsButton.TabIndex = 1;
-            this.DownLoadDocsButton.Text = "Download Docs";
-            this.DownLoadDocsButton.UseVisualStyleBackColor = true;
-            this.DownLoadDocsButton.Click += new System.EventHandler(this.DownloadDocButton_Click);
+            this.Address_upd_Button.Location = new System.Drawing.Point(159, 97);
+            this.Address_upd_Button.Name = "Address_upd_Button";
+            this.Address_upd_Button.Size = new System.Drawing.Size(75, 23);
+            this.Address_upd_Button.TabIndex = 24;
+            this.Address_upd_Button.Text = "Address";
+            this.Address_upd_Button.UseVisualStyleBackColor = true;
+            this.Address_upd_Button.Click += new System.EventHandler(this.Address_upd_Button_Click);
             // 
-            // PushToJobPackButton
+            // ProjectAddress
             // 
-            this.PushToJobPackButton.BackColor = System.Drawing.Color.Transparent;
-            this.PushToJobPackButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.PushToJobPackButton.Location = new System.Drawing.Point(7, 321);
-            this.PushToJobPackButton.Name = "PushToJobPackButton";
-            this.PushToJobPackButton.Size = new System.Drawing.Size(108, 23);
-            this.PushToJobPackButton.TabIndex = 19;
-            this.PushToJobPackButton.Text = "Push to Job Pack";
-            this.PushToJobPackButton.UseVisualStyleBackColor = false;
-            this.PushToJobPackButton.Click += new System.EventHandler(this.PushToJobPackButton_Click);
+            this.ProjectAddress.FormattingEnabled = true;
+            this.ProjectAddress.Location = new System.Drawing.Point(3, 178);
+            this.ProjectAddress.Name = "ProjectAddress";
+            this.ProjectAddress.Size = new System.Drawing.Size(231, 21);
+            this.ProjectAddress.TabIndex = 23;
             // 
-            // ClientContact_ComboBox
+            // ClientContact
             // 
-            this.ClientContact_ComboBox.FormattingEnabled = true;
-            this.ClientContact_ComboBox.Location = new System.Drawing.Point(5, 294);
-            this.ClientContact_ComboBox.Name = "ClientContact_ComboBox";
-            this.ClientContact_ComboBox.Size = new System.Drawing.Size(231, 21);
-            this.ClientContact_ComboBox.TabIndex = 22;
+            this.ClientContact.FormattingEnabled = true;
+            this.ClientContact.Location = new System.Drawing.Point(5, 294);
+            this.ClientContact.Name = "ClientContact";
+            this.ClientContact.Size = new System.Drawing.Size(231, 21);
+            this.ClientContact.TabIndex = 22;
             // 
             // label17
             // 
@@ -779,13 +447,13 @@
             this.label17.TabIndex = 21;
             this.label17.Text = "Client-Signed Timesheet Contact";
             // 
-            // SimProClient_TextBox
+            // ProjectClient
             // 
-            this.SimProClient_TextBox.FormattingEnabled = true;
-            this.SimProClient_TextBox.Location = new System.Drawing.Point(3, 99);
-            this.SimProClient_TextBox.Name = "SimProClient_TextBox";
-            this.SimProClient_TextBox.Size = new System.Drawing.Size(231, 21);
-            this.SimProClient_TextBox.TabIndex = 20;
+            this.ProjectClient.FormattingEnabled = true;
+            this.ProjectClient.Location = new System.Drawing.Point(3, 99);
+            this.ProjectClient.Name = "ProjectClient";
+            this.ProjectClient.Size = new System.Drawing.Size(144, 21);
+            this.ProjectClient.TabIndex = 20;
             // 
             // PushToJobPackButton
             // 
@@ -1389,12 +1057,12 @@
             this.ProjectStartDateLabel.TabIndex = 12;
             this.ProjectStartDateLabel.Text = "Project Start Date";
             // 
-            // ProjectPOTextBox
+            // ProjectPONumber
             // 
-            this.ProjectPOTextBox.Location = new System.Drawing.Point(3, 217);
-            this.ProjectPOTextBox.Name = "ProjectPOTextBox";
-            this.ProjectPOTextBox.Size = new System.Drawing.Size(231, 20);
-            this.ProjectPOTextBox.TabIndex = 11;
+            this.ProjectPONumber.Location = new System.Drawing.Point(3, 217);
+            this.ProjectPONumber.Name = "ProjectPONumber";
+            this.ProjectPONumber.Size = new System.Drawing.Size(231, 20);
+            this.ProjectPONumber.TabIndex = 11;
             // 
             // ProjectPOLabel
             // 
@@ -1404,13 +1072,6 @@
             this.ProjectPOLabel.Size = new System.Drawing.Size(98, 13);
             this.ProjectPOLabel.TabIndex = 10;
             this.ProjectPOLabel.Text = "Project PO Number";
-            // 
-            // ProjectAddress_TextBox
-            // 
-            this.ProjectAddress_TextBox.Location = new System.Drawing.Point(3, 178);
-            this.ProjectAddress_TextBox.Name = "ProjectAddress_TextBox";
-            this.ProjectAddress_TextBox.Size = new System.Drawing.Size(231, 20);
-            this.ProjectAddress_TextBox.TabIndex = 9;
             // 
             // ProjectAddress_Label
             // 
@@ -1433,12 +1094,12 @@
             this.PushAssignar_Button.UseVisualStyleBackColor = true;
             this.PushAssignar_Button.Click += new System.EventHandler(this.PushAssignar_Button_Click);
             // 
-            // ProjectNameTextBox
+            // ProjectName
             // 
-            this.ProjectNameTextBox.Location = new System.Drawing.Point(3, 139);
-            this.ProjectNameTextBox.Name = "ProjectNameTextBox";
-            this.ProjectNameTextBox.Size = new System.Drawing.Size(231, 20);
-            this.ProjectNameTextBox.TabIndex = 6;
+            this.ProjectName.Location = new System.Drawing.Point(3, 139);
+            this.ProjectName.Name = "ProjectName";
+            this.ProjectName.Size = new System.Drawing.Size(231, 20);
+            this.ProjectName.TabIndex = 6;
             // 
             // ProjectNameLabel
             // 
@@ -1458,31 +1119,31 @@
             this.SimProClient.TabIndex = 3;
             this.SimProClient.Text = "Client Name";
             // 
-            // SimProQuoteSearch
+            // JobNumberSearch
             // 
-            this.SimProQuoteSearch.Location = new System.Drawing.Point(159, 73);
-            this.SimProQuoteSearch.Name = "SimProQuoteSearch";
-            this.SimProQuoteSearch.Size = new System.Drawing.Size(75, 23);
-            this.SimProQuoteSearch.TabIndex = 2;
-            this.SimProQuoteSearch.Text = "Search";
-            this.SimProQuoteSearch.UseVisualStyleBackColor = true;
-            this.SimProQuoteSearch.Click += new System.EventHandler(this.SimProQuoteSearch_Click);
+            this.JobNumberSearch.Location = new System.Drawing.Point(159, 58);
+            this.JobNumberSearch.Name = "JobNumberSearch";
+            this.JobNumberSearch.Size = new System.Drawing.Size(75, 23);
+            this.JobNumberSearch.TabIndex = 2;
+            this.JobNumberSearch.Text = "Search";
+            this.JobNumberSearch.UseVisualStyleBackColor = true;
+            this.JobNumberSearch.Click += new System.EventHandler(this.JobNumberSearch_Click);
             // 
-            // SimProQuoteText
+            // ProjectJobNumber
             // 
-            this.SimProQuoteText.Location = new System.Drawing.Point(57, 47);
-            this.SimProQuoteText.Name = "SimProQuoteText";
-            this.SimProQuoteText.Size = new System.Drawing.Size(177, 20);
-            this.SimProQuoteText.TabIndex = 1;
+            this.ProjectJobNumber.Location = new System.Drawing.Point(6, 32);
+            this.ProjectJobNumber.Name = "ProjectJobNumber";
+            this.ProjectJobNumber.Size = new System.Drawing.Size(228, 20);
+            this.ProjectJobNumber.TabIndex = 1;
             // 
             // QuoteSearch_Label
             // 
             this.QuoteSearch_Label.AutoSize = true;
-            this.QuoteSearch_Label.Location = new System.Drawing.Point(0, 50);
+            this.QuoteSearch_Label.Location = new System.Drawing.Point(5, 16);
             this.QuoteSearch_Label.Name = "QuoteSearch_Label";
-            this.QuoteSearch_Label.Size = new System.Drawing.Size(44, 13);
+            this.QuoteSearch_Label.Size = new System.Drawing.Size(64, 13);
             this.QuoteSearch_Label.TabIndex = 0;
-            this.QuoteSearch_Label.Text = "Number";
+            this.QuoteSearch_Label.Text = "Job Number";
             // 
             // VehicleComboBox
             // 
@@ -1888,8 +1549,7 @@
             // 
             // Jobs_Tab
             // 
-            this.Jobs_Tab.Controls.Add(this.Project_Information_GroupBox);
-            this.Jobs_Tab.Controls.Add(this.Manual_Search_GroupBox);
+            this.Jobs_Tab.Controls.Add(this.Jobs_SplitContainer);
             this.Jobs_Tab.Location = new System.Drawing.Point(4, 22);
             this.Jobs_Tab.Name = "Jobs_Tab";
             this.Jobs_Tab.Padding = new System.Windows.Forms.Padding(3);
@@ -1897,181 +1557,6 @@
             this.Jobs_Tab.TabIndex = 1;
             this.Jobs_Tab.Text = "Jobs";
             this.Jobs_Tab.UseVisualStyleBackColor = true;
-            // 
-            // Project_Information_GroupBox
-            // 
-            this.Project_Information_GroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Project_Information_GroupBox.Controls.Add(this.JobsViewerGroup);
-            this.Project_Information_GroupBox.Controls.Add(this.Project_Active_CheckBox);
-            this.Project_Information_GroupBox.Controls.Add(this.Project_External_ID_TextBox);
-            this.Project_Information_GroupBox.Controls.Add(this.External_ID_Label);
-            this.Project_Information_GroupBox.Controls.Add(this.Postcode_TextBox);
-            this.Project_Information_GroupBox.Controls.Add(this.Postcode_Label);
-            this.Project_Information_GroupBox.Controls.Add(this.State_TextBox);
-            this.Project_Information_GroupBox.Controls.Add(this.State_Label);
-            this.Project_Information_GroupBox.Controls.Add(this.Suburb_TextBox);
-            this.Project_Information_GroupBox.Controls.Add(this.Suburb_Label);
-            this.Project_Information_GroupBox.Controls.Add(this.Site_Address_TextBox);
-            this.Project_Information_GroupBox.Controls.Add(this.Site_Address_Label);
-            this.Project_Information_GroupBox.Controls.Add(this.Client_Name_TextBox);
-            this.Project_Information_GroupBox.Controls.Add(this.Client_Label);
-            this.Project_Information_GroupBox.Controls.Add(this.End_Date_TextBox);
-            this.Project_Information_GroupBox.Controls.Add(this.End_Date_Label);
-            this.Project_Information_GroupBox.Controls.Add(this.Start_Date_TextBox);
-            this.Project_Information_GroupBox.Controls.Add(this.Start_Date_Label);
-            this.Project_Information_GroupBox.Controls.Add(this.Project_Name_TextBox);
-            this.Project_Information_GroupBox.Controls.Add(this.Project_Name_Label);
-            this.Project_Information_GroupBox.Controls.Add(this.ProjectInfo);
-            this.Project_Information_GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Project_Information_GroupBox.Location = new System.Drawing.Point(208, 3);
-            this.Project_Information_GroupBox.Name = "Project_Information_GroupBox";
-            this.Project_Information_GroupBox.Size = new System.Drawing.Size(1023, 611);
-            this.Project_Information_GroupBox.TabIndex = 4;
-            this.Project_Information_GroupBox.TabStop = false;
-            this.Project_Information_GroupBox.Text = "Project Information";
-            // 
-            // JobsViewerGroup
-            // 
-            this.JobsViewerGroup.Controls.Add(this.JobsTabViewer);
-            this.JobsViewerGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.JobsViewerGroup.Location = new System.Drawing.Point(362, 16);
-            this.JobsViewerGroup.Name = "JobsViewerGroup";
-            this.JobsViewerGroup.Size = new System.Drawing.Size(658, 592);
-            this.JobsViewerGroup.TabIndex = 23;
-            this.JobsViewerGroup.TabStop = false;
-            // 
-            // JobsTabViewer
-            // 
-            this.JobsTabViewer.AllowExternalDrop = true;
-            this.JobsTabViewer.CreationProperties = null;
-            this.JobsTabViewer.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.JobsTabViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.JobsTabViewer.Location = new System.Drawing.Point(3, 16);
-            this.JobsTabViewer.Name = "JobsTabViewer";
-            this.JobsTabViewer.Size = new System.Drawing.Size(652, 573);
-            this.JobsTabViewer.TabIndex = 0;
-            this.JobsTabViewer.ZoomFactor = 1D;
-            // 
-            // Project_Active_CheckBox
-            // 
-            this.Project_Active_CheckBox.AutoSize = true;
-            this.Project_Active_CheckBox.Location = new System.Drawing.Point(24, 264);
-            this.Project_Active_CheckBox.Name = "Project_Active_CheckBox";
-            this.Project_Active_CheckBox.Size = new System.Drawing.Size(92, 17);
-            this.Project_Active_CheckBox.TabIndex = 5;
-            this.Project_Active_CheckBox.Text = "Project Active";
-            this.Project_Active_CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // Suburb_TextBox
-            // 
-            this.Suburb_TextBox.Location = new System.Drawing.Point(24, 199);
-            this.Suburb_TextBox.Name = "Suburb_TextBox";
-            this.Suburb_TextBox.Size = new System.Drawing.Size(105, 20);
-            this.Suburb_TextBox.TabIndex = 12;
-            // 
-            // Suburb_Label
-            // 
-            this.Suburb_Label.AutoSize = true;
-            this.Suburb_Label.Location = new System.Drawing.Point(21, 183);
-            this.Suburb_Label.Name = "Suburb_Label";
-            this.Suburb_Label.Size = new System.Drawing.Size(41, 13);
-            this.Suburb_Label.TabIndex = 11;
-            this.Suburb_Label.Text = "Suburb";
-            // 
-            // Site_Address_TextBox
-            // 
-            this.Site_Address_TextBox.Location = new System.Drawing.Point(24, 160);
-            this.Site_Address_TextBox.Name = "Site_Address_TextBox";
-            this.Site_Address_TextBox.Size = new System.Drawing.Size(291, 20);
-            this.Site_Address_TextBox.TabIndex = 9;
-            // 
-            // Site_Address_Label
-            // 
-            this.Site_Address_Label.AutoSize = true;
-            this.Site_Address_Label.Location = new System.Drawing.Point(21, 144);
-            this.Site_Address_Label.Name = "Site_Address_Label";
-            this.Site_Address_Label.Size = new System.Drawing.Size(66, 13);
-            this.Site_Address_Label.TabIndex = 8;
-            this.Site_Address_Label.Text = "Site Address";
-            // 
-            // Client_Name_TextBox
-            // 
-            this.Client_Name_TextBox.Location = new System.Drawing.Point(24, 121);
-            this.Client_Name_TextBox.Name = "Client_Name_TextBox";
-            this.Client_Name_TextBox.Size = new System.Drawing.Size(291, 20);
-            this.Client_Name_TextBox.TabIndex = 7;
-            // 
-            // Client_Label
-            // 
-            this.Client_Label.AutoSize = true;
-            this.Client_Label.Location = new System.Drawing.Point(21, 105);
-            this.Client_Label.Name = "Client_Label";
-            this.Client_Label.Size = new System.Drawing.Size(33, 13);
-            this.Client_Label.TabIndex = 6;
-            this.Client_Label.Text = "Client";
-            // 
-            // End_Date_TextBox
-            // 
-            this.End_Date_TextBox.Location = new System.Drawing.Point(148, 82);
-            this.End_Date_TextBox.Name = "End_Date_TextBox";
-            this.End_Date_TextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.End_Date_TextBox.Size = new System.Drawing.Size(105, 20);
-            this.End_Date_TextBox.TabIndex = 5;
-            // 
-            // End_Date_Label
-            // 
-            this.End_Date_Label.AutoSize = true;
-            this.End_Date_Label.Location = new System.Drawing.Point(145, 66);
-            this.End_Date_Label.Name = "End_Date_Label";
-            this.End_Date_Label.Size = new System.Drawing.Size(52, 13);
-            this.End_Date_Label.TabIndex = 4;
-            this.End_Date_Label.Text = "End Date";
-            // 
-            // Start_Date_TextBox
-            // 
-            this.Start_Date_TextBox.Location = new System.Drawing.Point(24, 82);
-            this.Start_Date_TextBox.Name = "Start_Date_TextBox";
-            this.Start_Date_TextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Start_Date_TextBox.Size = new System.Drawing.Size(105, 20);
-            this.Start_Date_TextBox.TabIndex = 3;
-            // 
-            // Start_Date_Label
-            // 
-            this.Start_Date_Label.AutoSize = true;
-            this.Start_Date_Label.Location = new System.Drawing.Point(21, 66);
-            this.Start_Date_Label.Name = "Start_Date_Label";
-            this.Start_Date_Label.Size = new System.Drawing.Size(55, 13);
-            this.Start_Date_Label.TabIndex = 2;
-            this.Start_Date_Label.Text = "Start Date";
-            // 
-            // Project_Name_TextBox
-            // 
-            this.Project_Name_TextBox.Location = new System.Drawing.Point(24, 43);
-            this.Project_Name_TextBox.Name = "Project_Name_TextBox";
-            this.Project_Name_TextBox.Size = new System.Drawing.Size(291, 20);
-            this.Project_Name_TextBox.TabIndex = 1;
-            // 
-            // Project_Name_Label
-            // 
-            this.Project_Name_Label.AutoSize = true;
-            this.Project_Name_Label.Location = new System.Drawing.Point(21, 27);
-            this.Project_Name_Label.Name = "Project_Name_Label";
-            this.Project_Name_Label.Size = new System.Drawing.Size(71, 13);
-            this.Project_Name_Label.TabIndex = 0;
-            this.Project_Name_Label.Text = "Project Name";
-            // 
-            // ProjectInfo
-            // 
-            this.ProjectInfo.Controls.Add(this.PushToJobPack_Button);
-            this.ProjectInfo.Controls.Add(this.Project_Po_TextBox);
-            this.ProjectInfo.Controls.Add(this.Job_Information_GroupBox);
-            this.ProjectInfo.Controls.Add(this.Project_Po_Label);
-            this.ProjectInfo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ProjectInfo.Location = new System.Drawing.Point(3, 16);
-            this.ProjectInfo.Name = "ProjectInfo";
-            this.ProjectInfo.Size = new System.Drawing.Size(359, 592);
-            this.ProjectInfo.TabIndex = 22;
-            this.ProjectInfo.TabStop = false;
             // 
             // Admin_Tab
             // 
@@ -2718,18 +2203,18 @@
             this.New_Employee_Name_Label.TabIndex = 0;
             this.New_Employee_Name_Label.Text = "Name of Employee";
             // 
-            // statusStrip1
+            // StatusBar
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.VersionLabel,
             this.StatusLabel,
             this.ProgressBar});
-            this.statusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.statusStrip1.Location = new System.Drawing.Point(0, 643);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1242, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
+            this.StatusBar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.StatusBar.Location = new System.Drawing.Point(0, 643);
+            this.StatusBar.Name = "StatusBar";
+            this.StatusBar.Size = new System.Drawing.Size(1242, 22);
+            this.StatusBar.TabIndex = 2;
+            this.StatusBar.Text = "statusStrip1";
             // 
             // VersionLabel
             // 
@@ -2751,15 +2236,177 @@
             this.ProgressBar.Size = new System.Drawing.Size(500, 16);
             this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
-            // button1
+            // Jobs_MyobSearch
             // 
-            this.button1.Location = new System.Drawing.Point(124, 321);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Download Docs";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.Jobs_MyobSearch.Location = new System.Drawing.Point(87, 58);
+            this.Jobs_MyobSearch.Name = "Jobs_MyobSearch";
+            this.Jobs_MyobSearch.Size = new System.Drawing.Size(75, 23);
+            this.Jobs_MyobSearch.TabIndex = 0;
+            this.Jobs_MyobSearch.Text = "Search";
+            this.Jobs_MyobSearch.UseVisualStyleBackColor = true;
+            this.Jobs_MyobSearch.Click += new System.EventHandler(this.Job_MyobSearch_Click);
+            // 
+            // Manual_Search_Project_Label
+            // 
+            this.Manual_Search_Project_Label.AutoSize = true;
+            this.Manual_Search_Project_Label.Location = new System.Drawing.Point(69, 16);
+            this.Manual_Search_Project_Label.Name = "Manual_Search_Project_Label";
+            this.Manual_Search_Project_Label.Size = new System.Drawing.Size(117, 13);
+            this.Manual_Search_Project_Label.TabIndex = 1;
+            this.Manual_Search_Project_Label.Text = "Search Project Number";
+            // 
+            // Jobs_ProjectNumber
+            // 
+            this.Jobs_ProjectNumber.Location = new System.Drawing.Point(70, 32);
+            this.Jobs_ProjectNumber.Name = "Jobs_ProjectNumber";
+            this.Jobs_ProjectNumber.Size = new System.Drawing.Size(116, 20);
+            this.Jobs_ProjectNumber.TabIndex = 2;
+            // 
+            // Manual_Search_GroupBox
+            // 
+            this.Manual_Search_GroupBox.Controls.Add(this.Jobs_ProjectNumber);
+            this.Manual_Search_GroupBox.Controls.Add(this.Manual_Search_Project_Label);
+            this.Manual_Search_GroupBox.Controls.Add(this.Jobs_MyobSearch);
+            this.Manual_Search_GroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Manual_Search_GroupBox.Location = new System.Drawing.Point(0, 0);
+            this.Manual_Search_GroupBox.Name = "Manual_Search_GroupBox";
+            this.Manual_Search_GroupBox.Size = new System.Drawing.Size(250, 86);
+            this.Manual_Search_GroupBox.TabIndex = 3;
+            this.Manual_Search_GroupBox.TabStop = false;
+            this.Manual_Search_GroupBox.Text = "Manual Search";
+            // 
+            // Jobs_SplitContainer
+            // 
+            this.Jobs_SplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Jobs_SplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.Jobs_SplitContainer.Location = new System.Drawing.Point(3, 3);
+            this.Jobs_SplitContainer.Name = "Jobs_SplitContainer";
+            // 
+            // Jobs_SplitContainer.Panel1
+            // 
+            this.Jobs_SplitContainer.Panel1.Controls.Add(this.groupBox3);
+            this.Jobs_SplitContainer.Panel1.Controls.Add(this.Manual_Search_GroupBox);
+            // 
+            // Jobs_SplitContainer.Panel2
+            // 
+            this.Jobs_SplitContainer.Panel2.Controls.Add(this.Jobs_Viewer);
+            this.Jobs_SplitContainer.Size = new System.Drawing.Size(1228, 611);
+            this.Jobs_SplitContainer.SplitterDistance = 250;
+            this.Jobs_SplitContainer.TabIndex = 4;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.Jobs_GenerateCover);
+            this.groupBox3.Controls.Add(this.Jobs_PoNo);
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.Jobs_Site);
+            this.groupBox3.Controls.Add(this.label29);
+            this.groupBox3.Controls.Add(this.Jobs_Client);
+            this.groupBox3.Controls.Add(this.label30);
+            this.groupBox3.Controls.Add(this.Jobs_JobName);
+            this.groupBox3.Controls.Add(this.label32);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.Location = new System.Drawing.Point(0, 86);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(250, 180);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Cover Page";
+            // 
+            // Jobs_GenerateCover
+            // 
+            this.Jobs_GenerateCover.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_GenerateCover.Location = new System.Drawing.Point(3, 148);
+            this.Jobs_GenerateCover.Name = "Jobs_GenerateCover";
+            this.Jobs_GenerateCover.Size = new System.Drawing.Size(244, 27);
+            this.Jobs_GenerateCover.TabIndex = 12;
+            this.Jobs_GenerateCover.Text = "Generate Cover Page and Checklist";
+            this.Jobs_GenerateCover.UseVisualStyleBackColor = true;
+            this.Jobs_GenerateCover.Click += new System.EventHandler(this.Jobs_GenerateCover_Click);
+            // 
+            // Jobs_PoNo
+            // 
+            this.Jobs_PoNo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_PoNo.Location = new System.Drawing.Point(3, 128);
+            this.Jobs_PoNo.Name = "Jobs_PoNo";
+            this.Jobs_PoNo.Size = new System.Drawing.Size(244, 20);
+            this.Jobs_PoNo.TabIndex = 11;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label27.Location = new System.Drawing.Point(3, 115);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(42, 13);
+            this.label27.TabIndex = 10;
+            this.label27.Text = "PO No.";
+            // 
+            // Jobs_Site
+            // 
+            this.Jobs_Site.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_Site.Location = new System.Drawing.Point(3, 95);
+            this.Jobs_Site.Name = "Jobs_Site";
+            this.Jobs_Site.Size = new System.Drawing.Size(244, 20);
+            this.Jobs_Site.TabIndex = 7;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label29.Location = new System.Drawing.Point(3, 82);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(25, 13);
+            this.label29.TabIndex = 6;
+            this.label29.Text = "Site";
+            // 
+            // Jobs_Client
+            // 
+            this.Jobs_Client.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_Client.Location = new System.Drawing.Point(3, 62);
+            this.Jobs_Client.Name = "Jobs_Client";
+            this.Jobs_Client.Size = new System.Drawing.Size(244, 20);
+            this.Jobs_Client.TabIndex = 5;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label30.Location = new System.Drawing.Point(3, 49);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(33, 13);
+            this.label30.TabIndex = 4;
+            this.label30.Text = "Client";
+            // 
+            // Jobs_JobName
+            // 
+            this.Jobs_JobName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_JobName.Location = new System.Drawing.Point(3, 29);
+            this.Jobs_JobName.Name = "Jobs_JobName";
+            this.Jobs_JobName.Size = new System.Drawing.Size(244, 20);
+            this.Jobs_JobName.TabIndex = 1;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label32.Location = new System.Drawing.Point(3, 16);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(80, 13);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "Job Description";
+            // 
+            // Jobs_Viewer
+            // 
+            this.Jobs_Viewer.AllowExternalDrop = true;
+            this.Jobs_Viewer.CreationProperties = null;
+            this.Jobs_Viewer.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.Jobs_Viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Jobs_Viewer.Location = new System.Drawing.Point(0, 0);
+            this.Jobs_Viewer.Name = "Jobs_Viewer";
+            this.Jobs_Viewer.Size = new System.Drawing.Size(974, 611);
+            this.Jobs_Viewer.TabIndex = 0;
+            this.Jobs_Viewer.ZoomFactor = 1D;
             // 
             // MainWindow
             // 
@@ -2767,17 +2414,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1242, 665);
             this.Controls.Add(this.Assignar_Tabs);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.StatusBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DG Engineering Automation";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
-            this.Manual_Search_GroupBox.ResumeLayout(false);
-            this.Manual_Search_GroupBox.PerformLayout();
-            this.Job_Information_GroupBox.ResumeLayout(false);
-            this.Job_Information_GroupBox.PerformLayout();
             this.DocViewGroup.ResumeLayout(false);
             this.SimProSync_Tab.ResumeLayout(false);
             this.ProjectGenerationBrowserGroupBox.ResumeLayout(false);
@@ -2834,12 +2477,6 @@
             this.CoverPageGroup.ResumeLayout(false);
             this.CoverPageGroup.PerformLayout();
             this.Jobs_Tab.ResumeLayout(false);
-            this.Project_Information_GroupBox.ResumeLayout(false);
-            this.Project_Information_GroupBox.PerformLayout();
-            this.JobsViewerGroup.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.JobsTabViewer)).EndInit();
-            this.ProjectInfo.ResumeLayout(false);
-            this.ProjectInfo.PerformLayout();
             this.Admin_Tab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AdminViewer)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -2856,60 +2493,35 @@
             this.Contract_Gen_Group.PerformLayout();
             this.Employee_Address_GroupBox.ResumeLayout(false);
             this.Employee_Address_GroupBox.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.StatusBar.ResumeLayout(false);
+            this.StatusBar.PerformLayout();
+            this.Manual_Search_GroupBox.ResumeLayout(false);
+            this.Manual_Search_GroupBox.PerformLayout();
+            this.Jobs_SplitContainer.Panel1.ResumeLayout(false);
+            this.Jobs_SplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Jobs_SplitContainer)).EndInit();
+            this.Jobs_SplitContainer.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Jobs_Viewer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox All_Projects_ComboBox;
-        private System.Windows.Forms.Label Search_All_Projects_Label;
-        private System.Windows.Forms.GroupBox Manual_Search_GroupBox;
-        private System.Windows.Forms.TextBox Manual_Search_TextBox;
-        private System.Windows.Forms.Button All_Projects_Button;
-        private System.Windows.Forms.Label Manual_Search_Project_Label;
-        private System.Windows.Forms.Button Job_Search_Button;
-        private System.Windows.Forms.Label Project_Po_Label;
-        private System.Windows.Forms.TextBox Job_Po_TextBox;
-        private System.Windows.Forms.Label Job_Po_Label;
-        private System.Windows.Forms.TextBox Job_End_TextBox;
-        private System.Windows.Forms.Label Job_End_Label;
-        private System.Windows.Forms.TextBox Job_Start_TextBox;
-        private System.Windows.Forms.Label Job_Start_Label;
-        private System.Windows.Forms.TextBox Project_External_ID_TextBox;
-        private System.Windows.Forms.Label External_ID_Label;
-        private System.Windows.Forms.TextBox Postcode_TextBox;
-        private System.Windows.Forms.Label Postcode_Label;
-        private System.Windows.Forms.TextBox Job_Location_TextBox;
-        private System.Windows.Forms.Label Job_Location_Label;
-        private System.Windows.Forms.TextBox Job_Description_TextBox;
-        private System.Windows.Forms.Label Job_Description_Label;
-        private System.Windows.Forms.TextBox Job_Number_TextBox;
-        private System.Windows.Forms.TextBox State_TextBox;
-        private System.Windows.Forms.Label Job_Number_Label;
-        private System.Windows.Forms.ComboBox Job_List_ComboBox;
-        private System.Windows.Forms.Label Job_List_Label;
-        private System.Windows.Forms.GroupBox Job_Information_GroupBox;
-        private System.Windows.Forms.Button Display_Job_Info_button;
-        private System.Windows.Forms.Label State_Label;
         private System.Windows.Forms.GroupBox DocViewGroup;
-        private System.Windows.Forms.Button PushToJobPack_Button;
-        private System.Windows.Forms.TextBox Project_Po_TextBox;
         private System.Windows.Forms.Label DocTitle_Label;
         private System.Windows.Forms.TextBox DocTitle_TextBox;
         private System.Windows.Forms.TabPage SimProSync_Tab;
         private System.Windows.Forms.GroupBox SimProQuoteGroup;
-        private System.Windows.Forms.TextBox ProjectAddress_TextBox;
         private System.Windows.Forms.Label ProjectAddress_Label;
         private System.Windows.Forms.Button PushAssignar_Button;
-        private System.Windows.Forms.TextBox ProjectNameTextBox;
+        private System.Windows.Forms.TextBox ProjectName;
         private System.Windows.Forms.Label ProjectNameLabel;
         private System.Windows.Forms.Label SimProClient;
-        private System.Windows.Forms.Button SimProQuoteSearch;
-        private System.Windows.Forms.TextBox SimProQuoteText;
+        private System.Windows.Forms.Button JobNumberSearch;
+        private System.Windows.Forms.TextBox ProjectJobNumber;
         private System.Windows.Forms.Label QuoteSearch_Label;
         private System.Windows.Forms.ComboBox VehicleComboBox;
         private System.Windows.Forms.Label VehicleLabel;
@@ -2926,22 +2538,6 @@
         private System.Windows.Forms.TabPage DocumentGen_Tab;
         private System.Windows.Forms.TabControl Assignar_Tabs;
         private System.Windows.Forms.TabPage Jobs_Tab;
-        private System.Windows.Forms.GroupBox Project_Information_GroupBox;
-        private System.Windows.Forms.CheckBox Project_Active_CheckBox;
-        private System.Windows.Forms.TextBox Suburb_TextBox;
-        private System.Windows.Forms.Label Suburb_Label;
-        private System.Windows.Forms.TextBox Site_Address_TextBox;
-        private System.Windows.Forms.Label Site_Address_Label;
-        private System.Windows.Forms.TextBox Client_Name_TextBox;
-        private System.Windows.Forms.Label Client_Label;
-        private System.Windows.Forms.TextBox End_Date_TextBox;
-        private System.Windows.Forms.Label End_Date_Label;
-        private System.Windows.Forms.TextBox Start_Date_TextBox;
-        private System.Windows.Forms.Label Start_Date_Label;
-        private System.Windows.Forms.TextBox Project_Name_TextBox;
-        private System.Windows.Forms.Label Project_Name_Label;
-        private System.Windows.Forms.GroupBox ProjectInfo;
-        private System.Windows.Forms.GroupBox JobsViewerGroup;
         private System.Windows.Forms.TabPage Schedule_Tab;
         private System.Windows.Forms.GroupBox Scheduler_GroupBox;
         private System.Windows.Forms.TabPage Clients_Tab;
@@ -2999,7 +2595,6 @@
         private System.Windows.Forms.TextBox New_Employee_Name_TextBox;
         private System.Windows.Forms.Label New_Employee_Name_Label;
         private System.Windows.Forms.GroupBox Document_Preview_Group;
-        private Microsoft.Web.WebView2.WinForms.WebView2 JobsTabViewer;
         private System.Windows.Forms.WebBrowser DocumentGeneratorViewer;
         private Microsoft.Web.WebView2.WinForms.WebView2 ScheduleViewer;
         private System.Windows.Forms.GroupBox ProjectGenerationBrowserGroupBox;
@@ -3015,7 +2610,7 @@
         private System.Windows.Forms.Label ProjectEndDateLabel;
         private System.Windows.Forms.DateTimePicker ProjectStartDate;
         private System.Windows.Forms.Label ProjectStartDateLabel;
-        private System.Windows.Forms.TextBox ProjectPOTextBox;
+        private System.Windows.Forms.TextBox ProjectPONumber;
         private System.Windows.Forms.Label ProjectPOLabel;
         private System.Windows.Forms.NumericUpDown TADSUD;
         private System.Windows.Forms.Label TADS;
@@ -3074,14 +2669,14 @@
         private System.Windows.Forms.ComboBox OutputTypeComboBox;
         private Microsoft.Web.WebView2.WinForms.WebView2 RecruitmentViewer;
         private System.Windows.Forms.Button PushToJobPackButton;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip StatusBar;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.ToolStripProgressBar ProgressBar;
         private System.Windows.Forms.ComboBox RepresentativeComboBox;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ToolStripStatusLabel VersionLabel;
-        private System.Windows.Forms.ComboBox SimProClient_TextBox;
-        private System.Windows.Forms.ComboBox ClientContact_ComboBox;
+        private System.Windows.Forms.ComboBox ProjectClient;
+        private System.Windows.Forms.ComboBox ClientContact;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TabPage Admin_Tab;
         private Microsoft.Web.WebView2.WinForms.WebView2 AdminViewer;
@@ -3107,6 +2702,23 @@
         private System.Windows.Forms.Button AdminProjButton;
         private System.Windows.Forms.TextBox AdminProjName;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox ProjectAddress;
+        private System.Windows.Forms.Button Address_upd_Button;
+        private System.Windows.Forms.SplitContainer Jobs_SplitContainer;
+        private System.Windows.Forms.GroupBox Manual_Search_GroupBox;
+        private System.Windows.Forms.TextBox Jobs_ProjectNumber;
+        private System.Windows.Forms.Label Manual_Search_Project_Label;
+        private System.Windows.Forms.Button Jobs_MyobSearch;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button Jobs_GenerateCover;
+        private System.Windows.Forms.TextBox Jobs_PoNo;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox Jobs_Site;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox Jobs_Client;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox Jobs_JobName;
+        private System.Windows.Forms.Label label32;
+        private Microsoft.Web.WebView2.WinForms.WebView2 Jobs_Viewer;
     }
 }

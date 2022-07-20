@@ -12,7 +12,8 @@ namespace DG_Engineering
         /// Creates an Open Windows Box for Selecting the Job Description.
         /// </summary>
         /// <returns></returns>
-        public static string JobDescriptionExtract()
+        // ReSharper disable once UnusedMethodReturnValue.Local
+        private static string JobDescriptionExtract()
         {
             // Create an instance of the Open File Dialog Box
             var openFileDialog1 = new OpenFileDialog
@@ -64,15 +65,15 @@ namespace DG_Engineering
                 for (var row = 1; row <= tb.Rows.Count; row++)
                 {
                     var cell = tb.Cell(row, 1);
-                    RetrievedText = cell.Range.Text;
-                    Console.WriteLine(RetrievedText);
+                    _retrievedText = cell.Range.Text;
+                    Console.WriteLine(_retrievedText);
                     // text now contains the content of the cell.
                 }
             }
 
             docs.Close();
             word.Quit();
-            return RetrievedText;
+            return _retrievedText;
         }
     }
 }

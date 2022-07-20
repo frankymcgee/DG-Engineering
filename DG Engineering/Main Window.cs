@@ -1,10 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Net.Mail;
 using System.Windows.Forms;
+using DG_Engineering.Framework.Global.Assignar;
+using DG_Engineering.Framework.Global.MYOB;
 using Microsoft.Web.WebView2.Core;
+using Newtonsoft.Json;
 using RestSharp;
+using Timer = System.Timers.Timer;
 
 namespace DG_Engineering
 {
@@ -18,90 +21,130 @@ namespace DG_Engineering
         }
 
         #endregion
+
         #region Main Window Load
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-            VersionLabel.Text = @"Version 1.2.017  |    ";
+            VersionLabel.Text = @"Version 1.2.022  |    ";
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
-            await JobsTabViewer.EnsureCoreWebView2Async(environment);
             await AdminViewer.EnsureCoreWebView2Async(environment);
             await ScheduleViewer.EnsureCoreWebView2Async(environment);
             await ProjectViewer.EnsureCoreWebView2Async(environment);
             await RecruitmentViewer.EnsureCoreWebView2Async(environment);
+            await Jobs_Viewer.EnsureCoreWebView2Async(environment);
             ScheduleViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/scheduler/timeline");
             ProgressBar_Compiler.Step = 25;
             Assignar_Tabs.TabPages.Remove(Clients_Tab);
             Assignar_Tabs.TabPages.Remove(Fieldworkers_Tab);
-            Assignar_Tabs.TabPages.Remove(Jobs_Tab);
             Assignar_Tabs.TabPages.Remove(DocumentGen_Tab);
-            DownloadAllProjects(Static.AssignarDashboardUrl + "projects/", Static.JwtToken);
             DownloadRoleDescriptions(Static.AssignarDashboardUrl + "tasks/", Static.JwtToken);
             DownloadClientList(Static.AssignarDashboardUrl + "clients/", Static.JwtToken);
-            RefreshMyob();
-            MyobConnect(Static.companyfileuri + "/" + Static.companyfileguid + "/Sale/Quote", Method.GET);
-            var timer = new System.Timers.Timer();
-            timer.Interval = 1200000;
+            var timer = new Timer
+            {
+                AutoReset = true,
+                Enabled = true,
+                Interval = 1200000,
+                Site = null,
+                SynchronizingObject = null
+            };
             timer.Elapsed += OnTimedEvent;
-            timer.AutoReset = true;
-            timer.Enabled = true;
         }
         private static void OnTimedEvent(object source, System.Timers.ElapsedEventArgs e)
         {
             RefreshMyob();
         }
         #endregion
+
         #region Modules
-        #region SimPro to Assignar
-        private void SimProQuoteSearch_Click(object sender, EventArgs e)
+            #region Project Creation
+        private void JobNumberSearch_Click(object sender, EventArgs e)
         {
-            //SimProSearch();
-            MyobSearch();
-        } 
+            MyobSearch(ProjectJobNumber.Text);
+        }
         private void PushAssignar_Button_Click(object sender, EventArgs e)
         {
-            if (ProjectPOTextBox.Text == @"MISSING PO NUMBER")
+            if (ProjectPONumber.Text == @"MISSING PO NUMBER")
             {
                 MessageBox.Show(@"PLEASE ADD PROJECT PO NUMBER",@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {
-                AssignarProjectPost();
-                SendEmail();
+                if (string.IsNullOrWhiteSpace(ProjectJobNumber.Text))
+                {
+                    var dialog = MessageBox.Show(@"There is no Job Number. Continue?", @"Exit",MessageBoxButtons.YesNo);
+                    switch (dialog)
+                    {
+                        case DialogResult.Yes:
+                            CompanyIdExtract(ProjectClient.Text);
+                            AssignarProjectPost();
+                            break;
+                        case DialogResult.No:
+                            break;
+                        case DialogResult.None:
+                            break;
+                        case DialogResult.OK:
+                            break;
+                        case DialogResult.Cancel:
+                            break;
+                        case DialogResult.Abort:
+                            break;
+                        case DialogResult.Retry:
+                            break;
+                        case DialogResult.Ignore:
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                }
+                else
+                {
+                    CompanyIdExtract(ProjectClient.Text);
+                    AssignarProjectPost();
+                }
             }
         }
-        private void DownloadDocButton_Click(object sender, EventArgs e)
+        private void Address_upd_Button_Click(object sender, EventArgs e)
         {
-            SimProDocDownload();
+            if (string.IsNullOrEmpty(ProjectClient.Text)) return;
+            var request =
+                MyobConnect(
+                        Static.Companyfileuri + "/" + Static.Companyfileguid +
+                        "/Contact/Customer?$filter=CompanyName eq \'" + ProjectClient.Text + "\'",
+                        Method.GET)
+                    .Content;
+            Console.WriteLine(request);
+            var result = JsonConvert.DeserializeObject<Customer.Root>(request);
+            ProjectAddress.Items.Clear();
+            foreach (var b in result.Items.SelectMany(a => a.Addresses))
+            {
+                ProjectAddress.Items.Add(b.Street + ", " + b.City + ", " + b.State + ", " + b.PostCode);
+            }
+            ClientContact.Items.Clear();
+            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text,Static.JwtToken,Method.GET,null);
+            var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
+            foreach (var a in contactsresult.Data)
+            {
+                ClientContact.Items.Add(a.FirstName + " " + a.LastName + " - " + a.JobTitle);
+            }
         }
-        #endregion
-        #region Jobs
         private void PushToJobPackButton_Click(object sender, EventArgs e)
         {
             PushToJobPack();
         }
-        private void Job_Search_Button_Click(object sender, EventArgs e)
+        #endregion
+
+            #region Jobs
+        private void Job_MyobSearch_Click(object sender, EventArgs e)
         {
-            DownloadProjectInformation(Static.AssignarDashboardUrl + "projects/" + Manual_Search_TextBox.Text,
-                Static.JwtToken);
+            MyobSearch(Jobs_ProjectNumber.Text);
         }
-        private void All_Projects_Button_Click(object sender, EventArgs e)
+        private void Jobs_GenerateCover_Click(object sender, EventArgs e)
         {
-            var project = All_Projects_ComboBox.Text.Split(Convert.ToChar("-"));
-            DownloadProjectInformation(Static.AssignarDashboardUrl + "projects/" + project[0],
-                Static.JwtToken);
-        }
-        private void PushToJobPack_Button_Click(object sender, EventArgs e)
-        {
-            PushDataToJobPackGenerator();
-        }
-        private void Display_Job_Info_button_Click(object sender, EventArgs e)
-        {
-            DownloadJobInformation(
-                Static.AssignarDashboardUrl + "orders/" + Job_List_ComboBox.Text.Split(Convert.ToChar("-"))[0],
-                Static.JwtToken);
+            JobCoverLetterChecklist();
         }
         #endregion
-        #region Administration
+
+            #region Administration
         private void AdminProjButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(AdminJobNumber.Text))
@@ -128,13 +171,17 @@ namespace DG_Engineering
             AdminDownloadJobInformation(Static.AssignarDashboardUrl + "orders/" + AdminJobNo.Text, Static.JwtToken);
         }
         #endregion
-        #region Schedule
+
+            #region Schedule
     #endregion
-        #region Clients
+
+            #region Clients
     #endregion
-        #region Fieldworkers
+
+            #region Fieldworkers
     #endregion
-        #region Job Pack Compiler
+
+            #region Job Pack Compiler
     private void GenerateCover_Button_Click(object sender, EventArgs e)
         {
             Cover_Letter_Format();
@@ -151,14 +198,15 @@ namespace DG_Engineering
             {
                 case @"GENERATE":
                     CombineJobPackFiles();
-                    Filestep = 0;
+                    _filestep = 0;
                     JobDocuments_ListBox.Items.Clear();
                     break;
             }
 
         }
         #endregion
-        #region Recruitment
+
+            #region Recruitment
         private void Generate_Contract_Button_Click(object sender, EventArgs e)
         {
             ProgressBar_Compiler.Value = 0;
@@ -178,7 +226,8 @@ namespace DG_Engineering
             ProgressBar_Compiler.Value = 100;
         }
         #endregion
-        #region Document Generator
+
+            #region Document Generator
         private void DocumentForComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(_documentref))
@@ -196,40 +245,17 @@ namespace DG_Engineering
         }
 
         #endregion
+
         #endregion
+
         #region Closing Form
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             GC.Collect();
         }
 
+
         #endregion
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //ConvertCsvFileToJsonObject("C:\\Users\\seann\\OneDrive - DG Engineering (1)\\Desktop\\test.csv");
-        }
-        public string ConvertCsvFileToJsonObject(string path) 
-        {
-            var lines = File.ReadAllLines(path);
-
-            var csv = lines.Select(line => line.Split(',')).ToList();
-
-            var properties = lines[0].Split(',');
-
-            var listObjResult = new List<Dictionary<string, string>>();
-
-            for (var i = 1; i < lines.Length; i++)
-            {
-                var objResult = new Dictionary<string, string>();
-                for (var j = 0; j < properties.Length; j++)
-                    objResult.Add(properties[j], csv[i][j]);
-
-                listObjResult.Add(objResult);
-            }
-            Console.WriteLine(JsonConvert.SerializeObject(listObjResult));
-            return JsonConvert.SerializeObject(listObjResult); 
-        }
     }
 }

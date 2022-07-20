@@ -2,7 +2,7 @@
 
 namespace DG_Engineering.Framework.Global
 {
-    internal class Levenshtein
+    internal static class Levenshtein
     {
         /// <summary>
         /// Compute the distance between two strings.

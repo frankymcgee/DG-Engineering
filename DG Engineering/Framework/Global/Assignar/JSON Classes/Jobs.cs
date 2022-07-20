@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace DG_Engineering.Framework.Global.Assignar
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class Jobs
     {
         // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
     public class Geolocation
     {
         [JsonProperty("type")]
+        // ReSharper disable once MemberHidesStaticFromOuterClass
         public string Type { get; set; }
 
         [JsonProperty("coordinates")]
@@ -19,6 +20,7 @@ namespace DG_Engineering.Framework.Global.Assignar
     public class Geolocation2
     {
         [JsonProperty("type")]
+        // ReSharper disable once MemberHidesStaticFromOuterClass
         public string Type { get; set; }
 
         [JsonProperty("coordinates")]
@@ -160,6 +162,7 @@ namespace DG_Engineering.Framework.Global.Assignar
     public class Root
     {
         [JsonProperty("status")]
+        // ReSharper disable once MemberHidesStaticFromOuterClass
         public int Status { get; set; }
 
         [JsonProperty("data")]

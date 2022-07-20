@@ -2,6 +2,7 @@
 
 namespace DG_Engineering.Framework.Global.MYOB
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class RefreshTokenJson
     {
         // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);

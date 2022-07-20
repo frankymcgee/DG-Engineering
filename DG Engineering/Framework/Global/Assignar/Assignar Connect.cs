@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using RestSharp;
 
 namespace DG_Engineering
@@ -42,29 +41,6 @@ namespace DG_Engineering
                 Console.WriteLine(response.Content);
                 return response.Content;
             }
-        }
-        /// <summary>
-        /// PUT Request for assignar
-        /// </summary>
-        /// <param name="url">URL of the file to be uploaded to</param>
-        /// <param name="body"></param>
-        /// <returns></returns>
-        private static void AssignarPut(string url, string body)
-        {
-            var pFrom = url.IndexOf("Content-Type=") + "Content-Type=".Length;
-            var pTo = url.IndexOf("&X-Amz-Algorithm");
-            var contenttype = url.Substring(pFrom, pTo - pFrom);
-            var fixedtype = System.Web.HttpUtility.UrlDecode(contenttype);
-            var bytes = File.ReadAllBytes(body);
-            var file = Convert.ToBase64String(bytes);
-            var client = new RestClient(url)
-            {
-                Timeout = -1
-            };
-            var request = new RestRequest(Method.PUT);
-            request.AddHeader("Content-Type", "\"" + fixedtype + "\"");
-            request.AddParameter("\"" + fixedtype + "\"", "\"" + file + "\"", ParameterType.RequestBody);
-            client.Execute(request);
         }
     }
 }

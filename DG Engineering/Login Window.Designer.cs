@@ -38,6 +38,7 @@
             this.Username_TextBox = new System.Windows.Forms.TextBox();
             this.Username_Label = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Debug_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,11 +139,21 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // Debug_Label
+            // 
+            this.Debug_Label.AutoSize = true;
+            this.Debug_Label.Location = new System.Drawing.Point(358, 543);
+            this.Debug_Label.Name = "Debug_Label";
+            this.Debug_Label.Size = new System.Drawing.Size(121, 13);
+            this.Debug_Label.TabIndex = 19;
+            this.Debug_Label.Text = "DEBUG MODE ACTIVE";
+            // 
             // LoginWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(491, 565);
+            this.Controls.Add(this.Debug_Label);
             this.Controls.Add(this.SaveLoginInfo);
             this.Controls.Add(this.ClientID_TextBox);
             this.Controls.Add(this.ResetPasswordLink);
@@ -174,6 +185,7 @@
         private System.Windows.Forms.TextBox Username_TextBox;
         private System.Windows.Forms.Label Username_Label;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label Debug_Label;
     }
 }
 
