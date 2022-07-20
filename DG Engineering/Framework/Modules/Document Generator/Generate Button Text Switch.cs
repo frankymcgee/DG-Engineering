@@ -16,12 +16,12 @@ namespace DG_Engineering
                     switch (DocumentForComboBox.Text)
                     {
                         case @"De Wet & Green Engineering PTY LTD":
-                            Picture = Path.Combine(Picturepath, @"DGE.png");
-                            Signature = Path.Combine(Signpath, @"Janko.png");
+                            _picture = Path.Combine(PicturePath, @"DGE.png");
+                            _signature = Path.Combine(SignPath, @"Janko.png");
                             break;
                         case @"Norwest Rigging & Scaffolding":
-                            Picture = Path.Combine(Picturepath, @"NRS.png");
-                            Signature = Path.Combine(Signpath, @"Jason.png");
+                            _picture = Path.Combine(PicturePath, @"NRS.png");
+                            _signature = Path.Combine(SignPath, @"Jason.png");
                             break;
                     }
 
@@ -37,12 +37,12 @@ namespace DG_Engineering
             switch (DocumentForComboBox.Text)
             {
                 case @"De Wet & Green Engineering PTY LTD":
-                    Picture = Path.Combine(Picturepath, @"DGE.png");
-                    Signature = Path.Combine(Signpath, @"Janko.png");
+                    _picture = Path.Combine(PicturePath, @"DGE.png");
+                    _signature = Path.Combine(SignPath, @"Janko.png");
                     break;
                 case @"Norwest Rigging & Scaffolding":
-                    Picture = Path.Combine(Picturepath, @"NRS.png");
-                    Signature = Path.Combine(Signpath, @"Jason.png");
+                    _picture = Path.Combine(PicturePath, @"NRS.png");
+                    _signature = Path.Combine(SignPath, @"Jason.png");
                     break;
             }
 

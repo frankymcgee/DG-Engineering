@@ -13,13 +13,13 @@
             {
                 case @"De Wet & Green Engineering PTY LTD":
                     result = @"DGE-";
-                    OfficerName = @"Janko De Wet";
-                    OfficerPosition = @"Managing Director";
+                    _officerName = @"Janko De Wet";
+                    _officerPosition = @"Managing Director";
                     break;
                 case @"Norwest Rigging & Scaffolding":
                     result = @"NRS-";
-                    OfficerName = @"Jason Matakatea";
-                    OfficerPosition = @"Managing Director";
+                    _officerName = @"Jason Matakatea";
+                    _officerPosition = @"Managing Director";
                     break;
             }
 

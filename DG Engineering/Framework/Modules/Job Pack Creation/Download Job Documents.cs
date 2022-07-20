@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using DG_Engineering.Framework.Global.Assignar;
+﻿using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
 using RestSharp;
 

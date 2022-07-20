@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using DG_Engineering.Framework.Global.Assignar;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
 
@@ -38,7 +37,7 @@ namespace DG_Engineering
             StatusLabel.Text = @"Saving Document";
             // Save the document...
             var filename = Path.GetTempPath() + JobPackNo_TextBox.Text + " Job Pack.pdf";
-            FileUploadName = JobPackNo_TextBox.Text + " Job Pack.pdf";
+            _fileUploadName = JobPackNo_TextBox.Text + " Job Pack.pdf";
             outputDocument.Save(filename);
             // ...and start a viewer.
             JobPackBrowser.Navigate(filename);

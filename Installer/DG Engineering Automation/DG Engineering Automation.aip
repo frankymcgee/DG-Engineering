@@ -65,10 +65,10 @@
     <ROW Property="ARPURLUPDATEINFO" Value="https://dgengineering.com.au"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="De Wet &amp; Green Engineering PTY LTD"/>
-    <ROW Property="ProductCode" Value="1033:{671D1F74-DA55-4C53-985D-FDB600F53B68} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{F0B8167D-3BE6-430B-A9B5-CA1B66BFCEDC} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="DG Engineering Automation"/>
-    <ROW Property="ProductVersion" Value="1.2.021"/>
+    <ROW Property="ProductVersion" Value="1.2.022"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{4593A287-7B98-4B2C-A561-12AFAF0F93AA}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>

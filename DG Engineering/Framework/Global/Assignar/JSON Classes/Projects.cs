@@ -4,8 +4,10 @@ using Newtonsoft.Json;
 
 namespace DG_Engineering.Framework.Global.Assignar
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class Projects
     {
+        
         // Root myDeserializedClass = JsonConvert.DeserializeObject<Project>(myJsonResponse); 
     public class AddressGeo
     {

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using DG_Engineering.Framework.Global.MYOB;
+﻿using DG_Engineering.Framework.Global.MYOB;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -8,7 +6,7 @@ namespace DG_Engineering
 {
     public partial class MainWindow
     {
-        public static void RefreshMyob()
+        private static void RefreshMyob()
         {
             var client = new RestClient("https://secure.myob.com/oauth2/v1/authorize/")
             {
@@ -19,15 +17,15 @@ namespace DG_Engineering
             request.AddParameter("client_id", Static.MyobClientId);
             request.AddParameter("client_secret", Static.MyobSecretKey);
             request.AddParameter("grant_type", "refresh_token");
-            request.AddParameter("refresh_token", Static.Refreshtoken);
+            request.AddParameter("refresh_token", Static.RefreshToken);
             var response = client.Execute(request);
             var accesstoken = JsonConvert.DeserializeObject<RefreshTokenJson.Root>(response.Content);
             Static.AccessToken = accesstoken?.AccessToken;
-            Static.Refreshtoken = accesstoken?.RefreshToken;
+            Static.RefreshToken = accesstoken?.RefreshToken;
             MyobRetrieveCompanyList();
         }
 
-        public static void MyobRetrieveCompanyList()
+        private static void MyobRetrieveCompanyList()
         {
             var client = new RestClient("https://api.myob.com/accountright")
             {
@@ -38,8 +36,7 @@ namespace DG_Engineering
             request.AddHeader("x-myobapi-version", "v2");
             request.AddHeader("Accept-Encoding", "gzip,deflate");
             request.AddHeader("Authorization", "Bearer " + Static.AccessToken);
-            var response = client.Execute(request);
-            Console.WriteLine(response.Content);
+            client.Execute(request);
         }
     }
 }

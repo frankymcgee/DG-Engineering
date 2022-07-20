@@ -36,9 +36,9 @@ namespace DG_Engineering
                                 ""active"": true,
                                 ""po_number"": " + ProjectPONumber.Text +
                             ",\n  \"id\": " + idnumber +
-                            ",\n  \"client_id\": " + CompanyId +
+                            ",\n  \"client_id\": " + _companyId +
                             ",\n  \"order_owner\": 41" +
-                            ",\n  \"project_id\": " + ProjectId +
+                            ",\n  \"project_id\": " + _projectId +
                             ",\n  \"job_number\": \"" + ProjectJobNumber.Text + "\"" + 
                             ",\n  \"po_number\": \"" + ProjectPONumber.Text + "\"" + 
                             ",\n  \"location\": \"" + ProjectAddress.Text + "\"" + 
@@ -59,9 +59,9 @@ namespace DG_Engineering
                                 ""active"": true,
                                 ""po_number"": " + ProjectPONumber.Text +
                             ",\n  \"id\": " + idnumber +
-                            ",\n  \"client_id\": " + CompanyId +
+                            ",\n  \"client_id\": " + _companyId +
                             ",\n  \"order_owner\": 186" +
-                            ",\n  \"project_id\": " + ProjectId +
+                            ",\n  \"project_id\": " + _projectId +
                             ",\n  \"job_number\": \"" + ProjectJobNumber.Text + "\"" + 
                             ",\n  \"po_number\": \"" + ProjectPONumber.Text + "\"" + 
                             ",\n  \"location\": \"" + ProjectAddress.Text + "\"" + 

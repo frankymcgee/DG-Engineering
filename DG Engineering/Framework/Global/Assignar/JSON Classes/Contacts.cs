@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 
 namespace DG_Engineering.Framework.Global.Assignar
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class Contacts
     {
         // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);

@@ -7,7 +7,7 @@ namespace DG_Engineering
     public partial class MainWindow
     {
         /// <summary>
-        /// Conbine Contract Files.
+        /// Combine Contract Files.
         /// </summary>
         private void CombineContractFiles()
         {

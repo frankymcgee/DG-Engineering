@@ -34,7 +34,7 @@ namespace DG_Engineering
                 if (clientlist == null) continue;
                 foreach (var b in clientlist.Data.Where(b => company == b.Name))
                 {
-                    CompanyId = b.Id;
+                    _companyId = b.Id;
                 }
             }
             ProgressBar.PerformStep();

@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 // ReSharper disable once CheckNamespace
 namespace DG_Engineering.Framework.Global.MYOB
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class Job
     {
        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);

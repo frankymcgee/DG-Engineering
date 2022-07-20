@@ -1,9 +1,4 @@
-﻿using System;
-using System.Net;
-using System.Windows.Forms;
-using DG_Engineering.Framework.Global.Assignar;
-using Newtonsoft.Json;
-using RestSharp;
+﻿using RestSharp;
 
 namespace DG_Engineering
 {
@@ -18,7 +13,7 @@ namespace DG_Engineering
         /// <param name="orderid">Order ID of the Project the Task is being assigned for.</param>
         /// <param name="taskid">Task ID from Assignar.</param>
         /// <param name="quantity">Number of required Labour.</param>
-        public void TaskCreation(string starttime, string endtime, int orderid, int taskid, decimal quantity)
+        private void TaskCreation(string starttime, string endtime, int orderid, int taskid, decimal quantity)
         {
             if (quantity > 0)
             {
@@ -26,7 +21,8 @@ namespace DG_Engineering
             }
 
         }
-        public void AssignarTaskPost(string starttime, string endtime, int orderid, int taskid, int quantity)
+
+        private void AssignarTaskPost(string starttime, string endtime, int orderid, int taskid, int quantity)
         {
             var restClient = new RestClient(Static.AssignarDashboardUrl + "orders/" + orderid + "/tasks")
             {

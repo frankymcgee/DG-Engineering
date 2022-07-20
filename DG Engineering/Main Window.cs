@@ -21,23 +21,22 @@ namespace DG_Engineering
         }
 
         #endregion
+
         #region Main Window Load
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-            VersionLabel.Text = @"Version 1.2.021  |    ";
+            VersionLabel.Text = @"Version 1.2.022  |    ";
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
-            await JobsTabViewer.EnsureCoreWebView2Async(environment);
             await AdminViewer.EnsureCoreWebView2Async(environment);
             await ScheduleViewer.EnsureCoreWebView2Async(environment);
             await ProjectViewer.EnsureCoreWebView2Async(environment);
             await RecruitmentViewer.EnsureCoreWebView2Async(environment);
+            await Jobs_Viewer.EnsureCoreWebView2Async(environment);
             ScheduleViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/scheduler/timeline");
             ProgressBar_Compiler.Step = 25;
             Assignar_Tabs.TabPages.Remove(Clients_Tab);
             Assignar_Tabs.TabPages.Remove(Fieldworkers_Tab);
-            Assignar_Tabs.TabPages.Remove(Jobs_Tab);
             Assignar_Tabs.TabPages.Remove(DocumentGen_Tab);
-            DownloadAllProjects(Static.AssignarDashboardUrl + "projects/", Static.JwtToken);
             DownloadRoleDescriptions(Static.AssignarDashboardUrl + "tasks/", Static.JwtToken);
             DownloadClientList(Static.AssignarDashboardUrl + "clients/", Static.JwtToken);
             var timer = new Timer
@@ -55,11 +54,12 @@ namespace DG_Engineering
             RefreshMyob();
         }
         #endregion
+
         #region Modules
-        #region Project Creation
+            #region Project Creation
         private void JobNumberSearch_Click(object sender, EventArgs e)
         {
-            MyobSearch();
+            MyobSearch(ProjectJobNumber.Text);
         }
         private void PushAssignar_Button_Click(object sender, EventArgs e)
         {
@@ -127,35 +127,24 @@ namespace DG_Engineering
                 ClientContact.Items.Add(a.FirstName + " " + a.LastName + " - " + a.JobTitle);
             }
         }
-        #endregion
-        #region Jobs
         private void PushToJobPackButton_Click(object sender, EventArgs e)
         {
             PushToJobPack();
         }
-        private void Job_Search_Button_Click(object sender, EventArgs e)
+        #endregion
+
+            #region Jobs
+        private void Job_MyobSearch_Click(object sender, EventArgs e)
         {
-            DownloadProjectInformation(Static.AssignarDashboardUrl + "projects/" + Manual_Search_TextBox.Text,
-                Static.JwtToken);
+            MyobSearch(Jobs_ProjectNumber.Text);
         }
-        private void All_Projects_Button_Click(object sender, EventArgs e)
+        private void Jobs_GenerateCover_Click(object sender, EventArgs e)
         {
-            var project = All_Projects_ComboBox.Text.Split(Convert.ToChar("-"));
-            DownloadProjectInformation(Static.AssignarDashboardUrl + "projects/" + project[0],
-                Static.JwtToken);
-        }
-        private void PushToJobPack_Button_Click(object sender, EventArgs e)
-        {
-            PushDataToJobPackGenerator();
-        }
-        private void Display_Job_Info_button_Click(object sender, EventArgs e)
-        {
-            DownloadJobInformation(
-                Static.AssignarDashboardUrl + "orders/" + Job_List_ComboBox.Text.Split(Convert.ToChar("-"))[0],
-                Static.JwtToken);
+            JobCoverLetterChecklist();
         }
         #endregion
-        #region Administration
+
+            #region Administration
         private void AdminProjButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(AdminJobNumber.Text))
@@ -182,13 +171,17 @@ namespace DG_Engineering
             AdminDownloadJobInformation(Static.AssignarDashboardUrl + "orders/" + AdminJobNo.Text, Static.JwtToken);
         }
         #endregion
-    #region Schedule
+
+            #region Schedule
     #endregion
-    #region Clients
+
+            #region Clients
     #endregion
-    #region Fieldworkers
+
+            #region Fieldworkers
     #endregion
-    #region Job Pack Compiler
+
+            #region Job Pack Compiler
     private void GenerateCover_Button_Click(object sender, EventArgs e)
         {
             Cover_Letter_Format();
@@ -205,14 +198,15 @@ namespace DG_Engineering
             {
                 case @"GENERATE":
                     CombineJobPackFiles();
-                    Filestep = 0;
+                    _filestep = 0;
                     JobDocuments_ListBox.Items.Clear();
                     break;
             }
 
         }
         #endregion
-        #region Recruitment
+
+            #region Recruitment
         private void Generate_Contract_Button_Click(object sender, EventArgs e)
         {
             ProgressBar_Compiler.Value = 0;
@@ -232,7 +226,8 @@ namespace DG_Engineering
             ProgressBar_Compiler.Value = 100;
         }
         #endregion
-        #region Document Generator
+
+            #region Document Generator
         private void DocumentForComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(_documentref))
@@ -250,13 +245,17 @@ namespace DG_Engineering
         }
 
         #endregion
+
         #endregion
+
         #region Closing Form
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             GC.Collect();
         }
 
+
         #endregion
+
     }
 }

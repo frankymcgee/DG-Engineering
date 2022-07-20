@@ -13,7 +13,7 @@ namespace DG_Engineering
         /// <summary>
         /// Generates Job Pack Cover Letters for Mob Packs.
         /// </summary>
-        public void Cover_Letter_Format()
+        private void Cover_Letter_Format()
         {
             StatusLabel.Visible = true;
             StatusLabel.Text = @"Creating Cover Letter";
@@ -49,7 +49,7 @@ namespace DG_Engineering
             var output = Path.Combine(Path.GetTempPath(), "Job Pack Generator\\");
             Directory.CreateDirectory(output);
             StatusLabel.Text = @"Exporting Cover Letter";
-            doc.ExportAsFixedFormat(output + +Filestep + ". Job Pack Cover.pdf",
+            doc.ExportAsFixedFormat(output + +_filestep + ". Job Pack Cover.pdf",
                 WdExportFormat.wdExportFormatPDF);
             doc.Close(false);
             word.Quit();
@@ -67,7 +67,7 @@ namespace DG_Engineering
             }
 
             StatusLabel.Visible = false;
-            JobDocuments_ListBox.Items.Add(Filestep + ". Job Pack Cover");
+            JobDocuments_ListBox.Items.Add(_filestep + ". Job Pack Cover");
             MessageBox.Show(@"Completed", @"Cover for Pack Completed");
         }
     }

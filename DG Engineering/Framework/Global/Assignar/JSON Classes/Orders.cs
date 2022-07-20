@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace DG_Engineering.Framework.Global.Assignar
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class OrderResp
     {
         public class DateCreated

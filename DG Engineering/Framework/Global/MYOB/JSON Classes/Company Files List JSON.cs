@@ -3,6 +3,7 @@
 // ReSharper disable once CheckNamespace
 namespace DG_Engineering.Framework.Global.MYOB
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class CompanyFiles
     {
         // Root myDeserializedClass = JsonConvert.DeserializeObject<List<Root>>(myJsonResponse);

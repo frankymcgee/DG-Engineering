@@ -25,12 +25,12 @@ namespace DG_Engineering
             {
                 using (var client = new WebClient())
                 {
-                    Filestep++;
+                    _filestep++;
                     var filetype = a.Attachment.Split(Convert.ToChar("."));
                     var output = Path.Combine(Path.GetTempPath(), "Job Pack Generator\\");
-                    client.DownloadFile(a.AttachmentUrl.Url, output + Filestep + "." + a.Label + "." + filetype.Last());
+                    client.DownloadFile(a.AttachmentUrl.Url, output + _filestep + "." + a.Label + "." + filetype.Last());
                     MessageBox.Show(@"Added", @"Document Added");
-                    JobDocuments_ListBox.Items.Add(Filestep + "." + a.Label);
+                    JobDocuments_ListBox.Items.Add(_filestep + "." + a.Label);
                 }
             }
         }

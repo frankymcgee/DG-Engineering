@@ -12,7 +12,7 @@ namespace DG_Engineering
         /// Will Grab all Inputs from the Document Generator Tab and will output a .pdf document for printing / emailing.
         /// </summary>
         /// <param name="document">The Path to the Document Template being created from.</param>
-        public void UpdateDoc(object document)
+        private void UpdateDoc(object document)
         {
             var prefix = CompanyPreFix();
             _wordApp = new Application();
@@ -34,7 +34,7 @@ namespace DG_Engineering
                 s.Delete();
                 //Logo Replacement
                 foreach (var ils in headerRanges.Select(r =>
-                             r.InlineShapes.AddPicture(Picture, ref _missing, ref _missing, ref _missing)))
+                             r.InlineShapes.AddPicture(_picture, ref _missing, ref _missing, ref _missing)))
                 {
                     ils.Height = headerheight;
                     ils.Width = headerwidth;
@@ -52,7 +52,7 @@ namespace DG_Engineering
                 s.Delete();
                 //Signature Replacement
                 foreach (var ils in signRanges.Select(r =>
-                             r.InlineShapes.AddPicture(Path.Combine(Signature), ref _missing, ref _missing,
+                             r.InlineShapes.AddPicture(Path.Combine(_signature), ref _missing, ref _missing,
                                  ref _missing)))
                 {
                     ils.Height = signheight;
@@ -99,11 +99,11 @@ namespace DG_Engineering
                             break;
                         case "officer_name":
                             myMergeField.Select();
-                            _wordApp.Selection.TypeText(OfficerName);
+                            _wordApp.Selection.TypeText(_officerName);
                             break;
                         case "officer_position":
                             myMergeField.Select();
-                            _wordApp.Selection.TypeText(OfficerPosition);
+                            _wordApp.Selection.TypeText(_officerPosition);
                             break;
                         case "auth_name":
                             myMergeField.Select();

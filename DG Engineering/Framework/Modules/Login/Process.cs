@@ -12,7 +12,7 @@ namespace DG_Engineering
         /// <summary>
         /// Initiates the Login Process in Assignar for Audit Logging.
         /// </summary>
-        public void Process()
+        private void Process()
         {
             if (!string.IsNullOrEmpty(Username_TextBox.Text) || !string.IsNullOrEmpty(Password_TextBox.Text))
             {

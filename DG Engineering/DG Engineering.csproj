@@ -183,14 +183,6 @@
     <Compile Include="Framework\Global\Release COM Object.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Global\SimPro\SimPro Connect.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Framework\Global\SimPro\JSON Classes\Document Base64.cs" />
-    <Compile Include="Framework\Global\SimPro\JSON Classes\Document Information.cs" />
-    <Compile Include="Framework\Global\SimPro\JSON Classes\Documents.cs" />
-    <Compile Include="Framework\Global\SimPro\JSON Classes\Jobs.cs" />
-    <Compile Include="Framework\Global\SimPro\JSON Classes\Quotes.cs" />
     <Compile Include="Framework\Global\Static.cs" />
     <Compile Include="Framework\Modules\Document Generator\Company Pre-Fix.cs">
       <SubType>Form</SubType>
@@ -204,40 +196,31 @@
     <Compile Include="Framework\Modules\Document Generator\Update Document.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Job Pack Compiler\Download Document.cs">
+    <Compile Include="Framework\Modules\Job Pack Creation\Download Document.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Job Pack Compiler\Download Job Documents.cs">
+    <Compile Include="Framework\Modules\Job Pack Creation\Download Job Documents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Job Pack Compiler\Generate Cover Letter.cs">
+    <Compile Include="Framework\Modules\Job Pack Creation\Generate Cover Letter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Job Pack Compiler\Generate Job Pack.cs">
+    <Compile Include="Framework\Modules\Job Pack Creation\Generate Job Pack.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Jobs\Display Job Information.cs">
+    <Compile Include="Framework\Modules\Administration\Display Job Information.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Jobs\Display Location.cs">
+    <Compile Include="Framework\Modules\Administration\Download Project Info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Jobs\Download All Jobs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Framework\Modules\Jobs\Download Project Info.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Framework\Modules\Jobs\Push to Job Pack Generator.cs">
+    <Compile Include="Framework\Modules\Jobs\Generate Job Cover.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Modules\Login\Process.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Modules\Login\Read Login File.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Framework\Modules\ON LOAD\Download All Projects.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Modules\ON LOAD\Download Client List.cs">
@@ -261,28 +244,22 @@
     <Compile Include="Framework\Modules\Recruitment\Job Description Extract.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\SimPro to Assignar\Company Extract.cs">
+    <Compile Include="Framework\Modules\Project Creation\Company Extract.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\SimPro to Assignar\Create Task in Job.cs">
+    <Compile Include="Framework\Modules\Project Creation\Create Task in Job.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\SimPro to Assignar\MYOB Search.cs">
+    <Compile Include="Framework\Modules\Project Creation\POST Job.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\SimPro to Assignar\SimPro Document Download.cs">
+    <Compile Include="Framework\Modules\Project Creation\POST Project.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\SimPro to Assignar\POST Job.cs">
+    <Compile Include="Framework\Modules\Project Creation\Push to Job Pack Creation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\SimPro to Assignar\POST Project.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Framework\Modules\SimPro to Assignar\Push to Job Pack Creation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Framework\Modules\SimPro to Assignar\Job Search.cs">
+    <Compile Include="Framework\Modules\Project Creation\Job Search.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login Window.cs">
@@ -342,11 +319,7 @@
   <ItemGroup>
     <None Include="Resources\Standard Logo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Framework\Modules\Clients\" />
-    <Folder Include="Framework\Modules\Fieldworkers\" />
-    <Folder Include="Framework\Modules\Schedule\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
       <Visible>False</Visible>

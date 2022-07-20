@@ -11,9 +11,10 @@ namespace DG_Engineering
     public partial class MainWindow
     {
         /// <summary>
-        /// Search MYOB for Order from Number.
+        /// Searches MYOB with the Supplied Project Number
         /// </summary>
-        private void MyobSearch()
+        /// <param name="projectnumber">Project Number to Search. Has the option to search if there is a ' in the Job Number.</param>
+        private void MyobSearch(string projectnumber)
         {
             StatusLabel.Visible = true;
             StatusLabel.Text = @"Searching";
@@ -24,17 +25,16 @@ namespace DG_Engineering
             {
                 file.Delete();
             }
-
             string fixedjobnumber;
             ProgressBar.PerformStep();
-            if (ProjectJobNumber.Text.Contains("'"))
+            if (projectnumber.Contains("'"))
             {
-                var index = ProjectJobNumber.Text.IndexOf("'", StringComparison.Ordinal);
-                fixedjobnumber = ProjectJobNumber.Text.Insert(index, "'");
+                var index = projectnumber.IndexOf("'", StringComparison.Ordinal);
+                fixedjobnumber = projectnumber.Insert(index, "'");
             }
             else
             {
-                fixedjobnumber = ProjectJobNumber.Text;
+                fixedjobnumber = projectnumber;
             }
             var jobsearch = MyobConnect(Static.Companyfileuri + "/"+ Static.Companyfileguid + "/GeneralLedger/Job?$filter=Number eq \'" + fixedjobnumber + "\'", Method.GET).Content;
             Console.WriteLine(jobsearch);
@@ -45,8 +45,11 @@ namespace DG_Engineering
                 ProjectName.Text = a.Name;
                 ProjectAddress.Text = a.Contact;
                 ProjectPONumber.Text = a.Manager.ToString();
-                
-                
+
+                Jobs_Client.Text = a.LinkedCustomer.Name;
+                Jobs_JobName.Text = a.Description;
+                Jobs_Site.Text = a.Contact;
+                Jobs_PoNo.Text = a.Manager.ToString();
             }
             CompanyIdExtract(ProjectClient.Text);
             ProgressBar.PerformStep();
@@ -58,10 +61,6 @@ namespace DG_Engineering
                 {
                     ClientContact.Items.Add(a.FirstName + " " + a.LastName + "-" + a.JobTitle);
                 }
-
-            //var documents = SimProConnect(SimProUrl + "jobs/" + ProjectJobNumber.Text + "/attachments/files/").Content;
-            //var result = JsonConvert.DeserializeObject<List<Framework.Global.SimPro.Documents.Root>>(documents);
-            //StatusLabel.Text = @"Found " + result?.Count + @" Documents.";
             StatusLabel.Visible = false;
             ProgressBar.Value = 0;
         }

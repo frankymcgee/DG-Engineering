@@ -33,7 +33,7 @@ namespace DG_Engineering
             var value =@"{" +
                         "\n  \"active\": true" +
                         ",\n  \"id\": " + ProjectJobNumber.Text + 
-                        ",\n  \"client_id\": " + CompanyId +
+                        ",\n  \"client_id\": " + _companyId +
                         ",\n  \"name\": \"" + ProjectName.Text + @" - Job Number: " + ProjectJobNumber.Text +  "\"" + 
                         ",\n  \"address\": \"" + ProjectAddress.Text + "\"" + 
                         ",\n  \"external_id\": \"" + ProjectJobNumber.Text +  "\"" + 
@@ -45,8 +45,8 @@ namespace DG_Engineering
             Console.WriteLine(restResponse.Content);
             if (restResponse.StatusCode == HttpStatusCode.OK)
             {
-                ProjectId = JsonConvert.DeserializeObject<ProjectPost.Root>(restResponse.Content).Data.Id;
-                ClientAddToProject(ProjectId.ToString());
+                _projectId = JsonConvert.DeserializeObject<ProjectPost.Root>(restResponse.Content).Data.Id;
+                ClientAddToProject(_projectId.ToString());
                 Thread.Sleep(500);
                 AssignarJobPost("Mobilisation |DS",ProjectJobNumber.Text + "001");
                 Thread.Sleep(500);
@@ -62,8 +62,7 @@ namespace DG_Engineering
                 Thread.Sleep(500);
                 //SimProDocDownload();
                 MessageBox.Show(@"Project Created in Assignar. Documents have been automatically uploaded. Please add any more as necessary", @"Success");
-                DownloadAllProjects(Static.AssignarDashboardUrl + "projects/", Static.JwtToken);
-                ProjectViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/projects/detail/" + ProjectId + "/edit");
+                ProjectViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/projects/detail/" + _projectId + "/edit");
                 StatusLabel.Visible = false;
                 ProgressBar.Value = 0;
             }
