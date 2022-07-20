@@ -36,7 +36,7 @@ namespace DG_Engineering
                         ",\n  \"client_id\": " + _companyId +
                         ",\n  \"name\": \"" + ProjectName.Text + @" - Job Number: " + ProjectJobNumber.Text +  "\"" + 
                         ",\n  \"address\": \"" + ProjectAddress.Text + "\"" + 
-                        ",\n  \"external_id\": \"" + ProjectJobNumber.Text +  "\"" + 
+                        ",\n  \"external_id\": \"" + ProjectPONumber.Text +  "\"" + 
                         ",\n  \"start_date\": " + ProjectStartDate.Text + 
                         ",\n  \"end_date\": " + ProjectEndDate.Text + 
                         "}";
