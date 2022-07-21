@@ -1,5 +1,7 @@
 ﻿using System.IO;
 using Microsoft.Office.Interop.Word;
+using PdfSharp.Pdf;
+using PdfSharp.Pdf.IO;
 using Application = Microsoft.Office.Interop.Word.Application;
 
 namespace DG_Engineering
@@ -44,8 +46,34 @@ namespace DG_Engineering
             doc.Close(false);
             word.Quit();
             ReleaseComObjects(doc, word);
+            // Open the output document
+            var outputDocument = new PdfDocument();
+            
+                // Open the document to import pages from it.
+                var inputDocument = PdfReader.Open(output + Jobs_ProjectNumber.Text + " Job Pack Cover.pdf", PdfDocumentOpenMode.Import);
+                // Iterate pages
+                var count = inputDocument.PageCount;
+                for (var idx = 0; idx < count; idx++)
+                {
+                    switch (idx >= 1)
+                    {
+                        case true:
+                        {
+                            // Get the page from the external document...
+                            var page = inputDocument.Pages[idx];
+                            // ...and add it to the output document.
+                            outputDocument.AddPage(page);
+                            break;
+                        }
+                    }
+                }
+                inputDocument.Close();
+                StatusLabel.Text = @"Saving Document";
+            // Save the document...
+            var filename = output + Jobs_ProjectNumber.Text + " Job Pack Cover.pdf";
+            outputDocument.Save(filename);
             // ...and start a viewer.
-            Jobs_Viewer.CoreWebView2.Navigate(output + Jobs_ProjectNumber.Text + " Job Pack Cover.pdf");
+            Jobs_Viewer.CoreWebView2.Navigate(filename);
             StatusLabel.Visible = false;
         }
     }

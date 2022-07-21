@@ -25,7 +25,8 @@ namespace DG_Engineering
         #region Main Window Load
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-            VersionLabel.Text = @"Version 1.2.022  |    ";
+
+            VersionLabel.Text = $@"Version: {Application.ProductVersion}" + @"  |    ";
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
             await AdminViewer.EnsureCoreWebView2Async(environment);
             await ScheduleViewer.EnsureCoreWebView2Async(environment);
