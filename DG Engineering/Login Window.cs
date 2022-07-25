@@ -13,7 +13,7 @@ namespace DG_Engineering
             InitializeComponent();
             if (!Debugger.IsAttached)
             {
-                Debug_Label.Visible = false;
+                DebugMode.Visible = false;
             }
             if (!Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)) +
                                   @"\DGE"))
@@ -26,7 +26,6 @@ namespace DG_Engineering
                 File.Create(Static.Cache).Close();
             }
             if (new FileInfo(Static.Cache).Length == 0) return;
-            ClientID_TextBox.Text = ReadFile(Static.Cache, 2);
             Username_TextBox.Text = ReadFile(Static.Cache, 3);
             Password_TextBox.Text = ReadFile(Static.Cache, 4);
         }

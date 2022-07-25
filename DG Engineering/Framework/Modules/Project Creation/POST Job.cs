@@ -87,29 +87,14 @@ namespace DG_Engineering
             string endtime = null;
             var id = JsonConvert.DeserializeObject<OrderResp.Root>(restResponse.Content).Data.Id;
             ClientAddToJob(id.ToString());
+            //Default Times
             switch (jobname)
             {
-                case "Mobilisation|DS":
-                    starttime = "06:00";
-                    endtime = "18:00";
-                    break;
-                case "Mobilisation|NS":
-                    starttime = "18:00";
-                    endtime = "06:00";
-                    break;
                 case "Work|DS":
                     starttime = "06:00";
                     endtime = "18:00";
                     break;
                 case "Work|NS":
-                    starttime = "18:00";
-                    endtime = "06:00";
-                    break;
-                case "DeMobilisation|DS":
-                    starttime = "06:00";
-                    endtime = "18:00";
-                    break;
-                case "DeMobilisation|NS":
                     starttime = "18:00";
                     endtime = "06:00";
                     break;
@@ -119,27 +104,12 @@ namespace DG_Engineering
             {
                 switch (jobname)
                 {
-                    case "Mobilisation|DS":
-                        starttime = "05:00";
-                        endtime = "18:00";
-                        break;
-                    case "Mobilisation|NS":
-                        starttime = "17:00";
-                        endtime = "06:00";
-                        break;
+                    
                     case "Work|DS":
                         starttime = "05:00";
                         endtime = "18:00";
                         break;
                     case "Work|NS":
-                        starttime = "17:00";
-                        endtime = "06:00";
-                        break;
-                    case "DeMobilisation|DS":
-                        starttime = "05:00";
-                        endtime = "18:00";
-                        break;
-                    case "DeMobilisation|NS":
                         starttime = "17:00";
                         endtime = "06:00";
                         break;
@@ -150,27 +120,12 @@ namespace DG_Engineering
             {
                 switch (jobname)
                 {
-                    case "Mobilisation|DS":
-                        starttime = "05:00";
-                        endtime = "18:00";
-                        break;
-                    case "Mobilisation|NS":
-                        starttime = "17:00";
-                        endtime = "06:00";
-                        break;
+                    
                     case "Work|DS":
                         starttime = "05:00";
                         endtime = "18:00";
                         break;
                     case "Work|NS":
-                        starttime = "17:00";
-                        endtime = "06:00";
-                        break;
-                    case "DeMobilisation|DS":
-                        starttime = "05:00";
-                        endtime = "18:00";
-                        break;
-                    case "DeMobilisation|NS":
                         starttime = "17:00";
                         endtime = "06:00";
                         break;
@@ -182,27 +137,11 @@ namespace DG_Engineering
             {
                 switch (jobname)
                 {
-                    case "Mobilisation|DS":
-                        starttime = "05:00";
-                        endtime = "18:00";
-                        break;
-                    case "Mobilisation|NS":
-                        starttime = "17:00";
-                        endtime = "06:00";
-                        break;
-                    case "Work|DS":
+                   case "Work|DS":
                         starttime = "05:00";
                         endtime = "18:00";
                         break;
                     case "Work|NS":
-                        starttime = "17:00";
-                        endtime = "06:00";
-                        break;
-                    case "DeMobilisation|DS":
-                        starttime = "05:00";
-                        endtime = "18:00";
-                        break;
-                    case "DeMobilisation|NS":
                         starttime = "17:00";
                         endtime = "06:00";
                         break;
@@ -213,27 +152,11 @@ namespace DG_Engineering
             {
                 switch (jobname)
                 {
-                    case "Mobilisation|DS":
-                        starttime = "05:00";
-                        endtime = "18:00";
-                        break;
-                    case "Mobilisation|NS":
-                        starttime = "17:00";
-                        endtime = "06:00";
-                        break;
                     case "Work|DS":
                         starttime = "05:00";
                         endtime = "18:00";
                         break;
                     case "Work|NS":
-                        starttime = "17:00";
-                        endtime = "06:00";
-                        break;
-                    case "DeMobilisation|DS":
-                        starttime = "05:00";
-                        endtime = "18:00";
-                        break;
-                    case "DeMobilisation|NS":
                         starttime = "17:00";
                         endtime = "06:00";
                         break;
@@ -273,7 +196,7 @@ namespace DG_Engineering
                 TaskCreation("18:00","06:00",id,16,HSEQNSUD.Value);
             }
         }
-        public void ClientAddToJob(string orderid)
+        private void ClientAddToJob(string orderid)
         {
             var contactId = 0;
             var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text, Static.JwtToken, Method.GET, null);

@@ -15,6 +15,7 @@ namespace DG_Engineering
             JobPackSite_TextBox.Text = ProjectAddress.Text;
             JobPackNo_TextBox.Text = ProjectJobNumber.Text;
             JobPackPO_TextBox.Text = ProjectPONumber.Text;
+            Jobs_ProjectNumber.Text = ProjectJobNumber.Text;
             const CalendarWeekRule weekRule = CalendarWeekRule.FirstFourDayWeek;
             const DayOfWeek firstWeekDay = DayOfWeek.Monday;
             var calendar = System.Threading.Thread.CurrentThread.CurrentCulture.Calendar;

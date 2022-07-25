@@ -13,15 +13,15 @@ namespace DG_Engineering
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.ThreadException += Application_ThreadException;
+            //Application.ThreadException += Application_ThreadException;
             Application.Run(new LoginWindow());
         }
 
-        private static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
-        {
-            MessageBox.Show(@"Error:" + @"
+//        private static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
+//        {
+//            MessageBox.Show(@"Error:" + @"
 
-" + e.Exception.Message,@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
-        }
+//" + e.Exception.Message,@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
+//        }
     }
 }

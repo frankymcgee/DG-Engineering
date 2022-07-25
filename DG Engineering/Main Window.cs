@@ -70,38 +70,8 @@ namespace DG_Engineering
             }
             else
             {
-                if (string.IsNullOrWhiteSpace(ProjectJobNumber.Text))
-                {
-                    var dialog = MessageBox.Show(@"There is no Job Number. Continue?", @"Exit",MessageBoxButtons.YesNo);
-                    switch (dialog)
-                    {
-                        case DialogResult.Yes:
-                            CompanyIdExtract(ProjectClient.Text);
-                            AssignarProjectPost();
-                            break;
-                        case DialogResult.No:
-                            break;
-                        case DialogResult.None:
-                            break;
-                        case DialogResult.OK:
-                            break;
-                        case DialogResult.Cancel:
-                            break;
-                        case DialogResult.Abort:
-                            break;
-                        case DialogResult.Retry:
-                            break;
-                        case DialogResult.Ignore:
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
-                }
-                else
-                {
-                    CompanyIdExtract(ProjectClient.Text);
-                    AssignarProjectPost();
-                }
+                CompanyIdExtract(ProjectClient.Text);
+                AssignarProjectPost();
             }
         }
         private void Address_upd_Button_Click(object sender, EventArgs e)
@@ -148,7 +118,7 @@ namespace DG_Engineering
             #region Administration
         private void AdminProjButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(AdminJobNumber.Text))
+            if (string.IsNullOrEmpty(AdminProjectNumber.Text))
             {
                 MessageBox.Show(@"PLEASE ADD PROJECT NUMBER", @"Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -160,9 +130,8 @@ namespace DG_Engineering
 
         private void AdminProjSearch()
         {
-            AdminProjectInformation(Static.AssignarDashboardUrl + "projects?external_id=" + AdminJobNumber.Text, Static.JwtToken);
+            AdminProjectInformation(Static.AssignarDashboardUrl + "projects/" + AdminProjectNumber.Text, Static.JwtToken);
             var url = @"https://dashboard.assignar.com.au/v1/#!/projects/detail/" + Static.AssignarInternalNumber + @"/edit";
-            Console.WriteLine(url);
             AdminViewer.CoreWebView2.Navigate(url);
         }
 

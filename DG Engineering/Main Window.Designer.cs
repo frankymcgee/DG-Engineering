@@ -154,6 +154,22 @@
             this.JobPackTitle_TextBox = new System.Windows.Forms.TextBox();
             this.JobPackTitle_Label = new System.Windows.Forms.Label();
             this.Jobs_Tab = new System.Windows.Forms.TabPage();
+            this.Jobs_SplitContainer = new System.Windows.Forms.SplitContainer();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Jobs_GenerateCover = new System.Windows.Forms.Button();
+            this.Jobs_PoNo = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.Jobs_Site = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.Jobs_Client = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.Jobs_JobName = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.Manual_Search_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Jobs_ProjectNumber = new System.Windows.Forms.TextBox();
+            this.Manual_Search_Project_Label = new System.Windows.Forms.Label();
+            this.Jobs_MyobSearch = new System.Windows.Forms.Button();
+            this.Jobs_Viewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.Admin_Tab = new System.Windows.Forms.TabPage();
             this.AdminViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -175,7 +191,7 @@
             this.AdminDispJobInfo = new System.Windows.Forms.Button();
             this.AdminJobComboBox = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.AdminJobNumber = new System.Windows.Forms.TextBox();
+            this.AdminProjectNumber = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.AdminProjButton = new System.Windows.Forms.Button();
             this.Schedule_Tab = new System.Windows.Forms.TabPage();
@@ -223,22 +239,6 @@
             this.VersionLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.Jobs_MyobSearch = new System.Windows.Forms.Button();
-            this.Manual_Search_Project_Label = new System.Windows.Forms.Label();
-            this.Jobs_ProjectNumber = new System.Windows.Forms.TextBox();
-            this.Manual_Search_GroupBox = new System.Windows.Forms.GroupBox();
-            this.Jobs_SplitContainer = new System.Windows.Forms.SplitContainer();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.Jobs_GenerateCover = new System.Windows.Forms.Button();
-            this.Jobs_PoNo = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.Jobs_Site = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.Jobs_Client = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.Jobs_JobName = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.Jobs_Viewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.DocViewGroup.SuspendLayout();
             this.SimProSync_Tab.SuspendLayout();
             this.ProjectGenerationBrowserGroupBox.SuspendLayout();
@@ -288,6 +288,13 @@
             this.JobDocuments_Group.SuspendLayout();
             this.CoverPageGroup.SuspendLayout();
             this.Jobs_Tab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Jobs_SplitContainer)).BeginInit();
+            this.Jobs_SplitContainer.Panel1.SuspendLayout();
+            this.Jobs_SplitContainer.Panel2.SuspendLayout();
+            this.Jobs_SplitContainer.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.Manual_Search_GroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Jobs_Viewer)).BeginInit();
             this.Admin_Tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdminViewer)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -301,13 +308,6 @@
             this.Contract_Gen_Group.SuspendLayout();
             this.Employee_Address_GroupBox.SuspendLayout();
             this.StatusBar.SuspendLayout();
-            this.Manual_Search_GroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Jobs_SplitContainer)).BeginInit();
-            this.Jobs_SplitContainer.Panel1.SuspendLayout();
-            this.Jobs_SplitContainer.Panel2.SuspendLayout();
-            this.Jobs_SplitContainer.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Jobs_Viewer)).BeginInit();
             this.SuspendLayout();
             // 
             // DocViewGroup
@@ -459,7 +459,7 @@
             // 
             this.PushToJobPackButton.BackColor = System.Drawing.Color.Transparent;
             this.PushToJobPackButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.PushToJobPackButton.Location = new System.Drawing.Point(7, 321);
+            this.PushToJobPackButton.Location = new System.Drawing.Point(129, 318);
             this.PushToJobPackButton.Name = "PushToJobPackButton";
             this.PushToJobPackButton.Size = new System.Drawing.Size(108, 23);
             this.PushToJobPackButton.TabIndex = 19;
@@ -1538,6 +1538,178 @@
             this.Jobs_Tab.Text = "Jobs";
             this.Jobs_Tab.UseVisualStyleBackColor = true;
             // 
+            // Jobs_SplitContainer
+            // 
+            this.Jobs_SplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Jobs_SplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.Jobs_SplitContainer.Location = new System.Drawing.Point(3, 3);
+            this.Jobs_SplitContainer.Name = "Jobs_SplitContainer";
+            // 
+            // Jobs_SplitContainer.Panel1
+            // 
+            this.Jobs_SplitContainer.Panel1.Controls.Add(this.groupBox3);
+            this.Jobs_SplitContainer.Panel1.Controls.Add(this.Manual_Search_GroupBox);
+            // 
+            // Jobs_SplitContainer.Panel2
+            // 
+            this.Jobs_SplitContainer.Panel2.Controls.Add(this.Jobs_Viewer);
+            this.Jobs_SplitContainer.Size = new System.Drawing.Size(1228, 611);
+            this.Jobs_SplitContainer.SplitterDistance = 250;
+            this.Jobs_SplitContainer.TabIndex = 4;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.Jobs_GenerateCover);
+            this.groupBox3.Controls.Add(this.Jobs_PoNo);
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.Jobs_Site);
+            this.groupBox3.Controls.Add(this.label29);
+            this.groupBox3.Controls.Add(this.Jobs_Client);
+            this.groupBox3.Controls.Add(this.label30);
+            this.groupBox3.Controls.Add(this.Jobs_JobName);
+            this.groupBox3.Controls.Add(this.label32);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.Location = new System.Drawing.Point(0, 86);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(250, 180);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Cover Page";
+            // 
+            // Jobs_GenerateCover
+            // 
+            this.Jobs_GenerateCover.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_GenerateCover.Location = new System.Drawing.Point(3, 148);
+            this.Jobs_GenerateCover.Name = "Jobs_GenerateCover";
+            this.Jobs_GenerateCover.Size = new System.Drawing.Size(244, 27);
+            this.Jobs_GenerateCover.TabIndex = 12;
+            this.Jobs_GenerateCover.Text = "Generate Cover Page and Checklist";
+            this.Jobs_GenerateCover.UseVisualStyleBackColor = true;
+            this.Jobs_GenerateCover.Click += new System.EventHandler(this.Jobs_GenerateCover_Click);
+            // 
+            // Jobs_PoNo
+            // 
+            this.Jobs_PoNo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_PoNo.Location = new System.Drawing.Point(3, 128);
+            this.Jobs_PoNo.Name = "Jobs_PoNo";
+            this.Jobs_PoNo.Size = new System.Drawing.Size(244, 20);
+            this.Jobs_PoNo.TabIndex = 11;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label27.Location = new System.Drawing.Point(3, 115);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(42, 13);
+            this.label27.TabIndex = 10;
+            this.label27.Text = "PO No.";
+            // 
+            // Jobs_Site
+            // 
+            this.Jobs_Site.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_Site.Location = new System.Drawing.Point(3, 95);
+            this.Jobs_Site.Name = "Jobs_Site";
+            this.Jobs_Site.Size = new System.Drawing.Size(244, 20);
+            this.Jobs_Site.TabIndex = 7;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label29.Location = new System.Drawing.Point(3, 82);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(25, 13);
+            this.label29.TabIndex = 6;
+            this.label29.Text = "Site";
+            // 
+            // Jobs_Client
+            // 
+            this.Jobs_Client.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_Client.Location = new System.Drawing.Point(3, 62);
+            this.Jobs_Client.Name = "Jobs_Client";
+            this.Jobs_Client.Size = new System.Drawing.Size(244, 20);
+            this.Jobs_Client.TabIndex = 5;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label30.Location = new System.Drawing.Point(3, 49);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(33, 13);
+            this.label30.TabIndex = 4;
+            this.label30.Text = "Client";
+            // 
+            // Jobs_JobName
+            // 
+            this.Jobs_JobName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_JobName.Location = new System.Drawing.Point(3, 29);
+            this.Jobs_JobName.Name = "Jobs_JobName";
+            this.Jobs_JobName.Size = new System.Drawing.Size(244, 20);
+            this.Jobs_JobName.TabIndex = 1;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label32.Location = new System.Drawing.Point(3, 16);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(80, 13);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "Job Description";
+            // 
+            // Manual_Search_GroupBox
+            // 
+            this.Manual_Search_GroupBox.Controls.Add(this.Jobs_ProjectNumber);
+            this.Manual_Search_GroupBox.Controls.Add(this.Manual_Search_Project_Label);
+            this.Manual_Search_GroupBox.Controls.Add(this.Jobs_MyobSearch);
+            this.Manual_Search_GroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Manual_Search_GroupBox.Location = new System.Drawing.Point(0, 0);
+            this.Manual_Search_GroupBox.Name = "Manual_Search_GroupBox";
+            this.Manual_Search_GroupBox.Size = new System.Drawing.Size(250, 86);
+            this.Manual_Search_GroupBox.TabIndex = 3;
+            this.Manual_Search_GroupBox.TabStop = false;
+            this.Manual_Search_GroupBox.Text = "Manual Search";
+            // 
+            // Jobs_ProjectNumber
+            // 
+            this.Jobs_ProjectNumber.Location = new System.Drawing.Point(70, 32);
+            this.Jobs_ProjectNumber.Name = "Jobs_ProjectNumber";
+            this.Jobs_ProjectNumber.Size = new System.Drawing.Size(116, 20);
+            this.Jobs_ProjectNumber.TabIndex = 2;
+            // 
+            // Manual_Search_Project_Label
+            // 
+            this.Manual_Search_Project_Label.AutoSize = true;
+            this.Manual_Search_Project_Label.Location = new System.Drawing.Point(69, 16);
+            this.Manual_Search_Project_Label.Name = "Manual_Search_Project_Label";
+            this.Manual_Search_Project_Label.Size = new System.Drawing.Size(117, 13);
+            this.Manual_Search_Project_Label.TabIndex = 1;
+            this.Manual_Search_Project_Label.Text = "Search Project Number";
+            // 
+            // Jobs_MyobSearch
+            // 
+            this.Jobs_MyobSearch.Location = new System.Drawing.Point(87, 58);
+            this.Jobs_MyobSearch.Name = "Jobs_MyobSearch";
+            this.Jobs_MyobSearch.Size = new System.Drawing.Size(75, 23);
+            this.Jobs_MyobSearch.TabIndex = 0;
+            this.Jobs_MyobSearch.Text = "Search";
+            this.Jobs_MyobSearch.UseVisualStyleBackColor = true;
+            this.Jobs_MyobSearch.Click += new System.EventHandler(this.Job_MyobSearch_Click);
+            // 
+            // Jobs_Viewer
+            // 
+            this.Jobs_Viewer.AllowExternalDrop = true;
+            this.Jobs_Viewer.CreationProperties = null;
+            this.Jobs_Viewer.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.Jobs_Viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Jobs_Viewer.Location = new System.Drawing.Point(0, 0);
+            this.Jobs_Viewer.Name = "Jobs_Viewer";
+            this.Jobs_Viewer.Size = new System.Drawing.Size(974, 611);
+            this.Jobs_Viewer.TabIndex = 0;
+            this.Jobs_Viewer.ZoomFactor = 1D;
+            // 
             // Admin_Tab
             // 
             this.Admin_Tab.Controls.Add(this.AdminViewer);
@@ -1566,7 +1738,7 @@
             this.groupBox1.Controls.Add(this.AdminProjName);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.AdminJobNumber);
+            this.groupBox1.Controls.Add(this.AdminProjectNumber);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.AdminProjButton);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -1740,12 +1912,12 @@
             this.label26.TabIndex = 3;
             this.label26.Text = "Select Job:";
             // 
-            // AdminJobNumber
+            // AdminProjectNumber
             // 
-            this.AdminJobNumber.Location = new System.Drawing.Point(120, 50);
-            this.AdminJobNumber.Name = "AdminJobNumber";
-            this.AdminJobNumber.Size = new System.Drawing.Size(100, 20);
-            this.AdminJobNumber.TabIndex = 2;
+            this.AdminProjectNumber.Location = new System.Drawing.Point(120, 50);
+            this.AdminProjectNumber.Name = "AdminProjectNumber";
+            this.AdminProjectNumber.Size = new System.Drawing.Size(100, 20);
+            this.AdminProjectNumber.TabIndex = 2;
             // 
             // label19
             // 
@@ -2216,178 +2388,6 @@
             this.ProgressBar.Size = new System.Drawing.Size(500, 16);
             this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
-            // Jobs_MyobSearch
-            // 
-            this.Jobs_MyobSearch.Location = new System.Drawing.Point(87, 58);
-            this.Jobs_MyobSearch.Name = "Jobs_MyobSearch";
-            this.Jobs_MyobSearch.Size = new System.Drawing.Size(75, 23);
-            this.Jobs_MyobSearch.TabIndex = 0;
-            this.Jobs_MyobSearch.Text = "Search";
-            this.Jobs_MyobSearch.UseVisualStyleBackColor = true;
-            this.Jobs_MyobSearch.Click += new System.EventHandler(this.Job_MyobSearch_Click);
-            // 
-            // Manual_Search_Project_Label
-            // 
-            this.Manual_Search_Project_Label.AutoSize = true;
-            this.Manual_Search_Project_Label.Location = new System.Drawing.Point(69, 16);
-            this.Manual_Search_Project_Label.Name = "Manual_Search_Project_Label";
-            this.Manual_Search_Project_Label.Size = new System.Drawing.Size(117, 13);
-            this.Manual_Search_Project_Label.TabIndex = 1;
-            this.Manual_Search_Project_Label.Text = "Search Project Number";
-            // 
-            // Jobs_ProjectNumber
-            // 
-            this.Jobs_ProjectNumber.Location = new System.Drawing.Point(70, 32);
-            this.Jobs_ProjectNumber.Name = "Jobs_ProjectNumber";
-            this.Jobs_ProjectNumber.Size = new System.Drawing.Size(116, 20);
-            this.Jobs_ProjectNumber.TabIndex = 2;
-            // 
-            // Manual_Search_GroupBox
-            // 
-            this.Manual_Search_GroupBox.Controls.Add(this.Jobs_ProjectNumber);
-            this.Manual_Search_GroupBox.Controls.Add(this.Manual_Search_Project_Label);
-            this.Manual_Search_GroupBox.Controls.Add(this.Jobs_MyobSearch);
-            this.Manual_Search_GroupBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Manual_Search_GroupBox.Location = new System.Drawing.Point(0, 0);
-            this.Manual_Search_GroupBox.Name = "Manual_Search_GroupBox";
-            this.Manual_Search_GroupBox.Size = new System.Drawing.Size(250, 86);
-            this.Manual_Search_GroupBox.TabIndex = 3;
-            this.Manual_Search_GroupBox.TabStop = false;
-            this.Manual_Search_GroupBox.Text = "Manual Search";
-            // 
-            // Jobs_SplitContainer
-            // 
-            this.Jobs_SplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Jobs_SplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.Jobs_SplitContainer.Location = new System.Drawing.Point(3, 3);
-            this.Jobs_SplitContainer.Name = "Jobs_SplitContainer";
-            // 
-            // Jobs_SplitContainer.Panel1
-            // 
-            this.Jobs_SplitContainer.Panel1.Controls.Add(this.groupBox3);
-            this.Jobs_SplitContainer.Panel1.Controls.Add(this.Manual_Search_GroupBox);
-            // 
-            // Jobs_SplitContainer.Panel2
-            // 
-            this.Jobs_SplitContainer.Panel2.Controls.Add(this.Jobs_Viewer);
-            this.Jobs_SplitContainer.Size = new System.Drawing.Size(1228, 611);
-            this.Jobs_SplitContainer.SplitterDistance = 250;
-            this.Jobs_SplitContainer.TabIndex = 4;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.Jobs_GenerateCover);
-            this.groupBox3.Controls.Add(this.Jobs_PoNo);
-            this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Controls.Add(this.Jobs_Site);
-            this.groupBox3.Controls.Add(this.label29);
-            this.groupBox3.Controls.Add(this.Jobs_Client);
-            this.groupBox3.Controls.Add(this.label30);
-            this.groupBox3.Controls.Add(this.Jobs_JobName);
-            this.groupBox3.Controls.Add(this.label32);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(0, 86);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(250, 180);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Cover Page";
-            // 
-            // Jobs_GenerateCover
-            // 
-            this.Jobs_GenerateCover.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Jobs_GenerateCover.Location = new System.Drawing.Point(3, 148);
-            this.Jobs_GenerateCover.Name = "Jobs_GenerateCover";
-            this.Jobs_GenerateCover.Size = new System.Drawing.Size(244, 27);
-            this.Jobs_GenerateCover.TabIndex = 12;
-            this.Jobs_GenerateCover.Text = "Generate Cover Page and Checklist";
-            this.Jobs_GenerateCover.UseVisualStyleBackColor = true;
-            this.Jobs_GenerateCover.Click += new System.EventHandler(this.Jobs_GenerateCover_Click);
-            // 
-            // Jobs_PoNo
-            // 
-            this.Jobs_PoNo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Jobs_PoNo.Location = new System.Drawing.Point(3, 128);
-            this.Jobs_PoNo.Name = "Jobs_PoNo";
-            this.Jobs_PoNo.Size = new System.Drawing.Size(244, 20);
-            this.Jobs_PoNo.TabIndex = 11;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label27.Location = new System.Drawing.Point(3, 115);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(42, 13);
-            this.label27.TabIndex = 10;
-            this.label27.Text = "PO No.";
-            // 
-            // Jobs_Site
-            // 
-            this.Jobs_Site.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Jobs_Site.Location = new System.Drawing.Point(3, 95);
-            this.Jobs_Site.Name = "Jobs_Site";
-            this.Jobs_Site.Size = new System.Drawing.Size(244, 20);
-            this.Jobs_Site.TabIndex = 7;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label29.Location = new System.Drawing.Point(3, 82);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(25, 13);
-            this.label29.TabIndex = 6;
-            this.label29.Text = "Site";
-            // 
-            // Jobs_Client
-            // 
-            this.Jobs_Client.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Jobs_Client.Location = new System.Drawing.Point(3, 62);
-            this.Jobs_Client.Name = "Jobs_Client";
-            this.Jobs_Client.Size = new System.Drawing.Size(244, 20);
-            this.Jobs_Client.TabIndex = 5;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label30.Location = new System.Drawing.Point(3, 49);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(33, 13);
-            this.label30.TabIndex = 4;
-            this.label30.Text = "Client";
-            // 
-            // Jobs_JobName
-            // 
-            this.Jobs_JobName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Jobs_JobName.Location = new System.Drawing.Point(3, 29);
-            this.Jobs_JobName.Name = "Jobs_JobName";
-            this.Jobs_JobName.Size = new System.Drawing.Size(244, 20);
-            this.Jobs_JobName.TabIndex = 1;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label32.Location = new System.Drawing.Point(3, 16);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(80, 13);
-            this.label32.TabIndex = 0;
-            this.label32.Text = "Job Description";
-            // 
-            // Jobs_Viewer
-            // 
-            this.Jobs_Viewer.AllowExternalDrop = true;
-            this.Jobs_Viewer.CreationProperties = null;
-            this.Jobs_Viewer.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.Jobs_Viewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Jobs_Viewer.Location = new System.Drawing.Point(0, 0);
-            this.Jobs_Viewer.Name = "Jobs_Viewer";
-            this.Jobs_Viewer.Size = new System.Drawing.Size(974, 611);
-            this.Jobs_Viewer.TabIndex = 0;
-            this.Jobs_Viewer.ZoomFactor = 1D;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2457,6 +2457,15 @@
             this.CoverPageGroup.ResumeLayout(false);
             this.CoverPageGroup.PerformLayout();
             this.Jobs_Tab.ResumeLayout(false);
+            this.Jobs_SplitContainer.Panel1.ResumeLayout(false);
+            this.Jobs_SplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Jobs_SplitContainer)).EndInit();
+            this.Jobs_SplitContainer.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.Manual_Search_GroupBox.ResumeLayout(false);
+            this.Manual_Search_GroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Jobs_Viewer)).EndInit();
             this.Admin_Tab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AdminViewer)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -2475,15 +2484,6 @@
             this.Employee_Address_GroupBox.PerformLayout();
             this.StatusBar.ResumeLayout(false);
             this.StatusBar.PerformLayout();
-            this.Manual_Search_GroupBox.ResumeLayout(false);
-            this.Manual_Search_GroupBox.PerformLayout();
-            this.Jobs_SplitContainer.Panel1.ResumeLayout(false);
-            this.Jobs_SplitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Jobs_SplitContainer)).EndInit();
-            this.Jobs_SplitContainer.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Jobs_Viewer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2677,7 +2677,7 @@
         private System.Windows.Forms.Button AdminDispJobInfo;
         private System.Windows.Forms.ComboBox AdminJobComboBox;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox AdminJobNumber;
+        private System.Windows.Forms.TextBox AdminProjectNumber;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button AdminProjButton;
         private System.Windows.Forms.TextBox AdminProjName;

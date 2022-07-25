@@ -42,7 +42,7 @@ namespace DG_Engineering
             var output = Path.Combine(Path.GetTempPath(), "Job Cover Letter\\");
             Directory.CreateDirectory(output);
             StatusLabel.Text = @"Exporting Job Cover Letter and Checklist. Please Wait";
-            doc.ExportAsFixedFormat(output + Jobs_ProjectNumber.Text + " Job Pack Cover.pdf", WdExportFormat.wdExportFormatPDF);
+            doc.ExportAsFixedFormat(output + Jobs_ProjectNumber.Text + " Job Cover Letter and Checklist.pdf", WdExportFormat.wdExportFormatPDF);
             doc.Close(false);
             word.Quit();
             ReleaseComObjects(doc, word);
@@ -50,7 +50,7 @@ namespace DG_Engineering
             var outputDocument = new PdfDocument();
             
                 // Open the document to import pages from it.
-                var inputDocument = PdfReader.Open(output + Jobs_ProjectNumber.Text + " Job Pack Cover.pdf", PdfDocumentOpenMode.Import);
+                var inputDocument = PdfReader.Open(output + Jobs_ProjectNumber.Text + " Job Cover Letter and Checklist.pdf", PdfDocumentOpenMode.Import);
                 // Iterate pages
                 var count = inputDocument.PageCount;
                 for (var idx = 0; idx < count; idx++)

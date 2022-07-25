@@ -47,19 +47,22 @@ namespace DG_Engineering
             {
                 _projectId = JsonConvert.DeserializeObject<ProjectPost.Root>(restResponse.Content).Data.Id;
                 ClientAddToProject(_projectId.ToString());
+
+                //Thread.Sleep(500);
+                //AssignarJobPost("Mobilisation |DS",ProjectJobNumber.Text + "001");
+                //Thread.Sleep(500);
+                //AssignarJobPost("Mobilisation |NS",ProjectJobNumber.Text + "002");
+
                 Thread.Sleep(500);
-                AssignarJobPost("Mobilisation |DS",ProjectJobNumber.Text + "001");
+                AssignarJobPost("Work |DS",ProjectJobNumber.Text + "001");
                 Thread.Sleep(500);
-                AssignarJobPost("Mobilisation |NS",ProjectJobNumber.Text + "002");
+                AssignarJobPost("Work |NS",ProjectJobNumber.Text + "002");
                 Thread.Sleep(500);
-                AssignarJobPost("Work |DS",ProjectJobNumber.Text + "003");
-                Thread.Sleep(500);
-                AssignarJobPost("Work |NS",ProjectJobNumber.Text + "004");
-                Thread.Sleep(500);
-                AssignarJobPost("DeMobilisation |DS",ProjectJobNumber.Text + "005");
-                Thread.Sleep(500);
-                AssignarJobPost("DeMobilisation |NS",ProjectJobNumber.Text + "006");
-                Thread.Sleep(500);
+
+                //AssignarJobPost("DeMobilisation |DS",ProjectJobNumber.Text + "005");
+                //Thread.Sleep(500);
+                //AssignarJobPost("DeMobilisation |NS",ProjectJobNumber.Text + "006");
+                //Thread.Sleep(500);
                 //SimProDocDownload();
                 MessageBox.Show(@"Project Created in Assignar. Complete the Details Tab, then add the Documents as Necessary under the Documents Tab.", @"Success");
                 ProjectViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/projects/detail/" + _projectId + "/edit");

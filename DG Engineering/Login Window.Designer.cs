@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginWindow));
             this.SaveLoginInfo = new System.Windows.Forms.CheckBox();
-            this.ClientID_TextBox = new System.Windows.Forms.TextBox();
             this.ResetPasswordLink = new System.Windows.Forms.LinkLabel();
             this.Login_Button = new System.Windows.Forms.Button();
             this.Password_TextBox = new System.Windows.Forms.TextBox();
@@ -38,7 +37,7 @@
             this.Username_TextBox = new System.Windows.Forms.TextBox();
             this.Username_Label = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Debug_Label = new System.Windows.Forms.Label();
+            this.DebugMode = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,18 +50,6 @@
             this.SaveLoginInfo.TabIndex = 18;
             this.SaveLoginInfo.Text = "Save My Login Details";
             this.SaveLoginInfo.UseVisualStyleBackColor = true;
-            // 
-            // ClientID_TextBox
-            // 
-            this.ClientID_TextBox.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientID_TextBox.Location = new System.Drawing.Point(75, 206);
-            this.ClientID_TextBox.Name = "ClientID_TextBox";
-            this.ClientID_TextBox.Size = new System.Drawing.Size(341, 33);
-            this.ClientID_TextBox.TabIndex = 9;
-            this.ClientID_TextBox.Text = "dgengineering";
-            this.ClientID_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ClientID_TextBox.Visible = false;
-            this.ClientID_TextBox.TextChanged += new System.EventHandler(this.ClientID_TextBox_TextChanged);
             // 
             // ResetPasswordLink
             // 
@@ -139,23 +126,23 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // Debug_Label
+            // DebugMode
             // 
-            this.Debug_Label.AutoSize = true;
-            this.Debug_Label.Location = new System.Drawing.Point(358, 543);
-            this.Debug_Label.Name = "Debug_Label";
-            this.Debug_Label.Size = new System.Drawing.Size(121, 13);
-            this.Debug_Label.TabIndex = 19;
-            this.Debug_Label.Text = "DEBUG MODE ACTIVE";
+            this.DebugMode.AutoSize = true;
+            this.DebugMode.Location = new System.Drawing.Point(380, 536);
+            this.DebugMode.Name = "DebugMode";
+            this.DebugMode.Size = new System.Drawing.Size(99, 17);
+            this.DebugMode.TabIndex = 19;
+            this.DebugMode.Text = "DEBUG MODE";
+            this.DebugMode.UseVisualStyleBackColor = true;
             // 
             // LoginWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(491, 565);
-            this.Controls.Add(this.Debug_Label);
+            this.Controls.Add(this.DebugMode);
             this.Controls.Add(this.SaveLoginInfo);
-            this.Controls.Add(this.ClientID_TextBox);
             this.Controls.Add(this.ResetPasswordLink);
             this.Controls.Add(this.Login_Button);
             this.Controls.Add(this.Password_TextBox);
@@ -177,7 +164,6 @@
         #endregion
 
         private System.Windows.Forms.CheckBox SaveLoginInfo;
-        private System.Windows.Forms.TextBox ClientID_TextBox;
         private System.Windows.Forms.LinkLabel ResetPasswordLink;
         private System.Windows.Forms.Button Login_Button;
         private System.Windows.Forms.TextBox Password_TextBox;
@@ -185,7 +171,7 @@
         private System.Windows.Forms.TextBox Username_TextBox;
         private System.Windows.Forms.Label Username_Label;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label Debug_Label;
+        private System.Windows.Forms.CheckBox DebugMode;
     }
 }
 

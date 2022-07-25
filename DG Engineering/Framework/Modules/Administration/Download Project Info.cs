@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
 using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
 using RestSharp;
@@ -15,20 +16,37 @@ namespace DG_Engineering
         private void AdminProjectInformation(string url, string token)
         {
             var jobsearch = AssignarConnect(url, token, Method.GET, null);
-            var project = JsonConvert.DeserializeObject<Projectinfo.Root>(jobsearch);
-            Debug.Assert(project != null, nameof(project) + " != null");
-            foreach (var a in project.Data)
+            if (jobsearch.Contains("something went wrong."))
             {
-                AdminProjName.Text = a.Name;
-                var order = a.Id.ToString();
-                Static.AssignarInternalNumber = order;
+                jobsearch = (AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + AdminProjectNumber.Text, token, Method.GET, null));
             }
+            Console.WriteLine(jobsearch);
+            var project = JsonConvert.DeserializeObject<Projectinfo.Root>(jobsearch);
+            AdminProjName.Text = project.Data.Name;
+            var order = project.Data.Id.ToString();
+            Static.AssignarInternalNumber = order;
             AdminJobNo.Clear();
             AdminJobDesc.Clear();
             AdminJobLoc.Clear();
             AdminJobStart.Clear();
             AdminJobEnd.Clear();
-            AdminJobPO.Clear();            
+            AdminJobPO.Clear();
+            AdminJobComboBox.Items.Clear();
+            ListJobs(order);
         }
+        /// <summary>
+        /// List all References under a Project in the Administration Tab.
+        /// </summary>
+        /// <param name="projectnumber">The Project Number being referenced.</param>
+       private void ListJobs(string projectnumber)
+       {
+           var request = AssignarConnect(Static.AssignarDashboardUrl + "orders?project_id=" + projectnumber,
+               Static.JwtToken, Method.GET, null);
+           var response = JsonConvert.DeserializeObject<Jobs.Root>(request);
+           foreach (var a in response.Data)
+           {
+               AdminJobComboBox.Items.Add(a.Id + " | " + a.JobDescription);
+           }
+       }
     }
 }

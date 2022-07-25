@@ -16,7 +16,7 @@ namespace DG_Engineering
         {
             if (!string.IsNullOrEmpty(Username_TextBox.Text) || !string.IsNullOrEmpty(Password_TextBox.Text))
             {
-                Static.ClientId = Debugger.IsAttached ? "dge_sandbox" : ClientID_TextBox.Text;
+                Static.ClientId = DebugMode.Checked ? "dge_sandbox" : "dgengineering";
                 Static.UserName = Username_TextBox.Text;
                 Static.Password = Password_TextBox.Text;
                 if (Request(Static.ClientId,Static.UserName,Static.Password) == HttpStatusCode.OK)
