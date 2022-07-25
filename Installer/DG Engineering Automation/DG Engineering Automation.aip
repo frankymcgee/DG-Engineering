@@ -272,12 +272,12 @@
     <ROW IniFile="ApplicationVersion" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="ApplicationVersion" Value="[ProductVersion]" Action="0" Component_="updater.exe"/>
     <ROW IniFile="CheckFrequency" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="CheckFrequency" Value="1" Action="0" Component_="updater.exe"/>
     <ROW IniFile="CompanyName" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="CompanyName" Value="[Manufacturer]" Action="0" Component_="updater.exe"/>
-    <ROW IniFile="DefaultCommandLine" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="DefaultCommandLine" Value="/silentall -nofreqcheck" Action="0" Component_="updater.exe"/>
+    <ROW IniFile="DefaultCommandLine" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="DefaultCommandLine" Value="/silent" Action="0" Component_="updater.exe"/>
     <ROW IniFile="DownloadsFolder" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="DownloadsFolder" Value="[CommonAppDataFolder][Manufacturer]\[ProductName]\updates\" Action="0" Component_="updater.exe"/>
-    <ROW IniFile="Flags" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="Flags" Value="NoDisableAutoCheck|PerMachine|ShowConfigOptionsButton" Action="0" Component_="updater.exe"/>
+    <ROW IniFile="Flags" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="Flags" Value="NoDisableAutoCheck|PerMachine|ShowConfigOptionsButton|GitHubUpdates" Action="0" Component_="updater.exe"/>
     <ROW IniFile="ID" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="ID" Value="[UpgradeCode]" Action="0" Component_="updater.exe"/>
     <ROW IniFile="SupportServiceName" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="SupportServiceName" Value="DG Engineering Updater" Action="0" Component_="updater.exe"/>
-    <ROW IniFile="URL" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="URL" Value="https://dgengineering.com.au/downloads/updates.txt" Action="0" Component_="updater.exe"/>
+    <ROW IniFile="URL" FileName="DGENGI~1.INI|DG Engineering Updater.ini" DirProperty="APPDIR" Section="General" Key="URL" Value="https://github.com/frankymcgee/DG-Engineering/blob/master/updates.txt" Action="0" Component_="updater.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
