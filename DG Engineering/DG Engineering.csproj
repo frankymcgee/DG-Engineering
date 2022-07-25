@@ -148,6 +148,7 @@
     </Compile>
     <Compile Include="Framework\Global\Assignar\JSON Classes\Contacts.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Admin Job Info.cs" />
+    <Compile Include="Framework\Global\Assignar\JSON Classes\Individual Project - old.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Project Document.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Project Search.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Orders.cs" />
@@ -265,6 +266,7 @@
     <Compile Include="Framework\Modules\Project Creation\Job Search.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Login Window.cs">
       <SubType>Form</SubType>
     </Compile>

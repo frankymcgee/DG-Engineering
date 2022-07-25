@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
 using RestSharp;
@@ -20,10 +19,24 @@ namespace DG_Engineering
             {
                 jobsearch = (AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + AdminProjectNumber.Text, token, Method.GET, null));
             }
-            Console.WriteLine(jobsearch);
-            var project = JsonConvert.DeserializeObject<Projectinfo.Root>(jobsearch);
-            AdminProjName.Text = project.Data.Name;
-            var order = project.Data.Id.ToString();
+            string order = null;
+            try
+            {
+                var project = JsonConvert.DeserializeObject<Projectinfo.Root>(jobsearch);
+                AdminProjName.Text = project.Data.Name;
+                order = project.Data.Id.ToString();
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception e)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                var projectold = JsonConvert.DeserializeObject<Projectinfoold.Root>(jobsearch);
+                foreach (var a in projectold.Data)
+                {
+                    AdminProjName.Text = a.Name;
+                    order = a.Id.ToString();
+                }
+            }
             Static.AssignarInternalNumber = order;
             AdminJobNo.Clear();
             AdminJobDesc.Clear();
