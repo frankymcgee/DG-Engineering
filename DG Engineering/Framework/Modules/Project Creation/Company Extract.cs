@@ -18,11 +18,13 @@ namespace DG_Engineering
             ProgressBar.PerformStep();
             var lstStringsToCheck = new List<string>();
             var assignarclients =
-                AssignarConnect(Static.AssignarDashboardUrl + "clients/", Static.JwtToken, Method.GET,null);
+                AssignarConnect(Static.AssignarDashboardUrl + "clients?active=true", Static.JwtToken, Method.GET,null);
             var clientlist = JsonConvert.DeserializeObject<Clients.Root>(assignarclients);
-            if (clientlist != null) lstStringsToCheck.AddRange(clientlist.Data.Select(a => a.Name));
-            var resultset = lstStringsToCheck.ToDictionary(stringtoTest => stringtoTest,
-                stringtoTest => Levenshtein.Compute(basestring, stringtoTest));
+            if (clientlist != null)
+            {
+                lstStringsToCheck.AddRange(clientlist.Data.Select(a => a.Name));
+            }
+            var resultset = lstStringsToCheck.ToDictionary(s => s, s => Levenshtein.Compute(basestring, s));
             //get the minimum number of modifications needed to arrive at the basestring
             var minimumModifications = resultset.Min(c => c.Value);
             //gives you a list with all strings that need a minimum of modifications to become the
