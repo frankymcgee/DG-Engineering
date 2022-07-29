@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Windows.Forms;
@@ -23,11 +22,8 @@ namespace DG_Engineering
             ProjectStartDate.CustomFormat = @"yyyy-MM-dd";
             ProjectEndDate.Format = DateTimePickerFormat.Custom;
             ProjectEndDate.CustomFormat = @"yyyy-MM-dd";
-            var restClient = new RestClient(Static.AssignarDashboardUrl + "projects")
-            {
-                Timeout = -1
-            };
-            var restRequest = new RestRequest(Method.POST);
+            var restClient = new RestClient(Static.AssignarDashboardUrl + "projects");
+            var restRequest = new RestRequest(Static.AssignarDashboardUrl + "projects",Method.POST);
             restRequest.AddHeader("Content-Type", "application/json");
             restRequest.AddHeader("Authorization", Static.JwtToken);
             var value =@"{" +
@@ -42,7 +38,6 @@ namespace DG_Engineering
                         "}";
             restRequest.AddParameter("application/json", value, ParameterType.RequestBody);
             var restResponse = restClient.Execute(restRequest);
-            Console.WriteLine(restResponse.Content);
             if (restResponse.StatusCode == HttpStatusCode.OK)
             {
                 _projectId = JsonConvert.DeserializeObject<ProjectPost.Root>(restResponse.Content).Data.Id;
@@ -79,10 +74,10 @@ namespace DG_Engineering
             }
         }
 
-        private void ClientAddToProject(string projectid)
+        private async void ClientAddToProject(string projectid)
         {
             var contactId = 0;
-            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text, Static.JwtToken, Method.GET, null);
+            var contactsquery =await AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text, Static.JwtToken, Method.GET, null);
             var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
             foreach (var a in contactsresult.Data.Where(a => a.FirstName == ClientContact.Text.Split(" ".ToCharArray())[0] && ClientContact.Text.Split(" ".ToCharArray())[1].Contains(a.LastName)))
             {

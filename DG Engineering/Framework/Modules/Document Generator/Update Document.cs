@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
+using Application = Microsoft.Office.Interop.Word.Application;
 
 namespace DG_Engineering
 {
@@ -149,7 +151,9 @@ namespace DG_Engineering
             catch (Exception e)
             {
                 DocumentGeneratorViewer.Navigate("about:blank");
-                Console.WriteLine(e);
+                MessageBox.Show(@"Error:" + @"
+
+" + e.Message,@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
     }

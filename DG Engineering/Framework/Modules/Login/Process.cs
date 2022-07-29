@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
@@ -12,24 +11,26 @@ namespace DG_Engineering
         /// <summary>
         /// Initiates the Login Process in Assignar for Audit Logging.
         /// </summary>
-        private void Process()
+        private async void Process()
         {
             if (!string.IsNullOrEmpty(Username_TextBox.Text) || !string.IsNullOrEmpty(Password_TextBox.Text))
             {
                 Static.ClientId = DebugMode.Checked ? "dge_sandbox" : "dgengineering";
                 Static.UserName = Username_TextBox.Text;
                 Static.Password = Password_TextBox.Text;
-                if (Request(Static.ClientId,Static.UserName,Static.Password) == HttpStatusCode.OK)
+                var code = await Request(Static.ClientId, Static.UserName, Static.Password);
+                if (code == HttpStatusCode.OK)
                 {
                     if (SaveLoginInfo.CheckState == CheckState.Checked)
                     {
                         if (new FileInfo(Static.Cache).Length == 0)
                             using (var sw = new StreamWriter(Static.Cache))
                             {
-                                sw.WriteLineAsync(
-                                    Static.ClientId + Environment.NewLine + Static.UserName + Environment.NewLine +
+                                await sw.WriteLineAsync(
+                                    Static.ClientId + Environment.NewLine + 
+                                    Static.UserName + Environment.NewLine +
                                     Static.Password);
-                                sw.Flush();
+                                await sw.FlushAsync();
                                 sw.Close();
                             }
                     }

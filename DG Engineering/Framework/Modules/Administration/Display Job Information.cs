@@ -13,9 +13,9 @@ namespace DG_Engineering
         /// </summary>
         /// <param name="url">URL to be searched. i.e., "Static.AssignarDashboardUrl + "orders/" + AdminJobNo.Text"</param>
         /// <param name="token">The Bearer Token Supplied</param>
-        private void AdminDownloadJobInformation(string url, string token)
+        private async void AdminDownloadJobInformation(string url, string token)
         {
-            var jobsearch = AssignarConnect(url, token, Method.GET, null);
+            var jobsearch =  await AssignarConnect(url, token, Method.GET, null);
             var jobinfo = JsonConvert.DeserializeObject<AdminJobInfo.Root>(jobsearch);
             AdminJobDesc.Text = jobinfo.Data.JobDescription;
             AdminJobLoc.Text = jobinfo.Data.Location;

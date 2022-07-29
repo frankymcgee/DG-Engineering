@@ -13,7 +13,7 @@ namespace DG_Engineering
         /// <summary>
         /// Generates Job Pack Cover Letters for Mob Packs.
         /// </summary>
-        private void Cover_Letter_Format()
+        private async void Cover_Letter_Format()
         {
             StatusLabel.Visible = true;
             StatusLabel.Text = @"Creating Cover Letter";
@@ -56,7 +56,7 @@ namespace DG_Engineering
             ReleaseComObjects(doc, word);
             StatusLabel.Text = @"Searching for available Documents";
             // Find all documents in Project
-            var projectidsearch = AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + JobPackNo_TextBox.Text, Static.JwtToken, Method.GET,null);
+            var projectidsearch = await AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + JobPackNo_TextBox.Text, Static.JwtToken, Method.GET,null);
             var projectnumberresult = JsonConvert.DeserializeObject<ProjectSearch.Root>(projectidsearch);
             StatusLabel.Text = @"Found " + projectnumberresult.Count + @" Documents.";
             foreach (var a in projectnumberresult.Data)

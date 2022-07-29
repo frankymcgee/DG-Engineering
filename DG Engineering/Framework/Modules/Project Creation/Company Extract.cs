@@ -13,12 +13,12 @@ namespace DG_Engineering
         /// Excracts Company Names from Assignar
         /// </summary>
         /// <param name="basestring">Company Name Being Referenced to</param>
-        private void CompanyIdExtract(string basestring)
+        private async void CompanyIdExtract(string basestring)
         {
             ProgressBar.PerformStep();
             var lstStringsToCheck = new List<string>();
             var assignarclients =
-                AssignarConnect(Static.AssignarDashboardUrl + "clients?active=true", Static.JwtToken, Method.GET,null);
+                await AssignarConnect(Static.AssignarDashboardUrl + "clients?active=true", Static.JwtToken, Method.GET,null);
             var clientlist = JsonConvert.DeserializeObject<Clients.Root>(assignarclients);
             if (clientlist != null)
             {

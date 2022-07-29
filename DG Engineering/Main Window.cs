@@ -57,10 +57,11 @@ namespace DG_Engineering
         #endregion
 
         #region Modules
+
             #region Project Creation
-        private void JobNumberSearch_Click(object sender, EventArgs e)
+        private async void JobNumberSearch_Click(object sender, EventArgs e)
         {
-            MyobSearch(ProjectJobNumber.Text);
+            await MyobSearch(ProjectJobNumber.Text);
         }
         private void PushAssignar_Button_Click(object sender, EventArgs e)
         {
@@ -74,7 +75,7 @@ namespace DG_Engineering
                 AssignarProjectPost();
             }
         }
-        private void Address_upd_Button_Click(object sender, EventArgs e)
+        private async void Address_upd_Button_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(ProjectClient.Text)) return;
             var request =
@@ -83,7 +84,6 @@ namespace DG_Engineering
                         "/Contact/Customer?$filter=CompanyName eq \'" + ProjectClient.Text + "\'",
                         Method.GET)
                     .Content;
-            Console.WriteLine(request);
             var result = JsonConvert.DeserializeObject<Customer.Root>(request);
             ProjectAddress.Items.Clear();
             foreach (var b in result.Items.SelectMany(a => a.Addresses))
@@ -91,7 +91,7 @@ namespace DG_Engineering
                 ProjectAddress.Items.Add(b.Street + ", " + b.City + ", " + b.State + ", " + b.PostCode);
             }
             ClientContact.Items.Clear();
-            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text,Static.JwtToken,Method.GET,null);
+            var contactsquery = await AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text,Static.JwtToken,Method.GET,null);
             var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
             foreach (var a in contactsresult.Data)
             {
@@ -105,9 +105,9 @@ namespace DG_Engineering
         #endregion
 
             #region Jobs
-        private void Job_MyobSearch_Click(object sender, EventArgs e)
+        private async void Job_MyobSearch_Click(object sender, EventArgs e)
         {
-            MyobSearch(Jobs_ProjectNumber.Text);
+            await MyobSearch(Jobs_ProjectNumber.Text);
         }
         private void Jobs_GenerateCover_Click(object sender, EventArgs e)
         {
@@ -226,6 +226,5 @@ namespace DG_Engineering
 
 
         #endregion
-
     }
 }

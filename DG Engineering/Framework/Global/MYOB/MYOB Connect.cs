@@ -5,15 +5,12 @@ namespace DG_Engineering
 {
     public partial class MainWindow
     {
-        private static IRestResponse MyobConnect(string url, Method method)
+        private static RestResponse MyobConnect(string url, Method method)
         {
             while (true)
             {
-                var client = new RestClient(url)
-                {
-                    Timeout = -1
-                };
-                var request = new RestRequest(method);
+                var client = new RestClient(url);
+                var request = new RestRequest(url,method);
                 request.AddHeader("x-myobapi-key", Static.MyobClientId);
                 request.AddHeader("x-myobapi-version", "v2");
                 request.AddHeader("Accept-Encoding", "gzip,deflate");
@@ -24,7 +21,7 @@ namespace DG_Engineering
                 }
                 else
                 {
-                    return client.Execute(request);
+                    return (RestResponse) client.Execute(request);
                 }
             }
         }

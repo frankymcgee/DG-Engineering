@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using Application = Microsoft.Office.Interop.Word.Application;
@@ -66,7 +65,6 @@ namespace DG_Engineering
                 {
                     var cell = tb.Cell(row, 1);
                     _retrievedText = cell.Range.Text;
-                    Console.WriteLine(_retrievedText);
                     // text now contains the content of the cell.
                 }
             }
