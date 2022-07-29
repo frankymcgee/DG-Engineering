@@ -26,7 +26,10 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>https://github.com/frankymcgee/DG-Engineering/blob/master/Installer/DG%2520Engineering%2520Automation/DG%2520Engineering%2520Updater-SetupFiles/updates.txt/</UpdateUrl>
-    <ApplicationRevision>26</ApplicationRevision>
+    <ProductName>DG Engineering Automation</ProductName>
+    <PublisherName>Webwire</PublisherName>
+    <SuiteName>DG engineering</SuiteName>
+    <ApplicationRevision>30</ApplicationRevision>
     <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

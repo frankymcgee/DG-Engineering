@@ -31,6 +31,7 @@ namespace DG_Engineering
         //      Minor Version
         //      Build Number
         //      Revision
+
         public const string Version = "1.2.0.026";
     }
     public partial class MainWindow
@@ -68,4 +69,5 @@ namespace DG_Engineering
         // ReSharper disable once NotAccessedField.Local
         private string _fileUploadName;
     }
+
 }

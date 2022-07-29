@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Timers;
 using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar;
@@ -26,8 +27,16 @@ namespace DG_Engineering
         #region Main Window Load
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-
-            VersionLabel.Text = $@"Version: {Application.ProductVersion}" + @"  |    ";
+            Version version;
+            try
+            {
+                version =  System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
+            }
+            catch(Exception)
+            {
+                version = Assembly.GetExecutingAssembly().GetName().Version;
+            }
+            VersionLabel.Text = @"Version: " + version + @"  |    ";
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
             await AdminViewer.EnsureCoreWebView2Async(environment);
             await ScheduleViewer.EnsureCoreWebView2Async(environment);
@@ -69,7 +78,7 @@ namespace DG_Engineering
             }
         }
 
-        private static void OnTimedEvent(object source, System.Timers.ElapsedEventArgs e)
+        private static void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             RefreshMyob();
         }
