@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
 
@@ -25,6 +26,8 @@ namespace DG_Engineering
             var url = MYOBAccessViewer.Source.ToString();
             if (!url.Contains("authenticated")) return;
             Static.UrlCoded = url.Split('=')[1];
+            Thread.Sleep(2000);
+            this.Close();
         }
     }
 }

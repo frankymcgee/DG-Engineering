@@ -62,7 +62,6 @@ namespace DG_Engineering
                     ClientContact.Items.Add(a.FirstName + " " + a.LastName + "-" + a.JobTitle);
                 }
             StatusLabel.Visible = false;
-            ProgressBar.Value = 0;
         }
     }
 }

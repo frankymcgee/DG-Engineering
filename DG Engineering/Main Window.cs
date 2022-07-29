@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Timers;
 using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar;
 using DG_Engineering.Framework.Global.MYOB;
@@ -49,7 +50,25 @@ namespace DG_Engineering
                 SynchronizingObject = null
             };
             timer.Elapsed += OnTimedEvent;
+            var progressbar = new Timer
+            {
+                AutoReset = true,
+                Enabled = true,
+                Interval = 2000,
+                Site = null,
+                SynchronizingObject = null
+            };
+            progressbar.Elapsed += ProgressbarOnElapsed;
         }
+
+        private void ProgressbarOnElapsed(object sender, ElapsedEventArgs e)
+        {
+            if (ProgressBar.ProgressBar.Value > 0)
+            {
+                ProgressBar.ProgressBar.Value = 0;
+            }
+        }
+
         private static void OnTimedEvent(object source, System.Timers.ElapsedEventArgs e)
         {
             RefreshMyob();
