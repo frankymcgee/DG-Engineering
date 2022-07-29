@@ -9,11 +9,11 @@ namespace DG_Engineering
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.ThreadException += Application_ThreadException;
+            Application.ThreadException += Application_ThreadException;
             Application.Run(new LoginWindow());
       }
 

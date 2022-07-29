@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using DG_Engineering.Framework.Global.Assignar;
 using DG_Engineering.Framework.Global.MYOB;
 using Newtonsoft.Json;
@@ -14,7 +15,7 @@ namespace DG_Engineering
         /// Searches MYOB with the Supplied Project Number
         /// </summary>
         /// <param name="projectnumber">Project Number to Search. Has the option to search if there is a ' in the Job Number.</param>
-        private void MyobSearch(string projectnumber)
+        private async Task MyobSearch(string projectnumber)
         {
             StatusLabel.Visible = true;
             StatusLabel.Text = @"Searching";
@@ -37,7 +38,6 @@ namespace DG_Engineering
                 fixedjobnumber = projectnumber;
             }
             var jobsearch = MyobConnect(Static.Companyfileuri + "/"+ Static.Companyfileguid + "/GeneralLedger/Job?$filter=Number eq \'" + fixedjobnumber + "\'", Method.GET).Content;
-            Console.WriteLine(jobsearch);
             var jobsearchresult = JsonConvert.DeserializeObject<Job.Root>(jobsearch);
             foreach (var a in jobsearchresult.Items)
             {
@@ -54,7 +54,7 @@ namespace DG_Engineering
             CompanyIdExtract(ProjectClient.Text);
             ProgressBar.PerformStep();
             ClientContact.Items.Clear();
-            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text,Static.JwtToken,Method.GET,null);
+            var contactsquery = await AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text,Static.JwtToken,Method.GET,null);
             var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
             if (contactsresult?.Data != null)
                 foreach (var a in contactsresult.Data)

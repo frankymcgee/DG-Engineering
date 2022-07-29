@@ -13,9 +13,9 @@ namespace DG_Engineering
         /// </summary>
         /// <param name="url">LoginForm.AssignarDashboardUrl + "tasks/"</param>
         /// <param name="token">LoginForm.JwtToken</param>
-        private void DownloadRoleDescriptions(string url, string token)
+        private async void DownloadRoleDescriptions(string url, string token)
         {
-            var tasksearch = AssignarConnect(url, token, Method.GET,null);
+            var tasksearch = await AssignarConnect(url, token, Method.GET,null);
             var tasks = JsonConvert.DeserializeObject<Roles.Root>(tasksearch);
             if (tasks == null) return;
             var sortList = (from a in tasks.Data where a.Active select a.Name).ToList();

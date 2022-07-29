@@ -12,12 +12,12 @@ namespace DG_Engineering
         /// </summary>
         /// <param name="url">The URL of Assignar i.e., https://api.assignar.com.au/v2/projects and the Project Number.</param>
         /// <param name="token">The JWT retrieved for the Auth API.</param>
-        private void AdminProjectInformation(string url, string token)
+        private async void AdminProjectInformation(string url, string token)
         {
-            var jobsearch = AssignarConnect(url, token, Method.GET, null);
+            var jobsearch = await AssignarConnect(url, token, Method.GET, null);
             if (jobsearch.Contains("something went wrong."))
             {
-                jobsearch = (AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + AdminProjectNumber.Text, token, Method.GET, null));
+                jobsearch = ( await AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + AdminProjectNumber.Text, token, Method.GET, null));
             }
             string order = null;
             try
@@ -51,9 +51,9 @@ namespace DG_Engineering
         /// List all References under a Project in the Administration Tab.
         /// </summary>
         /// <param name="projectnumber">The Project Number being referenced.</param>
-       private void ListJobs(string projectnumber)
+       private async void ListJobs(string projectnumber)
        {
-           var request = AssignarConnect(Static.AssignarDashboardUrl + "orders?project_id=" + projectnumber,
+           var request = await AssignarConnect(Static.AssignarDashboardUrl + "orders?project_id=" + projectnumber,
                Static.JwtToken, Method.GET, null);
            var response = JsonConvert.DeserializeObject<Jobs.Root>(request);
            foreach (var a in response.Data)

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Threading.Tasks;
 using RestSharp;
 
 namespace DG_Engineering
@@ -13,7 +13,7 @@ namespace DG_Engineering
         /// <param name="method">Method.GET</param>
         /// <param name="body">If POST, must not be null</param>
         /// <returns>Content of the Request.</returns>
-        private static string AssignarConnect(string url, string jwtToken, Method method, string body)
+        private static async Task<string> AssignarConnect(string url, string jwtToken, Method method, string body)
         {
             if (method != Method.POST)
             {
@@ -24,7 +24,7 @@ namespace DG_Engineering
                 var request = new RestRequest(method);
                 request.AddHeader("Content-Type", "application/json");
                 request.AddHeader("Authorization", "Bearer " + jwtToken);
-                var response = client.Execute(request);
+                var response = await client.ExecuteAsync(request);
                 return response.Content;
             }
             else
@@ -37,8 +37,7 @@ namespace DG_Engineering
                 request.AddHeader("Content-Type", "application/json");
                 request.AddHeader("Authorization", "Bearer " + jwtToken);
                 request.AddParameter("application/json", body,  ParameterType.RequestBody);
-                var response = client.Execute(request);
-                Console.WriteLine(response.Content);
+                var response = await client.ExecuteAsync(request);
                 return response.Content;
             }
         }

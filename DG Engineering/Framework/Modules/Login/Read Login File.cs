@@ -1,5 +1,5 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
+using System.Windows.Forms;
 
 namespace DG_Engineering
 {
@@ -29,11 +29,10 @@ namespace DG_Engineering
             }
             catch (IOException e)
             {
-                Console.WriteLine(@"There was an error reading the file: ");
-                Console.WriteLine(e.Message);
-            }
+                MessageBox.Show(@"There was an error reading the file:" + @"
 
-            Console.ReadLine();
+" + e.Message,@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
             return null;
         }
     }

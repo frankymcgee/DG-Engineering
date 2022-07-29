@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows.Forms;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
 
@@ -38,7 +39,9 @@ namespace DG_Engineering
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e);
+                    MessageBox.Show(@"Error:" + @"
+
+" + e.Message,@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
             }
 

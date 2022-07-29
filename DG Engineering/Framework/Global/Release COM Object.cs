@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 
 namespace DG_Engineering
@@ -22,7 +23,9 @@ namespace DG_Engineering
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                MessageBox.Show(@"Error:" + @"
+
+" + e.Message,@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             finally
             {

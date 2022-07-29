@@ -67,7 +67,9 @@ namespace DG_Engineering
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                MessageBox.Show(@"Error:" + @"
+
+" + e.Message,@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
     }

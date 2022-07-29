@@ -22,11 +22,8 @@ namespace DG_Engineering
             ProjectStartDate.CustomFormat = @"yyyy-MM-dd";
 	        ProjectEndDate.Format = DateTimePickerFormat.Custom;
             ProjectEndDate.CustomFormat = @"yyyy-MM-dd";
-	        var restClient = new RestClient(Static.AssignarDashboardUrl + "orders")
-	        {
-		        Timeout = -1
-	        };
-	        var restRequest = new RestRequest(Method.POST);
+            var restClient = new RestClient(Static.AssignarDashboardUrl + "orders");
+            var restRequest = new RestRequest(Static.AssignarDashboardUrl + "orders", Method.POST);
 	        restRequest.AddHeader("Content-Type", "application/json");
 	        restRequest.AddHeader("Authorization", Static.JwtToken);
             string value;
@@ -196,10 +193,10 @@ namespace DG_Engineering
                 TaskCreation("18:00","06:00",id,16,HSEQNSUD.Value);
             }
         }
-        private void ClientAddToJob(string orderid)
+        private async void ClientAddToJob(string orderid)
         {
             var contactId = 0;
-            var contactsquery = AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text, Static.JwtToken, Method.GET, null);
+            var contactsquery = await AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text, Static.JwtToken, Method.POST, null);
             var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
             if (contactsresult != null)
                 foreach (var a in contactsresult.Data.Where(a =>
@@ -210,7 +207,7 @@ namespace DG_Engineering
                 }
 
             var body = "{\n \"order_id\":" + orderid + ",\n  \"contact_id\":" + contactId + "\n}";
-            AssignarConnect(Static.AssignarDashboardUrl + "orders/" + orderid + "/contacts", Static.JwtToken, Method.POST, body);
+            await AssignarConnect(Static.AssignarDashboardUrl + "orders/" + orderid + "/contacts", Static.JwtToken, Method.POST, body);
         }
     }
 }
