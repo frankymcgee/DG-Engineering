@@ -388,6 +388,9 @@
     <Content Include="Framework\updates.txt" />
     <Content Include="Icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClickOnce\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
