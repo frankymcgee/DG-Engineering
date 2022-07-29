@@ -14,10 +14,10 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
     <PublishUrl>C:\Users\seann\DG Engineering\DG Engineering HUB - Human Resources\2. Automation\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -25,11 +25,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>https://github.com/frankymcgee/DG-Engineering/blob/master/Installer/DG%2520Engineering%2520Automation/DG%2520Engineering%2520Updater-SetupFiles/updates.txt/</UpdateUrl>
+    <InstallUrl>https://raw.github.com/frankymcgee/DG-Engineering/tree/publishing/clickonce/</InstallUrl>
+    <UpdateUrl>https://github.com/frankymcgee/DG-Engineering/tree/master/Installer/DG%2520Engineering%2520Automation/</UpdateUrl>
     <ProductName>DG Engineering Automation</ProductName>
     <PublisherName>Webwire</PublisherName>
     <SuiteName>DG engineering</SuiteName>
-    <ApplicationRevision>30</ApplicationRevision>
+    <ApplicationRevision>33</ApplicationRevision>
     <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
