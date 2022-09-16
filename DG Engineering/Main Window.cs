@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -35,8 +37,18 @@ namespace DG_Engineering
             catch(Exception)
             {
                 version = Assembly.GetExecutingAssembly().GetName().Version;
+            } 
+            switch (Debugger.IsAttached)
+            {
+                case false:
+                    CreateFromGanttButton.Visible = false;
+                    break;
+                case true:
+                    WipeCleanButton.Visible = true;
+                    break;
             }
-            VersionLabel.Text = @"Version: " + version + @"  |    ";
+
+            VersionLabel.Text = @"Version: " + version + @"  |    Connected to: " + Static.ClientId + @"  |    ";
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
             await AdminViewer.EnsureCoreWebView2Async(environment);
             await ScheduleViewer.EnsureCoreWebView2Async(environment);
@@ -54,7 +66,7 @@ namespace DG_Engineering
             {
                 AutoReset = true,
                 Enabled = true,
-                Interval = 1200000,
+                Interval = 3600000,
                 Site = null,
                 SynchronizingObject = null
             };
@@ -72,7 +84,7 @@ namespace DG_Engineering
 
         private void ProgressbarOnElapsed(object sender, ElapsedEventArgs e)
         {
-            if (ProgressBar.ProgressBar.Value > 0)
+            if (ProgressBar.ProgressBar != null && ProgressBar.ProgressBar.Value > 0)
             {
                 ProgressBar.ProgressBar.Value = 0;
             }
@@ -114,21 +126,62 @@ namespace DG_Engineering
                     .Content;
             var result = JsonConvert.DeserializeObject<Customer.Root>(request);
             ProjectAddress.Items.Clear();
-            foreach (var b in result.Items.SelectMany(a => a.Addresses))
-            {
-                ProjectAddress.Items.Add(b.Street + ", " + b.City + ", " + b.State + ", " + b.PostCode);
-            }
+            if (result != null)
+                foreach (var b in result.Items.SelectMany(a => a.Addresses))
+                {
+                    ProjectAddress.Items.Add(b.Street + ", " + b.City + ", " + b.State + ", " + b.PostCode);
+                }
+
             ClientContact.Items.Clear();
             var contactsquery = await AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text,Static.JwtToken,Method.GET,null);
             var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
-            foreach (var a in contactsresult.Data)
-            {
-                ClientContact.Items.Add(a.FirstName + " " + a.LastName + " - " + a.JobTitle);
-            }
+            if (contactsresult != null)
+                foreach (var a in contactsresult.Data)
+                {
+                    ClientContact.Items.Add(a.FirstName + " " + a.LastName + " - " + a.JobTitle);
+                }
         }
         private void PushToJobPackButton_Click(object sender, EventArgs e)
         {
             PushToJobPack();
+        }
+
+        private void CreateFromGanttButton_Click(object sender, EventArgs e)
+        {
+            if (ProjectPONumber.Text == @"MISSING PO NUMBER")
+            {
+                MessageBox.Show(@"PLEASE ADD PROJECT PO NUMBER",@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            else
+            {
+                var openFileDialog1 = new OpenFileDialog
+                {
+                    Site = null,
+                    Tag = null,
+                    AddExtension = false,
+                    CheckPathExists = false,
+                    DefaultExt = null,
+                    DereferenceLinks = false,
+                    FileName = null,
+                    Filter = @"Project File (.mpp)|*.mpp|All files (*.*)|*.*",
+                    FilterIndex = 1,
+                    InitialDirectory = null,
+                    RestoreDirectory = false,
+                    ShowHelp = false,
+                    SupportMultiDottedExtensions = false,
+                    Title = null,
+                    ValidateNames = false,
+                    AutoUpgradeEnabled = false,
+                    CheckFileExists = false,
+                    Multiselect = false,
+                    ReadOnlyChecked = false,
+                    ShowReadOnly = false
+                };
+                // Call the ShowDialog method to show the dialog box.
+                openFileDialog1.ShowDialog();
+                CompanyIdExtract(ProjectClient.Text);
+                AssignarProjectPostfromGantt(openFileDialog1.FileName);
+            }
         }
         #endregion
 
@@ -253,6 +306,31 @@ namespace DG_Engineering
         }
 
 
+
         #endregion
+        private void WipeCleanButton_Click(object sender, EventArgs e)
+        {
+            ClearOrders();
+        }
+
+        public async void ClearOrders()
+        {
+            var jobsearch =  await AssignarConnect(Static.AssignarDashboardUrl + "orders", Static.JwtToken, Method.GET, null);
+            var jobinfo = JsonConvert.DeserializeObject<OrdersList.Root>(jobsearch);
+            var projectsearch = await AssignarConnect(Static.AssignarDashboardUrl + "projects/", Static.JwtToken, Method.GET, null);
+            var projectinfo = JsonConvert.DeserializeObject<Projects.Project>(projectsearch);
+            var message = MessageBox.Show(@"There are " + projectinfo.Count + @" Projects and " + jobinfo.Count +  @" Orders. Are you sure you wish to remove all of these?", @"Attention", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (message != DialogResult.Yes) return;
+            foreach (var a in jobinfo.Data)
+            {
+                await AssignarConnect(Static.AssignarDashboardUrl + "orders/" + a.Id, Static.JwtToken, Method.DELETE, null);
+            }
+
+            foreach (var b in projectinfo.Data)
+            {
+                await AssignarConnect(Static.AssignarDashboardUrl + "projects/" + b.Id, Static.JwtToken, Method.DELETE, null);
+            }
+        }
+
     }
 }

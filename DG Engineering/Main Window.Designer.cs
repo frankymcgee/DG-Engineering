@@ -37,6 +37,7 @@
             this.ProjectGenerationBrowserGroupBox = new System.Windows.Forms.GroupBox();
             this.ProjectViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.SimProQuoteGroup = new System.Windows.Forms.GroupBox();
+            this.CreateFromGanttButton = new System.Windows.Forms.Button();
             this.Address_upd_Button = new System.Windows.Forms.Button();
             this.ProjectAddress = new System.Windows.Forms.ComboBox();
             this.ClientContact = new System.Windows.Forms.ComboBox();
@@ -239,6 +240,7 @@
             this.VersionLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.WipeCleanButton = new System.Windows.Forms.Button();
             this.DocViewGroup.SuspendLayout();
             this.SimProSync_Tab.SuspendLayout();
             this.ProjectGenerationBrowserGroupBox.SuspendLayout();
@@ -383,6 +385,7 @@
             // 
             // SimProQuoteGroup
             // 
+            this.SimProQuoteGroup.Controls.Add(this.CreateFromGanttButton);
             this.SimProQuoteGroup.Controls.Add(this.Address_upd_Button);
             this.SimProQuoteGroup.Controls.Add(this.ProjectAddress);
             this.SimProQuoteGroup.Controls.Add(this.ClientContact);
@@ -411,6 +414,16 @@
             this.SimProQuoteGroup.TabIndex = 0;
             this.SimProQuoteGroup.TabStop = false;
             this.SimProQuoteGroup.Text = "Project Details";
+            // 
+            // CreateFromGanttButton
+            // 
+            this.CreateFromGanttButton.Location = new System.Drawing.Point(5, 550);
+            this.CreateFromGanttButton.Name = "CreateFromGanttButton";
+            this.CreateFromGanttButton.Size = new System.Drawing.Size(232, 23);
+            this.CreateFromGanttButton.TabIndex = 25;
+            this.CreateFromGanttButton.Text = "Create Project from Gantt Chart";
+            this.CreateFromGanttButton.UseVisualStyleBackColor = true;
+            this.CreateFromGanttButton.Click += new System.EventHandler(this.CreateFromGanttButton_Click);
             // 
             // Address_upd_Button
             // 
@@ -1735,6 +1748,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.WipeCleanButton);
             this.groupBox1.Controls.Add(this.AdminProjName);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -2388,6 +2402,18 @@
             this.ProgressBar.Size = new System.Drawing.Size(500, 16);
             this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
+            // WipeCleanButton
+            // 
+            this.WipeCleanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WipeCleanButton.Location = new System.Drawing.Point(6, 561);
+            this.WipeCleanButton.Name = "WipeCleanButton";
+            this.WipeCleanButton.Size = new System.Drawing.Size(340, 50);
+            this.WipeCleanButton.TabIndex = 24;
+            this.WipeCleanButton.Text = "WIPE THE SLATE CLEAN!";
+            this.WipeCleanButton.UseVisualStyleBackColor = true;
+            this.WipeCleanButton.Visible = false;
+            this.WipeCleanButton.Click += new System.EventHandler(this.WipeCleanButton_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2700,5 +2726,7 @@
         private System.Windows.Forms.TextBox Jobs_JobName;
         private System.Windows.Forms.Label label32;
         private Microsoft.Web.WebView2.WinForms.WebView2 Jobs_Viewer;
+        private System.Windows.Forms.Button CreateFromGanttButton;
+        private System.Windows.Forms.Button WipeCleanButton;
     }
 }

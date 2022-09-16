@@ -77,7 +77,7 @@ namespace DG_Engineering
                     {
                         case "address":
                             myMergeField.Select();
-                            word.Selection.TypeText("1967 Anderson Road, Karratha Industrial Estate, WA 6714");
+                            word.Selection.TypeText("50 Coolawanyah Road, Karratha Industrial Estate, WA 6714");
                             break;
                         case "email":
                             myMergeField.Select();

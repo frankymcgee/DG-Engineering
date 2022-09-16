@@ -154,6 +154,7 @@
     <Compile Include="Framework\Global\Assignar\JSON Classes\Contacts.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Admin Job Info.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Individual Project - old.cs" />
+    <Compile Include="Framework\Global\Assignar\JSON Classes\Orders List.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Project Document.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Project Search.cs" />
     <Compile Include="Framework\Global\Assignar\JSON Classes\Orders.cs" />
@@ -390,6 +391,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ClickOnce\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

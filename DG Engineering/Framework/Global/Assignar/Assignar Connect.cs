@@ -14,7 +14,7 @@ namespace DG_Engineering
         /// <param name="body">If POST, must not be null</param>
         /// <returns>Content of the Request.</returns>
         private static async Task<string> AssignarConnect(string url, string jwtToken, Method method, string body)
-        {
+        { 
             if (method != Method.POST)
             {
                 var client = new RestClient(url)
@@ -27,6 +27,7 @@ namespace DG_Engineering
                 var response = await client.ExecuteAsync(request);
                 return response.Content;
             }
+           
             else
             {
                 var client = new RestClient(url)

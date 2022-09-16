@@ -13,7 +13,7 @@ namespace DG_Engineering
         /// <summary>
         /// POST Project to Assignar.
         /// </summary>
-        private void AssignarProjectPostfromGantt()
+        private void AssignarProjectPostfromGantt(string filename)
         {
             StatusLabel.Visible = true;
             StatusLabel.Text = @"Creating Project";
@@ -42,7 +42,7 @@ namespace DG_Engineering
             {
                 _projectId = JsonConvert.DeserializeObject<ProjectPost.Root>(restResponse.Content).Data.Id;
 
-                OpenProjectFile(_projectId);
+                OpenProjectFile(_projectId, filename);
 
                 ClientAddToProject(_projectId.ToString());
                 MessageBox.Show(@"Project Created in Assignar. Complete the Details Tab, then add the Documents as Necessary under the Documents Tab.", @"Success");
@@ -59,11 +59,12 @@ namespace DG_Engineering
                 ProgressBar.Value = 0;
             }
         }
-        private void OpenProjectFile(int projectnumber)
+        private void OpenProjectFile(int projectnumber, string name)
         {
+           
             var projectApp = new Microsoft.Office.Interop.MSProject.Application();
             // Open the file. There are a number of options in this constructor as you can see
-            projectApp.FileOpen("C:\\test.mpp", true, Missing.Value, Missing.Value, Missing.Value,
+            projectApp.FileOpen(name, true, Missing.Value, Missing.Value, Missing.Value,
                 Missing.Value, Missing.Value, Missing.Value, Missing.Value, Missing.Value, Missing.Value,
                 Microsoft.Office.Interop.MSProject.PjPoolOpen.pjDoNotOpenPool, Missing.Value, Missing.Value, Missing.Value, Missing.Value);
 
@@ -73,7 +74,7 @@ namespace DG_Engineering
             var idnumber = Convert.ToInt32(projectnumber + "001");
             foreach (Microsoft.Office.Interop.MSProject.Task a in proj.Tasks)
             {
-                if (a.ResourceGroup.Contains("CABS"))
+                if (a.Text20.Contains("DGE"))
                 {
                     idnumber++;
                     var comment = @"WO Number: " + a.Text2 + " |  OP Number: " + a.Number1 + "\n\n | Summary: " +
