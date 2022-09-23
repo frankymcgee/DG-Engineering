@@ -174,6 +174,7 @@
             this.Admin_Tab = new System.Windows.Forms.TabPage();
             this.AdminViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.WipeCleanButton = new System.Windows.Forms.Button();
             this.AdminProjName = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -238,9 +239,9 @@
             this.New_Employee_Name_Label = new System.Windows.Forms.Label();
             this.StatusBar = new System.Windows.Forms.StatusStrip();
             this.VersionLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.MyobLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.WipeCleanButton = new System.Windows.Forms.Button();
             this.DocViewGroup.SuspendLayout();
             this.SimProSync_Tab.SuspendLayout();
             this.ProjectGenerationBrowserGroupBox.SuspendLayout();
@@ -423,7 +424,7 @@
             this.CreateFromGanttButton.TabIndex = 25;
             this.CreateFromGanttButton.Text = "Create Project from Gantt Chart";
             this.CreateFromGanttButton.UseVisualStyleBackColor = true;
-            this.CreateFromGanttButton.Click += new System.EventHandler(this.CreateFromGanttButton_Click);
+            this.CreateFromGanttButton.Visible = false;
             // 
             // Address_upd_Button
             // 
@@ -1763,6 +1764,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manual Search";
             // 
+            // WipeCleanButton
+            // 
+            this.WipeCleanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WipeCleanButton.Location = new System.Drawing.Point(6, 561);
+            this.WipeCleanButton.Name = "WipeCleanButton";
+            this.WipeCleanButton.Size = new System.Drawing.Size(340, 50);
+            this.WipeCleanButton.TabIndex = 24;
+            this.WipeCleanButton.Text = "WIPE THE SLATE CLEAN!";
+            this.WipeCleanButton.UseVisualStyleBackColor = true;
+            this.WipeCleanButton.Visible = false;
+            // 
             // AdminProjName
             // 
             this.AdminProjName.Location = new System.Drawing.Point(28, 119);
@@ -2373,6 +2385,7 @@
             // 
             this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.VersionLabel,
+            this.MyobLabel,
             this.StatusLabel,
             this.ProgressBar});
             this.StatusBar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
@@ -2388,6 +2401,16 @@
             this.VersionLabel.Size = new System.Drawing.Size(48, 17);
             this.VersionLabel.Text = "Version:";
             // 
+            // MyobLabel
+            // 
+            this.MyobLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MyobLabel.Image = global::DG_Engineering.Properties.Resources.greenlight;
+            this.MyobLabel.ImageTransparentColor = System.Drawing.Color.Black;
+            this.MyobLabel.Name = "MyobLabel";
+            this.MyobLabel.Size = new System.Drawing.Size(16, 17);
+            this.MyobLabel.Text = "Connection";
+            this.MyobLabel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            // 
             // StatusLabel
             // 
             this.StatusLabel.Name = "StatusLabel";
@@ -2401,18 +2424,6 @@
             this.ProgressBar.Name = "ProgressBar";
             this.ProgressBar.Size = new System.Drawing.Size(500, 16);
             this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            // 
-            // WipeCleanButton
-            // 
-            this.WipeCleanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WipeCleanButton.Location = new System.Drawing.Point(6, 561);
-            this.WipeCleanButton.Name = "WipeCleanButton";
-            this.WipeCleanButton.Size = new System.Drawing.Size(340, 50);
-            this.WipeCleanButton.TabIndex = 24;
-            this.WipeCleanButton.Text = "WIPE THE SLATE CLEAN!";
-            this.WipeCleanButton.UseVisualStyleBackColor = true;
-            this.WipeCleanButton.Visible = false;
-            this.WipeCleanButton.Click += new System.EventHandler(this.WipeCleanButton_Click);
             // 
             // MainWindow
             // 
@@ -2728,5 +2739,7 @@
         private Microsoft.Web.WebView2.WinForms.WebView2 Jobs_Viewer;
         private System.Windows.Forms.Button CreateFromGanttButton;
         private System.Windows.Forms.Button WipeCleanButton;
+        public  System.Windows.Forms.ToolStripStatusLabel ConnectionLabel;
+        public  System.Windows.Forms.ToolStripStatusLabel MyobLabel;
     }
 }

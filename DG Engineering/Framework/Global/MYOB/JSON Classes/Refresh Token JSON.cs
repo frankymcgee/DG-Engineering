@@ -15,7 +15,7 @@ namespace DG_Engineering.Framework.Global.MYOB
             public string TokenType { get; set; }
 
             [JsonProperty("expires_in")]
-            public string ExpiresIn { get; set; }
+            public int ExpiresIn { get; set; }
 
             [JsonProperty("refresh_token")]
             public string RefreshToken { get; set; }

@@ -20,6 +20,7 @@ namespace DG_Engineering
             var response = client.Execute(request);
             var requestjson = JsonConvert.DeserializeObject<RefreshTokenJson.Root>(response.Content);
             Static.RefreshToken = requestjson?.RefreshToken;
+            Static.ExpiresIn = requestjson.ExpiresIn;
             RefreshMyob();
         }
     }

@@ -24,6 +24,7 @@ namespace DG_Engineering
         public static string ClientId;
         public static string UserName;
         public static string Password;
+        public static int ExpiresIn;
         public static readonly string Cache = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),@"DGE",@"login.dge");
         // Version information for an assembly consists of the following four values:
         //
@@ -33,6 +34,7 @@ namespace DG_Engineering
         //      Revision
 
         public const string Version = "1.2.0.026";
+        
     }
     public partial class MainWindow
     {

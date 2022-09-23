@@ -60,7 +60,7 @@ namespace DG_Engineering
                 //Thread.Sleep(500);
                 //SimProDocDownload();
                 MessageBox.Show(@"Project Created in Assignar. Complete the Details Tab, then add the Documents as Necessary under the Documents Tab.", @"Success");
-                ProjectViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/projects/detail/" + _projectId + "/edit");
+                ProjectViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/projects/detail/" + ProjectJobNumber.Text + "/edit");
                 StatusLabel.Visible = false;
                 ProgressBar.Value = 0;
             }

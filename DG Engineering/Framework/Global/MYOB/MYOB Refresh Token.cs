@@ -1,4 +1,6 @@
-﻿using DG_Engineering.Framework.Global.MYOB;
+﻿using System;
+using DG_Engineering.Framework.Global.MYOB;
+using DG_Engineering.Properties;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -22,6 +24,8 @@ namespace DG_Engineering
             var accesstoken = JsonConvert.DeserializeObject<RefreshTokenJson.Root>(response.Content);
             Static.AccessToken = accesstoken?.AccessToken;
             Static.RefreshToken = accesstoken?.RefreshToken;
+            Static.ExpiresIn = accesstoken.ExpiresIn;
+            Console.WriteLine(@"MYOB Refreshed");
             MyobRetrieveCompanyList();
         }
         /// <summary>

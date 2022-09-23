@@ -14,10 +14,10 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>C:\Users\seann\DG Engineering\DG Engineering HUB - Human Resources\2. Automation\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
+    <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -25,14 +25,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.github.com/frankymcgee/DG-Engineering/tree/publishing/clickonce/</InstallUrl>
     <UpdateUrl>https://github.com/frankymcgee/DG-Engineering/tree/master/Installer/DG%2520Engineering%2520Automation/</UpdateUrl>
+    <SupportUrl>https://dgengineering.com.au/support</SupportUrl>
     <ProductName>DG Engineering Automation</ProductName>
-    <PublisherName>Webwire</PublisherName>
-    <SuiteName>DG engineering</SuiteName>
-    <ApplicationRevision>33</ApplicationRevision>
+    <PublisherName>DG Engineering</PublisherName>
+    <ApplicationRevision>41</ApplicationRevision>
     <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -388,6 +388,8 @@
   <ItemGroup>
     <Content Include="Framework\updates.txt" />
     <Content Include="Icon.ico" />
+    <None Include="Resources\yellowblink.gif" />
+    <None Include="Resources\greenlight.gif" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ClickOnce\" />

@@ -38,6 +38,7 @@ namespace DG_Engineering
                 fixedjobnumber = projectnumber;
             }
             var jobsearch = MyobConnect(Static.Companyfileuri + "/"+ Static.Companyfileguid + "/GeneralLedger/Job?$filter=Number eq \'" + fixedjobnumber + "\'", Method.GET).Content;
+            Console.WriteLine(jobsearch);
             var jobsearchresult = JsonConvert.DeserializeObject<Job.Root>(jobsearch);
             foreach (var a in jobsearchresult.Items)
             {
