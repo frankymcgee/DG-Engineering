@@ -37,6 +37,7 @@
             this.ProjectGenerationBrowserGroupBox = new System.Windows.Forms.GroupBox();
             this.ProjectViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.SimProQuoteGroup = new System.Windows.Forms.GroupBox();
+            this.TestButton = new System.Windows.Forms.Button();
             this.CreateFromGanttButton = new System.Windows.Forms.Button();
             this.Address_upd_Button = new System.Windows.Forms.Button();
             this.ProjectAddress = new System.Windows.Forms.ComboBox();
@@ -386,6 +387,7 @@
             // 
             // SimProQuoteGroup
             // 
+            this.SimProQuoteGroup.Controls.Add(this.TestButton);
             this.SimProQuoteGroup.Controls.Add(this.CreateFromGanttButton);
             this.SimProQuoteGroup.Controls.Add(this.Address_upd_Button);
             this.SimProQuoteGroup.Controls.Add(this.ProjectAddress);
@@ -415,6 +417,16 @@
             this.SimProQuoteGroup.TabIndex = 0;
             this.SimProQuoteGroup.TabStop = false;
             this.SimProQuoteGroup.Text = "Project Details";
+            // 
+            // TestButton
+            // 
+            this.TestButton.Location = new System.Drawing.Point(5, 58);
+            this.TestButton.Name = "TestButton";
+            this.TestButton.Size = new System.Drawing.Size(75, 23);
+            this.TestButton.TabIndex = 26;
+            this.TestButton.Text = "TEST";
+            this.TestButton.UseVisualStyleBackColor = true;
+            this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
             // 
             // CreateFromGanttButton
             // 
@@ -671,9 +683,9 @@
             this.HSEQDS.AutoSize = true;
             this.HSEQDS.Location = new System.Drawing.Point(114, 65);
             this.HSEQDS.Name = "HSEQDS";
-            this.HSEQDS.Size = new System.Drawing.Size(37, 13);
+            this.HSEQDS.Size = new System.Drawing.Size(66, 13);
             this.HSEQDS.TabIndex = 10;
-            this.HSEQDS.Text = "HSEQ";
+            this.HSEQDS.Text = "Site Saf. Ad.";
             // 
             // ExcavOpDSUD
             // 
@@ -933,9 +945,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(114, 65);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 13);
+            this.label9.Size = new System.Drawing.Size(66, 13);
             this.label9.TabIndex = 38;
-            this.label9.Text = "HSEQ";
+            this.label9.Text = "Site Saf. Ad.";
             // 
             // ExcavOpNSUD
             // 
@@ -1398,6 +1410,7 @@
             this.JobDocuments_ComboBox.Name = "JobDocuments_ComboBox";
             this.JobDocuments_ComboBox.Size = new System.Drawing.Size(300, 21);
             this.JobDocuments_ComboBox.TabIndex = 1;
+            this.JobDocuments_ComboBox.DropDown += new System.EventHandler(this.JobDocuments_ComboBox_DropDown);
             // 
             // CoverPageGroup
             // 
@@ -1774,6 +1787,7 @@
             this.WipeCleanButton.Text = "WIPE THE SLATE CLEAN!";
             this.WipeCleanButton.UseVisualStyleBackColor = true;
             this.WipeCleanButton.Visible = false;
+            this.WipeCleanButton.Click += new System.EventHandler(this.WipeCleanButton_Click);
             // 
             // AdminProjName
             // 
@@ -2741,5 +2755,6 @@
         private System.Windows.Forms.Button WipeCleanButton;
         public  System.Windows.Forms.ToolStripStatusLabel ConnectionLabel;
         public  System.Windows.Forms.ToolStripStatusLabel MyobLabel;
+        private System.Windows.Forms.Button TestButton;
     }
 }

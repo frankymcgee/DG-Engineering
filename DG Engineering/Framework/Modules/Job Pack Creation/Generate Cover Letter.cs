@@ -1,9 +1,8 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
-using DG_Engineering.Framework.Global.Assignar;
 using Microsoft.Office.Interop.Word;
-using Newtonsoft.Json;
-using RestSharp;
 using Application = Microsoft.Office.Interop.Word.Application;
 
 namespace DG_Engineering
@@ -13,7 +12,7 @@ namespace DG_Engineering
         /// <summary>
         /// Generates Job Pack Cover Letters for Mob Packs.
         /// </summary>
-        private async void Cover_Letter_Format()
+        private void Cover_Letter_Format()
         {
             StatusLabel.Visible = true;
             StatusLabel.Text = @"Creating Cover Letter";
@@ -51,23 +50,19 @@ namespace DG_Engineering
             StatusLabel.Text = @"Exporting Cover Letter";
             doc.ExportAsFixedFormat(output + +_filestep + ". Job Pack Cover.pdf",
                 WdExportFormat.wdExportFormatPDF);
-            doc.Close(false);
-            word.Quit();
-            ReleaseComObjects(doc, word);
+            ReleaseComObjects(doc,word);
+            JobDocuments_ListBox.Items.Add(_filestep + ". Job Pack Cover");
             StatusLabel.Text = @"Searching for available Documents";
             // Find all documents in Project
-            var projectidsearch = await AssignarConnect(Static.AssignarDashboardUrl + "projects?external_id=" + JobPackNo_TextBox.Text, Static.JwtToken, Method.GET,null);
-            var projectnumberresult = JsonConvert.DeserializeObject<ProjectSearch.Root>(projectidsearch);
-            StatusLabel.Text = @"Found " + projectnumberresult.Count + @" Documents.";
-            foreach (var a in projectnumberresult.Data)
+            var path = Path.Combine(DGEngineering,"DG Engineering HUB - Operations\\Jobs",JobPackNo_TextBox.Text);
+            Console.WriteLine(path);
+            var files = Directory.GetFiles(path,"*",SearchOption.AllDirectories);
+            StatusLabel.Text = @"Found " + files.Length + @" Documents.";
+            foreach (var a in files)
             {
-                Static.ProjectNumber = a.Id;
-                DownloadJobDocuments(Static.AssignarDashboardUrl + "projects/" + Static.ProjectNumber + "/documents/",
-                    Static.JwtToken);
+                JobDocuments_ComboBox.Items.Add(a.Split('\\').Reverse().ElementAt(2) + '\\' + a.Split('\\').Reverse().ElementAt(1)+ '\\' + a.Split('\\').Last());
             }
-
             StatusLabel.Visible = false;
-            JobDocuments_ListBox.Items.Add(_filestep + ". Job Pack Cover");
             MessageBox.Show(@"Completed", @"Cover for Pack Completed");
         }
     }

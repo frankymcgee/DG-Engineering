@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -6,7 +8,6 @@ using System.Timers;
 using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar;
 using DG_Engineering.Framework.Global.MYOB;
-using DG_Engineering.Properties;
 using Microsoft.Web.WebView2.Core;
 using Newtonsoft.Json;
 using RestSharp;
@@ -21,6 +22,10 @@ namespace DG_Engineering
         public MainWindow()
         {
             InitializeComponent();
+            if (!Debugger.IsAttached)
+            {
+                TestButton.Visible = false;
+            }
         }
 
         #endregion
@@ -69,6 +74,7 @@ namespace DG_Engineering
                 SynchronizingObject = null
             };
             progressbar.Elapsed += ProgressbarOnElapsed;
+            
         }
 
         private void ProgressbarOnElapsed(object sender, ElapsedEventArgs e)
@@ -81,7 +87,6 @@ namespace DG_Engineering
 
         private static void OnTimedEvent(object source, ElapsedEventArgs e)
         {
-            Console.WriteLine(Static.ExpiresIn);
             Static.ExpiresIn--;
             if (Static.ExpiresIn <= 1150)
             {
@@ -192,9 +197,8 @@ namespace DG_Engineering
         }
         private void AddToJobPack_Button_Click(object sender, EventArgs e)
         {
-            DownloadDocumentFromUrl(
-                Static.AssignarDashboardUrl + "projects/" + Static.ProjectNumber + "/documents/",
-                Static.JwtToken);
+            //DownloadDocumentFromUrl(Static.AssignarDashboardUrl + "projects/" + Static.ProjectNumber + "/documents/",Static.JwtToken);
+            DownloadFilesForJobPack(JobDocuments_ComboBox.Text);
         }
         private void GenerateJobPack_Button_Click(object sender, EventArgs e)
         {
@@ -260,6 +264,29 @@ namespace DG_Engineering
 
 
         #endregion
-        
+
+        private void TestButton_Click(object sender, EventArgs e)
+        {
+            CreateFolderStructure();
+        }
+
+        private void JobDocuments_ComboBox_DropDown(object sender, EventArgs e)
+        {
+            var senderComboBox = (ComboBox)sender;
+            var width = senderComboBox.DropDownWidth;
+            var g = senderComboBox.CreateGraphics();
+            var font = senderComboBox.Font;
+            var vertScrollBarWidth = 
+                (senderComboBox.Items.Count>senderComboBox.MaxDropDownItems)
+                    ?SystemInformation.VerticalScrollBarWidth:0;
+
+            width = (from string s in ((ComboBox) sender).Items select (int) g.MeasureString(s, font).Width + vertScrollBarWidth).Prepend(width).Max();
+            senderComboBox.DropDownWidth = width;
+        }
+
+        private void WipeCleanButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

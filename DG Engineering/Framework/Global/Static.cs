@@ -58,6 +58,7 @@ namespace DG_Engineering
             "DG Engineering\\DG Engineering HUB - Business Support\\New Folder Structure\\Corporate\\Logos\\");
         private static readonly string SignPath = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"),
             "DG Engineering\\DG Engineering HUB - Human Resources\\2. Automation\\Signatures\\");
+        private static readonly string DGEngineering =  Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"),"DG Engineering\\");
         private OpenFileDialog OpenFileDialog { get; set; }
         private string _signature;
         private string _picture;

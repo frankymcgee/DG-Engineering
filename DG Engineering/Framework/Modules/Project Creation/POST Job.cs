@@ -13,7 +13,7 @@ namespace DG_Engineering
         /// <summary>
         /// POST Job to Assignar
         /// </summary>
-        /// <param name="jobname">Job Name i.e., Mobilisation|DS</param>
+        /// <param name="jobname">Job Name i.e., Mobilisation | DS</param>
         /// <param name="idnumber">ID Number for the Reference i.e., 4565001</param>
         private void AssignarJobPost(string jobname, string idnumber)
         {
@@ -80,87 +80,63 @@ namespace DG_Engineering
             {
                 return;
             }
-            string starttime = null;
-            string endtime = null;
+            var starttime = "06:00";
+            var endtime = "18:00";
             var id = JsonConvert.DeserializeObject<OrderResp.Root>(restResponse.Content).Data.Id;
             ClientAddToJob(id.ToString());
-            //Default Times
-            switch (jobname)
-            {
-                case "Work|DS":
-                    starttime = "06:00";
-                    endtime = "18:00";
-                    break;
-                case "Work|NS":
-                    starttime = "18:00";
-                    endtime = "06:00";
-                    break;
-            }
             //Superintendent Tasks
-            if (SuperintDSUD.Value > 0)
+            if (SuperintDSUD.Value > 0 || SuperintNSUD.Value > 0)
             {
                 switch (jobname)
                 {
                     
-                    case "Work|DS":
+                    case "Work | DS":
                         starttime = "05:00";
                         endtime = "18:00";
                         break;
-                    case "Work|NS":
+                    case "Work | NS":
                         starttime = "17:00";
                         endtime = "06:00";
                         break;
                 }
-                TaskCreation(starttime,endtime,id,3,SuperintDSUD.Value);
-            }
-            if (SuperintNSUD.Value > 0)
-            {
-                switch (jobname)
-                {
-                    
-                    case "Work|DS":
-                        starttime = "05:00";
-                        endtime = "18:00";
-                        break;
-                    case "Work|NS":
-                        starttime = "17:00";
-                        endtime = "06:00";
-                        break;
-                }
-                TaskCreation(starttime,endtime,id,3,SuperintNSUD.Value);
+                TaskCreation(starttime,endtime,id,33,SuperintDSUD.Value);
+                TaskCreation(starttime,endtime,id,33,SuperintNSUD.Value);
             }
             //Supervisor Tasks
-            if (SupervisorDSUD.Value > 0)
+            if (SupervisorDSUD.Value > 0 || SupervisorNSUD.Value > 0)
             {
                 switch (jobname)
                 {
-                   case "Work|DS":
+                   case "Work | DS":
                         starttime = "05:00";
                         endtime = "18:00";
                         break;
-                    case "Work|NS":
+                    case "Work | NS":
                         starttime = "17:00";
                         endtime = "06:00";
                         break;
                 }
                 TaskCreation(starttime,endtime,id,3,SupervisorDSUD.Value);
+                TaskCreation(starttime,endtime,id,3,SupervisorNSUD.Value);
             }
-            if (SupervisorNSUD.Value > 0)
+            //Site Safety Adviser Tasks
+            if (HSEQDSUD.Value > 0 || HSEQNSUD.Value > 0)
             {
                 switch (jobname)
                 {
-                    case "Work|DS":
+                    case "Work | DS":
                         starttime = "05:00";
                         endtime = "18:00";
                         break;
-                    case "Work|NS":
+                    case "Work | NS":
                         starttime = "17:00";
                         endtime = "06:00";
                         break;
                 }
-                TaskCreation(starttime,endtime,id,3,SupervisorNSUD.Value);
+                TaskCreation(starttime,endtime,id,16,HSEQDSUD.Value);
+                TaskCreation(starttime,endtime,id,16,HSEQNSUD.Value);
             }
-            if (jobname.Contains("|DS"))
+            if (jobname.Contains(" | DS"))
             {
                 //Day Shift
                 TaskCreation("06:00","18:00",id,32,LHDSUD.Value);
@@ -174,9 +150,8 @@ namespace DG_Engineering
                 TaskCreation("06:00","18:00",id,26,TADSUD.Value);
                 TaskCreation("06:00","18:00",id,14,TechnicianDSUD.Value);
                 TaskCreation("06:00","18:00",id,1,ExcavOpDSUD.Value);
-                TaskCreation("06:00","18:00",id,16,HSEQDSUD.Value);
             }
-            else if (jobname.Contains("|NS"))
+            else if (jobname.Contains(" | NS"))
             {
                 //Night Shift
                 TaskCreation("18:00","06:00",id,32,LHNSUD.Value);
@@ -190,7 +165,6 @@ namespace DG_Engineering
                 TaskCreation("18:00","06:00",id,26,TANSUD.Value);
                 TaskCreation("18:00","06:00",id,14,TechnicianNSUD.Value);
                 TaskCreation("18:00","06:00",id,1,ExcavOpNSUD.Value);
-                TaskCreation("18:00","06:00",id,16,HSEQNSUD.Value);
             }
         }
         private async void ClientAddToJob(string orderid)

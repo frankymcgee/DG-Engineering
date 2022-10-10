@@ -171,7 +171,7 @@
         private System.Windows.Forms.TextBox Username_TextBox;
         private System.Windows.Forms.Label Username_Label;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.CheckBox DebugMode;
+        public System.Windows.Forms.CheckBox DebugMode;
     }
 }
 

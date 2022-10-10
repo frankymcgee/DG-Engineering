@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Windows.Forms;
@@ -49,9 +51,9 @@ namespace DG_Engineering
                 //AssignarJobPost("Mobilisation |NS",ProjectJobNumber.Text + "002");
 
                 Thread.Sleep(500);
-                AssignarJobPost("Work |DS",ProjectJobNumber.Text + "001");
+                AssignarJobPost("Work | DS",ProjectJobNumber.Text + "001");
                 Thread.Sleep(500);
-                AssignarJobPost("Work |NS",ProjectJobNumber.Text + "002");
+                AssignarJobPost("Work | NS",ProjectJobNumber.Text + "002");
                 Thread.Sleep(500);
 
                 //AssignarJobPost("DeMobilisation |DS",ProjectJobNumber.Text + "005");
@@ -59,8 +61,19 @@ namespace DG_Engineering
                 //AssignarJobPost("DeMobilisation |NS",ProjectJobNumber.Text + "006");
                 //Thread.Sleep(500);
                 //SimProDocDownload();
+                CreateFolderStructure();
                 MessageBox.Show(@"Project Created in Assignar. Complete the Details Tab, then add the Documents as Necessary under the Documents Tab.", @"Success");
-                ProjectViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/projects/detail/" + ProjectJobNumber.Text + "/edit");
+                try
+                {
+                    ProjectViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/v1/#!/projects/detail/" + ProjectJobNumber.Text + "/edit");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(@"Whoops! An Error has occurred trying to navigate to your Project. The error is as follows:" +@"
+
+" + e, @"Error");
+                    
+                }
                 StatusLabel.Visible = false;
                 ProgressBar.Value = 0;
             }
@@ -86,6 +99,44 @@ namespace DG_Engineering
 
             var body = "{\n \"project_id\":" + projectid + ",\n  \"contact_id\":" + contactId + "\n}";
             _ = AssignarConnect(Static.AssignarDashboardUrl + "projects/" + projectid + "/contacts", Static.JwtToken, Method.POST, body);
+        }
+
+        private void CreateFolderStructure()
+        {
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"Administration (TS-Correspondence-Quotes-PO's)"));
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"QA (Material Certs-MDR-NDT)"));
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"Scope (SOW-WMS-SWP's-Photos-Drawings)"));
+
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"Administration (TS-Correspondence-Quotes-PO's)","Time Sheets"));
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"Administration (TS-Correspondence-Quotes-PO's)","Correspondence"));
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"Administration (TS-Correspondence-Quotes-PO's)","Quotes"));
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"Administration (TS-Correspondence-Quotes-PO's)","Purchase Orders"));
+
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"QA (Material Certs-MDR-NDT)","Material Certifications"));
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"QA (Material Certs-MDR-NDT)","MDR's"));
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"QA (Material Certs-MDR-NDT)","NDT's"));
+
+            
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"Scope (SOW-WMS-SWP's-Photos-Drawings)","Scope of Works"));
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"Scope (SOW-WMS-SWP's-Photos-Drawings)","WMS's"));
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"Scope (SOW-WMS-SWP's-Photos-Drawings)","SWP's"));
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"Scope (SOW-WMS-SWP's-Photos-Drawings)","Photos"));
+            Directory.CreateDirectory(Path.Combine(DGEngineering, "DG Engineering HUB - Operations", "Jobs",
+                ProjectJobNumber.Text,"Scope (SOW-WMS-SWP's-Photos-Drawings)","Drawings"));
         }
     }
 }
