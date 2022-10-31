@@ -214,6 +214,7 @@
             this.Generate_Contract_Button = new System.Windows.Forms.Button();
             this.Job_Position_ComboBox = new System.Windows.Forms.ComboBox();
             this.ProgressBar_Compiler = new System.Windows.Forms.ProgressBar();
+            this.Local_Worker_Checkbox = new System.Windows.Forms.CheckBox();
             this.Employment_Type_ComboBox = new System.Windows.Forms.ComboBox();
             this.Casual_Or_Full_Time_Label = new System.Windows.Forms.Label();
             this.Employee_Base_Rate_TextBox = new System.Windows.Forms.TextBox();
@@ -242,7 +243,6 @@
             this.MyobLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.Local_Worker_Checkbox = new System.Windows.Forms.CheckBox();
             this.DocViewGroup.SuspendLayout();
             this.SimProSync_Tab.SuspendLayout();
             this.ProjectGenerationBrowserGroupBox.SuspendLayout();
@@ -2102,7 +2102,7 @@
             this.RepresentativeComboBox.FormattingEnabled = true;
             this.RepresentativeComboBox.Items.AddRange(new object[] {
             "Damien Voigt",
-            "Leight Wright"});
+            "Leigh Wright"});
             this.RepresentativeComboBox.Location = new System.Drawing.Point(16, 420);
             this.RepresentativeComboBox.Name = "RepresentativeComboBox";
             this.RepresentativeComboBox.Size = new System.Drawing.Size(329, 21);
@@ -2173,6 +2173,16 @@
             this.ProgressBar_Compiler.Name = "ProgressBar_Compiler";
             this.ProgressBar_Compiler.Size = new System.Drawing.Size(329, 14);
             this.ProgressBar_Compiler.TabIndex = 16;
+            // 
+            // Local_Worker_Checkbox
+            // 
+            this.Local_Worker_Checkbox.AutoSize = true;
+            this.Local_Worker_Checkbox.Location = new System.Drawing.Point(16, 384);
+            this.Local_Worker_Checkbox.Name = "Local_Worker_Checkbox";
+            this.Local_Worker_Checkbox.Size = new System.Drawing.Size(135, 17);
+            this.Local_Worker_Checkbox.TabIndex = 11;
+            this.Local_Worker_Checkbox.Text = "Local Resident Worker";
+            this.Local_Worker_Checkbox.UseVisualStyleBackColor = true;
             // 
             // Employment_Type_ComboBox
             // 
@@ -2429,16 +2439,6 @@
             this.ProgressBar.Name = "ProgressBar";
             this.ProgressBar.Size = new System.Drawing.Size(500, 16);
             this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            // 
-            // Local_Worker_Checkbox
-            // 
-            this.Local_Worker_Checkbox.AutoSize = true;
-            this.Local_Worker_Checkbox.Location = new System.Drawing.Point(16, 384);
-            this.Local_Worker_Checkbox.Name = "Local_Worker_Checkbox";
-            this.Local_Worker_Checkbox.Size = new System.Drawing.Size(135, 17);
-            this.Local_Worker_Checkbox.TabIndex = 11;
-            this.Local_Worker_Checkbox.Text = "Local Resident Worker";
-            this.Local_Worker_Checkbox.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 

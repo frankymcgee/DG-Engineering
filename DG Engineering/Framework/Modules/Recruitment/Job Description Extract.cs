@@ -59,8 +59,10 @@ namespace DG_Engineering
             // Loop through each table in the document, 
             // grab only text from cells in the first column
             // in each table.
-            foreach (Table tb in docs.Tables) {
-                for (int row = 1; row <= tb.Rows.Count; row++) {
+            foreach (var tb in docs.Tables.Cast<Table>().Where(tb => tb.Title == "Position"))
+            {
+                for (var row = 1; row <= tb.Rows.Count; row++)
+                {
                     var cell = tb.Cell(row, 1);
                     _retrievedText = cell.Range.FormattedText.WordOpenXML;
                     // text now contains the content of the cell.
@@ -71,7 +73,9 @@ namespace DG_Engineering
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                MessageBox.Show(@"Error:" + @"
+
+" + e.Message,@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             return _retrievedText;
         }
