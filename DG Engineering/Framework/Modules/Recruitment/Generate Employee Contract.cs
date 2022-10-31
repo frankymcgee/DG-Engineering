@@ -2,7 +2,6 @@
 using System.IO;
 using System.Linq;
 using Microsoft.Office.Interop.Word;
-using Microsoft.Web.WebView2.Core.Raw;
 
 namespace DG_Engineering
 {
@@ -174,22 +173,26 @@ namespace DG_Engineering
                         field.Range.InsertXML(_retrievedText);
                         break;
                     case "Working_Away":
-                         field.Range.Text = WorkingAwayCheckBox.Checked
-                            ? @"Additional Benefits
+                        if (WorkingAwayCheckBox.Checked)
+                        {
+                            field.Range.InsertXML(SiteAllowanceExtract(employmentcontracts + "Site allowance.docx"));
+                        }
+//                         field.Range.Text = WorkingAwayCheckBox.Checked
+//                            ? @"Additional Benefits
 
-Site allowance / LAHA
+//Site allowance / LAHA
 
-    $4.00 P/H flat site allowance / LAHA:
-        a) The company is offering to as per your contract (clause 10.2) a variation to your current contract to include a benefit that will supplement your contractual rate by a further AUD $4.00 (Four Australian Dollars only) per hour worked while working away from home.
+//    $4.00 P/H flat site allowance / LAHA:
+//        a) The company is offering to as per your contract (clause 10.2) a variation to your current contract to include a benefit that will supplement your contractual rate by a further AUD $4.00 (Four Australian Dollars only) per hour worked while working away from home.
         
-        b) Conditions of receiving Site allowance / LAHA
-            i) The benefit may be only claimed for hours worked onsite including travel time to and from site
-            ii) Employee must be working away from home.
+//        b) Conditions of receiving Site allowance / LAHA
+//            i) The benefit may be only claimed for hours worked onsite including travel time to and from site
+//            ii) Employee must be working away from home.
         
-        c) Benefit cannot be claimed for the following:
-            i) Off Site, Mobilisation and Demobilisation carried out in Karratha.
-            ii) Sick leave onsite or days off whilst on site.
-            iii) Standdown.":"";
+//        c) Benefit cannot be claimed for the following:
+//            i) Off Site, Mobilisation and Demobilisation carried out in Karratha.
+//            ii) Sick leave onsite or days off whilst on site.
+//            iii) Standdown.":"";
                         break;
                 }
             }
