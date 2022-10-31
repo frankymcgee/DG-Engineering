@@ -1,7 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
-using Application = Microsoft.Office.Interop.Word.Application;
+//using Application = Microsoft.Office.Interop.Word.Application;
 
 namespace DG_Engineering
 {
@@ -14,7 +15,9 @@ namespace DG_Engineering
         // ReSharper disable once UnusedMethodReturnValue.Local
         private static string JobDescriptionExtract()
         {
-            // Create an instance of the Open File Dialog Box
+            try
+            {
+                // Create an instance of the Open File Dialog Box
             var openFileDialog1 = new OpenFileDialog
             {
                 Site = null,
@@ -40,16 +43,15 @@ namespace DG_Engineering
             };
             // Call the ShowDialog method to show the dialog box.
             openFileDialog1.ShowDialog();
-            var word = new Application();
+            var word = new Microsoft.Office.Interop.Word.Application();
             object miss = System.Reflection.Missing.Value;
             object path = openFileDialog1.FileName;
             object readOnly = true;
             var docs = word.Documents.Open(ref path, ref miss, ref readOnly,
                 ref miss, ref miss, ref miss, ref miss,
                 ref miss, ref miss, ref miss, ref miss,
-                ref miss, ref miss, ref miss, ref miss,
+                ref readOnly, ref miss, ref miss, ref miss,
                 ref miss);
-
             // Datatable to store text from Word doc
             var dt = new System.Data.DataTable();
             dt.Columns.Add("Text");
@@ -57,21 +59,22 @@ namespace DG_Engineering
             // Loop through each table in the document, 
             // grab only text from cells in the first column
             // in each table.
-            foreach (var tb in docs.Tables.Cast<Table>().Where(tb => tb.Columns.Count.Equals(1)))
-            {
-                // insert code here to get text from cells in first column
-                // and insert into datatable.
-                for (var row = 1; row <= tb.Rows.Count; row++)
-                {
+            foreach (Table tb in docs.Tables) {
+                for (int row = 1; row <= tb.Rows.Count; row++) {
                     var cell = tb.Cell(row, 1);
-                    _retrievedText = cell.Range.Text;
+                    _retrievedText = cell.Range.FormattedText.WordOpenXML;
                     // text now contains the content of the cell.
                 }
             }
-
             docs.Close();
             word.Quit();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
             return _retrievedText;
         }
     }
+
 }
