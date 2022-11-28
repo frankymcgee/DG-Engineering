@@ -52,15 +52,14 @@ namespace DG_Engineering
                 Jobs_Site.Text = a.Contact;
                 Jobs_PoNo.Text = a.Manager.ToString();
             }
-            CompanyIdExtract(ProjectClient.Text);
-            ProgressBar.PerformStep();
+            await CompanyIdExtract(ProjectClient.Text);
             ClientContact.Items.Clear();
             var contactsquery = await AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text,Static.JwtToken,Method.GET,null);
             var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
             if (contactsresult?.Data != null)
                 foreach (var a in contactsresult.Data)
                 {
-                    ClientContact.Items.Add(a.FirstName + " " + a.LastName + "-" + a.JobTitle);
+                    ClientContact.Items.Add(a.FirstName + " " + a.LastName + "  -  " + a.JobTitle);
                 }
             StatusLabel.Visible = false;
         }

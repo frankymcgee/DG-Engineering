@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using DG_Engineering.Framework.Global;
 using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
@@ -13,7 +14,7 @@ namespace DG_Engineering
         /// Excracts Company Names from Assignar
         /// </summary>
         /// <param name="basestring">Company Name Being Referenced to</param>
-        private async void CompanyIdExtract(string basestring)
+        private async Task CompanyIdExtract(string basestring)
         {
             ProgressBar.PerformStep();
             var lstStringsToCheck = new List<string>();
@@ -37,9 +38,9 @@ namespace DG_Engineering
                 foreach (var b in clientlist.Data.Where(b => company == b.Name))
                 {
                     _companyId = b.Id;
+                    ProjectClient.Text = b.Name;
                 }
             }
-            ProgressBar.PerformStep();
         }
     }
 }

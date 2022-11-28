@@ -26,8 +26,6 @@ namespace DG_Engineering
             var url = MYOBAccessViewer.Source.ToString();
             if (!url.Contains("authenticated")) return;
             Static.UrlCoded = url.Split('=')[1];
-            Thread.Sleep(2000);
-            this.Close();
         }
     }
 }

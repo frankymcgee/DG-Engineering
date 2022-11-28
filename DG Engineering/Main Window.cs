@@ -42,7 +42,7 @@ namespace DG_Engineering
             {
                 version = Assembly.GetExecutingAssembly().GetName().Version;
             }
-            VersionLabel.Text = @"Version: " + version + @"  |    ";
+            VersionLabel.Text = @"Version: " + version + @"  |    " + "Connected to: " + Static.ClientId;
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
             await AdminViewer.EnsureCoreWebView2Async(environment);
             await ScheduleViewer.EnsureCoreWebView2Async(environment);
@@ -72,19 +72,8 @@ namespace DG_Engineering
                 Interval = 2000,
                 Site = null,
                 SynchronizingObject = null
-            };
-            progressbar.Elapsed += ProgressbarOnElapsed;
-            
+            };            
         }
-
-        private void ProgressbarOnElapsed(object sender, ElapsedEventArgs e)
-        {
-            if (ProgressBar.ProgressBar.Value > 0)
-            {
-                ProgressBar.ProgressBar.Value = 0;
-            }
-        }
-
         private static void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             Static.ExpiresIn--;
@@ -102,7 +91,7 @@ namespace DG_Engineering
         {
             await MyobSearch(ProjectJobNumber.Text);
         }
-        private void PushAssignar_Button_Click(object sender, EventArgs e)
+        private async void PushAssignar_Button_Click(object sender, EventArgs e)
         {
             if (ProjectPONumber.Text == @"MISSING PO NUMBER")
             {
@@ -110,7 +99,7 @@ namespace DG_Engineering
             }
             else
             {
-                CompanyIdExtract(ProjectClient.Text);
+                await CompanyIdExtract(ProjectClient.Text);
                 AssignarProjectPost();
             }
         }
