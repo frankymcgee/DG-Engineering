@@ -43,65 +43,37 @@
             this.label17 = new System.Windows.Forms.Label();
             this.ProjectClient = new System.Windows.Forms.ComboBox();
             this.PushToJobPackButton = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Shift_Tabs = new System.Windows.Forms.TabControl();
             this.DSTab = new System.Windows.Forms.TabPage();
             this.TADSUD = new System.Windows.Forms.NumericUpDown();
-            this.TADS = new System.Windows.Forms.Label();
+            this.SitSaf_D = new System.Windows.Forms.Label();
             this.TechnicianDSUD = new System.Windows.Forms.NumericUpDown();
-            this.TechnicianDS = new System.Windows.Forms.Label();
+            this.CodWel_D = new System.Windows.Forms.Label();
             this.SupervisorDSUD = new System.Windows.Forms.NumericUpDown();
-            this.SupervisorDS = new System.Windows.Forms.Label();
+            this.Sch_D = new System.Windows.Forms.Label();
             this.SuperintDSUD = new System.Windows.Forms.NumericUpDown();
-            this.SuperintDS = new System.Windows.Forms.Label();
+            this.Cert10_D = new System.Windows.Forms.Label();
             this.ScaffDSUD = new System.Windows.Forms.NumericUpDown();
-            this.ScaffDS = new System.Windows.Forms.Label();
+            this.Sca_D = new System.Windows.Forms.Label();
             this.RiggerDSUD = new System.Windows.Forms.NumericUpDown();
-            this.RiggerDS = new System.Windows.Forms.Label();
+            this.BusSup_D = new System.Windows.Forms.Label();
             this.MechFitterDSUD = new System.Windows.Forms.NumericUpDown();
-            this.MechFitterDS = new System.Windows.Forms.Label();
+            this.LeaHan_D = new System.Windows.Forms.Label();
             this.LHDSUD = new System.Windows.Forms.NumericUpDown();
-            this.LHDS = new System.Windows.Forms.Label();
+            this.Boil_D = new System.Windows.Forms.Label();
             this.HSEQDSUD = new System.Windows.Forms.NumericUpDown();
-            this.HSEQDS = new System.Windows.Forms.Label();
+            this.GenMan_D = new System.Windows.Forms.Label();
             this.ExcavOpDSUD = new System.Windows.Forms.NumericUpDown();
-            this.ExcavOpDS = new System.Windows.Forms.Label();
+            this.BlaPai_D = new System.Windows.Forms.Label();
             this.CWDSUD = new System.Windows.Forms.NumericUpDown();
-            this.CWDS = new System.Windows.Forms.Label();
+            this.Est_D = new System.Windows.Forms.Label();
             this.CraneDvrDSUD = new System.Windows.Forms.NumericUpDown();
-            this.CraneDvrDS = new System.Windows.Forms.Label();
+            this.AccRec_D = new System.Windows.Forms.Label();
             this.BMWDSUD = new System.Windows.Forms.NumericUpDown();
-            this.BMWDS = new System.Windows.Forms.Label();
+            this.CraDri_D = new System.Windows.Forms.Label();
             this.BlastPntDSUD = new System.Windows.Forms.NumericUpDown();
-            this.BlastPaintDS = new System.Windows.Forms.Label();
+            this.AccPay_D = new System.Windows.Forms.Label();
             this.NSTab = new System.Windows.Forms.TabPage();
-            this.TANSUD = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TechnicianNSUD = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.SupervisorNSUD = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.SuperintNSUD = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ScaffNSUD = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.RiggerNSUD = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.MechFitterNSUD = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.LHNSUD = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
-            this.HSEQNSUD = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.ExcavOpNSUD = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
-            this.CWNSUD = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.CraneDvrNSUD = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.BMWNSUD = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
-            this.BlasPntNSUD = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
             this.ProjectEndDate = new System.Windows.Forms.DateTimePicker();
             this.ProjectEndDateLabel = new System.Windows.Forms.Label();
             this.ProjectStartDate = new System.Windows.Forms.DateTimePicker();
@@ -242,12 +214,80 @@
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.Address_upd_Button = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.Rig_D = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.OpeMan_D = new System.Windows.Forms.Label();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.NdtTec_D = new System.Windows.Forms.Label();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.MecSup_D = new System.Windows.Forms.Label();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.TraAss_D = new System.Windows.Forms.Label();
+            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.Sup_D = new System.Windows.Forms.Label();
+            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.SupInt_D = new System.Windows.Forms.Label();
+            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.SitTec_D = new System.Windows.Forms.Label();
+            this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
+            this.YarMan_D = new System.Windows.Forms.Label();
+            this.numericUpDown33 = new System.Windows.Forms.NumericUpDown();
+            this.label40 = new System.Windows.Forms.Label();
+            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown11 = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDown12 = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDown13 = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.numericUpDown14 = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.numericUpDown15 = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numericUpDown16 = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numericUpDown17 = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numericUpDown18 = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.numericUpDown19 = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.numericUpDown20 = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.numericUpDown21 = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.numericUpDown22 = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.numericUpDown23 = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.numericUpDown24 = new System.Windows.Forms.NumericUpDown();
+            this.label28 = new System.Windows.Forms.Label();
+            this.numericUpDown25 = new System.Windows.Forms.NumericUpDown();
+            this.label31 = new System.Windows.Forms.Label();
+            this.numericUpDown26 = new System.Windows.Forms.NumericUpDown();
+            this.label33 = new System.Windows.Forms.Label();
+            this.numericUpDown27 = new System.Windows.Forms.NumericUpDown();
+            this.label34 = new System.Windows.Forms.Label();
+            this.numericUpDown28 = new System.Windows.Forms.NumericUpDown();
+            this.label35 = new System.Windows.Forms.Label();
+            this.numericUpDown29 = new System.Windows.Forms.NumericUpDown();
+            this.label36 = new System.Windows.Forms.Label();
+            this.numericUpDown30 = new System.Windows.Forms.NumericUpDown();
+            this.label37 = new System.Windows.Forms.Label();
+            this.numericUpDown31 = new System.Windows.Forms.NumericUpDown();
+            this.label38 = new System.Windows.Forms.Label();
+            this.numericUpDown32 = new System.Windows.Forms.NumericUpDown();
+            this.label39 = new System.Windows.Forms.Label();
+            this.numericUpDown34 = new System.Windows.Forms.NumericUpDown();
+            this.label41 = new System.Windows.Forms.Label();
             this.DocViewGroup.SuspendLayout();
             this.SimProSync_Tab.SuspendLayout();
             this.ProjectGenerationBrowserGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectViewer)).BeginInit();
             this.SimProQuoteGroup.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.Shift_Tabs.SuspendLayout();
             this.DSTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TADSUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TechnicianDSUD)).BeginInit();
@@ -264,20 +304,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.BMWDSUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlastPntDSUD)).BeginInit();
             this.NSTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TANSUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TechnicianNSUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SupervisorNSUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SuperintNSUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ScaffNSUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RiggerNSUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MechFitterNSUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LHNSUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HSEQNSUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ExcavOpNSUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CWNSUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CraneDvrNSUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BMWNSUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BlasPntNSUD)).BeginInit();
             this.DocPropertiesGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -311,6 +337,40 @@
             this.Contract_Gen_Group.SuspendLayout();
             this.Employee_Address_GroupBox.SuspendLayout();
             this.StatusBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown33)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown31)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown32)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown34)).BeginInit();
             this.SuspendLayout();
             // 
             // DocViewGroup
@@ -320,7 +380,7 @@
             this.DocViewGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DocViewGroup.Location = new System.Drawing.Point(0, 0);
             this.DocViewGroup.Name = "DocViewGroup";
-            this.DocViewGroup.Size = new System.Drawing.Size(819, 617);
+            this.DocViewGroup.Size = new System.Drawing.Size(870, 617);
             this.DocViewGroup.TabIndex = 0;
             this.DocViewGroup.TabStop = false;
             this.DocViewGroup.Text = "Document Viewer";
@@ -331,7 +391,7 @@
             this.DocumentGeneratorViewer.Location = new System.Drawing.Point(3, 16);
             this.DocumentGeneratorViewer.MinimumSize = new System.Drawing.Size(20, 20);
             this.DocumentGeneratorViewer.Name = "DocumentGeneratorViewer";
-            this.DocumentGeneratorViewer.Size = new System.Drawing.Size(813, 598);
+            this.DocumentGeneratorViewer.Size = new System.Drawing.Size(864, 598);
             this.DocumentGeneratorViewer.TabIndex = 0;
             // 
             // DocTitle_Label
@@ -356,7 +416,7 @@
             this.SimProSync_Tab.Controls.Add(this.SimProQuoteGroup);
             this.SimProSync_Tab.Location = new System.Drawing.Point(4, 22);
             this.SimProSync_Tab.Name = "SimProSync_Tab";
-            this.SimProSync_Tab.Size = new System.Drawing.Size(1234, 617);
+            this.SimProSync_Tab.Size = new System.Drawing.Size(1234, 663);
             this.SimProSync_Tab.TabIndex = 8;
             this.SimProSync_Tab.Text = "Project Creation";
             this.SimProSync_Tab.UseVisualStyleBackColor = true;
@@ -365,9 +425,9 @@
             // 
             this.ProjectGenerationBrowserGroupBox.Controls.Add(this.ProjectViewer);
             this.ProjectGenerationBrowserGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectGenerationBrowserGroupBox.Location = new System.Drawing.Point(350, 0);
+            this.ProjectGenerationBrowserGroupBox.Location = new System.Drawing.Point(360, 0);
             this.ProjectGenerationBrowserGroupBox.Name = "ProjectGenerationBrowserGroupBox";
-            this.ProjectGenerationBrowserGroupBox.Size = new System.Drawing.Size(884, 617);
+            this.ProjectGenerationBrowserGroupBox.Size = new System.Drawing.Size(874, 663);
             this.ProjectGenerationBrowserGroupBox.TabIndex = 1;
             this.ProjectGenerationBrowserGroupBox.TabStop = false;
             this.ProjectGenerationBrowserGroupBox.Text = "Browser";
@@ -380,7 +440,7 @@
             this.ProjectViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectViewer.Location = new System.Drawing.Point(3, 16);
             this.ProjectViewer.Name = "ProjectViewer";
-            this.ProjectViewer.Size = new System.Drawing.Size(878, 598);
+            this.ProjectViewer.Size = new System.Drawing.Size(868, 644);
             this.ProjectViewer.TabIndex = 0;
             this.ProjectViewer.ZoomFactor = 1D;
             // 
@@ -393,7 +453,7 @@
             this.SimProQuoteGroup.Controls.Add(this.label17);
             this.SimProQuoteGroup.Controls.Add(this.ProjectClient);
             this.SimProQuoteGroup.Controls.Add(this.PushToJobPackButton);
-            this.SimProQuoteGroup.Controls.Add(this.tabControl1);
+            this.SimProQuoteGroup.Controls.Add(this.Shift_Tabs);
             this.SimProQuoteGroup.Controls.Add(this.ProjectEndDate);
             this.SimProQuoteGroup.Controls.Add(this.ProjectEndDateLabel);
             this.SimProQuoteGroup.Controls.Add(this.ProjectStartDate);
@@ -411,14 +471,14 @@
             this.SimProQuoteGroup.Dock = System.Windows.Forms.DockStyle.Left;
             this.SimProQuoteGroup.Location = new System.Drawing.Point(0, 0);
             this.SimProQuoteGroup.Name = "SimProQuoteGroup";
-            this.SimProQuoteGroup.Size = new System.Drawing.Size(350, 617);
+            this.SimProQuoteGroup.Size = new System.Drawing.Size(360, 663);
             this.SimProQuoteGroup.TabIndex = 0;
             this.SimProQuoteGroup.TabStop = false;
             this.SimProQuoteGroup.Text = "Project Details";
             // 
             // TestButton
             // 
-            this.TestButton.Location = new System.Drawing.Point(265, 6);
+            this.TestButton.Location = new System.Drawing.Point(144, 6);
             this.TestButton.Name = "TestButton";
             this.TestButton.Size = new System.Drawing.Size(75, 23);
             this.TestButton.TabIndex = 26;
@@ -439,7 +499,7 @@
             this.ClientContact.FormattingEnabled = true;
             this.ClientContact.Location = new System.Drawing.Point(7, 230);
             this.ClientContact.Name = "ClientContact";
-            this.ClientContact.Size = new System.Drawing.Size(333, 21);
+            this.ClientContact.Size = new System.Drawing.Size(345, 21);
             this.ClientContact.TabIndex = 22;
             // 
             // label17
@@ -463,7 +523,7 @@
             // 
             this.PushToJobPackButton.BackColor = System.Drawing.Color.Transparent;
             this.PushToJobPackButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.PushToJobPackButton.Location = new System.Drawing.Point(265, 105);
+            this.PushToJobPackButton.Location = new System.Drawing.Point(277, 105);
             this.PushToJobPackButton.Name = "PushToJobPackButton";
             this.PushToJobPackButton.Size = new System.Drawing.Size(75, 63);
             this.PushToJobPackButton.TabIndex = 19;
@@ -471,546 +531,376 @@
             this.PushToJobPackButton.UseVisualStyleBackColor = false;
             this.PushToJobPackButton.Click += new System.EventHandler(this.PushToJobPackButton_Click);
             // 
-            // tabControl1
+            // Shift_Tabs
             // 
-            this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tabControl1.Controls.Add(this.DSTab);
-            this.tabControl1.Controls.Add(this.NSTab);
-            this.tabControl1.Location = new System.Drawing.Point(5, 257);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(341, 316);
-            this.tabControl1.TabIndex = 16;
+            this.Shift_Tabs.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Shift_Tabs.Controls.Add(this.DSTab);
+            this.Shift_Tabs.Controls.Add(this.NSTab);
+            this.Shift_Tabs.Location = new System.Drawing.Point(6, 257);
+            this.Shift_Tabs.Multiline = true;
+            this.Shift_Tabs.Name = "Shift_Tabs";
+            this.Shift_Tabs.SelectedIndex = 0;
+            this.Shift_Tabs.Size = new System.Drawing.Size(350, 362);
+            this.Shift_Tabs.TabIndex = 16;
             // 
             // DSTab
             // 
+            this.DSTab.Controls.Add(this.numericUpDown33);
+            this.DSTab.Controls.Add(this.label40);
+            this.DSTab.Controls.Add(this.numericUpDown9);
+            this.DSTab.Controls.Add(this.YarMan_D);
+            this.DSTab.Controls.Add(this.numericUpDown5);
+            this.DSTab.Controls.Add(this.TraAss_D);
+            this.DSTab.Controls.Add(this.numericUpDown6);
+            this.DSTab.Controls.Add(this.Sup_D);
+            this.DSTab.Controls.Add(this.numericUpDown7);
+            this.DSTab.Controls.Add(this.SupInt_D);
+            this.DSTab.Controls.Add(this.numericUpDown8);
+            this.DSTab.Controls.Add(this.SitTec_D);
+            this.DSTab.Controls.Add(this.numericUpDown1);
+            this.DSTab.Controls.Add(this.Rig_D);
+            this.DSTab.Controls.Add(this.numericUpDown2);
+            this.DSTab.Controls.Add(this.OpeMan_D);
+            this.DSTab.Controls.Add(this.numericUpDown3);
+            this.DSTab.Controls.Add(this.NdtTec_D);
+            this.DSTab.Controls.Add(this.numericUpDown4);
+            this.DSTab.Controls.Add(this.MecSup_D);
             this.DSTab.Controls.Add(this.TADSUD);
-            this.DSTab.Controls.Add(this.TADS);
+            this.DSTab.Controls.Add(this.SitSaf_D);
             this.DSTab.Controls.Add(this.TechnicianDSUD);
-            this.DSTab.Controls.Add(this.TechnicianDS);
+            this.DSTab.Controls.Add(this.CodWel_D);
             this.DSTab.Controls.Add(this.SupervisorDSUD);
-            this.DSTab.Controls.Add(this.SupervisorDS);
+            this.DSTab.Controls.Add(this.Sch_D);
             this.DSTab.Controls.Add(this.SuperintDSUD);
-            this.DSTab.Controls.Add(this.SuperintDS);
+            this.DSTab.Controls.Add(this.Cert10_D);
             this.DSTab.Controls.Add(this.ScaffDSUD);
-            this.DSTab.Controls.Add(this.ScaffDS);
+            this.DSTab.Controls.Add(this.Sca_D);
             this.DSTab.Controls.Add(this.RiggerDSUD);
-            this.DSTab.Controls.Add(this.RiggerDS);
+            this.DSTab.Controls.Add(this.BusSup_D);
             this.DSTab.Controls.Add(this.MechFitterDSUD);
-            this.DSTab.Controls.Add(this.MechFitterDS);
+            this.DSTab.Controls.Add(this.LeaHan_D);
             this.DSTab.Controls.Add(this.LHDSUD);
-            this.DSTab.Controls.Add(this.LHDS);
+            this.DSTab.Controls.Add(this.Boil_D);
             this.DSTab.Controls.Add(this.HSEQDSUD);
-            this.DSTab.Controls.Add(this.HSEQDS);
+            this.DSTab.Controls.Add(this.GenMan_D);
             this.DSTab.Controls.Add(this.ExcavOpDSUD);
-            this.DSTab.Controls.Add(this.ExcavOpDS);
+            this.DSTab.Controls.Add(this.BlaPai_D);
             this.DSTab.Controls.Add(this.CWDSUD);
-            this.DSTab.Controls.Add(this.CWDS);
+            this.DSTab.Controls.Add(this.Est_D);
             this.DSTab.Controls.Add(this.CraneDvrDSUD);
-            this.DSTab.Controls.Add(this.CraneDvrDS);
+            this.DSTab.Controls.Add(this.AccRec_D);
             this.DSTab.Controls.Add(this.BMWDSUD);
-            this.DSTab.Controls.Add(this.BMWDS);
+            this.DSTab.Controls.Add(this.CraDri_D);
             this.DSTab.Controls.Add(this.BlastPntDSUD);
-            this.DSTab.Controls.Add(this.BlastPaintDS);
+            this.DSTab.Controls.Add(this.AccPay_D);
             this.DSTab.Location = new System.Drawing.Point(4, 22);
             this.DSTab.Name = "DSTab";
             this.DSTab.Padding = new System.Windows.Forms.Padding(3);
-            this.DSTab.Size = new System.Drawing.Size(333, 290);
+            this.DSTab.Size = new System.Drawing.Size(342, 336);
             this.DSTab.TabIndex = 0;
             this.DSTab.Text = "Day Shift";
             this.DSTab.UseVisualStyleBackColor = true;
             // 
             // TADSUD
             // 
-            this.TADSUD.Location = new System.Drawing.Point(177, 161);
+            this.TADSUD.Location = new System.Drawing.Point(290, 161);
             this.TADSUD.Name = "TADSUD";
             this.TADSUD.Size = new System.Drawing.Size(42, 20);
             this.TADSUD.TabIndex = 27;
+            this.TADSUD.Tag = "Day, 16";
             // 
-            // TADS
+            // SitSaf_D
             // 
-            this.TADS.AutoSize = true;
-            this.TADS.Location = new System.Drawing.Point(114, 163);
-            this.TADS.Name = "TADS";
-            this.TADS.Size = new System.Drawing.Size(26, 13);
-            this.TADS.TabIndex = 26;
-            this.TADS.Text = "T/A";
+            this.SitSaf_D.AutoSize = true;
+            this.SitSaf_D.Location = new System.Drawing.Point(171, 163);
+            this.SitSaf_D.Name = "SitSaf_D";
+            this.SitSaf_D.Size = new System.Drawing.Size(96, 13);
+            this.SitSaf_D.TabIndex = 26;
+            this.SitSaf_D.Text = "Site Safety Advisor";
             // 
             // TechnicianDSUD
             // 
-            this.TechnicianDSUD.Location = new System.Drawing.Point(66, 161);
+            this.TechnicianDSUD.Location = new System.Drawing.Point(125, 187);
             this.TechnicianDSUD.Name = "TechnicianDSUD";
             this.TechnicianDSUD.Size = new System.Drawing.Size(42, 20);
             this.TechnicianDSUD.TabIndex = 25;
+            this.TechnicianDSUD.Tag = "Day, 31";
             // 
-            // TechnicianDS
+            // CodWel_D
             // 
-            this.TechnicianDS.AutoSize = true;
-            this.TechnicianDS.Location = new System.Drawing.Point(4, 163);
-            this.TechnicianDS.Name = "TechnicianDS";
-            this.TechnicianDS.Size = new System.Drawing.Size(60, 13);
-            this.TechnicianDS.TabIndex = 24;
-            this.TechnicianDS.Text = "Technician";
+            this.CodWel_D.AutoSize = true;
+            this.CodWel_D.Location = new System.Drawing.Point(6, 189);
+            this.CodWel_D.Name = "CodWel_D";
+            this.CodWel_D.Size = new System.Drawing.Size(75, 13);
+            this.CodWel_D.TabIndex = 24;
+            this.CodWel_D.Text = "Coded Welder";
             // 
             // SupervisorDSUD
             // 
-            this.SupervisorDSUD.Location = new System.Drawing.Point(177, 137);
+            this.SupervisorDSUD.Location = new System.Drawing.Point(290, 137);
             this.SupervisorDSUD.Name = "SupervisorDSUD";
             this.SupervisorDSUD.Size = new System.Drawing.Size(42, 20);
             this.SupervisorDSUD.TabIndex = 23;
+            this.SupervisorDSUD.Tag = "Day, 39";
             // 
-            // SupervisorDS
+            // Sch_D
             // 
-            this.SupervisorDS.AutoSize = true;
-            this.SupervisorDS.Location = new System.Drawing.Point(114, 139);
-            this.SupervisorDS.Name = "SupervisorDS";
-            this.SupervisorDS.Size = new System.Drawing.Size(57, 13);
-            this.SupervisorDS.TabIndex = 22;
-            this.SupervisorDS.Text = "Supervisor";
+            this.Sch_D.AutoSize = true;
+            this.Sch_D.Location = new System.Drawing.Point(171, 139);
+            this.Sch_D.Name = "Sch_D";
+            this.Sch_D.Size = new System.Drawing.Size(55, 13);
+            this.Sch_D.TabIndex = 22;
+            this.Sch_D.Text = "Scheduler";
             // 
             // SuperintDSUD
             // 
-            this.SuperintDSUD.Location = new System.Drawing.Point(66, 137);
+            this.SuperintDSUD.Location = new System.Drawing.Point(125, 163);
             this.SuperintDSUD.Name = "SuperintDSUD";
             this.SuperintDSUD.Size = new System.Drawing.Size(42, 20);
             this.SuperintDSUD.TabIndex = 21;
+            this.SuperintDSUD.Tag = "Day, 38";
             // 
-            // SuperintDS
+            // Cert10_D
             // 
-            this.SuperintDS.AutoSize = true;
-            this.SuperintDS.Location = new System.Drawing.Point(4, 139);
-            this.SuperintDS.Name = "SuperintDS";
-            this.SuperintDS.Size = new System.Drawing.Size(41, 13);
-            this.SuperintDS.TabIndex = 20;
-            this.SuperintDS.Text = "Sup-Int";
+            this.Cert10_D.AutoSize = true;
+            this.Cert10_D.Location = new System.Drawing.Point(6, 165);
+            this.Cert10_D.Name = "Cert10_D";
+            this.Cert10_D.Size = new System.Drawing.Size(116, 13);
+            this.Cert10_D.TabIndex = 20;
+            this.Cert10_D.Text = "Cert 10 Weld Inspector";
             // 
             // ScaffDSUD
             // 
-            this.ScaffDSUD.Location = new System.Drawing.Point(177, 113);
+            this.ScaffDSUD.Location = new System.Drawing.Point(290, 113);
             this.ScaffDSUD.Name = "ScaffDSUD";
             this.ScaffDSUD.Size = new System.Drawing.Size(42, 20);
             this.ScaffDSUD.TabIndex = 19;
+            this.ScaffDSUD.Tag = "Day, 25";
             // 
-            // ScaffDS
+            // Sca_D
             // 
-            this.ScaffDS.AutoSize = true;
-            this.ScaffDS.Location = new System.Drawing.Point(114, 115);
-            this.ScaffDS.Name = "ScaffDS";
-            this.ScaffDS.Size = new System.Drawing.Size(32, 13);
-            this.ScaffDS.TabIndex = 18;
-            this.ScaffDS.Text = "Scaff";
+            this.Sca_D.AutoSize = true;
+            this.Sca_D.Location = new System.Drawing.Point(171, 115);
+            this.Sca_D.Name = "Sca_D";
+            this.Sca_D.Size = new System.Drawing.Size(55, 13);
+            this.Sca_D.TabIndex = 18;
+            this.Sca_D.Text = "Scaffolder";
             // 
             // RiggerDSUD
             // 
-            this.RiggerDSUD.Location = new System.Drawing.Point(66, 113);
+            this.RiggerDSUD.Location = new System.Drawing.Point(125, 139);
             this.RiggerDSUD.Name = "RiggerDSUD";
             this.RiggerDSUD.Size = new System.Drawing.Size(42, 20);
             this.RiggerDSUD.TabIndex = 17;
+            this.RiggerDSUD.Tag = "Day, 10";
             // 
-            // RiggerDS
+            // BusSup_D
             // 
-            this.RiggerDS.AutoSize = true;
-            this.RiggerDS.Location = new System.Drawing.Point(4, 115);
-            this.RiggerDS.Name = "RiggerDS";
-            this.RiggerDS.Size = new System.Drawing.Size(38, 13);
-            this.RiggerDS.TabIndex = 16;
-            this.RiggerDS.Text = "Rigger";
+            this.BusSup_D.AutoSize = true;
+            this.BusSup_D.Location = new System.Drawing.Point(6, 141);
+            this.BusSup_D.Name = "BusSup_D";
+            this.BusSup_D.Size = new System.Drawing.Size(89, 13);
+            this.BusSup_D.TabIndex = 16;
+            this.BusSup_D.Text = "Business Support";
             // 
             // MechFitterDSUD
             // 
-            this.MechFitterDSUD.Location = new System.Drawing.Point(177, 89);
+            this.MechFitterDSUD.Location = new System.Drawing.Point(125, 289);
             this.MechFitterDSUD.Name = "MechFitterDSUD";
             this.MechFitterDSUD.Size = new System.Drawing.Size(42, 20);
             this.MechFitterDSUD.TabIndex = 15;
+            this.MechFitterDSUD.Tag = "Day, 32";
             // 
-            // MechFitterDS
+            // LeaHan_D
             // 
-            this.MechFitterDS.AutoSize = true;
-            this.MechFitterDS.Location = new System.Drawing.Point(114, 91);
-            this.MechFitterDS.Name = "MechFitterDS";
-            this.MechFitterDS.Size = new System.Drawing.Size(54, 13);
-            this.MechFitterDS.TabIndex = 14;
-            this.MechFitterDS.Text = "Mech. Fitr";
+            this.LeaHan_D.AutoSize = true;
+            this.LeaHan_D.Location = new System.Drawing.Point(6, 291);
+            this.LeaHan_D.Name = "LeaHan_D";
+            this.LeaHan_D.Size = new System.Drawing.Size(74, 13);
+            this.LeaHan_D.TabIndex = 14;
+            this.LeaHan_D.Text = "Leading Hand";
             // 
             // LHDSUD
             // 
-            this.LHDSUD.Location = new System.Drawing.Point(66, 89);
+            this.LHDSUD.Location = new System.Drawing.Point(125, 115);
             this.LHDSUD.Name = "LHDSUD";
             this.LHDSUD.Size = new System.Drawing.Size(42, 20);
             this.LHDSUD.TabIndex = 13;
+            this.LHDSUD.Tag = "Day, 9";
             // 
-            // LHDS
+            // Boil_D
             // 
-            this.LHDS.AutoSize = true;
-            this.LHDS.Location = new System.Drawing.Point(4, 91);
-            this.LHDS.Name = "LHDS";
-            this.LHDS.Size = new System.Drawing.Size(26, 13);
-            this.LHDS.TabIndex = 12;
-            this.LHDS.Text = "L/H";
+            this.Boil_D.AutoSize = true;
+            this.Boil_D.Location = new System.Drawing.Point(6, 117);
+            this.Boil_D.Name = "Boil_D";
+            this.Boil_D.Size = new System.Drawing.Size(62, 13);
+            this.Boil_D.TabIndex = 12;
+            this.Boil_D.Text = "Boilermaker";
             // 
             // HSEQDSUD
             // 
-            this.HSEQDSUD.Location = new System.Drawing.Point(177, 63);
+            this.HSEQDSUD.Location = new System.Drawing.Point(125, 264);
             this.HSEQDSUD.Name = "HSEQDSUD";
             this.HSEQDSUD.Size = new System.Drawing.Size(42, 20);
             this.HSEQDSUD.TabIndex = 11;
+            this.HSEQDSUD.Tag = "Day, 22";
             // 
-            // HSEQDS
+            // GenMan_D
             // 
-            this.HSEQDS.AutoSize = true;
-            this.HSEQDS.Location = new System.Drawing.Point(114, 65);
-            this.HSEQDS.Name = "HSEQDS";
-            this.HSEQDS.Size = new System.Drawing.Size(66, 13);
-            this.HSEQDS.TabIndex = 10;
-            this.HSEQDS.Text = "Site Saf. Ad.";
+            this.GenMan_D.AutoSize = true;
+            this.GenMan_D.Location = new System.Drawing.Point(6, 266);
+            this.GenMan_D.Name = "GenMan_D";
+            this.GenMan_D.Size = new System.Drawing.Size(89, 13);
+            this.GenMan_D.TabIndex = 10;
+            this.GenMan_D.Text = "General Manager";
             // 
             // ExcavOpDSUD
             // 
-            this.ExcavOpDSUD.Location = new System.Drawing.Point(66, 63);
+            this.ExcavOpDSUD.Location = new System.Drawing.Point(125, 89);
             this.ExcavOpDSUD.Name = "ExcavOpDSUD";
             this.ExcavOpDSUD.Size = new System.Drawing.Size(42, 20);
             this.ExcavOpDSUD.TabIndex = 9;
+            this.ExcavOpDSUD.Tag = "Day, 8";
             // 
-            // ExcavOpDS
+            // BlaPai_D
             // 
-            this.ExcavOpDS.AutoSize = true;
-            this.ExcavOpDS.Location = new System.Drawing.Point(4, 65);
-            this.ExcavOpDS.Name = "ExcavOpDS";
-            this.ExcavOpDS.Size = new System.Drawing.Size(57, 13);
-            this.ExcavOpDS.TabIndex = 8;
-            this.ExcavOpDS.Text = "Excav Op.";
+            this.BlaPai_D.AutoSize = true;
+            this.BlaPai_D.Location = new System.Drawing.Point(6, 91);
+            this.BlaPai_D.Name = "BlaPai_D";
+            this.BlaPai_D.Size = new System.Drawing.Size(75, 13);
+            this.BlaPai_D.TabIndex = 8;
+            this.BlaPai_D.Text = "Blaster Painter";
             // 
             // CWDSUD
             // 
-            this.CWDSUD.Location = new System.Drawing.Point(177, 37);
+            this.CWDSUD.Location = new System.Drawing.Point(125, 238);
             this.CWDSUD.Name = "CWDSUD";
             this.CWDSUD.Size = new System.Drawing.Size(42, 20);
             this.CWDSUD.TabIndex = 7;
+            this.CWDSUD.Tag = "Day, 15";
             // 
-            // CWDS
+            // Est_D
             // 
-            this.CWDS.AutoSize = true;
-            this.CWDS.Location = new System.Drawing.Point(114, 39);
-            this.CWDS.Name = "CWDS";
-            this.CWDS.Size = new System.Drawing.Size(30, 13);
-            this.CWDS.TabIndex = 6;
-            this.CWDS.Text = "C/W";
+            this.Est_D.AutoSize = true;
+            this.Est_D.Location = new System.Drawing.Point(6, 240);
+            this.Est_D.Name = "Est_D";
+            this.Est_D.Size = new System.Drawing.Size(50, 13);
+            this.Est_D.TabIndex = 6;
+            this.Est_D.Text = "Estimator";
             // 
             // CraneDvrDSUD
             // 
-            this.CraneDvrDSUD.Location = new System.Drawing.Point(66, 37);
+            this.CraneDvrDSUD.Location = new System.Drawing.Point(125, 37);
             this.CraneDvrDSUD.Name = "CraneDvrDSUD";
             this.CraneDvrDSUD.Size = new System.Drawing.Size(42, 20);
             this.CraneDvrDSUD.TabIndex = 5;
+            this.CraneDvrDSUD.Tag = "Day, 29";
             // 
-            // CraneDvrDS
+            // AccRec_D
             // 
-            this.CraneDvrDS.AutoSize = true;
-            this.CraneDvrDS.Location = new System.Drawing.Point(4, 39);
-            this.CraneDvrDS.Name = "CraneDvrDS";
-            this.CraneDvrDS.Size = new System.Drawing.Size(55, 13);
-            this.CraneDvrDS.TabIndex = 4;
-            this.CraneDvrDS.Text = "Crane Dvr";
+            this.AccRec_D.AutoSize = true;
+            this.AccRec_D.Location = new System.Drawing.Point(6, 39);
+            this.AccRec_D.Name = "AccRec_D";
+            this.AccRec_D.Size = new System.Drawing.Size(109, 13);
+            this.AccRec_D.TabIndex = 4;
+            this.AccRec_D.Text = "Accounts Receivable";
             // 
             // BMWDSUD
             // 
-            this.BMWDSUD.Location = new System.Drawing.Point(177, 11);
+            this.BMWDSUD.Location = new System.Drawing.Point(125, 212);
             this.BMWDSUD.Name = "BMWDSUD";
             this.BMWDSUD.Size = new System.Drawing.Size(42, 20);
             this.BMWDSUD.TabIndex = 3;
+            this.BMWDSUD.Tag = "Day, 24";
             // 
-            // BMWDS
+            // CraDri_D
             // 
-            this.BMWDS.AutoSize = true;
-            this.BMWDS.Location = new System.Drawing.Point(114, 13);
-            this.BMWDS.Name = "BMWDS";
-            this.BMWDS.Size = new System.Drawing.Size(34, 13);
-            this.BMWDS.TabIndex = 2;
-            this.BMWDS.Text = "BMW";
+            this.CraDri_D.AutoSize = true;
+            this.CraDri_D.Location = new System.Drawing.Point(6, 214);
+            this.CraDri_D.Name = "CraDri_D";
+            this.CraDri_D.Size = new System.Drawing.Size(66, 13);
+            this.CraDri_D.TabIndex = 2;
+            this.CraDri_D.Text = "Crane Driver";
             // 
             // BlastPntDSUD
             // 
-            this.BlastPntDSUD.Location = new System.Drawing.Point(66, 11);
+            this.BlastPntDSUD.Location = new System.Drawing.Point(125, 11);
             this.BlastPntDSUD.Name = "BlastPntDSUD";
             this.BlastPntDSUD.Size = new System.Drawing.Size(42, 20);
             this.BlastPntDSUD.TabIndex = 1;
+            this.BlastPntDSUD.Tag = "Day, 4";
             // 
-            // BlastPaintDS
+            // AccPay_D
             // 
-            this.BlastPaintDS.AutoSize = true;
-            this.BlastPaintDS.Location = new System.Drawing.Point(4, 13);
-            this.BlastPaintDS.Name = "BlastPaintDS";
-            this.BlastPaintDS.Size = new System.Drawing.Size(51, 13);
-            this.BlastPaintDS.TabIndex = 0;
-            this.BlastPaintDS.Text = "Blast/Pnt";
+            this.AccPay_D.AutoSize = true;
+            this.AccPay_D.Location = new System.Drawing.Point(6, 13);
+            this.AccPay_D.Name = "AccPay_D";
+            this.AccPay_D.Size = new System.Drawing.Size(93, 13);
+            this.AccPay_D.TabIndex = 0;
+            this.AccPay_D.Text = "Accounts Payable";
             // 
             // NSTab
             // 
-            this.NSTab.Controls.Add(this.TANSUD);
+            this.NSTab.Controls.Add(this.numericUpDown10);
             this.NSTab.Controls.Add(this.label1);
-            this.NSTab.Controls.Add(this.TechnicianNSUD);
+            this.NSTab.Controls.Add(this.numericUpDown11);
             this.NSTab.Controls.Add(this.label2);
-            this.NSTab.Controls.Add(this.SupervisorNSUD);
+            this.NSTab.Controls.Add(this.numericUpDown12);
             this.NSTab.Controls.Add(this.label3);
-            this.NSTab.Controls.Add(this.SuperintNSUD);
+            this.NSTab.Controls.Add(this.numericUpDown13);
             this.NSTab.Controls.Add(this.label4);
-            this.NSTab.Controls.Add(this.ScaffNSUD);
+            this.NSTab.Controls.Add(this.numericUpDown14);
             this.NSTab.Controls.Add(this.label5);
-            this.NSTab.Controls.Add(this.RiggerNSUD);
+            this.NSTab.Controls.Add(this.numericUpDown15);
             this.NSTab.Controls.Add(this.label6);
-            this.NSTab.Controls.Add(this.MechFitterNSUD);
+            this.NSTab.Controls.Add(this.numericUpDown16);
             this.NSTab.Controls.Add(this.label7);
-            this.NSTab.Controls.Add(this.LHNSUD);
+            this.NSTab.Controls.Add(this.numericUpDown17);
             this.NSTab.Controls.Add(this.label8);
-            this.NSTab.Controls.Add(this.HSEQNSUD);
+            this.NSTab.Controls.Add(this.numericUpDown18);
             this.NSTab.Controls.Add(this.label9);
-            this.NSTab.Controls.Add(this.ExcavOpNSUD);
+            this.NSTab.Controls.Add(this.numericUpDown19);
             this.NSTab.Controls.Add(this.label10);
-            this.NSTab.Controls.Add(this.CWNSUD);
+            this.NSTab.Controls.Add(this.numericUpDown20);
             this.NSTab.Controls.Add(this.label11);
-            this.NSTab.Controls.Add(this.CraneDvrNSUD);
+            this.NSTab.Controls.Add(this.numericUpDown21);
             this.NSTab.Controls.Add(this.label12);
-            this.NSTab.Controls.Add(this.BMWNSUD);
+            this.NSTab.Controls.Add(this.numericUpDown22);
             this.NSTab.Controls.Add(this.label13);
-            this.NSTab.Controls.Add(this.BlasPntNSUD);
+            this.NSTab.Controls.Add(this.numericUpDown23);
             this.NSTab.Controls.Add(this.label14);
+            this.NSTab.Controls.Add(this.numericUpDown24);
+            this.NSTab.Controls.Add(this.label28);
+            this.NSTab.Controls.Add(this.numericUpDown25);
+            this.NSTab.Controls.Add(this.label31);
+            this.NSTab.Controls.Add(this.numericUpDown26);
+            this.NSTab.Controls.Add(this.label33);
+            this.NSTab.Controls.Add(this.numericUpDown27);
+            this.NSTab.Controls.Add(this.label34);
+            this.NSTab.Controls.Add(this.numericUpDown28);
+            this.NSTab.Controls.Add(this.label35);
+            this.NSTab.Controls.Add(this.numericUpDown29);
+            this.NSTab.Controls.Add(this.label36);
+            this.NSTab.Controls.Add(this.numericUpDown30);
+            this.NSTab.Controls.Add(this.label37);
+            this.NSTab.Controls.Add(this.numericUpDown31);
+            this.NSTab.Controls.Add(this.label38);
+            this.NSTab.Controls.Add(this.numericUpDown32);
+            this.NSTab.Controls.Add(this.label39);
+            this.NSTab.Controls.Add(this.numericUpDown34);
+            this.NSTab.Controls.Add(this.label41);
             this.NSTab.Location = new System.Drawing.Point(4, 22);
             this.NSTab.Name = "NSTab";
             this.NSTab.Padding = new System.Windows.Forms.Padding(3);
-            this.NSTab.Size = new System.Drawing.Size(333, 290);
+            this.NSTab.Size = new System.Drawing.Size(342, 336);
             this.NSTab.TabIndex = 1;
             this.NSTab.Text = "Night Shift";
             this.NSTab.UseVisualStyleBackColor = true;
             // 
-            // TANSUD
-            // 
-            this.TANSUD.Location = new System.Drawing.Point(177, 161);
-            this.TANSUD.Name = "TANSUD";
-            this.TANSUD.Size = new System.Drawing.Size(42, 20);
-            this.TANSUD.TabIndex = 55;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(114, 163);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 13);
-            this.label1.TabIndex = 54;
-            this.label1.Text = "T/A";
-            // 
-            // TechnicianNSUD
-            // 
-            this.TechnicianNSUD.Location = new System.Drawing.Point(66, 161);
-            this.TechnicianNSUD.Name = "TechnicianNSUD";
-            this.TechnicianNSUD.Size = new System.Drawing.Size(42, 20);
-            this.TechnicianNSUD.TabIndex = 53;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 163);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 52;
-            this.label2.Text = "Technician";
-            // 
-            // SupervisorNSUD
-            // 
-            this.SupervisorNSUD.Location = new System.Drawing.Point(177, 137);
-            this.SupervisorNSUD.Name = "SupervisorNSUD";
-            this.SupervisorNSUD.Size = new System.Drawing.Size(42, 20);
-            this.SupervisorNSUD.TabIndex = 51;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(114, 139);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
-            this.label3.TabIndex = 50;
-            this.label3.Text = "Supervisor";
-            // 
-            // SuperintNSUD
-            // 
-            this.SuperintNSUD.Location = new System.Drawing.Point(66, 137);
-            this.SuperintNSUD.Name = "SuperintNSUD";
-            this.SuperintNSUD.Size = new System.Drawing.Size(42, 20);
-            this.SuperintNSUD.TabIndex = 49;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 139);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 48;
-            this.label4.Text = "Sup-Int";
-            // 
-            // ScaffNSUD
-            // 
-            this.ScaffNSUD.Location = new System.Drawing.Point(177, 113);
-            this.ScaffNSUD.Name = "ScaffNSUD";
-            this.ScaffNSUD.Size = new System.Drawing.Size(42, 20);
-            this.ScaffNSUD.TabIndex = 47;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(114, 115);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
-            this.label5.TabIndex = 46;
-            this.label5.Text = "Scaff";
-            // 
-            // RiggerNSUD
-            // 
-            this.RiggerNSUD.Location = new System.Drawing.Point(66, 113);
-            this.RiggerNSUD.Name = "RiggerNSUD";
-            this.RiggerNSUD.Size = new System.Drawing.Size(42, 20);
-            this.RiggerNSUD.TabIndex = 45;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 115);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
-            this.label6.TabIndex = 44;
-            this.label6.Text = "Rigger";
-            // 
-            // MechFitterNSUD
-            // 
-            this.MechFitterNSUD.Location = new System.Drawing.Point(177, 89);
-            this.MechFitterNSUD.Name = "MechFitterNSUD";
-            this.MechFitterNSUD.Size = new System.Drawing.Size(42, 20);
-            this.MechFitterNSUD.TabIndex = 43;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(114, 91);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
-            this.label7.TabIndex = 42;
-            this.label7.Text = "Mech. Fitr";
-            // 
-            // LHNSUD
-            // 
-            this.LHNSUD.Location = new System.Drawing.Point(66, 89);
-            this.LHNSUD.Name = "LHNSUD";
-            this.LHNSUD.Size = new System.Drawing.Size(42, 20);
-            this.LHNSUD.TabIndex = 41;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 91);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(26, 13);
-            this.label8.TabIndex = 40;
-            this.label8.Text = "L/H";
-            // 
-            // HSEQNSUD
-            // 
-            this.HSEQNSUD.Location = new System.Drawing.Point(177, 63);
-            this.HSEQNSUD.Name = "HSEQNSUD";
-            this.HSEQNSUD.Size = new System.Drawing.Size(42, 20);
-            this.HSEQNSUD.TabIndex = 39;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(114, 65);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 13);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Site Saf. Ad.";
-            // 
-            // ExcavOpNSUD
-            // 
-            this.ExcavOpNSUD.Location = new System.Drawing.Point(66, 63);
-            this.ExcavOpNSUD.Name = "ExcavOpNSUD";
-            this.ExcavOpNSUD.Size = new System.Drawing.Size(42, 20);
-            this.ExcavOpNSUD.TabIndex = 37;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(4, 65);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 13);
-            this.label10.TabIndex = 36;
-            this.label10.Text = "Excav Op.";
-            // 
-            // CWNSUD
-            // 
-            this.CWNSUD.Location = new System.Drawing.Point(177, 37);
-            this.CWNSUD.Name = "CWNSUD";
-            this.CWNSUD.Size = new System.Drawing.Size(42, 20);
-            this.CWNSUD.TabIndex = 35;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(114, 39);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(30, 13);
-            this.label11.TabIndex = 34;
-            this.label11.Text = "C/W";
-            // 
-            // CraneDvrNSUD
-            // 
-            this.CraneDvrNSUD.Location = new System.Drawing.Point(66, 37);
-            this.CraneDvrNSUD.Name = "CraneDvrNSUD";
-            this.CraneDvrNSUD.Size = new System.Drawing.Size(42, 20);
-            this.CraneDvrNSUD.TabIndex = 33;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(4, 39);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 13);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "Crane Dvr";
-            // 
-            // BMWNSUD
-            // 
-            this.BMWNSUD.Location = new System.Drawing.Point(177, 11);
-            this.BMWNSUD.Name = "BMWNSUD";
-            this.BMWNSUD.Size = new System.Drawing.Size(42, 20);
-            this.BMWNSUD.TabIndex = 31;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(114, 13);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(34, 13);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "BMW";
-            // 
-            // BlasPntNSUD
-            // 
-            this.BlasPntNSUD.Location = new System.Drawing.Point(66, 11);
-            this.BlasPntNSUD.Name = "BlasPntNSUD";
-            this.BlasPntNSUD.Size = new System.Drawing.Size(42, 20);
-            this.BlasPntNSUD.TabIndex = 29;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(4, 13);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 13);
-            this.label14.TabIndex = 28;
-            this.label14.Text = "Blast/Pnt";
-            // 
             // ProjectEndDate
             // 
             this.ProjectEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ProjectEndDate.Location = new System.Drawing.Point(262, 187);
+            this.ProjectEndDate.Location = new System.Drawing.Point(274, 187);
             this.ProjectEndDate.Name = "ProjectEndDate";
             this.ProjectEndDate.Size = new System.Drawing.Size(78, 20);
             this.ProjectEndDate.TabIndex = 15;
@@ -1018,7 +908,7 @@
             // ProjectEndDateLabel
             // 
             this.ProjectEndDateLabel.AutoSize = true;
-            this.ProjectEndDateLabel.Location = new System.Drawing.Point(252, 171);
+            this.ProjectEndDateLabel.Location = new System.Drawing.Point(264, 171);
             this.ProjectEndDateLabel.Name = "ProjectEndDateLabel";
             this.ProjectEndDateLabel.Size = new System.Drawing.Size(88, 13);
             this.ProjectEndDateLabel.TabIndex = 14;
@@ -1027,7 +917,7 @@
             // ProjectStartDate
             // 
             this.ProjectStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ProjectStartDate.Location = new System.Drawing.Point(158, 187);
+            this.ProjectStartDate.Location = new System.Drawing.Point(171, 187);
             this.ProjectStartDate.Name = "ProjectStartDate";
             this.ProjectStartDate.Size = new System.Drawing.Size(78, 20);
             this.ProjectStartDate.TabIndex = 13;
@@ -1035,7 +925,7 @@
             // ProjectStartDateLabel
             // 
             this.ProjectStartDateLabel.AutoSize = true;
-            this.ProjectStartDateLabel.Location = new System.Drawing.Point(155, 171);
+            this.ProjectStartDateLabel.Location = new System.Drawing.Point(168, 171);
             this.ProjectStartDateLabel.Name = "ProjectStartDateLabel";
             this.ProjectStartDateLabel.Size = new System.Drawing.Size(91, 13);
             this.ProjectStartDateLabel.TabIndex = 12;
@@ -1045,7 +935,7 @@
             // 
             this.ProjectPONumber.Location = new System.Drawing.Point(7, 187);
             this.ProjectPONumber.Name = "ProjectPONumber";
-            this.ProjectPONumber.Size = new System.Drawing.Size(140, 20);
+            this.ProjectPONumber.Size = new System.Drawing.Size(158, 20);
             this.ProjectPONumber.TabIndex = 11;
             // 
             // ProjectPOLabel
@@ -1070,9 +960,9 @@
             // 
             this.PushAssignar_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PushAssignar_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PushAssignar_Button.Location = new System.Drawing.Point(3, 579);
+            this.PushAssignar_Button.Location = new System.Drawing.Point(3, 625);
             this.PushAssignar_Button.Name = "PushAssignar_Button";
-            this.PushAssignar_Button.Size = new System.Drawing.Size(344, 35);
+            this.PushAssignar_Button.Size = new System.Drawing.Size(354, 35);
             this.PushAssignar_Button.TabIndex = 7;
             this.PushAssignar_Button.Text = "Create Project";
             this.PushAssignar_Button.UseVisualStyleBackColor = true;
@@ -1105,7 +995,7 @@
             // 
             // JobNumberSearch
             // 
-            this.JobNumberSearch.Location = new System.Drawing.Point(265, 30);
+            this.JobNumberSearch.Location = new System.Drawing.Point(277, 29);
             this.JobNumberSearch.Name = "JobNumberSearch";
             this.JobNumberSearch.Size = new System.Drawing.Size(75, 23);
             this.JobNumberSearch.TabIndex = 2;
@@ -1217,7 +1107,7 @@
             this.Generate_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Generate_Button.Location = new System.Drawing.Point(3, 591);
             this.Generate_Button.Name = "Generate_Button";
-            this.Generate_Button.Size = new System.Drawing.Size(405, 23);
+            this.Generate_Button.Size = new System.Drawing.Size(354, 23);
             this.Generate_Button.TabIndex = 2;
             this.Generate_Button.Text = "Generate";
             this.Generate_Button.UseVisualStyleBackColor = true;
@@ -1241,7 +1131,7 @@
             this.DocPropertiesGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DocPropertiesGroup.Location = new System.Drawing.Point(0, 0);
             this.DocPropertiesGroup.Name = "DocPropertiesGroup";
-            this.DocPropertiesGroup.Size = new System.Drawing.Size(411, 617);
+            this.DocPropertiesGroup.Size = new System.Drawing.Size(360, 617);
             this.DocPropertiesGroup.TabIndex = 0;
             this.DocPropertiesGroup.TabStop = false;
             this.DocPropertiesGroup.Text = "Document Properties";
@@ -1260,7 +1150,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.DocViewGroup);
             this.splitContainer1.Size = new System.Drawing.Size(1234, 617);
-            this.splitContainer1.SplitterDistance = 411;
+            this.splitContainer1.SplitterDistance = 360;
             this.splitContainer1.TabIndex = 1;
             // 
             // DocumentGen_Tab
@@ -1288,7 +1178,7 @@
             this.Assignar_Tabs.Location = new System.Drawing.Point(0, 0);
             this.Assignar_Tabs.Name = "Assignar_Tabs";
             this.Assignar_Tabs.SelectedIndex = 0;
-            this.Assignar_Tabs.Size = new System.Drawing.Size(1242, 643);
+            this.Assignar_Tabs.Size = new System.Drawing.Size(1242, 689);
             this.Assignar_Tabs.TabIndex = 1;
             // 
             // Job_Pack_tab
@@ -1297,7 +1187,7 @@
             this.Job_Pack_tab.Controls.Add(this.JobPackGroupBox);
             this.Job_Pack_tab.Location = new System.Drawing.Point(4, 22);
             this.Job_Pack_tab.Name = "Job_Pack_tab";
-            this.Job_Pack_tab.Size = new System.Drawing.Size(1234, 617);
+            this.Job_Pack_tab.Size = new System.Drawing.Size(1234, 663);
             this.Job_Pack_tab.TabIndex = 4;
             this.Job_Pack_tab.Text = "Job Pack Creation";
             this.Job_Pack_tab.UseVisualStyleBackColor = true;
@@ -1306,9 +1196,9 @@
             // 
             this.DocumentPreview_Group.Controls.Add(this.JobPackBrowser);
             this.DocumentPreview_Group.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DocumentPreview_Group.Location = new System.Drawing.Point(350, 0);
+            this.DocumentPreview_Group.Location = new System.Drawing.Point(360, 0);
             this.DocumentPreview_Group.Name = "DocumentPreview_Group";
-            this.DocumentPreview_Group.Size = new System.Drawing.Size(884, 617);
+            this.DocumentPreview_Group.Size = new System.Drawing.Size(874, 663);
             this.DocumentPreview_Group.TabIndex = 1;
             this.DocumentPreview_Group.TabStop = false;
             this.DocumentPreview_Group.Text = "Document Preview";
@@ -1319,7 +1209,7 @@
             this.JobPackBrowser.Location = new System.Drawing.Point(3, 16);
             this.JobPackBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.JobPackBrowser.Name = "JobPackBrowser";
-            this.JobPackBrowser.Size = new System.Drawing.Size(878, 598);
+            this.JobPackBrowser.Size = new System.Drawing.Size(868, 644);
             this.JobPackBrowser.TabIndex = 0;
             // 
             // JobPackGroupBox
@@ -1329,7 +1219,7 @@
             this.JobPackGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.JobPackGroupBox.Location = new System.Drawing.Point(0, 0);
             this.JobPackGroupBox.Name = "JobPackGroupBox";
-            this.JobPackGroupBox.Size = new System.Drawing.Size(350, 617);
+            this.JobPackGroupBox.Size = new System.Drawing.Size(360, 663);
             this.JobPackGroupBox.TabIndex = 0;
             this.JobPackGroupBox.TabStop = false;
             this.JobPackGroupBox.Text = "Job Pack Creator";
@@ -1343,7 +1233,7 @@
             this.JobDocuments_Group.Dock = System.Windows.Forms.DockStyle.Fill;
             this.JobDocuments_Group.Location = new System.Drawing.Point(3, 261);
             this.JobDocuments_Group.Name = "JobDocuments_Group";
-            this.JobDocuments_Group.Size = new System.Drawing.Size(344, 353);
+            this.JobDocuments_Group.Size = new System.Drawing.Size(354, 399);
             this.JobDocuments_Group.TabIndex = 1;
             this.JobDocuments_Group.TabStop = false;
             this.JobDocuments_Group.Text = "Job Documents";
@@ -1354,16 +1244,16 @@
             this.JobDocuments_ListBox.FormattingEnabled = true;
             this.JobDocuments_ListBox.Location = new System.Drawing.Point(3, 60);
             this.JobDocuments_ListBox.Name = "JobDocuments_ListBox";
-            this.JobDocuments_ListBox.Size = new System.Drawing.Size(338, 256);
+            this.JobDocuments_ListBox.Size = new System.Drawing.Size(348, 302);
             this.JobDocuments_ListBox.TabIndex = 0;
             // 
             // GenerateJobPack_Button
             // 
             this.GenerateJobPack_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.GenerateJobPack_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenerateJobPack_Button.Location = new System.Drawing.Point(3, 316);
+            this.GenerateJobPack_Button.Location = new System.Drawing.Point(3, 362);
             this.GenerateJobPack_Button.Name = "GenerateJobPack_Button";
-            this.GenerateJobPack_Button.Size = new System.Drawing.Size(338, 34);
+            this.GenerateJobPack_Button.Size = new System.Drawing.Size(348, 34);
             this.GenerateJobPack_Button.TabIndex = 3;
             this.GenerateJobPack_Button.Text = "GENERATE";
             this.GenerateJobPack_Button.UseVisualStyleBackColor = true;
@@ -1374,7 +1264,7 @@
             this.AddToJobPack_Button.Dock = System.Windows.Forms.DockStyle.Top;
             this.AddToJobPack_Button.Location = new System.Drawing.Point(3, 37);
             this.AddToJobPack_Button.Name = "AddToJobPack_Button";
-            this.AddToJobPack_Button.Size = new System.Drawing.Size(338, 23);
+            this.AddToJobPack_Button.Size = new System.Drawing.Size(348, 23);
             this.AddToJobPack_Button.TabIndex = 2;
             this.AddToJobPack_Button.Text = "Add to Job Pack";
             this.AddToJobPack_Button.UseVisualStyleBackColor = true;
@@ -1386,7 +1276,7 @@
             this.JobDocuments_ComboBox.FormattingEnabled = true;
             this.JobDocuments_ComboBox.Location = new System.Drawing.Point(3, 16);
             this.JobDocuments_ComboBox.Name = "JobDocuments_ComboBox";
-            this.JobDocuments_ComboBox.Size = new System.Drawing.Size(338, 21);
+            this.JobDocuments_ComboBox.Size = new System.Drawing.Size(348, 21);
             this.JobDocuments_ComboBox.TabIndex = 1;
             this.JobDocuments_ComboBox.DropDown += new System.EventHandler(this.JobDocuments_ComboBox_DropDown);
             // 
@@ -1408,7 +1298,7 @@
             this.CoverPageGroup.Dock = System.Windows.Forms.DockStyle.Top;
             this.CoverPageGroup.Location = new System.Drawing.Point(3, 16);
             this.CoverPageGroup.Name = "CoverPageGroup";
-            this.CoverPageGroup.Size = new System.Drawing.Size(344, 245);
+            this.CoverPageGroup.Size = new System.Drawing.Size(354, 245);
             this.CoverPageGroup.TabIndex = 0;
             this.CoverPageGroup.TabStop = false;
             this.CoverPageGroup.Text = "Cover Page";
@@ -1418,7 +1308,7 @@
             this.GenerateCover_Button.Dock = System.Windows.Forms.DockStyle.Top;
             this.GenerateCover_Button.Location = new System.Drawing.Point(3, 214);
             this.GenerateCover_Button.Name = "GenerateCover_Button";
-            this.GenerateCover_Button.Size = new System.Drawing.Size(338, 27);
+            this.GenerateCover_Button.Size = new System.Drawing.Size(348, 27);
             this.GenerateCover_Button.TabIndex = 12;
             this.GenerateCover_Button.Text = "Generate Cover Letter";
             this.GenerateCover_Button.UseVisualStyleBackColor = true;
@@ -1429,7 +1319,7 @@
             this.JobPackPO_TextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.JobPackPO_TextBox.Location = new System.Drawing.Point(3, 194);
             this.JobPackPO_TextBox.Name = "JobPackPO_TextBox";
-            this.JobPackPO_TextBox.Size = new System.Drawing.Size(338, 20);
+            this.JobPackPO_TextBox.Size = new System.Drawing.Size(348, 20);
             this.JobPackPO_TextBox.TabIndex = 11;
             // 
             // JobPackPO_Label
@@ -1447,7 +1337,7 @@
             this.JobPackNo_TextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.JobPackNo_TextBox.Location = new System.Drawing.Point(3, 161);
             this.JobPackNo_TextBox.Name = "JobPackNo_TextBox";
-            this.JobPackNo_TextBox.Size = new System.Drawing.Size(338, 20);
+            this.JobPackNo_TextBox.Size = new System.Drawing.Size(348, 20);
             this.JobPackNo_TextBox.TabIndex = 9;
             // 
             // JobPackNo_Label
@@ -1465,7 +1355,7 @@
             this.JobPackSite_TextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.JobPackSite_TextBox.Location = new System.Drawing.Point(3, 128);
             this.JobPackSite_TextBox.Name = "JobPackSite_TextBox";
-            this.JobPackSite_TextBox.Size = new System.Drawing.Size(338, 20);
+            this.JobPackSite_TextBox.Size = new System.Drawing.Size(348, 20);
             this.JobPackSite_TextBox.TabIndex = 7;
             // 
             // JobPackSite_Label
@@ -1483,7 +1373,7 @@
             this.JobPackClient_TextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.JobPackClient_TextBox.Location = new System.Drawing.Point(3, 95);
             this.JobPackClient_TextBox.Name = "JobPackClient_TextBox";
-            this.JobPackClient_TextBox.Size = new System.Drawing.Size(338, 20);
+            this.JobPackClient_TextBox.Size = new System.Drawing.Size(348, 20);
             this.JobPackClient_TextBox.TabIndex = 5;
             // 
             // JobPackClient_Label
@@ -1501,7 +1391,7 @@
             this.JobPackWeek_TextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.JobPackWeek_TextBox.Location = new System.Drawing.Point(3, 62);
             this.JobPackWeek_TextBox.Name = "JobPackWeek_TextBox";
-            this.JobPackWeek_TextBox.Size = new System.Drawing.Size(338, 20);
+            this.JobPackWeek_TextBox.Size = new System.Drawing.Size(348, 20);
             this.JobPackWeek_TextBox.TabIndex = 3;
             // 
             // JobPackWeek_Label
@@ -1519,7 +1409,7 @@
             this.JobPackTitle_TextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.JobPackTitle_TextBox.Location = new System.Drawing.Point(3, 29);
             this.JobPackTitle_TextBox.Name = "JobPackTitle_TextBox";
-            this.JobPackTitle_TextBox.Size = new System.Drawing.Size(338, 20);
+            this.JobPackTitle_TextBox.Size = new System.Drawing.Size(348, 20);
             this.JobPackTitle_TextBox.TabIndex = 1;
             // 
             // JobPackTitle_Label
@@ -1559,7 +1449,7 @@
             // 
             this.Jobs_SplitContainer.Panel2.Controls.Add(this.Jobs_Viewer);
             this.Jobs_SplitContainer.Size = new System.Drawing.Size(1228, 611);
-            this.Jobs_SplitContainer.SplitterDistance = 350;
+            this.Jobs_SplitContainer.SplitterDistance = 360;
             this.Jobs_SplitContainer.TabIndex = 4;
             // 
             // groupBox3
@@ -1576,7 +1466,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(0, 86);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(350, 180);
+            this.groupBox3.Size = new System.Drawing.Size(360, 180);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cover Page";
@@ -1586,7 +1476,7 @@
             this.Jobs_GenerateCover.Dock = System.Windows.Forms.DockStyle.Top;
             this.Jobs_GenerateCover.Location = new System.Drawing.Point(3, 148);
             this.Jobs_GenerateCover.Name = "Jobs_GenerateCover";
-            this.Jobs_GenerateCover.Size = new System.Drawing.Size(344, 27);
+            this.Jobs_GenerateCover.Size = new System.Drawing.Size(354, 27);
             this.Jobs_GenerateCover.TabIndex = 12;
             this.Jobs_GenerateCover.Text = "Generate Cover Page and Checklist";
             this.Jobs_GenerateCover.UseVisualStyleBackColor = true;
@@ -1597,7 +1487,7 @@
             this.Jobs_PoNo.Dock = System.Windows.Forms.DockStyle.Top;
             this.Jobs_PoNo.Location = new System.Drawing.Point(3, 128);
             this.Jobs_PoNo.Name = "Jobs_PoNo";
-            this.Jobs_PoNo.Size = new System.Drawing.Size(344, 20);
+            this.Jobs_PoNo.Size = new System.Drawing.Size(354, 20);
             this.Jobs_PoNo.TabIndex = 11;
             // 
             // label27
@@ -1615,7 +1505,7 @@
             this.Jobs_Site.Dock = System.Windows.Forms.DockStyle.Top;
             this.Jobs_Site.Location = new System.Drawing.Point(3, 95);
             this.Jobs_Site.Name = "Jobs_Site";
-            this.Jobs_Site.Size = new System.Drawing.Size(344, 20);
+            this.Jobs_Site.Size = new System.Drawing.Size(354, 20);
             this.Jobs_Site.TabIndex = 7;
             // 
             // label29
@@ -1633,7 +1523,7 @@
             this.Jobs_Client.Dock = System.Windows.Forms.DockStyle.Top;
             this.Jobs_Client.Location = new System.Drawing.Point(3, 62);
             this.Jobs_Client.Name = "Jobs_Client";
-            this.Jobs_Client.Size = new System.Drawing.Size(344, 20);
+            this.Jobs_Client.Size = new System.Drawing.Size(354, 20);
             this.Jobs_Client.TabIndex = 5;
             // 
             // label30
@@ -1651,7 +1541,7 @@
             this.Jobs_JobName.Dock = System.Windows.Forms.DockStyle.Top;
             this.Jobs_JobName.Location = new System.Drawing.Point(3, 29);
             this.Jobs_JobName.Name = "Jobs_JobName";
-            this.Jobs_JobName.Size = new System.Drawing.Size(344, 20);
+            this.Jobs_JobName.Size = new System.Drawing.Size(354, 20);
             this.Jobs_JobName.TabIndex = 1;
             // 
             // label32
@@ -1672,7 +1562,7 @@
             this.Manual_Search_GroupBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.Manual_Search_GroupBox.Location = new System.Drawing.Point(0, 0);
             this.Manual_Search_GroupBox.Name = "Manual_Search_GroupBox";
-            this.Manual_Search_GroupBox.Size = new System.Drawing.Size(350, 86);
+            this.Manual_Search_GroupBox.Size = new System.Drawing.Size(360, 86);
             this.Manual_Search_GroupBox.TabIndex = 3;
             this.Manual_Search_GroupBox.TabStop = false;
             this.Manual_Search_GroupBox.Text = "Manual Search";
@@ -1711,7 +1601,7 @@
             this.Jobs_Viewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Jobs_Viewer.Location = new System.Drawing.Point(0, 0);
             this.Jobs_Viewer.Name = "Jobs_Viewer";
-            this.Jobs_Viewer.Size = new System.Drawing.Size(874, 611);
+            this.Jobs_Viewer.Size = new System.Drawing.Size(864, 611);
             this.Jobs_Viewer.TabIndex = 0;
             this.Jobs_Viewer.ZoomFactor = 1D;
             // 
@@ -1732,9 +1622,9 @@
             this.AdminViewer.CreationProperties = null;
             this.AdminViewer.DefaultBackgroundColor = System.Drawing.Color.White;
             this.AdminViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AdminViewer.Location = new System.Drawing.Point(350, 0);
+            this.AdminViewer.Location = new System.Drawing.Point(360, 0);
             this.AdminViewer.Name = "AdminViewer";
-            this.AdminViewer.Size = new System.Drawing.Size(884, 617);
+            this.AdminViewer.Size = new System.Drawing.Size(874, 617);
             this.AdminViewer.TabIndex = 5;
             this.AdminViewer.ZoomFactor = 1D;
             // 
@@ -1750,7 +1640,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(350, 617);
+            this.groupBox1.Size = new System.Drawing.Size(360, 617);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manual Search";
@@ -2022,9 +1912,9 @@
             // 
             this.Document_Preview_Group.Controls.Add(this.RecruitmentViewer);
             this.Document_Preview_Group.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Document_Preview_Group.Location = new System.Drawing.Point(350, 0);
+            this.Document_Preview_Group.Location = new System.Drawing.Point(360, 0);
             this.Document_Preview_Group.Name = "Document_Preview_Group";
-            this.Document_Preview_Group.Size = new System.Drawing.Size(884, 617);
+            this.Document_Preview_Group.Size = new System.Drawing.Size(874, 617);
             this.Document_Preview_Group.TabIndex = 3;
             this.Document_Preview_Group.TabStop = false;
             this.Document_Preview_Group.Text = "Document Preview";
@@ -2037,7 +1927,7 @@
             this.RecruitmentViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RecruitmentViewer.Location = new System.Drawing.Point(3, 16);
             this.RecruitmentViewer.Name = "RecruitmentViewer";
-            this.RecruitmentViewer.Size = new System.Drawing.Size(878, 598);
+            this.RecruitmentViewer.Size = new System.Drawing.Size(868, 598);
             this.RecruitmentViewer.TabIndex = 0;
             this.RecruitmentViewer.ZoomFactor = 1D;
             // 
@@ -2070,7 +1960,7 @@
             this.Contract_Gen_Group.Dock = System.Windows.Forms.DockStyle.Left;
             this.Contract_Gen_Group.Location = new System.Drawing.Point(0, 0);
             this.Contract_Gen_Group.Name = "Contract_Gen_Group";
-            this.Contract_Gen_Group.Size = new System.Drawing.Size(350, 617);
+            this.Contract_Gen_Group.Size = new System.Drawing.Size(360, 617);
             this.Contract_Gen_Group.TabIndex = 1;
             this.Contract_Gen_Group.TabStop = false;
             this.Contract_Gen_Group.Text = "Contract Generation";
@@ -2382,7 +2272,7 @@
             this.StatusLabel,
             this.ProgressBar});
             this.StatusBar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.StatusBar.Location = new System.Drawing.Point(0, 643);
+            this.StatusBar.Location = new System.Drawing.Point(0, 689);
             this.StatusBar.Name = "StatusBar";
             this.StatusBar.Size = new System.Drawing.Size(1242, 22);
             this.StatusBar.TabIndex = 2;
@@ -2420,7 +2310,7 @@
             // 
             // Address_upd_Button
             // 
-            this.Address_upd_Button.Location = new System.Drawing.Point(265, 66);
+            this.Address_upd_Button.Location = new System.Drawing.Point(277, 66);
             this.Address_upd_Button.Name = "Address_upd_Button";
             this.Address_upd_Button.Size = new System.Drawing.Size(75, 23);
             this.Address_upd_Button.TabIndex = 24;
@@ -2428,11 +2318,589 @@
             this.Address_upd_Button.UseVisualStyleBackColor = true;
             this.Address_upd_Button.Click += new System.EventHandler(this.Address_upd_Button_Click);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(290, 89);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown1.TabIndex = 35;
+            this.numericUpDown1.Tag = "Day, 23";
+            // 
+            // Rig_D
+            // 
+            this.Rig_D.AutoSize = true;
+            this.Rig_D.Location = new System.Drawing.Point(171, 91);
+            this.Rig_D.Name = "Rig_D";
+            this.Rig_D.Size = new System.Drawing.Size(38, 13);
+            this.Rig_D.TabIndex = 34;
+            this.Rig_D.Text = "Rigger";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(290, 63);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown2.TabIndex = 33;
+            this.numericUpDown2.Tag = "Day, 20";
+            // 
+            // OpeMan_D
+            // 
+            this.OpeMan_D.AutoSize = true;
+            this.OpeMan_D.Location = new System.Drawing.Point(171, 65);
+            this.OpeMan_D.Name = "OpeMan_D";
+            this.OpeMan_D.Size = new System.Drawing.Size(103, 13);
+            this.OpeMan_D.TabIndex = 32;
+            this.OpeMan_D.Text = "Operations Manager";
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(290, 37);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown3.TabIndex = 31;
+            this.numericUpDown3.Tag = "Day, 37";
+            // 
+            // NdtTec_D
+            // 
+            this.NdtTec_D.AutoSize = true;
+            this.NdtTec_D.Location = new System.Drawing.Point(171, 39);
+            this.NdtTec_D.Name = "NdtTec_D";
+            this.NdtTec_D.Size = new System.Drawing.Size(58, 13);
+            this.NdtTec_D.TabIndex = 30;
+            this.NdtTec_D.Text = "NDT Tech";
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(290, 11);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown4.TabIndex = 29;
+            this.numericUpDown4.Tag = "Day, 18";
+            // 
+            // MecSup_D
+            // 
+            this.MecSup_D.AutoSize = true;
+            this.MecSup_D.Location = new System.Drawing.Point(171, 13);
+            this.MecSup_D.Name = "MecSup_D";
+            this.MecSup_D.Size = new System.Drawing.Size(115, 13);
+            this.MecSup_D.TabIndex = 28;
+            this.MecSup_D.Text = "Mechanical Supervisor";
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.Location = new System.Drawing.Point(290, 263);
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown5.TabIndex = 43;
+            this.numericUpDown5.Tag = "Day, 26";
+            // 
+            // TraAss_D
+            // 
+            this.TraAss_D.AutoSize = true;
+            this.TraAss_D.Location = new System.Drawing.Point(171, 265);
+            this.TraAss_D.Name = "TraAss_D";
+            this.TraAss_D.Size = new System.Drawing.Size(80, 13);
+            this.TraAss_D.TabIndex = 42;
+            this.TraAss_D.Text = "Trade Assistant";
+            // 
+            // numericUpDown6
+            // 
+            this.numericUpDown6.Location = new System.Drawing.Point(290, 238);
+            this.numericUpDown6.Name = "numericUpDown6";
+            this.numericUpDown6.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown6.TabIndex = 41;
+            this.numericUpDown6.Tag = "Day, 3";
+            // 
+            // Sup_D
+            // 
+            this.Sup_D.AutoSize = true;
+            this.Sup_D.Location = new System.Drawing.Point(171, 240);
+            this.Sup_D.Name = "Sup_D";
+            this.Sup_D.Size = new System.Drawing.Size(57, 13);
+            this.Sup_D.TabIndex = 40;
+            this.Sup_D.Text = "Supervisor";
+            // 
+            // numericUpDown7
+            // 
+            this.numericUpDown7.Location = new System.Drawing.Point(290, 212);
+            this.numericUpDown7.Name = "numericUpDown7";
+            this.numericUpDown7.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown7.TabIndex = 39;
+            this.numericUpDown7.Tag = "Day, 33";
+            // 
+            // SupInt_D
+            // 
+            this.SupInt_D.AutoSize = true;
+            this.SupInt_D.Location = new System.Drawing.Point(171, 214);
+            this.SupInt_D.Name = "SupInt_D";
+            this.SupInt_D.Size = new System.Drawing.Size(83, 13);
+            this.SupInt_D.TabIndex = 38;
+            this.SupInt_D.Text = "Super-Intendent";
+            // 
+            // numericUpDown8
+            // 
+            this.numericUpDown8.Location = new System.Drawing.Point(290, 186);
+            this.numericUpDown8.Name = "numericUpDown8";
+            this.numericUpDown8.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown8.TabIndex = 37;
+            this.numericUpDown8.Tag = "Day, 14";
+            // 
+            // SitTec_D
+            // 
+            this.SitTec_D.AutoSize = true;
+            this.SitTec_D.Location = new System.Drawing.Point(171, 188);
+            this.SitTec_D.Name = "SitTec_D";
+            this.SitTec_D.Size = new System.Drawing.Size(81, 13);
+            this.SitTec_D.TabIndex = 36;
+            this.SitTec_D.Text = "Site Technician";
+            // 
+            // numericUpDown9
+            // 
+            this.numericUpDown9.Location = new System.Drawing.Point(290, 289);
+            this.numericUpDown9.Name = "numericUpDown9";
+            this.numericUpDown9.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown9.TabIndex = 45;
+            this.numericUpDown9.Tag = "Day, 40";
+            // 
+            // YarMan_D
+            // 
+            this.YarMan_D.AutoSize = true;
+            this.YarMan_D.Location = new System.Drawing.Point(171, 291);
+            this.YarMan_D.Name = "YarMan_D";
+            this.YarMan_D.Size = new System.Drawing.Size(74, 13);
+            this.YarMan_D.TabIndex = 44;
+            this.YarMan_D.Text = "Yard Manager";
+            // 
+            // numericUpDown33
+            // 
+            this.numericUpDown33.Location = new System.Drawing.Point(125, 63);
+            this.numericUpDown33.Name = "numericUpDown33";
+            this.numericUpDown33.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown33.TabIndex = 47;
+            this.numericUpDown33.Tag = "Day, 44";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(6, 65);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(72, 13);
+            this.label40.TabIndex = 46;
+            this.label40.Text = "Administration";
+            // 
+            // numericUpDown10
+            // 
+            this.numericUpDown10.Location = new System.Drawing.Point(125, 63);
+            this.numericUpDown10.Name = "numericUpDown10";
+            this.numericUpDown10.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown10.TabIndex = 95;
+            this.numericUpDown10.Tag = "Night, 44";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 94;
+            this.label1.Text = "Administration";
+            // 
+            // numericUpDown11
+            // 
+            this.numericUpDown11.Location = new System.Drawing.Point(290, 289);
+            this.numericUpDown11.Name = "numericUpDown11";
+            this.numericUpDown11.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown11.TabIndex = 93;
+            this.numericUpDown11.Tag = "Night, 40";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(171, 291);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.TabIndex = 92;
+            this.label2.Text = "Yard Manager";
+            // 
+            // numericUpDown12
+            // 
+            this.numericUpDown12.Location = new System.Drawing.Point(290, 263);
+            this.numericUpDown12.Name = "numericUpDown12";
+            this.numericUpDown12.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown12.TabIndex = 91;
+            this.numericUpDown12.Tag = "Night, 26";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(171, 265);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.TabIndex = 90;
+            this.label3.Text = "Trade Assistant";
+            // 
+            // numericUpDown13
+            // 
+            this.numericUpDown13.Location = new System.Drawing.Point(290, 238);
+            this.numericUpDown13.Name = "numericUpDown13";
+            this.numericUpDown13.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown13.TabIndex = 89;
+            this.numericUpDown13.Tag = "Night, 3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(171, 240);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.TabIndex = 88;
+            this.label4.Text = "Supervisor";
+            // 
+            // numericUpDown14
+            // 
+            this.numericUpDown14.Location = new System.Drawing.Point(290, 212);
+            this.numericUpDown14.Name = "numericUpDown14";
+            this.numericUpDown14.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown14.TabIndex = 87;
+            this.numericUpDown14.Tag = "Night, 33";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(171, 214);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 13);
+            this.label5.TabIndex = 86;
+            this.label5.Text = "Super-Intendent";
+            // 
+            // numericUpDown15
+            // 
+            this.numericUpDown15.Location = new System.Drawing.Point(290, 186);
+            this.numericUpDown15.Name = "numericUpDown15";
+            this.numericUpDown15.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown15.TabIndex = 85;
+            this.numericUpDown15.Tag = "Night, 14";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(171, 188);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 84;
+            this.label6.Text = "Site Technician";
+            // 
+            // numericUpDown16
+            // 
+            this.numericUpDown16.Location = new System.Drawing.Point(290, 89);
+            this.numericUpDown16.Name = "numericUpDown16";
+            this.numericUpDown16.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown16.TabIndex = 83;
+            this.numericUpDown16.Tag = "Night, 23";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(171, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 82;
+            this.label7.Text = "Rigger";
+            // 
+            // numericUpDown17
+            // 
+            this.numericUpDown17.Location = new System.Drawing.Point(290, 63);
+            this.numericUpDown17.Name = "numericUpDown17";
+            this.numericUpDown17.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown17.TabIndex = 81;
+            this.numericUpDown17.Tag = "Night, 20";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(171, 65);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 13);
+            this.label8.TabIndex = 80;
+            this.label8.Text = "Operations Manager";
+            // 
+            // numericUpDown18
+            // 
+            this.numericUpDown18.Location = new System.Drawing.Point(290, 37);
+            this.numericUpDown18.Name = "numericUpDown18";
+            this.numericUpDown18.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown18.TabIndex = 79;
+            this.numericUpDown18.Tag = "Night, 37";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(171, 39);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 13);
+            this.label9.TabIndex = 78;
+            this.label9.Text = "NDT Tech";
+            // 
+            // numericUpDown19
+            // 
+            this.numericUpDown19.Location = new System.Drawing.Point(290, 11);
+            this.numericUpDown19.Name = "numericUpDown19";
+            this.numericUpDown19.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown19.TabIndex = 77;
+            this.numericUpDown19.Tag = "Night, 18";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(171, 13);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(115, 13);
+            this.label10.TabIndex = 76;
+            this.label10.Text = "Mechanical Supervisor";
+            // 
+            // numericUpDown20
+            // 
+            this.numericUpDown20.Location = new System.Drawing.Point(290, 161);
+            this.numericUpDown20.Name = "numericUpDown20";
+            this.numericUpDown20.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown20.TabIndex = 75;
+            this.numericUpDown20.Tag = "Night, 16";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(171, 163);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(96, 13);
+            this.label11.TabIndex = 74;
+            this.label11.Text = "Site Safety Advisor";
+            // 
+            // numericUpDown21
+            // 
+            this.numericUpDown21.Location = new System.Drawing.Point(125, 187);
+            this.numericUpDown21.Name = "numericUpDown21";
+            this.numericUpDown21.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown21.TabIndex = 73;
+            this.numericUpDown21.Tag = "Night, 31";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 189);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 13);
+            this.label12.TabIndex = 72;
+            this.label12.Text = "Coded Welder";
+            // 
+            // numericUpDown22
+            // 
+            this.numericUpDown22.Location = new System.Drawing.Point(290, 137);
+            this.numericUpDown22.Name = "numericUpDown22";
+            this.numericUpDown22.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown22.TabIndex = 71;
+            this.numericUpDown22.Tag = "Night, 39";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(171, 139);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 13);
+            this.label13.TabIndex = 70;
+            this.label13.Text = "Scheduler";
+            // 
+            // numericUpDown23
+            // 
+            this.numericUpDown23.Location = new System.Drawing.Point(125, 163);
+            this.numericUpDown23.Name = "numericUpDown23";
+            this.numericUpDown23.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown23.TabIndex = 69;
+            this.numericUpDown23.Tag = "Night, 38";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 165);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(116, 13);
+            this.label14.TabIndex = 68;
+            this.label14.Text = "Cert 10 Weld Inspector";
+            // 
+            // numericUpDown24
+            // 
+            this.numericUpDown24.Location = new System.Drawing.Point(290, 113);
+            this.numericUpDown24.Name = "numericUpDown24";
+            this.numericUpDown24.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown24.TabIndex = 67;
+            this.numericUpDown24.Tag = "Night, 25";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(171, 115);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(55, 13);
+            this.label28.TabIndex = 66;
+            this.label28.Text = "Scaffolder";
+            // 
+            // numericUpDown25
+            // 
+            this.numericUpDown25.Location = new System.Drawing.Point(125, 139);
+            this.numericUpDown25.Name = "numericUpDown25";
+            this.numericUpDown25.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown25.TabIndex = 65;
+            this.numericUpDown25.Tag = "Night, 10";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(6, 141);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(89, 13);
+            this.label31.TabIndex = 64;
+            this.label31.Text = "Business Support";
+            // 
+            // numericUpDown26
+            // 
+            this.numericUpDown26.Location = new System.Drawing.Point(125, 289);
+            this.numericUpDown26.Name = "numericUpDown26";
+            this.numericUpDown26.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown26.TabIndex = 63;
+            this.numericUpDown26.Tag = "Night, 32";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(6, 291);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(74, 13);
+            this.label33.TabIndex = 62;
+            this.label33.Text = "Leading Hand";
+            // 
+            // numericUpDown27
+            // 
+            this.numericUpDown27.Location = new System.Drawing.Point(125, 115);
+            this.numericUpDown27.Name = "numericUpDown27";
+            this.numericUpDown27.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown27.TabIndex = 61;
+            this.numericUpDown27.Tag = "Night, 9";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 117);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(62, 13);
+            this.label34.TabIndex = 60;
+            this.label34.Text = "Boilermaker";
+            // 
+            // numericUpDown28
+            // 
+            this.numericUpDown28.Location = new System.Drawing.Point(125, 264);
+            this.numericUpDown28.Name = "numericUpDown28";
+            this.numericUpDown28.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown28.TabIndex = 59;
+            this.numericUpDown28.Tag = "Night, 22";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(6, 266);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(89, 13);
+            this.label35.TabIndex = 58;
+            this.label35.Text = "General Manager";
+            // 
+            // numericUpDown29
+            // 
+            this.numericUpDown29.Location = new System.Drawing.Point(125, 89);
+            this.numericUpDown29.Name = "numericUpDown29";
+            this.numericUpDown29.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown29.TabIndex = 57;
+            this.numericUpDown29.Tag = "Night, 8";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(6, 91);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(75, 13);
+            this.label36.TabIndex = 56;
+            this.label36.Text = "Blaster Painter";
+            // 
+            // numericUpDown30
+            // 
+            this.numericUpDown30.Location = new System.Drawing.Point(125, 238);
+            this.numericUpDown30.Name = "numericUpDown30";
+            this.numericUpDown30.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown30.TabIndex = 55;
+            this.numericUpDown30.Tag = "Night, 15";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(6, 240);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(50, 13);
+            this.label37.TabIndex = 54;
+            this.label37.Text = "Estimator";
+            // 
+            // numericUpDown31
+            // 
+            this.numericUpDown31.Location = new System.Drawing.Point(125, 37);
+            this.numericUpDown31.Name = "numericUpDown31";
+            this.numericUpDown31.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown31.TabIndex = 53;
+            this.numericUpDown31.Tag = "Night, 29";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(6, 39);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(109, 13);
+            this.label38.TabIndex = 52;
+            this.label38.Text = "Accounts Receivable";
+            // 
+            // numericUpDown32
+            // 
+            this.numericUpDown32.Location = new System.Drawing.Point(125, 212);
+            this.numericUpDown32.Name = "numericUpDown32";
+            this.numericUpDown32.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown32.TabIndex = 51;
+            this.numericUpDown32.Tag = "Night, 24";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 214);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(66, 13);
+            this.label39.TabIndex = 50;
+            this.label39.Text = "Crane Driver";
+            // 
+            // numericUpDown34
+            // 
+            this.numericUpDown34.Location = new System.Drawing.Point(125, 11);
+            this.numericUpDown34.Name = "numericUpDown34";
+            this.numericUpDown34.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown34.TabIndex = 49;
+            this.numericUpDown34.Tag = "Night, 4";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(6, 13);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(93, 13);
+            this.label41.TabIndex = 48;
+            this.label41.Text = "Accounts Payable";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1242, 665);
+            this.ClientSize = new System.Drawing.Size(1242, 711);
             this.Controls.Add(this.Assignar_Tabs);
             this.Controls.Add(this.StatusBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2447,7 +2915,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProjectViewer)).EndInit();
             this.SimProQuoteGroup.ResumeLayout(false);
             this.SimProQuoteGroup.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.Shift_Tabs.ResumeLayout(false);
             this.DSTab.ResumeLayout(false);
             this.DSTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TADSUD)).EndInit();
@@ -2466,20 +2934,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.BlastPntDSUD)).EndInit();
             this.NSTab.ResumeLayout(false);
             this.NSTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TANSUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TechnicianNSUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SupervisorNSUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SuperintNSUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ScaffNSUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RiggerNSUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MechFitterNSUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LHNSUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HSEQNSUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ExcavOpNSUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CWNSUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CraneDvrNSUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BMWNSUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BlasPntNSUD)).EndInit();
             this.DocPropertiesGroup.ResumeLayout(false);
             this.DocPropertiesGroup.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -2524,6 +2978,40 @@
             this.Employee_Address_GroupBox.PerformLayout();
             this.StatusBar.ResumeLayout(false);
             this.StatusBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown33)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown31)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown32)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown34)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2618,12 +3106,12 @@
         private Microsoft.Web.WebView2.WinForms.WebView2 ScheduleViewer;
         private System.Windows.Forms.GroupBox ProjectGenerationBrowserGroupBox;
         private Microsoft.Web.WebView2.WinForms.WebView2 ProjectViewer;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl Shift_Tabs;
         private System.Windows.Forms.TabPage DSTab;
         private System.Windows.Forms.NumericUpDown BMWDSUD;
-        private System.Windows.Forms.Label BMWDS;
+        private System.Windows.Forms.Label CraDri_D;
         private System.Windows.Forms.NumericUpDown BlastPntDSUD;
-        private System.Windows.Forms.Label BlastPaintDS;
+        private System.Windows.Forms.Label AccPay_D;
         private System.Windows.Forms.TabPage NSTab;
         private System.Windows.Forms.DateTimePicker ProjectEndDate;
         private System.Windows.Forms.Label ProjectEndDateLabel;
@@ -2632,57 +3120,29 @@
         private System.Windows.Forms.TextBox ProjectPONumber;
         private System.Windows.Forms.Label ProjectPOLabel;
         private System.Windows.Forms.NumericUpDown TADSUD;
-        private System.Windows.Forms.Label TADS;
+        private System.Windows.Forms.Label SitSaf_D;
         private System.Windows.Forms.NumericUpDown TechnicianDSUD;
-        private System.Windows.Forms.Label TechnicianDS;
+        private System.Windows.Forms.Label CodWel_D;
         private System.Windows.Forms.NumericUpDown SupervisorDSUD;
-        private System.Windows.Forms.Label SupervisorDS;
+        private System.Windows.Forms.Label Sch_D;
         private System.Windows.Forms.NumericUpDown SuperintDSUD;
-        private System.Windows.Forms.Label SuperintDS;
+        private System.Windows.Forms.Label Cert10_D;
         private System.Windows.Forms.NumericUpDown ScaffDSUD;
-        private System.Windows.Forms.Label ScaffDS;
+        private System.Windows.Forms.Label Sca_D;
         private System.Windows.Forms.NumericUpDown RiggerDSUD;
-        private System.Windows.Forms.Label RiggerDS;
+        private System.Windows.Forms.Label BusSup_D;
         private System.Windows.Forms.NumericUpDown MechFitterDSUD;
-        private System.Windows.Forms.Label MechFitterDS;
+        private System.Windows.Forms.Label LeaHan_D;
         private System.Windows.Forms.NumericUpDown LHDSUD;
-        private System.Windows.Forms.Label LHDS;
+        private System.Windows.Forms.Label Boil_D;
         private System.Windows.Forms.NumericUpDown HSEQDSUD;
-        private System.Windows.Forms.Label HSEQDS;
+        private System.Windows.Forms.Label GenMan_D;
         private System.Windows.Forms.NumericUpDown ExcavOpDSUD;
-        private System.Windows.Forms.Label ExcavOpDS;
+        private System.Windows.Forms.Label BlaPai_D;
         private System.Windows.Forms.NumericUpDown CWDSUD;
-        private System.Windows.Forms.Label CWDS;
+        private System.Windows.Forms.Label Est_D;
         private System.Windows.Forms.NumericUpDown CraneDvrDSUD;
-        private System.Windows.Forms.Label CraneDvrDS;
-        private System.Windows.Forms.NumericUpDown TANSUD;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown TechnicianNSUD;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown SupervisorNSUD;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown SuperintNSUD;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown ScaffNSUD;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown RiggerNSUD;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown MechFitterNSUD;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown LHNSUD;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown HSEQNSUD;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown ExcavOpNSUD;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown CWNSUD;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown CraneDvrNSUD;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown BMWNSUD;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.NumericUpDown BlasPntNSUD;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label AccRec_D;
         private System.Windows.Forms.CheckBox WorkingAwayCheckBox;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox OutputTypeComboBox;
@@ -2744,5 +3204,73 @@
         private System.Windows.Forms.Button TestButton;
         private System.Windows.Forms.CheckBox Local_Worker_Checkbox;
         private System.Windows.Forms.Button Address_upd_Button;
+        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.Label TraAss_D;
+        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.Label Sup_D;
+        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.Label SupInt_D;
+        private System.Windows.Forms.NumericUpDown numericUpDown8;
+        private System.Windows.Forms.Label SitTec_D;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label Rig_D;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label OpeMan_D;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.Label NdtTec_D;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.Label MecSup_D;
+        private System.Windows.Forms.NumericUpDown numericUpDown9;
+        private System.Windows.Forms.Label YarMan_D;
+        private System.Windows.Forms.NumericUpDown numericUpDown33;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.NumericUpDown numericUpDown10;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numericUpDown11;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numericUpDown12;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numericUpDown13;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numericUpDown14;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown numericUpDown15;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown numericUpDown16;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDown17;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown numericUpDown18;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown numericUpDown19;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown numericUpDown20;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown numericUpDown21;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown numericUpDown22;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.NumericUpDown numericUpDown23;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.NumericUpDown numericUpDown24;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.NumericUpDown numericUpDown25;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.NumericUpDown numericUpDown26;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.NumericUpDown numericUpDown27;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.NumericUpDown numericUpDown28;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.NumericUpDown numericUpDown29;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.NumericUpDown numericUpDown30;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.NumericUpDown numericUpDown31;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.NumericUpDown numericUpDown32;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.NumericUpDown numericUpDown34;
+        private System.Windows.Forms.Label label41;
     }
 }

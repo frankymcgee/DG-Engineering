@@ -42,7 +42,8 @@ namespace DG_Engineering
             {
                 version = Assembly.GetExecutingAssembly().GetName().Version;
             }
-            VersionLabel.Text = @"Version: " + version + @"  |    " + "Connected to: " + Static.ClientId;
+            string sandbox = Static.ClientId == "dgengineering" ? "DG Engineering" : "SANDBOX ENVIRONMENT";
+            VersionLabel.Text = @"Version: " + version + @"  |  " + "Connected to: " + sandbox;
             var environment = await CoreWebView2Environment.CreateAsync(null, Path.GetTempPath());
             await AdminViewer.EnsureCoreWebView2Async(environment);
             await ScheduleViewer.EnsureCoreWebView2Async(environment);
@@ -100,7 +101,7 @@ namespace DG_Engineering
             else
             {
                 await CompanyIdExtract(ProjectClient.Text);
-                AssignarProjectPost();
+                await AssignarProjectPost();
             }
         }
         private async void Address_upd_Button_Click(object sender, EventArgs e)
@@ -129,6 +130,7 @@ namespace DG_Engineering
         private void PushToJobPackButton_Click(object sender, EventArgs e)
         {
             PushToJobPack();
+
         }
         #endregion
 
