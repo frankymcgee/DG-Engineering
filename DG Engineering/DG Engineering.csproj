@@ -29,7 +29,7 @@
     <SupportUrl>https://dgengineering.com.au/support</SupportUrl>
     <ProductName>DG Engineering Automation</ProductName>
     <PublisherName>DG Engineering</PublisherName>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.3.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
