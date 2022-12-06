@@ -8,6 +8,7 @@ using DG_Engineering.Framework.Global.Assignar.ProjectPost;
 using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
 using RestSharp;
+using System.Threading.Tasks;
 
 namespace DG_Engineering
 {
@@ -16,7 +17,7 @@ namespace DG_Engineering
         /// <summary>
         /// POST Project to Assignar.
         /// </summary>
-        private void AssignarProjectPost()
+        private async Task AssignarProjectPost()
         {
             StatusLabel.Visible = true;
             StatusLabel.Text = @"Creating Project";
@@ -51,9 +52,9 @@ namespace DG_Engineering
                 //AssignarJobPost("Mobilisation |NS",ProjectJobNumber.Text + "002");
 
                 Thread.Sleep(500);
-                AssignarJobPost("Work | DS",ProjectJobNumber.Text + "001");
+                await AssignarJobPost("Work | DS",ProjectJobNumber.Text + "001");
                 Thread.Sleep(500);
-                AssignarJobPost("Work | NS",ProjectJobNumber.Text + "002");
+                await AssignarJobPost("Work | NS",ProjectJobNumber.Text + "002");
                 Thread.Sleep(500);
 
                 //AssignarJobPost("DeMobilisation |DS",ProjectJobNumber.Text + "005");

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using Application = Microsoft.Office.Interop.Word.Application;
@@ -71,6 +72,7 @@ namespace DG_Engineering
         private int _projectId;
         // ReSharper disable once NotAccessedField.Local
         private string _fileUploadName;
+        public string Company_Name;
     }
 
 }

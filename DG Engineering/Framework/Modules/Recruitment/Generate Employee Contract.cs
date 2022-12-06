@@ -37,7 +37,7 @@ namespace DG_Engineering
                     doc = word.Documents.Add(employmentcontracts + "\\HR-EMP-001 Casual Employment Agreement.dotx");
                     break;
                 case @"Full-Time Employment":
-                    doc = word.Documents.Add(employmentcontracts + "\\HR-EMP-002 Full-Time Agreement.dotx");
+                    doc = word.Documents.Add(employmentcontracts + "\\DGE-HR-FRM-024 Full Time Local-Pilbara Region Employment Agreement.dotx");
                     break;
             }
 
@@ -117,7 +117,7 @@ namespace DG_Engineering
                         switch (RepresentativeComboBox.Text)
                         {
                             case @"Damien Voigt":
-                                field.Range.Text = @"Operation Manager";
+                                field.Range.Text = @"Operations Manager";
                                 break;
                             case @"Leigh Wright":
                                 field.Range.Text = @"General Manager";
@@ -170,32 +170,29 @@ namespace DG_Engineering
                         
                         break;
                     case "Role_Description":
-                        field.Range.Text = _retrievedText;
+                        field.Range.InsertXML(_retrievedText);
                         break;
                     case "Working_Away":
-                        field.Range.Text = WorkingAwayCheckBox.Checked ? @"Local Housing Allowance*
-                                FIFO Working Away Allowance*:
-                                The Employer will provide for additional Allowances according to the number of hours completed per fortnight, as follows:
+                        if (WorkingAwayCheckBox.Checked)
+                        {
+                            field.Range.InsertXML(SiteAllowanceExtract(employmentcontracts + "Site allowance.docx"));
+                        }
+//                         field.Range.Text = WorkingAwayCheckBox.Checked
+//                            ? @"Additional Benefits
 
-                                Up to 76 Hours 
-                                0 – 76 hours per fortnight 		    Extra: $ 5.00 per hour
+//Site allowance / LAHA
 
-                                Up to 100 Hours
-                                0 – 76 hours per fortnight		    Extra: $ 5.00 per hour
-                                77 – 100 hours per fortnight		Extra: $ 6.00 per hour
-
-                                Up to 120 Hours
-                                0 – 76 hours per fortnight		    Extra: $ 5.00 per hour
-                                77 – 100 hours per fortnight		Extra: $ 6.00 per hour
-                                101 – 120 hours per fortnight		Extra: $ 7.00 per hour
-
-                                Above 120 Hours
-                                0 – 76 hours per fortnight		    Extra: $ 5.00 per hour
-                                77 – 100 hours per fortnight		Extra: $ 6.00 per hour
-                                101 – 120 hours per fortnight		Extra: $ 7.00 per hour
-                                120 plus hours per fortnight		Extra: $ 9.00 per hour
-
-                                *All leave, public holidays and training excluded." : @" ";
+//    $4.00 P/H flat site allowance / LAHA:
+//        a) The company is offering to as per your contract (clause 10.2) a variation to your current contract to include a benefit that will supplement your contractual rate by a further AUD $4.00 (Four Australian Dollars only) per hour worked while working away from home.
+        
+//        b) Conditions of receiving Site allowance / LAHA
+//            i) The benefit may be only claimed for hours worked onsite including travel time to and from site
+//            ii) Employee must be working away from home.
+        
+//        c) Benefit cannot be claimed for the following:
+//            i) Off Site, Mobilisation and Demobilisation carried out in Karratha.
+//            ii) Sick leave onsite or days off whilst on site.
+//            iii) Standdown.":"";
                         break;
                 }
             }
@@ -223,14 +220,25 @@ namespace DG_Engineering
                 case true:
                 {
                     var outputfilename = filename + New_Employee_Name_TextBox.Text + "\\00. Contract.pdf";
-                    doc.ExportAsFixedFormat(outputfilename, WdExportFormat.wdExportFormatPDF);
-                    CombineContractFiles();
-                    ReleaseComObjects(doc, word);
-                    Directory.Delete(Path.GetTempPath() + New_Employee_Name_TextBox.Text, true);
+                    switch (OutputTypeComboBox.Text)
+                    {
+                        case "Adobe Acrobat PDF Document":
+                            doc.ExportAsFixedFormat(outputfilename, WdExportFormat.wdExportFormatPDF);
+                            CombineContractFiles();
+                            ReleaseComObjects(doc, word);
+                            Directory.Delete(Path.GetTempPath() + New_Employee_Name_TextBox.Text, true);
+                            break;
+                        case "Microsoft Word Document":
+                            doc.ExportAsFixedFormat(outputfilename, WdExportFormat.wdExportFormatPDF);
+                            CombineContractFiles();
+                            ReleaseComObjects(doc, word);
+                            Directory.Delete(Path.GetTempPath() + New_Employee_Name_TextBox.Text, true);
+                            break;
+                    }
                     break;
                 }
             }
-
+            _retrievedText = null;
             StatusLabel.Visible = false;
         }
     }

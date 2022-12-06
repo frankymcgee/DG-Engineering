@@ -1,4 +1,5 @@
 ﻿using RestSharp;
+using System.Threading.Tasks;
 
 namespace DG_Engineering
 {
@@ -13,11 +14,11 @@ namespace DG_Engineering
         /// <param name="orderid">Order ID of the Project the Task is being assigned for.</param>
         /// <param name="taskid">Task ID from Assignar.</param>
         /// <param name="quantity">Number of required Labour.</param>
-        private void TaskCreation(string starttime, string endtime, int orderid, int taskid, decimal quantity)
+        private async Task TaskCreation(string starttime, string endtime, int orderid, int taskid, decimal quantity)
         {
             if (quantity > 0)
             {
-                AssignarTaskPost(starttime,endtime,orderid,taskid,(int) quantity);
+                await AssignarTaskPost(starttime,endtime,orderid,taskid,(int) quantity);
             }
 
         }
@@ -29,7 +30,7 @@ namespace DG_Engineering
         /// <param name="orderid">the Order ID of the Project the Task is being assigned for</param>
         /// <param name="taskid">Job Discipline ID from Assignar</param>
         /// <param name="quantity">Amount of Workers required for the Job Discipline</param>
-        private void AssignarTaskPost(string starttime, string endtime, int orderid, int taskid, int quantity)
+        private Task AssignarTaskPost(string starttime, string endtime, int orderid, int taskid, int quantity)
         {
             var restClient = new RestClient(Static.AssignarDashboardUrl + "orders/" + orderid + "/tasks");
             var restRequest = new RestRequest(Static.AssignarDashboardUrl + "orders/" + orderid + "/tasks",Method.POST);
@@ -38,6 +39,7 @@ namespace DG_Engineering
             var value = "{\n  \"task_id\": " + taskid + ",\n  \"task_quantity\": " + quantity + ",\n  \"active\": true,\n  \"req_machines\": true,\n  \"start_time\": " + starttime + ",\n  \"end_time\": " + endtime + ",\n}";
             restRequest.AddParameter("application/json", value, ParameterType.RequestBody);
             _ = restClient.Execute(restRequest).Content;
-         }
+            return Task.CompletedTask;
+        }
     }
 }
