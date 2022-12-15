@@ -480,7 +480,7 @@
             // 
             this.TestButton.Location = new System.Drawing.Point(144, 6);
             this.TestButton.Name = "TestButton";
-            this.TestButton.Size = new System.Drawing.Size(75, 23);
+            this.TestButton.Size = new System.Drawing.Size(142, 23);
             this.TestButton.TabIndex = 26;
             this.TestButton.Text = "TEST";
             this.TestButton.UseVisualStyleBackColor = true;

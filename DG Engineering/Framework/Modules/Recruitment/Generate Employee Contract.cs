@@ -34,10 +34,10 @@ namespace DG_Engineering
             switch (employmenttype)
             {
                 case @"Casual Employment":
-                    doc = word.Documents.Add(employmentcontracts + "\\HR-EMP-001 Casual Employment Agreement.dotx");
+                    doc = word.Documents.Add(employmentcontracts + "\\DGE-HSEQT-CRP-FRM-025-005 Casual Local-Pilbara Region Employment Agreement.dotx");
                     break;
                 case @"Full-Time Employment":
-                    doc = word.Documents.Add(employmentcontracts + "\\DGE-HR-FRM-024 Full Time Local-Pilbara Region Employment Agreement.dotx");
+                    doc = word.Documents.Add(employmentcontracts + "\\DGE-HSEQT-CRP-FRM-024-005 Full Time Local-Pilbara Region Employment Agreement.dotx");
                     break;
             }
 
