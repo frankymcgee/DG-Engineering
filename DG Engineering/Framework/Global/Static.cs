@@ -46,7 +46,7 @@ namespace DG_Engineering
         private static readonly string JobCoverPath = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"),
             "DG Engineering\\DG Engineering HUB - Health & Safety\\HSEQT\\12. Admin\\1. Forms\\DGE-HSEQ-ADM-FRM-010 Job Cover Letter & Checklist.dotx");
         private static readonly string EmploymentContracts = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"),
-            "DG Engineering\\DG Engineering HUB - Human Resources\\1. Forms\\3. Employment Agreements\\");
+            "DG Engineering\\DG Engineering - Documents\\Document Control\\Corporate\\Form\\");
         private static readonly string CompilePath = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"),
             "DG Engineering\\DG Engineering HUB - Human Resources\\Employees\\8. Forms\\New Employment Form\\Documents\\");
 

@@ -15,7 +15,7 @@ namespace DG_Engineering
         {
             if (!string.IsNullOrEmpty(Username_TextBox.Text) || !string.IsNullOrEmpty(Password_TextBox.Text))
             {
-                Static.ClientId = DebugMode.Checked ? "dge_sandbox" : "dgengineering";
+                Static.ClientId = DebugMode.Checked ? "dge_sandbox2" : "dgengineering";
                 Static.UserName = Username_TextBox.Text;
                 Static.Password = Password_TextBox.Text;
                 var code = await Request(Static.ClientId, Static.UserName, Static.Password);
