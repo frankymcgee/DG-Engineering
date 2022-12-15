@@ -1,6 +1,8 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
@@ -15,7 +17,7 @@ namespace DG_Engineering
         /// </summary>
         /// <param name="jobname">Job Name i.e., Mobilisation | DS</param>
         /// <param name="idnumber">ID Number for the Reference i.e., 4565001</param>
-        private void AssignarJobPost(string jobname, string idnumber)
+        private async Task AssignarJobPost(string jobname, string idnumber)
         {
             StatusLabel.Text = @"Creating Job:  " + jobname;
             ProjectStartDate.Format = DateTimePickerFormat.Custom;
@@ -80,91 +82,54 @@ namespace DG_Engineering
             {
                 return;
             }
-            var starttime = "06:00";
-            var endtime = "18:00";
             var id = JsonConvert.DeserializeObject<OrderResp.Root>(restResponse.Content).Data.Id;
-            ClientAddToJob(id.ToString());
-            //Superintendent Tasks
-            if (SuperintDSUD.Value > 0 || SuperintNSUD.Value > 0)
-            {
-                switch (jobname)
+            if (!string.IsNullOrEmpty(ClientContact.Text))
                 {
-                    
-                    case "Work | DS":
-                        starttime = "05:00";
-                        endtime = "18:00";
-                        break;
-                    case "Work | NS":
-                        starttime = "17:00";
-                        endtime = "06:00";
-                        break;
-                }
-                TaskCreation(starttime,endtime,id,33,SuperintDSUD.Value);
-                TaskCreation(starttime,endtime,id,33,SuperintNSUD.Value);
+                ClientAddToJob(id.ToString());
             }
-            //Supervisor Tasks
-            if (SupervisorDSUD.Value > 0 || SupervisorNSUD.Value > 0)
-            {
-                switch (jobname)
-                {
-                   case "Work | DS":
-                        starttime = "05:00";
-                        endtime = "18:00";
-                        break;
-                    case "Work | NS":
-                        starttime = "17:00";
-                        endtime = "06:00";
-                        break;
-                }
-                TaskCreation(starttime,endtime,id,3,SupervisorDSUD.Value);
-                TaskCreation(starttime,endtime,id,3,SupervisorNSUD.Value);
-            }
-            //Site Safety Adviser Tasks
-            if (HSEQDSUD.Value > 0 || HSEQNSUD.Value > 0)
-            {
-                switch (jobname)
-                {
-                    case "Work | DS":
-                        starttime = "05:00";
-                        endtime = "18:00";
-                        break;
-                    case "Work | NS":
-                        starttime = "17:00";
-                        endtime = "06:00";
-                        break;
-                }
-                TaskCreation(starttime,endtime,id,16,HSEQDSUD.Value);
-                TaskCreation(starttime,endtime,id,16,HSEQNSUD.Value);
-            }
+            //Day Shift
             if (jobname.Contains(" | DS"))
             {
-                //Day Shift
-                TaskCreation("06:00","18:00",id,32,LHDSUD.Value);
-                TaskCreation("06:00","18:00",id,8,BlastPntDSUD.Value);
-                TaskCreation("06:00","18:00",id,9,BMWDSUD.Value);
-                TaskCreation("06:00","18:00",id,17,MechFitterDSUD.Value);
-                TaskCreation("06:00","18:00",id,23,RiggerDSUD.Value);
-                TaskCreation("06:00","18:00",id,24,CraneDvrDSUD.Value);
-                TaskCreation("06:00","18:00",id,31,CWDSUD.Value);
-                TaskCreation("06:00","18:00",id,25,ScaffDSUD.Value);
-                TaskCreation("06:00","18:00",id,26,TADSUD.Value);
-                TaskCreation("06:00","18:00",id,14,TechnicianDSUD.Value);
-                TaskCreation("06:00","18:00",id,1,ExcavOpDSUD.Value);
+                foreach (Control a in Shift_Tabs.TabPages[0].Controls)
+                {
+                    if (a.GetType().ToString().Equals("System.Windows.Forms.NumericUpDown"))
+                    {
+                        if (a.Text != "0" && a.Tag.ToString().Contains("Day"))
+                        {
+                            var discipline = Convert.ToInt32(a.Tag.ToString().Split(',')[1]);
+                            if (discipline == 33 || discipline == 3 || discipline == 16)
+                            {
+                                await TaskCreation("05:00", "18:00", id, discipline, Convert.ToDecimal(a.Text));
+                            }
+                            else
+                            {
+                                await TaskCreation("06:00", "18:00", id, discipline, Convert.ToDecimal(a.Text));
+                            }
+                        }
+                    }
+                }
             }
-            else if (jobname.Contains(" | NS"))
+            //Night Shift
+            if (jobname.Contains(" | NS"))
             {
-                //Night Shift
-                TaskCreation("18:00","06:00",id,32,LHNSUD.Value);
-                TaskCreation("18:00","06:00",id,8,BlasPntNSUD.Value);
-                TaskCreation("18:00","06:00",id,9,BMWNSUD.Value);
-                TaskCreation("18:00","06:00",id,17,MechFitterNSUD.Value);
-                TaskCreation("18:00","06:00",id,23,RiggerNSUD.Value);
-                TaskCreation("18:00","06:00",id,24,CraneDvrNSUD.Value);
-                TaskCreation("18:00","06:00",id,31,CWNSUD.Value);
-                TaskCreation("18:00","06:00",id,25,ScaffNSUD.Value);
-                TaskCreation("18:00","06:00",id,26,TANSUD.Value);
-                TaskCreation("18:00","06:00",id,14,TechnicianNSUD.Value);
-                TaskCreation("18:00","06:00",id,1,ExcavOpNSUD.Value);
+                foreach (Control a in Shift_Tabs.TabPages[1].Controls)
+                {
+                    if (a.GetType().ToString().Equals("System.Windows.Forms.NumericUpDown"))
+                    {
+                        if (a.Text != "0" && a.Tag.ToString().Contains("Night"))
+                        {
+                            var discipline = Convert.ToInt32(a.Tag.ToString().Split(',')[1]);
+                            if (discipline == 33 || discipline == 3 || discipline == 16)
+                            {
+                                await TaskCreation("17:00", "06:00", id, discipline, Convert.ToDecimal(a.Text));
+                            }
+                            else
+                            {
+                                await TaskCreation("18:00", "06:00", id, discipline, Convert.ToDecimal(a.Text));
+                            }
+                        }
+                    }
+                }
             }
         }
         private async void ClientAddToJob(string orderid)

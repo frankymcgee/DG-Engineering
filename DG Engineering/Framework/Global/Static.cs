@@ -72,6 +72,7 @@ namespace DG_Engineering
         private int _projectId;
         // ReSharper disable once NotAccessedField.Local
         private string _fileUploadName;
+        public string Company_Name;
     }
 
 }
