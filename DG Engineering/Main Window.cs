@@ -53,7 +53,6 @@ namespace DG_Engineering
             ScheduleViewer.CoreWebView2.Navigate("https://dashboard.assignar.com.au/scheduler/timeline");
             ProgressBar_Compiler.Step = 25;
             Assignar_Tabs.TabPages.Remove(Clients_Tab);
-            Assignar_Tabs.TabPages.Remove(Fieldworkers_Tab);
             Assignar_Tabs.TabPages.Remove(DocumentGen_Tab);
             DownloadRoleDescriptions(Static.AssignarDashboardUrl + "tasks/", Static.JwtToken);
             DownloadClientList(Static.AssignarDashboardUrl + "clients/", Static.JwtToken);
@@ -278,6 +277,49 @@ namespace DG_Engineering
         private void WipeCleanButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ERPNextLogin();
+            CreateFieldworkers();
+        }
+
+        public void ERPNextLogin()
+        {
+            var client = new RestClient("http://dgengineering.com.au/api/method/login?usr=Administrator&pwd=FUYS5oYo9hnNd6criyhF");
+client.Timeout = -1;
+var request = new RestRequest(Method.POST);
+request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+request.AddHeader("Accept", "application/json");
+IRestResponse response = client.Execute(request);
+Console.WriteLine(response.Content);
+        }
+
+        public void CreateFieldworkers()
+        {
+            fld_dob.Format = DateTimePickerFormat.Custom;
+            fld_dob.CustomFormat = @"yyyy-MM-dd";
+            var client = new RestClient("http://dgengineering.com.au/api/resource/User");
+client.Timeout = -1;
+var request = new RestRequest(Method.POST);
+request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+request.AddHeader("Accept", "application/json");
+request.AddParameter("name", "\"" + fld_first.ToString() + " " + fld_last.ToString() + "\"");
+request.AddParameter("enabled", "1");
+request.AddParameter("email", "\"" + fld_email + "\"");
+request.AddParameter("first_name", "\"" + fld_first.ToString() + "\"");
+request.AddParameter("last_name", "\"" + fld_last.ToString() + "\"");
+request.AddParameter("full_name", "\"" + fld_first.ToString() + " " + fld_last.ToString() + "\"");
+request.AddParameter("username", "\"" + fld_first.ToString() + "." + fld_last.ToString() + "\"");
+request.AddParameter("country", "Australia");
+request.AddParameter("time_zone", "Australia/Perth");
+request.AddParameter("user_category", "Employee");
+request.AddParameter("send_welcome_email", "1");
+request.AddParameter("unsubscribed", "1");
+request.AddParameter("birth_date", "\"" + fld_dob + "\"");
+IRestResponse response = client.Execute(request);
+Console.WriteLine(response.Content);
         }
     }
 }
