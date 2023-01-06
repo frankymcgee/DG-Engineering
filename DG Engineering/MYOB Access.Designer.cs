@@ -42,7 +42,7 @@ namespace DG_Engineering
             this.MYOBAccessViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MYOBAccessViewer.Location = new System.Drawing.Point(0, 0);
             this.MYOBAccessViewer.Name = "MYOBAccessViewer";
-            this.MYOBAccessViewer.Size = new System.Drawing.Size(427, 595);
+            this.MYOBAccessViewer.Size = new System.Drawing.Size(427, 787);
             this.MYOBAccessViewer.TabIndex = 0;
             this.MYOBAccessViewer.ZoomFactor = 1D;
             // 
@@ -50,7 +50,7 @@ namespace DG_Engineering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 595);
+            this.ClientSize = new System.Drawing.Size(427, 787);
             this.Controls.Add(this.MYOBAccessViewer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MyobAccess";
