@@ -13,7 +13,7 @@ namespace DG_Engineering
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.ThreadException += Application_ThreadException;
+            Application.ThreadException += Application_ThreadException;
             Application.Run(new LoginWindow());
       }
 
