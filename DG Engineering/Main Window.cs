@@ -281,43 +281,54 @@ namespace DG_Engineering
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ERPNextLogin();
             CreateFieldworkers();
-        }
-
-        public void ERPNextLogin()
-        {
-            var client = new RestClient("http://dgengineering.com.au/api/method/login?usr=Administrator&pwd=FUYS5oYo9hnNd6criyhF");
-client.Timeout = -1;
-var request = new RestRequest(Method.POST);
-request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
-request.AddHeader("Accept", "application/json");
-IRestResponse response = client.Execute(request);
-Console.WriteLine(response.Content);
         }
 
         public void CreateFieldworkers()
         {
-            fld_dob.Format = DateTimePickerFormat.Custom;
-            fld_dob.CustomFormat = @"yyyy-MM-dd";
+            //fld_dob.Format = DateTimePickerFormat.Custom;
+            //fld_dob.CustomFormat = @"yyyy-MM-dd";
+            //var client = new RestClient("http://dgengineering.com.au/api/resource/User");
+            //client.Timeout = -1;
+            //var request = new RestRequest(Method.POST);
+            //request.AddHeader("b544d47f25a916a", "079d58b09f6cd01");
+            //request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+            //request.AddHeader("Accept", "application/json");
+            //request.AddParameter("name", "\"" + fld_first.ToString() + " " + fld_last.ToString() + "\"");
+            //request.AddParameter("enabled", "1");
+            //request.AddParameter("email", "\"" + fld_email + "\"");
+            //request.AddParameter("first_name", "\"" + fld_first.ToString() + "\"");
+            //request.AddParameter("last_name", "\"" + fld_last.ToString() + "\"");
+            //request.AddParameter("full_name", "\"" + fld_first.ToString() + " " + fld_last.ToString() + "\"");
+            //request.AddParameter("username", "\"" + fld_first.ToString() + "." + fld_last.ToString() + "\"");
+            //request.AddParameter("country", "Australia");
+            //request.AddParameter("time_zone", "Australia/Perth");
+            //request.AddParameter("user_category", "Employee");
+            //request.AddParameter("send_welcome_email", "1");
+            //request.AddParameter("unsubscribed", "1");
+            //request.AddParameter("birth_date", "\"" + fld_dob + "\"");
+            //IRestResponse response = client.Execute(request);
+            //Console.WriteLine(response.Content);
+
             var client = new RestClient("http://dgengineering.com.au/api/resource/User");
 client.Timeout = -1;
 var request = new RestRequest(Method.POST);
-request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
 request.AddHeader("Accept", "application/json");
-request.AddParameter("name", "\"" + fld_first.ToString() + " " + fld_last.ToString() + "\"");
+request.AddHeader("b544d47f25a916a", "079d58b09f6cd01");
+request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+request.AddParameter("name", "no thankyou");
 request.AddParameter("enabled", "1");
-request.AddParameter("email", "\"" + fld_email + "\"");
-request.AddParameter("first_name", "\"" + fld_first.ToString() + "\"");
-request.AddParameter("last_name", "\"" + fld_last.ToString() + "\"");
-request.AddParameter("full_name", "\"" + fld_first.ToString() + " " + fld_last.ToString() + "\"");
-request.AddParameter("username", "\"" + fld_first.ToString() + "." + fld_last.ToString() + "\"");
+request.AddParameter("email", "sean@webwire.com.au");
+request.AddParameter("first_name", "no");
+request.AddParameter("last_name", "thankyou");
+request.AddParameter("full_name", "no thankyou");
+request.AddParameter("username", "no.thankyou");
 request.AddParameter("country", "Australia");
 request.AddParameter("time_zone", "Australia/Perth");
 request.AddParameter("user_category", "Employee");
 request.AddParameter("send_welcome_email", "1");
 request.AddParameter("unsubscribed", "1");
-request.AddParameter("birth_date", "\"" + fld_dob + "\"");
+request.AddParameter("birth_date", "1990-08-15");
 IRestResponse response = client.Execute(request);
 Console.WriteLine(response.Content);
         }

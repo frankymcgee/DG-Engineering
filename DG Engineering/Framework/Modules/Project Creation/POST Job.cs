@@ -31,49 +31,47 @@ namespace DG_Engineering
             string value;
             if (Debugger.IsAttached)
             {
-                value = @"{
-                                ""active"": true,
-                                ""po_number"": " + ProjectPONumber.Text +
-                            ",\n  \"id\": " + idnumber +
-                            ",\n  \"client_id\": " + _companyId +
-                            ",\n  \"order_owner\": 41" +
-                            ",\n  \"project_id\": " + _projectId +
-                            ",\n  \"job_number\": \"" + ProjectJobNumber.Text + "\"" + 
-                            ",\n  \"po_number\": \"" + ProjectPONumber.Text + "\"" + 
-                            ",\n  \"location\": \"" + ProjectAddress.Text + "\"" + 
-                            ",\n  \"job_description\": \"" + jobname + "\"" + 
-                            ",\n  \"start_time\": \"\"" +
-                            ",\n  \"shift_duration\": \"\"" +
-                            ",\n  \"start_date\": " + ProjectStartDate.Text + 
-                            ",\n  \"end_date\": " + ProjectEndDate.Text +
-                            ",\n  \"comments\": \"" + jobname + "\"" + 
-                            ",\n  \"status_id\": 5" +
-                            ",\n  \"type_id\": 1" +
-                            ",\n  \"supplier_id\": null" +
-                            "\n}";
+                value = "{" +
+                    "\n  \"id\": " + idnumber +
+                    ",\n  \"active\": true" +
+                    ",\n  \"job_number\": \"" + ProjectJobNumber.Text + "\"" + 
+                    ",\n  \"po_number\": \"" + ProjectPONumber.Text + "\"" + 
+                    ",\n  \"client_id\": " + _companyId +
+                    ",\n  \"order_owner\": 48" +
+                    ",\n  \"project_id\": " + _projectId +
+                    ",\n  \"location\": \"" + ProjectAddress.Text + "\"" + 
+                    ",\n  \"job_description\": \"" + jobname + "\"" + 
+                    ",\n  \"start_time\": \"\"" +
+                    ",\n  \"shift_duration\": \"\"" +
+                    ",\n  \"start_date\": \"" + ProjectStartDate.Text + "\"" + 
+                    ",\n  \"end_date\": \"" + ProjectEndDate.Text + "\"" + 
+                    ",\n  \"comments\": \"" + jobname + "\"" + 
+                    ",\n  \"status_id\": 5" +
+                    ",\n  \"type_id\": 1" +
+                    ",\n  \"supplier_id\": null" +
+                    "\n}";
             }
             else
             {
-                value = @"{
-                                ""active"": true,
-                                ""po_number"": " + ProjectPONumber.Text +
-                            ",\n  \"id\": " + idnumber +
-                            ",\n  \"client_id\": " + _companyId +
-                            ",\n  \"order_owner\": 186" +
-                            ",\n  \"project_id\": " + _projectId +
-                            ",\n  \"job_number\": \"" + ProjectJobNumber.Text + "\"" + 
-                            ",\n  \"po_number\": \"" + ProjectPONumber.Text + "\"" + 
-                            ",\n  \"location\": \"" + ProjectAddress.Text + "\"" + 
-                            ",\n  \"job_description\": \"" + jobname + "\"" + 
-                            ",\n  \"start_time\": \"\"" +
-                            ",\n  \"shift_duration\": \"\"" +
-                            ",\n  \"start_date\": " + ProjectStartDate.Text + 
-                            ",\n  \"end_date\": " + ProjectEndDate.Text +
-                            ",\n  \"comments\": \"" + jobname + "\"" + 
-                            ",\n  \"status_id\": 5" +
-                            ",\n  \"type_id\": 1" +
-                            ",\n  \"supplier_id\": null" +
-                            "\n}";
+                value = "{" +
+                    ",\n  \"id\": " + idnumber +
+                    ",\n  \"active\": true" +
+                    ",\n  \"job_number\": \"" + ProjectJobNumber.Text + "\"" + 
+                    ",\n  \"po_number\": " + ProjectPONumber.Text +
+                    ",\n  \"client_id\": " + _companyId +
+                    ",\n  \"order_owner\": 186" +
+                    ",\n  \"project_id\": " + _projectId +
+                    ",\n  \"location\": \"" + ProjectAddress.Text + "\"" + 
+                    ",\n  \"job_description\": \"" + jobname + "\"" + 
+                    ",\n  \"start_time\": \"\"" +
+                    ",\n  \"shift_duration\": \"\"" +
+                    ",\n  \"start_date\": " + ProjectStartDate.Text + 
+                    ",\n  \"end_date\": " + ProjectEndDate.Text +
+                    ",\n  \"comments\": \"" + jobname + "\"" + 
+                    ",\n  \"status_id\": 5" +
+                    ",\n  \"type_id\": 1" +
+                    ",\n  \"supplier_id\": null" +
+                    "\n}";
             }
 	        
 	        restRequest.AddParameter("application/json", value, ParameterType.RequestBody);
@@ -86,7 +84,7 @@ namespace DG_Engineering
             if (!string.IsNullOrEmpty(ClientContact.Text))
                 {
                 ClientAddToJob(id.ToString());
-            }
+                }
             //Day Shift
             if (jobname.Contains(" | DS"))
             {
