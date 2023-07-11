@@ -16,9 +16,10 @@ namespace DG_Engineering
         /// </summary>
         /// <param name="url">LoginForm.AssignarDashboardUrl + "projects/" + JobPackNo_TextBox.Text + "/documents/"</param>
         /// <param name="token">LoginForm.JwtToken</param>
-        private async void DownloadDocumentFromUrl(string url, string token)
+        private async void DownloadDocumentFromUrl(string url)
         {
-            var docsearch = await AssignarConnect(url, token, Method.GET,null);
+             await AssignarAPIConnect(url, Method.Get, null);
+            var docsearch = Static.AssignarResponseContent;
             var project = JsonConvert.DeserializeObject<Documents.Root>(docsearch);
             if (project == null) return;
             foreach (var a in project.Data.Where(a => a.Label == JobDocuments_ComboBox.Text))

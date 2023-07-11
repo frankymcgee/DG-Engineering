@@ -30,16 +30,10 @@ namespace DG_Engineering
         /// <param name="orderid">the Order ID of the Project the Task is being assigned for</param>
         /// <param name="taskid">Job Discipline ID from Assignar</param>
         /// <param name="quantity">Amount of Workers required for the Job Discipline</param>
-        private Task AssignarTaskPost(string starttime, string endtime, int orderid, int taskid, int quantity)
+        private async Task AssignarTaskPost(string starttime, string endtime, int orderid, int taskid, int quantity)
         {
-            var restClient = new RestClient(Static.AssignarDashboardUrl + "orders/" + orderid + "/tasks");
-            var restRequest = new RestRequest(Static.AssignarDashboardUrl + "orders/" + orderid + "/tasks",Method.POST);
-            restRequest.AddHeader("Content-Type", "application/json");
-            restRequest.AddHeader("Authorization", Static.JwtToken);
-            var value = "{\n  \"task_id\": " + taskid + ",\n  \"task_quantity\": " + quantity + ",\n  \"active\": true,\n  \"req_machines\": true,\n  \"start_time\": " + starttime + ",\n  \"end_time\": " + endtime + ",\n}";
-            restRequest.AddParameter("application/json", value, ParameterType.RequestBody);
-            _ = restClient.Execute(restRequest).Content;
-            return Task.CompletedTask;
+            var body = "{\n  \"task_id\": " + taskid + ",\n  \"task_quantity\": " + quantity + ",\n  \"active\": true,\n  \"req_machines\": true,\n  \"start_time\": " + starttime + ",\n  \"end_time\": " + endtime + ",\n}";
+            await AssignarAPIConnect("/orders/ " + orderid + " /tasks", Method.Post, body);           
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DG_Engineering.Framework.Global;
@@ -16,10 +17,9 @@ namespace DG_Engineering
         /// <param name="basestring">Company Name Being Referenced to</param>
         private async Task CompanyIdExtract(string basestring)
         {
-            ProgressBar.PerformStep();
             var lstStringsToCheck = new List<string>();
-            var assignarclients =
-                await AssignarConnect(Static.AssignarDashboardUrl + "clients?active=true", Static.JwtToken, Method.GET,null);
+            await AssignarAPIConnect("/clients?active=true", Method.Get, null);
+            var assignarclients =  Static.AssignarResponseContent;
             var clientlist = JsonConvert.DeserializeObject<Clients.Root>(assignarclients);
             if (clientlist != null)
             {

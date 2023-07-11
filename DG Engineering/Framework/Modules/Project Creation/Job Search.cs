@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DG_Engineering.Framework.Global.Assignar;
 using DG_Engineering.Framework.Global.MYOB;
@@ -27,7 +28,6 @@ namespace DG_Engineering
                 file.Delete();
             }
             string fixedjobnumber;
-            ProgressBar.PerformStep();
             if (projectnumber.Contains("'"))
             {
                 var index = projectnumber.IndexOf("'", StringComparison.Ordinal);
@@ -37,16 +37,26 @@ namespace DG_Engineering
             {
                 fixedjobnumber = projectnumber;
             }
-            var jobsearch = MyobConnect(Static.Companyfileuri + "/"+ Static.Companyfileguid + "/GeneralLedger/Job?$filter=Number eq \'" + fixedjobnumber + "\'", Method.GET).Content;
+            var jobsearch = MyobConnect(Static.Companyfileuri + "/"+ Static.Companyfileguid, "/GeneralLedger/Job?$filter=Number eq \'" + fixedjobnumber + "\'", Method.Get).Content;
             Console.WriteLine(jobsearch);
             var jobsearchresult = JsonConvert.DeserializeObject<Job.Root>(jobsearch);
+            int quotenumber;
             foreach (var a in jobsearchresult.Items)
             {
+                Match match = Regex.Match(a.Description, @"\d+$");
+                if (match.Success)
+                {
+                    quotenumber = int.Parse(match.Value);
+                }
+                else
+                {
+                    quotenumber = 0;
+                }
                 ProjectClient.Text = a.LinkedCustomer.Name;
                 ProjectName.Text = a.Name;
                 ProjectAddress.Text = a.Contact;
                 ProjectPONumber.Text = a.Manager.ToString();
-
+                QuoteNo_TextBox.Text = quotenumber.ToString();
                 Jobs_Client.Text = a.LinkedCustomer.Name;
                 Jobs_JobName.Text = a.Description;
                 Jobs_Site.Text = a.Contact;
@@ -54,7 +64,8 @@ namespace DG_Engineering
             }
             await CompanyIdExtract(ProjectClient.Text);
             ClientContact.Items.Clear();
-            var contactsquery = await AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text,Static.JwtToken,Method.GET,null);
+            await AssignarAPIConnect("/contacts?company=" + ProjectClient.Text, Method.Get, null);
+            var contactsquery = Static.AssignarResponseContent;
             var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
             if (contactsresult?.Data != null)
                 foreach (var a in contactsresult.Data)
@@ -62,7 +73,6 @@ namespace DG_Engineering
                     ClientContact.Items.Add(a.FirstName + " " + a.LastName + "  -  " + a.JobTitle);
                 }
             StatusLabel.Visible = false;
-            ProgressBar.Value = 0;
         }
     }
 }
