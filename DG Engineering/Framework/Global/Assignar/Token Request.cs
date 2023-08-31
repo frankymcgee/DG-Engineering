@@ -17,11 +17,12 @@ namespace DG_Engineering
         /// <param name="password">Dashboard User Password</param>
         private static async Task<HttpStatusCode> Request(string clientId, string usernameLabel, string password)
         {
-            var client = new RestClient(Static.AssignarAuthUrl)
+            var options = new RestClientOptions(Static.AssignarAuthUrl)
             {
-                Timeout = -1
+                MaxTimeout = -1,
             };
-            var request = new RestRequest(Static.AssignarAuthUrl,Method.POST);
+            var client = new RestClient(options);
+            var request = new RestRequest("/login",Method.Post);
             request.AddHeader("Content-Type", "application/json");
             var body = "{ \"tennant_id\": " + clientId + ", \"username\": \"" + usernameLabel +
                        "\", \"password\": \"" + password + "\", \"user_type\": \"dashboard\" }";

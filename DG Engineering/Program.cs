@@ -17,11 +17,9 @@ namespace DG_Engineering
             Application.Run(new LoginWindow());
       }
 
-        private static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
+        public static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
         {
-            MessageBox.Show(@"Error:" + @"
-
-" + e.Exception.Message,@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show(@"Error:" + e.Exception.Message,@"Attention",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }

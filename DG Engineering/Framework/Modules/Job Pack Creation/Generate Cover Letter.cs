@@ -54,7 +54,19 @@ namespace DG_Engineering
             JobDocuments_ListBox.Items.Add(_filestep + ". Job Pack Cover");
             StatusLabel.Text = @"Searching for available Documents";
             // Find all documents in Project
-            var path = Path.Combine(DGEngineering,"DG Engineering HUB - Operations\\Jobs",JobPackNo_TextBox.Text);
+            string modifiedname = "";
+            foreach (char c in ProjectName.Text)
+            {
+                if (c == '\\' || c == '/')
+                {
+                    modifiedname += "-";
+                }
+                else
+                {
+                    modifiedname += c;
+                }
+            }
+            var path = Path.Combine(DGEngineering,"DG Engineering HUB - Operations\\Jobs",JobPackNo_TextBox.Text + " - " + modifiedname);
             Console.WriteLine(path);
             var files = Directory.GetFiles(path,"*",SearchOption.AllDirectories);
             StatusLabel.Text = @"Found " + files.Length + @" Documents.";

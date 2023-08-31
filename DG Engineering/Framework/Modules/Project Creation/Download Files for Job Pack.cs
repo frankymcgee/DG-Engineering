@@ -8,8 +8,19 @@ namespace DG_Engineering
     {
         private void DownloadFilesForJobPack(string file)
         {
-            var path = Path.Combine(DGEngineering, "DG Engineering HUB - Operations\\Jobs", JobPackNo_TextBox.Text,
-                JobDocuments_ComboBox.Text);
+            string modifiedname = "";
+            foreach (char c in ProjectName.Text)
+            {
+                if (c == '\\' || c == '/')
+                {
+                    modifiedname += "-";
+                }
+                else
+                {
+                    modifiedname += c;
+                }
+            }
+            var path = Path.Combine(DGEngineering, "DG Engineering HUB - Operations\\Jobs", JobDocuments_ComboBox.Text);
             _filestep++;
             var output = Path.Combine(Path.GetTempPath(), "Job Pack Generator\\");
             File.Copy(path, output + _filestep + ". " + file.Split('\\').Last());

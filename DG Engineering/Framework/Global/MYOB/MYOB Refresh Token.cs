@@ -14,7 +14,7 @@ namespace DG_Engineering
         private static void RefreshMyob()
         {
             var client = new RestClient("https://secure.myob.com/oauth2/v1/authorize/");
-            var request = new RestRequest("https://secure.myob.com/oauth2/v1/authorize/",Method.POST);
+            var request = new RestRequest("https://secure.myob.com/oauth2/v1/authorize/",Method.Post);
             request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
             request.AddParameter("client_id", Static.MyobClientId);
             request.AddParameter("client_secret", Static.MyobSecretKey);
@@ -34,7 +34,7 @@ namespace DG_Engineering
         private static void MyobRetrieveCompanyList()
         {
             var client = new RestClient("https://api.myob.com/accountright");
-            var request = new RestRequest("https://api.myob.com/accountright",Method.GET);
+            var request = new RestRequest("https://api.myob.com/accountright",Method. Get);
             request.AddHeader("x-myobapi-key", "43112a28-1d90-4a9e-97a2-0c5f40f25aef");
             request.AddHeader("x-myobapi-version", "v2");
             request.AddHeader("Accept-Encoding", "gzip,deflate");

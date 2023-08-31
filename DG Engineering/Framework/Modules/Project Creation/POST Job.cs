@@ -2,11 +2,13 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
 using RestSharp;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace DG_Engineering
 {
@@ -15,78 +17,52 @@ namespace DG_Engineering
         /// <summary>
         /// POST Job to Assignar
         /// </summary>
-        /// <param name="jobname">Job Name i.e., Mobilisation | DS</param>
-        /// <param name="idnumber">ID Number for the Reference i.e., 4565001</param>
-        private async Task AssignarJobPost(string jobname, string idnumber)
+        /// <param name="projectid">The Job Number the Shift is being attached to</param>
+        /// <param name="shiftname">Job Name i.e., Mobilisation | DS</param>
+        /// <param name="referencenumber">ID Number for the Reference i.e., 4565001</param>
+        private async Task AssignarJobPost(int projectid,string shiftname, string referencenumber)
         {
-            StatusLabel.Text = @"Creating Job:  " + jobname;
+            StatusLabel.Text = @"Creating Shift: " + shiftname;
             ProjectStartDate.Format = DateTimePickerFormat.Custom;
             ProjectStartDate.CustomFormat = @"yyyy-MM-dd";
 	        ProjectEndDate.Format = DateTimePickerFormat.Custom;
             ProjectEndDate.CustomFormat = @"yyyy-MM-dd";
-            var restClient = new RestClient(Static.AssignarDashboardUrl + "orders");
-            var restRequest = new RestRequest(Static.AssignarDashboardUrl + "orders", Method.POST);
-	        restRequest.AddHeader("Content-Type", "application/json");
-	        restRequest.AddHeader("Authorization", Static.JwtToken);
-            string value;
+            int orderowner;           
             if (Debugger.IsAttached)
             {
-                value = "{" +
-                    "\n  \"id\": " + idnumber +
-                    ",\n  \"active\": true" +
-                    ",\n  \"job_number\": \"" + ProjectJobNumber.Text + "\"" + 
-                    ",\n  \"po_number\": \"" + ProjectPONumber.Text + "\"" + 
-                    ",\n  \"client_id\": " + _companyId +
-                    ",\n  \"order_owner\": 48" +
-                    ",\n  \"project_id\": " + _projectId +
-                    ",\n  \"location\": \"" + ProjectAddress.Text + "\"" + 
-                    ",\n  \"job_description\": \"" + jobname + "\"" + 
-                    ",\n  \"start_time\": \"\"" +
-                    ",\n  \"shift_duration\": \"\"" +
-                    ",\n  \"start_date\": \"" + ProjectStartDate.Text + "\"" + 
-                    ",\n  \"end_date\": \"" + ProjectEndDate.Text + "\"" + 
-                    ",\n  \"comments\": \"" + jobname + "\"" + 
-                    ",\n  \"status_id\": 5" +
-                    ",\n  \"type_id\": 1" +
-                    ",\n  \"supplier_id\": null" +
-                    "\n}";
+                orderowner = 48;           
             }
             else
             {
-                value = "{" +
-                    ",\n  \"id\": " + idnumber +
-                    ",\n  \"active\": true" +
-                    ",\n  \"job_number\": \"" + ProjectJobNumber.Text + "\"" + 
-                    ",\n  \"po_number\": " + ProjectPONumber.Text +
-                    ",\n  \"client_id\": " + _companyId +
-                    ",\n  \"order_owner\": 186" +
-                    ",\n  \"project_id\": " + _projectId +
-                    ",\n  \"location\": \"" + ProjectAddress.Text + "\"" + 
-                    ",\n  \"job_description\": \"" + jobname + "\"" + 
-                    ",\n  \"start_time\": \"\"" +
-                    ",\n  \"shift_duration\": \"\"" +
-                    ",\n  \"start_date\": " + ProjectStartDate.Text + 
-                    ",\n  \"end_date\": " + ProjectEndDate.Text +
-                    ",\n  \"comments\": \"" + jobname + "\"" + 
-                    ",\n  \"status_id\": 5" +
-                    ",\n  \"type_id\": 1" +
-                    ",\n  \"supplier_id\": null" +
-                    "\n}";
+                orderowner = 156;              
             }
-	        
-	        restRequest.AddParameter("application/json", value, ParameterType.RequestBody);
-	        var restResponse = restClient.Execute(restRequest);
-	        if (restResponse.StatusCode != HttpStatusCode.OK)
-            {
-                return;
-            }
-            var id = JsonConvert.DeserializeObject<OrderResp.Root>(restResponse.Content).Data.Id;
+            string body = "{" +
+                   "\n  \"id\": " + referencenumber +
+                   ",\n  \"active\": true" +
+                   ",\n  \"job_number\": \"" + ProjectJobNumber.Text + "\"" +
+                   ",\n  \"po_number\": \"" + ProjectPONumber.Text + "\"" +
+                   ",\n  \"client_id\": " + _companyId +
+                   ",\n  \"order_owner\": " + orderowner +
+                   ",\n  \"project_id\": " + projectid +
+                   ",\n  \"location\": \"" + ProjectAddress.Text + "\"" +
+                   ",\n  \"job_description\": \"" + shiftname + "\"" +
+                   ",\n  \"start_time\": \"\"" +
+                   ",\n  \"shift_duration\": \"\"" +
+                   ",\n  \"start_date\": \"" + ProjectStartDate.Text + "\"" +
+                   ",\n  \"end_date\": \"" + ProjectEndDate.Text + "\"" +
+                   ",\n  \"comments\": \"" + shiftname + "\"" +
+                   ",\n  \"status_id\": 5" +
+                   ",\n  \"type_id\": 1" +
+                   ",\n  \"supplier_id\": null" +
+                   "\n}";
+            await AssignarAPIConnect("/orders", Method.Post, body);
+            var id = JsonConvert.DeserializeObject<OrderResp.Root>(Static.AssignarResponseContent).Data.Id;
             if (!string.IsNullOrEmpty(ClientContact.Text))
                 {
                 ClientAddToJob(id.ToString());
                 }
             //Day Shift
-            if (jobname.Contains(" | DS"))
+            if (shiftname.Contains(" | DS"))
             {
                 foreach (Control a in Shift_Tabs.TabPages[0].Controls)
                 {
@@ -108,7 +84,7 @@ namespace DG_Engineering
                 }
             }
             //Night Shift
-            if (jobname.Contains(" | NS"))
+            if (shiftname.Contains(" | NS"))
             {
                 foreach (Control a in Shift_Tabs.TabPages[1].Controls)
                 {
@@ -133,7 +109,8 @@ namespace DG_Engineering
         private async void ClientAddToJob(string orderid)
         {
             var contactId = 0;
-            var contactsquery = await AssignarConnect(Static.AssignarDashboardUrl + "contacts?company=" + ProjectClient.Text, Static.JwtToken, Method.POST, null);
+            await AssignarAPIConnect( "/contacts?company=" + ProjectClient.Text, Method.Post, null);
+            var contactsquery = Static.AssignarResponseContent;
             var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
             if (contactsresult != null)
                 foreach (var a in contactsresult.Data.Where(a =>
@@ -142,9 +119,8 @@ namespace DG_Engineering
                 {
                     contactId = a.Id;
                 }
-
             var body = "{\n \"order_id\":" + orderid + ",\n  \"contact_id\":" + contactId + "\n}";
-            await AssignarConnect(Static.AssignarDashboardUrl + "orders/" + orderid + "/contacts", Static.JwtToken, Method.POST, body);
+            await AssignarAPIConnect("/orders/" + orderid + "/contacts", Method.Post, body);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
 using RestSharp;
@@ -9,13 +10,13 @@ namespace DG_Engineering
     {
         
         /// <summary>
-        /// Displays Job Information
+        /// Displays Shift Information
         /// </summary>
-        /// <param name="url">URL to be searched. i.e., "Static.AssignarDashboardUrl + "orders/" + AdminJobNo.Text"</param>
-        /// <param name="token">The Bearer Token Supplied</param>
-        private async void AdminDownloadJobInformation(string url, string token)
+        /// <param name="url">URL to be searched. i.e.: "/orders/" + Shift Number"</param>
+        private async Task AssignarShiftInformation( string url)
         {
-            var jobsearch =  await AssignarConnect(url, token, Method.GET, null);
+            await AssignarAPIConnect(url, Method.Get, null);
+            var jobsearch = Static.AssignarResponseContent;
             var jobinfo = JsonConvert.DeserializeObject<AdminJobInfo.Root>(jobsearch);
             AdminJobDesc.Text = jobinfo.Data.JobDescription;
             AdminJobLoc.Text = jobinfo.Data.Location;

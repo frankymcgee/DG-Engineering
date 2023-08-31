@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using DG_Engineering.Framework.Global.Assignar;
 using Newtonsoft.Json;
 using RestSharp;
@@ -9,13 +10,14 @@ namespace DG_Engineering
     public partial class MainWindow
     {
         /// <summary>
-        /// Downloads all Role Descriptions in Assignar.
+        /// Downloads all Clients in Assignar.
         /// </summary>
-        /// <param name="url">LoginForm.AssignarDashboardUrl + "tasks/"</param>
-        /// <param name="token">LoginForm.JwtToken</param>
-        private async void DownloadClientList(string url, string token)
+        /// <param name=""></param>
+        /// <returns>The List of Clients from Assignar in the Clients ComboBox.</returns>
+        private async Task DownloadClientList()
         {
-            var tasksearch = await AssignarConnect(url, token, Method.GET,null);
+            await AssignarAPIConnect("/clients", Method.Get, null);
+            var tasksearch = Static.AssignarResponseContent;
             var tasks = JsonConvert.DeserializeObject<Clients.Root>(tasksearch);
             if (tasks == null) return;
             var sortList = (from a in tasks.Data where a.Active select a.Name).ToList();
