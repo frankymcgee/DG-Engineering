@@ -31,6 +31,7 @@ namespace DG_Engineering
         }
         private void Login_Button_Click(object sender, EventArgs e)
         {
+            Login_Button.Text = "Logging in";
             Process();
         }
 
