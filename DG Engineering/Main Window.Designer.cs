@@ -181,6 +181,62 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.DocumentGen_Tab = new System.Windows.Forms.TabPage();
             this.Assignar_Tabs = new System.Windows.Forms.TabControl();
+            this.Jobs_Tab = new System.Windows.Forms.TabPage();
+            this.Jobs_SplitContainer = new System.Windows.Forms.SplitContainer();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Jobs_GenerateCover = new System.Windows.Forms.Button();
+            this.Jobs_PoNo = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.Jobs_Site = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.Jobs_Client = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.Jobs_JobName = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.Manual_Search_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Jobs_ProjectNumber = new System.Windows.Forms.TextBox();
+            this.Manual_Search_Project_Label = new System.Windows.Forms.Label();
+            this.Jobs_MyobSearch = new System.Windows.Forms.Button();
+            this.Jobs_Viewer = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.Fieldworkers_Tab = new System.Windows.Forms.TabPage();
+            this.Fldwkr_Webview = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.Fld_Left = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.fld_gender = new System.Windows.Forms.ComboBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.fwPosHeld = new System.Windows.Forms.ComboBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.fwEmployment = new System.Windows.Forms.ComboBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.fld_doj = new System.Windows.Forms.DateTimePicker();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.emcontact = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.emnumber = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.fld_number = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.fld_email = new System.Windows.Forms.TextBox();
+            this.CreateWorkerBtn = new System.Windows.Forms.Button();
+            this.label50 = new System.Windows.Forms.Label();
+            this.fld_dob = new System.Windows.Forms.DateTimePicker();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.fld_postcode = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.fld_state = new System.Windows.Forms.ComboBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.fld_sub = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.fld_add = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.fld_last = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.fld_first = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
             this.Job_Pack_tab = new System.Windows.Forms.TabPage();
             this.DocumentPreview_Group = new System.Windows.Forms.GroupBox();
             this.JobPackBrowser = new System.Windows.Forms.WebBrowser();
@@ -204,23 +260,6 @@
             this.JobPackWeek_Label = new System.Windows.Forms.Label();
             this.JobPackTitle_TextBox = new System.Windows.Forms.TextBox();
             this.JobPackTitle_Label = new System.Windows.Forms.Label();
-            this.Jobs_Tab = new System.Windows.Forms.TabPage();
-            this.Jobs_SplitContainer = new System.Windows.Forms.SplitContainer();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.Jobs_GenerateCover = new System.Windows.Forms.Button();
-            this.Jobs_PoNo = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.Jobs_Site = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.Jobs_Client = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.Jobs_JobName = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.Manual_Search_GroupBox = new System.Windows.Forms.GroupBox();
-            this.Jobs_ProjectNumber = new System.Windows.Forms.TextBox();
-            this.Manual_Search_Project_Label = new System.Windows.Forms.Label();
-            this.Jobs_MyobSearch = new System.Windows.Forms.Button();
-            this.Jobs_Viewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.Admin_Tab = new System.Windows.Forms.TabPage();
             this.AdminViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -263,45 +302,6 @@
             this.Scheduler_GroupBox = new System.Windows.Forms.GroupBox();
             this.ScheduleViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.Clients_Tab = new System.Windows.Forms.TabPage();
-            this.Fieldworkers_Tab = new System.Windows.Forms.TabPage();
-            this.Fldwkr_Webview = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.Fld_Left = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.fld_gender = new System.Windows.Forms.ComboBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.fwPosHeld = new System.Windows.Forms.ComboBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.fwEmployment = new System.Windows.Forms.ComboBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.fld_doj = new System.Windows.Forms.DateTimePicker();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.emcontact = new System.Windows.Forms.TextBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.emnumber = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.fld_number = new System.Windows.Forms.TextBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.fld_email = new System.Windows.Forms.TextBox();
-            this.CreateWorkerBtn = new System.Windows.Forms.Button();
-            this.label50 = new System.Windows.Forms.Label();
-            this.fld_dob = new System.Windows.Forms.DateTimePicker();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.fld_postcode = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.fld_state = new System.Windows.Forms.ComboBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.fld_sub = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.fld_add = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.fld_last = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.fld_first = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
             this.Recruitment_Tab = new System.Windows.Forms.TabPage();
             this.Document_Preview_Group = new System.Windows.Forms.GroupBox();
             this.RecruitmentViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
@@ -415,11 +415,6 @@
             this.splitContainer1.SuspendLayout();
             this.DocumentGen_Tab.SuspendLayout();
             this.Assignar_Tabs.SuspendLayout();
-            this.Job_Pack_tab.SuspendLayout();
-            this.DocumentPreview_Group.SuspendLayout();
-            this.JobPackGroupBox.SuspendLayout();
-            this.JobDocuments_Group.SuspendLayout();
-            this.CoverPageGroup.SuspendLayout();
             this.Jobs_Tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Jobs_SplitContainer)).BeginInit();
             this.Jobs_SplitContainer.Panel1.SuspendLayout();
@@ -428,14 +423,6 @@
             this.groupBox3.SuspendLayout();
             this.Manual_Search_GroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Jobs_Viewer)).BeginInit();
-            this.Admin_Tab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AdminViewer)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.Schedule_Tab.SuspendLayout();
-            this.Scheduler_GroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ScheduleViewer)).BeginInit();
             this.Fieldworkers_Tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Fldwkr_Webview)).BeginInit();
             this.Fld_Left.SuspendLayout();
@@ -444,6 +431,19 @@
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.Job_Pack_tab.SuspendLayout();
+            this.DocumentPreview_Group.SuspendLayout();
+            this.JobPackGroupBox.SuspendLayout();
+            this.JobDocuments_Group.SuspendLayout();
+            this.CoverPageGroup.SuspendLayout();
+            this.Admin_Tab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AdminViewer)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.Schedule_Tab.SuspendLayout();
+            this.Scheduler_GroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ScheduleViewer)).BeginInit();
             this.Recruitment_Tab.SuspendLayout();
             this.Document_Preview_Group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RecruitmentViewer)).BeginInit();
@@ -502,7 +502,7 @@
             this.SimProSync_Tab.Name = "SimProSync_Tab";
             this.SimProSync_Tab.Size = new System.Drawing.Size(1234, 663);
             this.SimProSync_Tab.TabIndex = 8;
-            this.SimProSync_Tab.Text = "Project Creation";
+            this.SimProSync_Tab.Text = "Job Creation";
             this.SimProSync_Tab.UseVisualStyleBackColor = true;
             // 
             // ProjectGenerationBrowserGroupBox
@@ -514,7 +514,6 @@
             this.ProjectGenerationBrowserGroupBox.Size = new System.Drawing.Size(874, 663);
             this.ProjectGenerationBrowserGroupBox.TabIndex = 1;
             this.ProjectGenerationBrowserGroupBox.TabStop = false;
-            this.ProjectGenerationBrowserGroupBox.Text = "Browser";
             // 
             // ProjectViewer
             // 
@@ -560,7 +559,6 @@
             this.SimProQuoteGroup.Size = new System.Drawing.Size(360, 663);
             this.SimProQuoteGroup.TabIndex = 0;
             this.SimProQuoteGroup.TabStop = false;
-            this.SimProQuoteGroup.Text = "Project Details";
             // 
             // QuoteNo_TextBox
             // 
@@ -596,31 +594,32 @@
             this.Address_upd_Button.TabIndex = 24;
             this.Address_upd_Button.Text = "Address";
             this.Address_upd_Button.UseVisualStyleBackColor = true;
+            this.Address_upd_Button.Visible = false;
             // 
             // ProjectAddress
             // 
             this.ProjectAddress.FormattingEnabled = true;
-            this.ProjectAddress.Location = new System.Drawing.Point(7, 147);
+            this.ProjectAddress.Location = new System.Drawing.Point(6, 147);
             this.ProjectAddress.Name = "ProjectAddress";
-            this.ProjectAddress.Size = new System.Drawing.Size(252, 21);
+            this.ProjectAddress.Size = new System.Drawing.Size(253, 21);
             this.ProjectAddress.TabIndex = 23;
             // 
             // ClientContact
             // 
             this.ClientContact.FormattingEnabled = true;
-            this.ClientContact.Location = new System.Drawing.Point(7, 230);
+            this.ClientContact.Location = new System.Drawing.Point(8, 230);
             this.ClientContact.Name = "ClientContact";
-            this.ClientContact.Size = new System.Drawing.Size(345, 21);
+            this.ClientContact.Size = new System.Drawing.Size(344, 21);
             this.ClientContact.TabIndex = 22;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(98, 214);
+            this.label17.Location = new System.Drawing.Point(2, 214);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(161, 13);
+            this.label17.Size = new System.Drawing.Size(65, 13);
             this.label17.TabIndex = 21;
-            this.label17.Text = "Client-Signed Timesheet Contact";
+            this.label17.Text = "Site Contact";
             // 
             // ProjectClient
             // 
@@ -1666,9 +1665,9 @@
             // ProjectEndDate
             // 
             this.ProjectEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ProjectEndDate.Location = new System.Drawing.Point(274, 187);
+            this.ProjectEndDate.Location = new System.Drawing.Point(267, 187);
             this.ProjectEndDate.Name = "ProjectEndDate";
-            this.ProjectEndDate.Size = new System.Drawing.Size(78, 20);
+            this.ProjectEndDate.Size = new System.Drawing.Size(85, 20);
             this.ProjectEndDate.TabIndex = 15;
             // 
             // ProjectEndDateLabel
@@ -1676,9 +1675,9 @@
             this.ProjectEndDateLabel.AutoSize = true;
             this.ProjectEndDateLabel.Location = new System.Drawing.Point(264, 171);
             this.ProjectEndDateLabel.Name = "ProjectEndDateLabel";
-            this.ProjectEndDateLabel.Size = new System.Drawing.Size(88, 13);
+            this.ProjectEndDateLabel.Size = new System.Drawing.Size(52, 13);
             this.ProjectEndDateLabel.TabIndex = 14;
-            this.ProjectEndDateLabel.Text = "Project End Date";
+            this.ProjectEndDateLabel.Text = "End Date";
             // 
             // ProjectStartDate
             // 
@@ -1693,9 +1692,9 @@
             this.ProjectStartDateLabel.AutoSize = true;
             this.ProjectStartDateLabel.Location = new System.Drawing.Point(168, 171);
             this.ProjectStartDateLabel.Name = "ProjectStartDateLabel";
-            this.ProjectStartDateLabel.Size = new System.Drawing.Size(91, 13);
+            this.ProjectStartDateLabel.Size = new System.Drawing.Size(55, 13);
             this.ProjectStartDateLabel.TabIndex = 12;
-            this.ProjectStartDateLabel.Text = "Project Start Date";
+            this.ProjectStartDateLabel.Text = "Start Date";
             // 
             // ProjectPONumber
             // 
@@ -1707,20 +1706,20 @@
             // ProjectPOLabel
             // 
             this.ProjectPOLabel.AutoSize = true;
-            this.ProjectPOLabel.Location = new System.Drawing.Point(4, 171);
+            this.ProjectPOLabel.Location = new System.Drawing.Point(2, 171);
             this.ProjectPOLabel.Name = "ProjectPOLabel";
-            this.ProjectPOLabel.Size = new System.Drawing.Size(98, 13);
+            this.ProjectPOLabel.Size = new System.Drawing.Size(62, 13);
             this.ProjectPOLabel.TabIndex = 10;
-            this.ProjectPOLabel.Text = "Project PO Number";
+            this.ProjectPOLabel.Text = "PO Number";
             // 
             // ProjectAddress_Label
             // 
             this.ProjectAddress_Label.AutoSize = true;
-            this.ProjectAddress_Label.Location = new System.Drawing.Point(4, 131);
+            this.ProjectAddress_Label.Location = new System.Drawing.Point(2, 131);
             this.ProjectAddress_Label.Name = "ProjectAddress_Label";
-            this.ProjectAddress_Label.Size = new System.Drawing.Size(81, 13);
+            this.ProjectAddress_Label.Size = new System.Drawing.Size(65, 13);
             this.ProjectAddress_Label.TabIndex = 8;
-            this.ProjectAddress_Label.Text = "Project Address";
+            this.ProjectAddress_Label.Text = "Job Address";
             // 
             // PushAssignar_Button
             // 
@@ -1730,7 +1729,7 @@
             this.PushAssignar_Button.Name = "PushAssignar_Button";
             this.PushAssignar_Button.Size = new System.Drawing.Size(354, 35);
             this.PushAssignar_Button.TabIndex = 7;
-            this.PushAssignar_Button.Text = "Create Project";
+            this.PushAssignar_Button.Text = "Schedule Job";
             this.PushAssignar_Button.UseVisualStyleBackColor = true;
             this.PushAssignar_Button.Click += new System.EventHandler(this.PushAssignar_Button_Click);
             // 
@@ -1744,16 +1743,16 @@
             // ProjectNameLabel
             // 
             this.ProjectNameLabel.AutoSize = true;
-            this.ProjectNameLabel.Location = new System.Drawing.Point(3, 92);
+            this.ProjectNameLabel.Location = new System.Drawing.Point(2, 92);
             this.ProjectNameLabel.Name = "ProjectNameLabel";
-            this.ProjectNameLabel.Size = new System.Drawing.Size(71, 13);
+            this.ProjectNameLabel.Size = new System.Drawing.Size(55, 13);
             this.ProjectNameLabel.TabIndex = 5;
-            this.ProjectNameLabel.Text = "Project Name";
+            this.ProjectNameLabel.Text = "Job Name";
             // 
             // SimProClient
             // 
             this.SimProClient.AutoSize = true;
-            this.SimProClient.Location = new System.Drawing.Point(5, 55);
+            this.SimProClient.Location = new System.Drawing.Point(2, 55);
             this.SimProClient.Name = "SimProClient";
             this.SimProClient.Size = new System.Drawing.Size(64, 13);
             this.SimProClient.TabIndex = 3;
@@ -1947,6 +1946,584 @@
             this.Assignar_Tabs.SelectedIndex = 0;
             this.Assignar_Tabs.Size = new System.Drawing.Size(1242, 689);
             this.Assignar_Tabs.TabIndex = 1;
+            // 
+            // Jobs_Tab
+            // 
+            this.Jobs_Tab.Controls.Add(this.Jobs_SplitContainer);
+            this.Jobs_Tab.Location = new System.Drawing.Point(4, 22);
+            this.Jobs_Tab.Name = "Jobs_Tab";
+            this.Jobs_Tab.Padding = new System.Windows.Forms.Padding(3);
+            this.Jobs_Tab.Size = new System.Drawing.Size(1234, 663);
+            this.Jobs_Tab.TabIndex = 1;
+            this.Jobs_Tab.Text = "Cover Page Generator";
+            this.Jobs_Tab.UseVisualStyleBackColor = true;
+            // 
+            // Jobs_SplitContainer
+            // 
+            this.Jobs_SplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Jobs_SplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.Jobs_SplitContainer.Location = new System.Drawing.Point(3, 3);
+            this.Jobs_SplitContainer.Name = "Jobs_SplitContainer";
+            // 
+            // Jobs_SplitContainer.Panel1
+            // 
+            this.Jobs_SplitContainer.Panel1.Controls.Add(this.groupBox3);
+            this.Jobs_SplitContainer.Panel1.Controls.Add(this.Manual_Search_GroupBox);
+            // 
+            // Jobs_SplitContainer.Panel2
+            // 
+            this.Jobs_SplitContainer.Panel2.Controls.Add(this.Jobs_Viewer);
+            this.Jobs_SplitContainer.Size = new System.Drawing.Size(1228, 657);
+            this.Jobs_SplitContainer.SplitterDistance = 360;
+            this.Jobs_SplitContainer.TabIndex = 4;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.Jobs_GenerateCover);
+            this.groupBox3.Controls.Add(this.Jobs_PoNo);
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.Jobs_Site);
+            this.groupBox3.Controls.Add(this.label29);
+            this.groupBox3.Controls.Add(this.Jobs_Client);
+            this.groupBox3.Controls.Add(this.label30);
+            this.groupBox3.Controls.Add(this.Jobs_JobName);
+            this.groupBox3.Controls.Add(this.label32);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.Location = new System.Drawing.Point(0, 86);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(360, 180);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Cover Page";
+            // 
+            // Jobs_GenerateCover
+            // 
+            this.Jobs_GenerateCover.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_GenerateCover.Location = new System.Drawing.Point(3, 148);
+            this.Jobs_GenerateCover.Name = "Jobs_GenerateCover";
+            this.Jobs_GenerateCover.Size = new System.Drawing.Size(354, 27);
+            this.Jobs_GenerateCover.TabIndex = 12;
+            this.Jobs_GenerateCover.Text = "Generate Cover Page and Checklist";
+            this.Jobs_GenerateCover.UseVisualStyleBackColor = true;
+            this.Jobs_GenerateCover.Click += new System.EventHandler(this.Jobs_GenerateCover_Click);
+            // 
+            // Jobs_PoNo
+            // 
+            this.Jobs_PoNo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_PoNo.Location = new System.Drawing.Point(3, 128);
+            this.Jobs_PoNo.Name = "Jobs_PoNo";
+            this.Jobs_PoNo.Size = new System.Drawing.Size(354, 20);
+            this.Jobs_PoNo.TabIndex = 11;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label27.Location = new System.Drawing.Point(3, 115);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(42, 13);
+            this.label27.TabIndex = 10;
+            this.label27.Text = "PO No.";
+            // 
+            // Jobs_Site
+            // 
+            this.Jobs_Site.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_Site.Location = new System.Drawing.Point(3, 95);
+            this.Jobs_Site.Name = "Jobs_Site";
+            this.Jobs_Site.Size = new System.Drawing.Size(354, 20);
+            this.Jobs_Site.TabIndex = 7;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label29.Location = new System.Drawing.Point(3, 82);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(25, 13);
+            this.label29.TabIndex = 6;
+            this.label29.Text = "Site";
+            // 
+            // Jobs_Client
+            // 
+            this.Jobs_Client.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_Client.Location = new System.Drawing.Point(3, 62);
+            this.Jobs_Client.Name = "Jobs_Client";
+            this.Jobs_Client.Size = new System.Drawing.Size(354, 20);
+            this.Jobs_Client.TabIndex = 5;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label30.Location = new System.Drawing.Point(3, 49);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(33, 13);
+            this.label30.TabIndex = 4;
+            this.label30.Text = "Client";
+            // 
+            // Jobs_JobName
+            // 
+            this.Jobs_JobName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Jobs_JobName.Location = new System.Drawing.Point(3, 29);
+            this.Jobs_JobName.Name = "Jobs_JobName";
+            this.Jobs_JobName.Size = new System.Drawing.Size(354, 20);
+            this.Jobs_JobName.TabIndex = 1;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label32.Location = new System.Drawing.Point(3, 16);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(80, 13);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "Job Description";
+            // 
+            // Manual_Search_GroupBox
+            // 
+            this.Manual_Search_GroupBox.Controls.Add(this.Jobs_ProjectNumber);
+            this.Manual_Search_GroupBox.Controls.Add(this.Manual_Search_Project_Label);
+            this.Manual_Search_GroupBox.Controls.Add(this.Jobs_MyobSearch);
+            this.Manual_Search_GroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Manual_Search_GroupBox.Location = new System.Drawing.Point(0, 0);
+            this.Manual_Search_GroupBox.Name = "Manual_Search_GroupBox";
+            this.Manual_Search_GroupBox.Size = new System.Drawing.Size(360, 86);
+            this.Manual_Search_GroupBox.TabIndex = 3;
+            this.Manual_Search_GroupBox.TabStop = false;
+            this.Manual_Search_GroupBox.Text = "Manual Search";
+            // 
+            // Jobs_ProjectNumber
+            // 
+            this.Jobs_ProjectNumber.Location = new System.Drawing.Point(9, 32);
+            this.Jobs_ProjectNumber.Name = "Jobs_ProjectNumber";
+            this.Jobs_ProjectNumber.Size = new System.Drawing.Size(345, 20);
+            this.Jobs_ProjectNumber.TabIndex = 2;
+            // 
+            // Manual_Search_Project_Label
+            // 
+            this.Manual_Search_Project_Label.AutoSize = true;
+            this.Manual_Search_Project_Label.Location = new System.Drawing.Point(6, 16);
+            this.Manual_Search_Project_Label.Name = "Manual_Search_Project_Label";
+            this.Manual_Search_Project_Label.Size = new System.Drawing.Size(117, 13);
+            this.Manual_Search_Project_Label.TabIndex = 1;
+            this.Manual_Search_Project_Label.Text = "Search Project Number";
+            // 
+            // Jobs_MyobSearch
+            // 
+            this.Jobs_MyobSearch.Location = new System.Drawing.Point(9, 57);
+            this.Jobs_MyobSearch.Name = "Jobs_MyobSearch";
+            this.Jobs_MyobSearch.Size = new System.Drawing.Size(345, 23);
+            this.Jobs_MyobSearch.TabIndex = 0;
+            this.Jobs_MyobSearch.Text = "Search";
+            this.Jobs_MyobSearch.UseVisualStyleBackColor = true;
+            this.Jobs_MyobSearch.Click += new System.EventHandler(this.Job_MyobSearch_Click);
+            // 
+            // Jobs_Viewer
+            // 
+            this.Jobs_Viewer.AllowExternalDrop = true;
+            this.Jobs_Viewer.CreationProperties = null;
+            this.Jobs_Viewer.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.Jobs_Viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Jobs_Viewer.Location = new System.Drawing.Point(0, 0);
+            this.Jobs_Viewer.Name = "Jobs_Viewer";
+            this.Jobs_Viewer.Size = new System.Drawing.Size(864, 657);
+            this.Jobs_Viewer.TabIndex = 0;
+            this.Jobs_Viewer.ZoomFactor = 1D;
+            // 
+            // Fieldworkers_Tab
+            // 
+            this.Fieldworkers_Tab.Controls.Add(this.Fldwkr_Webview);
+            this.Fieldworkers_Tab.Controls.Add(this.Fld_Left);
+            this.Fieldworkers_Tab.Location = new System.Drawing.Point(4, 22);
+            this.Fieldworkers_Tab.Name = "Fieldworkers_Tab";
+            this.Fieldworkers_Tab.Size = new System.Drawing.Size(1234, 663);
+            this.Fieldworkers_Tab.TabIndex = 3;
+            this.Fieldworkers_Tab.Text = "New Workers";
+            this.Fieldworkers_Tab.UseVisualStyleBackColor = true;
+            // 
+            // Fldwkr_Webview
+            // 
+            this.Fldwkr_Webview.AllowExternalDrop = true;
+            this.Fldwkr_Webview.CreationProperties = null;
+            this.Fldwkr_Webview.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.Fldwkr_Webview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Fldwkr_Webview.Location = new System.Drawing.Point(360, 0);
+            this.Fldwkr_Webview.Name = "Fldwkr_Webview";
+            this.Fldwkr_Webview.Size = new System.Drawing.Size(874, 663);
+            this.Fldwkr_Webview.TabIndex = 1;
+            this.Fldwkr_Webview.ZoomFactor = 1D;
+            // 
+            // Fld_Left
+            // 
+            this.Fld_Left.Controls.Add(this.groupBox4);
+            this.Fld_Left.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Fld_Left.Location = new System.Drawing.Point(0, 0);
+            this.Fld_Left.Name = "Fld_Left";
+            this.Fld_Left.Size = new System.Drawing.Size(360, 663);
+            this.Fld_Left.TabIndex = 0;
+            this.Fld_Left.TabStop = false;
+            this.Fld_Left.Text = "Fieldworkers";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label58);
+            this.groupBox4.Controls.Add(this.fld_gender);
+            this.groupBox4.Controls.Add(this.groupBox8);
+            this.groupBox4.Controls.Add(this.label57);
+            this.groupBox4.Controls.Add(this.fld_doj);
+            this.groupBox4.Controls.Add(this.groupBox7);
+            this.groupBox4.Controls.Add(this.groupBox6);
+            this.groupBox4.Controls.Add(this.CreateWorkerBtn);
+            this.groupBox4.Controls.Add(this.label50);
+            this.groupBox4.Controls.Add(this.fld_dob);
+            this.groupBox4.Controls.Add(this.groupBox5);
+            this.groupBox4.Controls.Add(this.fld_last);
+            this.groupBox4.Controls.Add(this.label43);
+            this.groupBox4.Controls.Add(this.fld_first);
+            this.groupBox4.Controls.Add(this.label42);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox4.Location = new System.Drawing.Point(3, 16);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(354, 644);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "New Worker Details";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(6, 106);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(42, 13);
+            this.label58.TabIndex = 11;
+            this.label58.Text = "Gender";
+            // 
+            // fld_gender
+            // 
+            this.fld_gender.FormattingEnabled = true;
+            this.fld_gender.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Other"});
+            this.fld_gender.Location = new System.Drawing.Point(9, 122);
+            this.fld_gender.Name = "fld_gender";
+            this.fld_gender.Size = new System.Drawing.Size(331, 21);
+            this.fld_gender.TabIndex = 5;
+            this.fld_gender.Text = "Please Select...";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label53);
+            this.groupBox8.Controls.Add(this.fwPosHeld);
+            this.groupBox8.Controls.Add(this.label54);
+            this.groupBox8.Controls.Add(this.fwEmployment);
+            this.groupBox8.Location = new System.Drawing.Point(3, 390);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(345, 108);
+            this.groupBox8.TabIndex = 24;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Employment Info";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(3, 16);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(69, 13);
+            this.label53.TabIndex = 18;
+            this.label53.Text = "Position Held";
+            // 
+            // fwPosHeld
+            // 
+            this.fwPosHeld.FormattingEnabled = true;
+            this.fwPosHeld.Location = new System.Drawing.Point(5, 32);
+            this.fwPosHeld.Name = "fwPosHeld";
+            this.fwPosHeld.Size = new System.Drawing.Size(329, 21);
+            this.fwPosHeld.TabIndex = 12;
+            this.fwPosHeld.Text = "Please Select...";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(3, 56);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(96, 13);
+            this.label54.TabIndex = 21;
+            this.label54.Text = "Casual or Full Time";
+            // 
+            // fwEmployment
+            // 
+            this.fwEmployment.FormattingEnabled = true;
+            this.fwEmployment.Items.AddRange(new object[] {
+            "Casual",
+            "Casual Flat Rate",
+            "Full Time",
+            "Full Time Flat Rate",
+            "Suc-Contracted Worker"});
+            this.fwEmployment.Location = new System.Drawing.Point(5, 74);
+            this.fwEmployment.Name = "fwEmployment";
+            this.fwEmployment.Size = new System.Drawing.Size(328, 21);
+            this.fwEmployment.TabIndex = 13;
+            this.fwEmployment.Text = "Please Select...";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(165, 55);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(78, 13);
+            this.label57.TabIndex = 23;
+            this.label57.Text = "Date of Joining";
+            // 
+            // fld_doj
+            // 
+            this.fld_doj.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fld_doj.Location = new System.Drawing.Point(167, 71);
+            this.fld_doj.Name = "fld_doj";
+            this.fld_doj.Size = new System.Drawing.Size(173, 20);
+            this.fld_doj.TabIndex = 4;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label55);
+            this.groupBox7.Controls.Add(this.emcontact);
+            this.groupBox7.Controls.Add(this.label56);
+            this.groupBox7.Controls.Add(this.emnumber);
+            this.groupBox7.Location = new System.Drawing.Point(3, 504);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(345, 101);
+            this.groupBox7.TabIndex = 15;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Emergency Contact";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(3, 16);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(100, 13);
+            this.label55.TabIndex = 8;
+            this.label55.Text = "Emergency Contact";
+            // 
+            // emcontact
+            // 
+            this.emcontact.Location = new System.Drawing.Point(6, 32);
+            this.emcontact.Name = "emcontact";
+            this.emcontact.Size = new System.Drawing.Size(328, 20);
+            this.emcontact.TabIndex = 14;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(3, 55);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(100, 13);
+            this.label56.TabIndex = 11;
+            this.label56.Text = "Emergency Number";
+            // 
+            // emnumber
+            // 
+            this.emnumber.Location = new System.Drawing.Point(6, 71);
+            this.emnumber.Name = "emnumber";
+            this.emnumber.Size = new System.Drawing.Size(328, 20);
+            this.emnumber.TabIndex = 15;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label49);
+            this.groupBox6.Controls.Add(this.fld_number);
+            this.groupBox6.Controls.Add(this.label48);
+            this.groupBox6.Controls.Add(this.fld_email);
+            this.groupBox6.Location = new System.Drawing.Point(5, 283);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(345, 101);
+            this.groupBox6.TabIndex = 14;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Contact Information";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(3, 16);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(84, 13);
+            this.label49.TabIndex = 8;
+            this.label49.Text = "Contact Number";
+            // 
+            // fld_number
+            // 
+            this.fld_number.Location = new System.Drawing.Point(6, 32);
+            this.fld_number.Name = "fld_number";
+            this.fld_number.Size = new System.Drawing.Size(328, 20);
+            this.fld_number.TabIndex = 10;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(3, 55);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(73, 13);
+            this.label48.TabIndex = 11;
+            this.label48.Text = "Email Address";
+            // 
+            // fld_email
+            // 
+            this.fld_email.Location = new System.Drawing.Point(6, 71);
+            this.fld_email.Name = "fld_email";
+            this.fld_email.Size = new System.Drawing.Size(328, 20);
+            this.fld_email.TabIndex = 11;
+            // 
+            // CreateWorkerBtn
+            // 
+            this.CreateWorkerBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CreateWorkerBtn.Location = new System.Drawing.Point(3, 617);
+            this.CreateWorkerBtn.Name = "CreateWorkerBtn";
+            this.CreateWorkerBtn.Size = new System.Drawing.Size(348, 24);
+            this.CreateWorkerBtn.TabIndex = 16;
+            this.CreateWorkerBtn.Text = "Create Worker";
+            this.CreateWorkerBtn.UseVisualStyleBackColor = true;
+            this.CreateWorkerBtn.Click += new System.EventHandler(this.CreateWorkerButton_Click);
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(6, 55);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(66, 13);
+            this.label50.TabIndex = 12;
+            this.label50.Text = "Date of Birth";
+            // 
+            // fld_dob
+            // 
+            this.fld_dob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fld_dob.Location = new System.Drawing.Point(8, 71);
+            this.fld_dob.Name = "fld_dob";
+            this.fld_dob.Size = new System.Drawing.Size(154, 20);
+            this.fld_dob.TabIndex = 3;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.fld_postcode);
+            this.groupBox5.Controls.Add(this.label44);
+            this.groupBox5.Controls.Add(this.fld_state);
+            this.groupBox5.Controls.Add(this.label45);
+            this.groupBox5.Controls.Add(this.fld_sub);
+            this.groupBox5.Controls.Add(this.label46);
+            this.groupBox5.Controls.Add(this.fld_add);
+            this.groupBox5.Controls.Add(this.label47);
+            this.groupBox5.Location = new System.Drawing.Point(3, 160);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(345, 117);
+            this.groupBox5.TabIndex = 5;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Employee Address Details";
+            // 
+            // fld_postcode
+            // 
+            this.fld_postcode.Location = new System.Drawing.Point(236, 71);
+            this.fld_postcode.Name = "fld_postcode";
+            this.fld_postcode.Size = new System.Drawing.Size(100, 20);
+            this.fld_postcode.TabIndex = 9;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(233, 55);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(52, 13);
+            this.label44.TabIndex = 10;
+            this.label44.Text = "Postcode";
+            // 
+            // fld_state
+            // 
+            this.fld_state.FormattingEnabled = true;
+            this.fld_state.Items.AddRange(new object[] {
+            "ACT",
+            "NSW",
+            "NT",
+            "QLD",
+            "SA",
+            "TAS",
+            "VIC",
+            "WA"});
+            this.fld_state.Location = new System.Drawing.Point(125, 71);
+            this.fld_state.Name = "fld_state";
+            this.fld_state.Size = new System.Drawing.Size(105, 21);
+            this.fld_state.TabIndex = 8;
+            this.fld_state.Text = "WA";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(127, 55);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(32, 13);
+            this.label45.TabIndex = 9;
+            this.label45.Text = "State";
+            // 
+            // fld_sub
+            // 
+            this.fld_sub.Location = new System.Drawing.Point(9, 71);
+            this.fld_sub.Name = "fld_sub";
+            this.fld_sub.Size = new System.Drawing.Size(110, 20);
+            this.fld_sub.TabIndex = 7;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(6, 55);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(41, 13);
+            this.label46.TabIndex = 7;
+            this.label46.Text = "Suburb";
+            // 
+            // fld_add
+            // 
+            this.fld_add.Location = new System.Drawing.Point(9, 32);
+            this.fld_add.Name = "fld_add";
+            this.fld_add.Size = new System.Drawing.Size(328, 20);
+            this.fld_add.TabIndex = 6;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(6, 16);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(45, 13);
+            this.label47.TabIndex = 5;
+            this.label47.Text = "Address";
+            // 
+            // fld_last
+            // 
+            this.fld_last.Location = new System.Drawing.Point(168, 32);
+            this.fld_last.Name = "fld_last";
+            this.fld_last.Size = new System.Drawing.Size(172, 20);
+            this.fld_last.TabIndex = 2;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(165, 16);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(58, 13);
+            this.label43.TabIndex = 4;
+            this.label43.Text = "Last Name";
+            // 
+            // fld_first
+            // 
+            this.fld_first.Location = new System.Drawing.Point(9, 32);
+            this.fld_first.Name = "fld_first";
+            this.fld_first.Size = new System.Drawing.Size(153, 20);
+            this.fld_first.TabIndex = 1;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(6, 16);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(57, 13);
+            this.label42.TabIndex = 2;
+            this.label42.Text = "First Name";
             // 
             // Job_Pack_tab
             // 
@@ -2188,189 +2765,6 @@
             this.JobPackTitle_Label.Size = new System.Drawing.Size(55, 13);
             this.JobPackTitle_Label.TabIndex = 0;
             this.JobPackTitle_Label.Text = "Job Name";
-            // 
-            // Jobs_Tab
-            // 
-            this.Jobs_Tab.Controls.Add(this.Jobs_SplitContainer);
-            this.Jobs_Tab.Location = new System.Drawing.Point(4, 22);
-            this.Jobs_Tab.Name = "Jobs_Tab";
-            this.Jobs_Tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Jobs_Tab.Size = new System.Drawing.Size(1234, 663);
-            this.Jobs_Tab.TabIndex = 1;
-            this.Jobs_Tab.Text = "Cover Page Generator";
-            this.Jobs_Tab.UseVisualStyleBackColor = true;
-            // 
-            // Jobs_SplitContainer
-            // 
-            this.Jobs_SplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Jobs_SplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.Jobs_SplitContainer.Location = new System.Drawing.Point(3, 3);
-            this.Jobs_SplitContainer.Name = "Jobs_SplitContainer";
-            // 
-            // Jobs_SplitContainer.Panel1
-            // 
-            this.Jobs_SplitContainer.Panel1.Controls.Add(this.groupBox3);
-            this.Jobs_SplitContainer.Panel1.Controls.Add(this.Manual_Search_GroupBox);
-            // 
-            // Jobs_SplitContainer.Panel2
-            // 
-            this.Jobs_SplitContainer.Panel2.Controls.Add(this.Jobs_Viewer);
-            this.Jobs_SplitContainer.Size = new System.Drawing.Size(1228, 657);
-            this.Jobs_SplitContainer.SplitterDistance = 360;
-            this.Jobs_SplitContainer.TabIndex = 4;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.Jobs_GenerateCover);
-            this.groupBox3.Controls.Add(this.Jobs_PoNo);
-            this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Controls.Add(this.Jobs_Site);
-            this.groupBox3.Controls.Add(this.label29);
-            this.groupBox3.Controls.Add(this.Jobs_Client);
-            this.groupBox3.Controls.Add(this.label30);
-            this.groupBox3.Controls.Add(this.Jobs_JobName);
-            this.groupBox3.Controls.Add(this.label32);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(0, 86);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(360, 180);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Cover Page";
-            // 
-            // Jobs_GenerateCover
-            // 
-            this.Jobs_GenerateCover.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Jobs_GenerateCover.Location = new System.Drawing.Point(3, 148);
-            this.Jobs_GenerateCover.Name = "Jobs_GenerateCover";
-            this.Jobs_GenerateCover.Size = new System.Drawing.Size(354, 27);
-            this.Jobs_GenerateCover.TabIndex = 12;
-            this.Jobs_GenerateCover.Text = "Generate Cover Page and Checklist";
-            this.Jobs_GenerateCover.UseVisualStyleBackColor = true;
-            this.Jobs_GenerateCover.Click += new System.EventHandler(this.Jobs_GenerateCover_Click);
-            // 
-            // Jobs_PoNo
-            // 
-            this.Jobs_PoNo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Jobs_PoNo.Location = new System.Drawing.Point(3, 128);
-            this.Jobs_PoNo.Name = "Jobs_PoNo";
-            this.Jobs_PoNo.Size = new System.Drawing.Size(354, 20);
-            this.Jobs_PoNo.TabIndex = 11;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label27.Location = new System.Drawing.Point(3, 115);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(42, 13);
-            this.label27.TabIndex = 10;
-            this.label27.Text = "PO No.";
-            // 
-            // Jobs_Site
-            // 
-            this.Jobs_Site.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Jobs_Site.Location = new System.Drawing.Point(3, 95);
-            this.Jobs_Site.Name = "Jobs_Site";
-            this.Jobs_Site.Size = new System.Drawing.Size(354, 20);
-            this.Jobs_Site.TabIndex = 7;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label29.Location = new System.Drawing.Point(3, 82);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(25, 13);
-            this.label29.TabIndex = 6;
-            this.label29.Text = "Site";
-            // 
-            // Jobs_Client
-            // 
-            this.Jobs_Client.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Jobs_Client.Location = new System.Drawing.Point(3, 62);
-            this.Jobs_Client.Name = "Jobs_Client";
-            this.Jobs_Client.Size = new System.Drawing.Size(354, 20);
-            this.Jobs_Client.TabIndex = 5;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label30.Location = new System.Drawing.Point(3, 49);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(33, 13);
-            this.label30.TabIndex = 4;
-            this.label30.Text = "Client";
-            // 
-            // Jobs_JobName
-            // 
-            this.Jobs_JobName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Jobs_JobName.Location = new System.Drawing.Point(3, 29);
-            this.Jobs_JobName.Name = "Jobs_JobName";
-            this.Jobs_JobName.Size = new System.Drawing.Size(354, 20);
-            this.Jobs_JobName.TabIndex = 1;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label32.Location = new System.Drawing.Point(3, 16);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(80, 13);
-            this.label32.TabIndex = 0;
-            this.label32.Text = "Job Description";
-            // 
-            // Manual_Search_GroupBox
-            // 
-            this.Manual_Search_GroupBox.Controls.Add(this.Jobs_ProjectNumber);
-            this.Manual_Search_GroupBox.Controls.Add(this.Manual_Search_Project_Label);
-            this.Manual_Search_GroupBox.Controls.Add(this.Jobs_MyobSearch);
-            this.Manual_Search_GroupBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Manual_Search_GroupBox.Location = new System.Drawing.Point(0, 0);
-            this.Manual_Search_GroupBox.Name = "Manual_Search_GroupBox";
-            this.Manual_Search_GroupBox.Size = new System.Drawing.Size(360, 86);
-            this.Manual_Search_GroupBox.TabIndex = 3;
-            this.Manual_Search_GroupBox.TabStop = false;
-            this.Manual_Search_GroupBox.Text = "Manual Search";
-            // 
-            // Jobs_ProjectNumber
-            // 
-            this.Jobs_ProjectNumber.Location = new System.Drawing.Point(9, 32);
-            this.Jobs_ProjectNumber.Name = "Jobs_ProjectNumber";
-            this.Jobs_ProjectNumber.Size = new System.Drawing.Size(345, 20);
-            this.Jobs_ProjectNumber.TabIndex = 2;
-            // 
-            // Manual_Search_Project_Label
-            // 
-            this.Manual_Search_Project_Label.AutoSize = true;
-            this.Manual_Search_Project_Label.Location = new System.Drawing.Point(6, 16);
-            this.Manual_Search_Project_Label.Name = "Manual_Search_Project_Label";
-            this.Manual_Search_Project_Label.Size = new System.Drawing.Size(117, 13);
-            this.Manual_Search_Project_Label.TabIndex = 1;
-            this.Manual_Search_Project_Label.Text = "Search Project Number";
-            // 
-            // Jobs_MyobSearch
-            // 
-            this.Jobs_MyobSearch.Location = new System.Drawing.Point(9, 57);
-            this.Jobs_MyobSearch.Name = "Jobs_MyobSearch";
-            this.Jobs_MyobSearch.Size = new System.Drawing.Size(345, 23);
-            this.Jobs_MyobSearch.TabIndex = 0;
-            this.Jobs_MyobSearch.Text = "Search";
-            this.Jobs_MyobSearch.UseVisualStyleBackColor = true;
-            this.Jobs_MyobSearch.Click += new System.EventHandler(this.Job_MyobSearch_Click);
-            // 
-            // Jobs_Viewer
-            // 
-            this.Jobs_Viewer.AllowExternalDrop = true;
-            this.Jobs_Viewer.CreationProperties = null;
-            this.Jobs_Viewer.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.Jobs_Viewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Jobs_Viewer.Location = new System.Drawing.Point(0, 0);
-            this.Jobs_Viewer.Name = "Jobs_Viewer";
-            this.Jobs_Viewer.Size = new System.Drawing.Size(864, 657);
-            this.Jobs_Viewer.TabIndex = 0;
-            this.Jobs_Viewer.ZoomFactor = 1D;
             // 
             // Admin_Tab
             // 
@@ -2774,401 +3168,6 @@
             this.Clients_Tab.TabIndex = 2;
             this.Clients_Tab.Text = "Clients";
             this.Clients_Tab.UseVisualStyleBackColor = true;
-            // 
-            // Fieldworkers_Tab
-            // 
-            this.Fieldworkers_Tab.Controls.Add(this.Fldwkr_Webview);
-            this.Fieldworkers_Tab.Controls.Add(this.Fld_Left);
-            this.Fieldworkers_Tab.Location = new System.Drawing.Point(4, 22);
-            this.Fieldworkers_Tab.Name = "Fieldworkers_Tab";
-            this.Fieldworkers_Tab.Size = new System.Drawing.Size(1234, 663);
-            this.Fieldworkers_Tab.TabIndex = 3;
-            this.Fieldworkers_Tab.Text = "New Workers";
-            this.Fieldworkers_Tab.UseVisualStyleBackColor = true;
-            // 
-            // Fldwkr_Webview
-            // 
-            this.Fldwkr_Webview.AllowExternalDrop = true;
-            this.Fldwkr_Webview.CreationProperties = null;
-            this.Fldwkr_Webview.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.Fldwkr_Webview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Fldwkr_Webview.Location = new System.Drawing.Point(360, 0);
-            this.Fldwkr_Webview.Name = "Fldwkr_Webview";
-            this.Fldwkr_Webview.Size = new System.Drawing.Size(874, 663);
-            this.Fldwkr_Webview.TabIndex = 1;
-            this.Fldwkr_Webview.ZoomFactor = 1D;
-            // 
-            // Fld_Left
-            // 
-            this.Fld_Left.Controls.Add(this.groupBox4);
-            this.Fld_Left.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Fld_Left.Location = new System.Drawing.Point(0, 0);
-            this.Fld_Left.Name = "Fld_Left";
-            this.Fld_Left.Size = new System.Drawing.Size(360, 663);
-            this.Fld_Left.TabIndex = 0;
-            this.Fld_Left.TabStop = false;
-            this.Fld_Left.Text = "Fieldworkers";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.label58);
-            this.groupBox4.Controls.Add(this.fld_gender);
-            this.groupBox4.Controls.Add(this.groupBox8);
-            this.groupBox4.Controls.Add(this.label57);
-            this.groupBox4.Controls.Add(this.fld_doj);
-            this.groupBox4.Controls.Add(this.groupBox7);
-            this.groupBox4.Controls.Add(this.groupBox6);
-            this.groupBox4.Controls.Add(this.CreateWorkerBtn);
-            this.groupBox4.Controls.Add(this.label50);
-            this.groupBox4.Controls.Add(this.fld_dob);
-            this.groupBox4.Controls.Add(this.groupBox5);
-            this.groupBox4.Controls.Add(this.fld_last);
-            this.groupBox4.Controls.Add(this.label43);
-            this.groupBox4.Controls.Add(this.fld_first);
-            this.groupBox4.Controls.Add(this.label42);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox4.Location = new System.Drawing.Point(3, 16);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(354, 644);
-            this.groupBox4.TabIndex = 0;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "New Worker Details";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(6, 106);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(42, 13);
-            this.label58.TabIndex = 11;
-            this.label58.Text = "Gender";
-            // 
-            // fld_gender
-            // 
-            this.fld_gender.FormattingEnabled = true;
-            this.fld_gender.Items.AddRange(new object[] {
-            "Male",
-            "Female",
-            "Other"});
-            this.fld_gender.Location = new System.Drawing.Point(9, 122);
-            this.fld_gender.Name = "fld_gender";
-            this.fld_gender.Size = new System.Drawing.Size(331, 21);
-            this.fld_gender.TabIndex = 5;
-            this.fld_gender.Text = "Please Select...";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.label53);
-            this.groupBox8.Controls.Add(this.fwPosHeld);
-            this.groupBox8.Controls.Add(this.label54);
-            this.groupBox8.Controls.Add(this.fwEmployment);
-            this.groupBox8.Location = new System.Drawing.Point(3, 390);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(345, 108);
-            this.groupBox8.TabIndex = 24;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Employment Info";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(3, 16);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(69, 13);
-            this.label53.TabIndex = 18;
-            this.label53.Text = "Position Held";
-            // 
-            // fwPosHeld
-            // 
-            this.fwPosHeld.FormattingEnabled = true;
-            this.fwPosHeld.Location = new System.Drawing.Point(5, 32);
-            this.fwPosHeld.Name = "fwPosHeld";
-            this.fwPosHeld.Size = new System.Drawing.Size(329, 21);
-            this.fwPosHeld.TabIndex = 12;
-            this.fwPosHeld.Text = "Please Select...";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(3, 56);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(96, 13);
-            this.label54.TabIndex = 21;
-            this.label54.Text = "Casual or Full Time";
-            // 
-            // fwEmployment
-            // 
-            this.fwEmployment.FormattingEnabled = true;
-            this.fwEmployment.Items.AddRange(new object[] {
-            "Casual",
-            "Casual Flat Rate",
-            "Full Time",
-            "Full Time Flat Rate",
-            "Suc-Contracted Worker"});
-            this.fwEmployment.Location = new System.Drawing.Point(5, 74);
-            this.fwEmployment.Name = "fwEmployment";
-            this.fwEmployment.Size = new System.Drawing.Size(328, 21);
-            this.fwEmployment.TabIndex = 13;
-            this.fwEmployment.Text = "Please Select...";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(165, 55);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(78, 13);
-            this.label57.TabIndex = 23;
-            this.label57.Text = "Date of Joining";
-            // 
-            // fld_doj
-            // 
-            this.fld_doj.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fld_doj.Location = new System.Drawing.Point(167, 71);
-            this.fld_doj.Name = "fld_doj";
-            this.fld_doj.Size = new System.Drawing.Size(173, 20);
-            this.fld_doj.TabIndex = 4;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.label55);
-            this.groupBox7.Controls.Add(this.emcontact);
-            this.groupBox7.Controls.Add(this.label56);
-            this.groupBox7.Controls.Add(this.emnumber);
-            this.groupBox7.Location = new System.Drawing.Point(3, 504);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(345, 101);
-            this.groupBox7.TabIndex = 15;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Emergency Contact";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(3, 16);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(100, 13);
-            this.label55.TabIndex = 8;
-            this.label55.Text = "Emergency Contact";
-            // 
-            // emcontact
-            // 
-            this.emcontact.Location = new System.Drawing.Point(6, 32);
-            this.emcontact.Name = "emcontact";
-            this.emcontact.Size = new System.Drawing.Size(328, 20);
-            this.emcontact.TabIndex = 14;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(3, 55);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(100, 13);
-            this.label56.TabIndex = 11;
-            this.label56.Text = "Emergency Number";
-            // 
-            // emnumber
-            // 
-            this.emnumber.Location = new System.Drawing.Point(6, 71);
-            this.emnumber.Name = "emnumber";
-            this.emnumber.Size = new System.Drawing.Size(328, 20);
-            this.emnumber.TabIndex = 15;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label49);
-            this.groupBox6.Controls.Add(this.fld_number);
-            this.groupBox6.Controls.Add(this.label48);
-            this.groupBox6.Controls.Add(this.fld_email);
-            this.groupBox6.Location = new System.Drawing.Point(5, 283);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(345, 101);
-            this.groupBox6.TabIndex = 14;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Contact Information";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(3, 16);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(84, 13);
-            this.label49.TabIndex = 8;
-            this.label49.Text = "Contact Number";
-            // 
-            // fld_number
-            // 
-            this.fld_number.Location = new System.Drawing.Point(6, 32);
-            this.fld_number.Name = "fld_number";
-            this.fld_number.Size = new System.Drawing.Size(328, 20);
-            this.fld_number.TabIndex = 10;
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(3, 55);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(73, 13);
-            this.label48.TabIndex = 11;
-            this.label48.Text = "Email Address";
-            // 
-            // fld_email
-            // 
-            this.fld_email.Location = new System.Drawing.Point(6, 71);
-            this.fld_email.Name = "fld_email";
-            this.fld_email.Size = new System.Drawing.Size(328, 20);
-            this.fld_email.TabIndex = 11;
-            // 
-            // CreateWorkerBtn
-            // 
-            this.CreateWorkerBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.CreateWorkerBtn.Location = new System.Drawing.Point(3, 617);
-            this.CreateWorkerBtn.Name = "CreateWorkerBtn";
-            this.CreateWorkerBtn.Size = new System.Drawing.Size(348, 24);
-            this.CreateWorkerBtn.TabIndex = 16;
-            this.CreateWorkerBtn.Text = "Create Worker";
-            this.CreateWorkerBtn.UseVisualStyleBackColor = true;
-            this.CreateWorkerBtn.Click += new System.EventHandler(this.CreateWorkerButton_Click);
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(6, 55);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(66, 13);
-            this.label50.TabIndex = 12;
-            this.label50.Text = "Date of Birth";
-            // 
-            // fld_dob
-            // 
-            this.fld_dob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fld_dob.Location = new System.Drawing.Point(8, 71);
-            this.fld_dob.Name = "fld_dob";
-            this.fld_dob.Size = new System.Drawing.Size(154, 20);
-            this.fld_dob.TabIndex = 3;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.fld_postcode);
-            this.groupBox5.Controls.Add(this.label44);
-            this.groupBox5.Controls.Add(this.fld_state);
-            this.groupBox5.Controls.Add(this.label45);
-            this.groupBox5.Controls.Add(this.fld_sub);
-            this.groupBox5.Controls.Add(this.label46);
-            this.groupBox5.Controls.Add(this.fld_add);
-            this.groupBox5.Controls.Add(this.label47);
-            this.groupBox5.Location = new System.Drawing.Point(3, 160);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(345, 117);
-            this.groupBox5.TabIndex = 5;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Employee Address Details";
-            // 
-            // fld_postcode
-            // 
-            this.fld_postcode.Location = new System.Drawing.Point(236, 71);
-            this.fld_postcode.Name = "fld_postcode";
-            this.fld_postcode.Size = new System.Drawing.Size(100, 20);
-            this.fld_postcode.TabIndex = 9;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(233, 55);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(52, 13);
-            this.label44.TabIndex = 10;
-            this.label44.Text = "Postcode";
-            // 
-            // fld_state
-            // 
-            this.fld_state.FormattingEnabled = true;
-            this.fld_state.Items.AddRange(new object[] {
-            "ACT",
-            "NSW",
-            "NT",
-            "QLD",
-            "SA",
-            "TAS",
-            "VIC",
-            "WA"});
-            this.fld_state.Location = new System.Drawing.Point(125, 71);
-            this.fld_state.Name = "fld_state";
-            this.fld_state.Size = new System.Drawing.Size(105, 21);
-            this.fld_state.TabIndex = 8;
-            this.fld_state.Text = "WA";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(127, 55);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(32, 13);
-            this.label45.TabIndex = 9;
-            this.label45.Text = "State";
-            // 
-            // fld_sub
-            // 
-            this.fld_sub.Location = new System.Drawing.Point(9, 71);
-            this.fld_sub.Name = "fld_sub";
-            this.fld_sub.Size = new System.Drawing.Size(110, 20);
-            this.fld_sub.TabIndex = 7;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(6, 55);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(41, 13);
-            this.label46.TabIndex = 7;
-            this.label46.Text = "Suburb";
-            // 
-            // fld_add
-            // 
-            this.fld_add.Location = new System.Drawing.Point(9, 32);
-            this.fld_add.Name = "fld_add";
-            this.fld_add.Size = new System.Drawing.Size(328, 20);
-            this.fld_add.TabIndex = 6;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(6, 16);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(45, 13);
-            this.label47.TabIndex = 5;
-            this.label47.Text = "Address";
-            // 
-            // fld_last
-            // 
-            this.fld_last.Location = new System.Drawing.Point(168, 32);
-            this.fld_last.Name = "fld_last";
-            this.fld_last.Size = new System.Drawing.Size(172, 20);
-            this.fld_last.TabIndex = 2;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(165, 16);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(58, 13);
-            this.label43.TabIndex = 4;
-            this.label43.Text = "Last Name";
-            // 
-            // fld_first
-            // 
-            this.fld_first.Location = new System.Drawing.Point(9, 32);
-            this.fld_first.Name = "fld_first";
-            this.fld_first.Size = new System.Drawing.Size(153, 20);
-            this.fld_first.TabIndex = 1;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(6, 16);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(57, 13);
-            this.label42.TabIndex = 2;
-            this.label42.Text = "First Name";
             // 
             // Recruitment_Tab
             // 
@@ -3721,12 +3720,6 @@
             this.splitContainer1.ResumeLayout(false);
             this.DocumentGen_Tab.ResumeLayout(false);
             this.Assignar_Tabs.ResumeLayout(false);
-            this.Job_Pack_tab.ResumeLayout(false);
-            this.DocumentPreview_Group.ResumeLayout(false);
-            this.JobPackGroupBox.ResumeLayout(false);
-            this.JobDocuments_Group.ResumeLayout(false);
-            this.CoverPageGroup.ResumeLayout(false);
-            this.CoverPageGroup.PerformLayout();
             this.Jobs_Tab.ResumeLayout(false);
             this.Jobs_SplitContainer.Panel1.ResumeLayout(false);
             this.Jobs_SplitContainer.Panel2.ResumeLayout(false);
@@ -3737,17 +3730,6 @@
             this.Manual_Search_GroupBox.ResumeLayout(false);
             this.Manual_Search_GroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Jobs_Viewer)).EndInit();
-            this.Admin_Tab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AdminViewer)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.Schedule_Tab.ResumeLayout(false);
-            this.Scheduler_GroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ScheduleViewer)).EndInit();
             this.Fieldworkers_Tab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Fldwkr_Webview)).EndInit();
             this.Fld_Left.ResumeLayout(false);
@@ -3761,6 +3743,23 @@
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.Job_Pack_tab.ResumeLayout(false);
+            this.DocumentPreview_Group.ResumeLayout(false);
+            this.JobPackGroupBox.ResumeLayout(false);
+            this.JobDocuments_Group.ResumeLayout(false);
+            this.CoverPageGroup.ResumeLayout(false);
+            this.CoverPageGroup.PerformLayout();
+            this.Admin_Tab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.AdminViewer)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.Schedule_Tab.ResumeLayout(false);
+            this.Scheduler_GroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ScheduleViewer)).EndInit();
             this.Recruitment_Tab.ResumeLayout(false);
             this.Document_Preview_Group.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RecruitmentViewer)).EndInit();

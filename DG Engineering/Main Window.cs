@@ -97,10 +97,25 @@ namespace DG_Engineering
 
         #region Modules
 
-        #region Project Creation
+        #region Job Creation
         private async void JobNumberSearch_Click(object sender, EventArgs e)
         {
             await MyobSearch(ProjectJobNumber.Text);
+            try
+            {
+                ClientContact.Items.Clear();
+                await AssignarAPIConnect("/contacts?company=" + ProjectClient.Text, Method.Get, null);
+                var contactsquery = Static.AssignarResponseContent;
+                var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
+                foreach (var a in contactsresult.Data)
+                {
+                    ClientContact.Items.Add(a.FirstName + " " + a.LastName + " - " + a.JobTitle);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Error: " + ex.Message, @"Site Contact error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         private async void PushAssignar_Button_Click(object sender, EventArgs e)
         {
@@ -111,7 +126,7 @@ namespace DG_Engineering
             else
             {
                 await CompanyIdExtract(ProjectClient.Text);
-                await AssignarProjectPost();
+                await AssignarProjectPost();                
             }
         }
         private async Task Address_upd_Button_Click(object sender, EventArgs e)
@@ -469,6 +484,5 @@ namespace DG_Engineering
 " + ex, @"Error");
             }
         }
-
     }
 }

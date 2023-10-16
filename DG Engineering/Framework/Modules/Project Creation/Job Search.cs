@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DG_Engineering.Framework.Global.Assignar;
 using DG_Engineering.Framework.Global.MYOB;
 using Newtonsoft.Json;
@@ -37,7 +39,8 @@ namespace DG_Engineering
             {
                 fixedjobnumber = projectnumber;
             }
-            var jobsearch = MyobConnect(Static.Companyfileuri + "/"+ Static.Companyfileguid, "/GeneralLedger/Job?$filter=Number eq \'" + fixedjobnumber + "\'", Method.Get).Content;
+            var joburl = "/GeneralLedger/Job?$filter=substringof(\'" + fixedjobnumber + "\'" + ",Number) eq true";
+            var jobsearch = MyobConnect(Static.Companyfileuri + "/"+ Static.Companyfileguid,joburl, Method.Get).Content;
             Console.WriteLine(jobsearch);
             var jobsearchresult = JsonConvert.DeserializeObject<Job.Root>(jobsearch);
             int quotenumber;
