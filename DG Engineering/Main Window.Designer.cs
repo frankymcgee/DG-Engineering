@@ -37,15 +37,14 @@
             this.ProjectGenerationBrowserGroupBox = new System.Windows.Forms.GroupBox();
             this.ProjectViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.SimProQuoteGroup = new System.Windows.Forms.GroupBox();
+            this.ProjectAddress = new System.Windows.Forms.TextBox();
+            this.Predictions = new System.Windows.Forms.ComboBox();
             this.QuoteNo_TextBox = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
             this.TestButton = new System.Windows.Forms.Button();
-            this.Address_upd_Button = new System.Windows.Forms.Button();
-            this.ProjectAddress = new System.Windows.Forms.ComboBox();
             this.ClientContact = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.ProjectClient = new System.Windows.Forms.ComboBox();
-            this.PushToJobPackButton = new System.Windows.Forms.Button();
             this.Shift_Tabs = new System.Windows.Forms.TabControl();
             this.DSTab = new System.Windows.Forms.TabPage();
             this.numericUpDown37 = new System.Windows.Forms.NumericUpDown();
@@ -529,15 +528,14 @@
             // 
             // SimProQuoteGroup
             // 
+            this.SimProQuoteGroup.Controls.Add(this.Predictions);
+            this.SimProQuoteGroup.Controls.Add(this.ProjectAddress);
             this.SimProQuoteGroup.Controls.Add(this.QuoteNo_TextBox);
             this.SimProQuoteGroup.Controls.Add(this.label60);
             this.SimProQuoteGroup.Controls.Add(this.TestButton);
-            this.SimProQuoteGroup.Controls.Add(this.Address_upd_Button);
-            this.SimProQuoteGroup.Controls.Add(this.ProjectAddress);
             this.SimProQuoteGroup.Controls.Add(this.ClientContact);
             this.SimProQuoteGroup.Controls.Add(this.label17);
             this.SimProQuoteGroup.Controls.Add(this.ProjectClient);
-            this.SimProQuoteGroup.Controls.Add(this.PushToJobPackButton);
             this.SimProQuoteGroup.Controls.Add(this.Shift_Tabs);
             this.SimProQuoteGroup.Controls.Add(this.ProjectEndDate);
             this.SimProQuoteGroup.Controls.Add(this.ProjectEndDateLabel);
@@ -560,11 +558,29 @@
             this.SimProQuoteGroup.TabIndex = 0;
             this.SimProQuoteGroup.TabStop = false;
             // 
+            // ProjectAddress
+            // 
+            this.ProjectAddress.Location = new System.Drawing.Point(0, 145);
+            this.ProjectAddress.Name = "ProjectAddress";
+            this.ProjectAddress.Size = new System.Drawing.Size(360, 20);
+            this.ProjectAddress.TabIndex = 31;
+            this.ProjectAddress.TextChanged += new System.EventHandler(this.ProjectAddress_TextChanged);
+            // 
+            // Predictions
+            // 
+            this.Predictions.FormattingEnabled = true;
+            this.Predictions.Location = new System.Drawing.Point(19, 164);
+            this.Predictions.Name = "Predictions";
+            this.Predictions.Size = new System.Drawing.Size(341, 21);
+            this.Predictions.TabIndex = 30;
+            this.Predictions.Visible = false;
+            this.Predictions.TextChanged += new System.EventHandler(this.Predictions_TextChanged);
+            // 
             // QuoteNo_TextBox
             // 
             this.QuoteNo_TextBox.Location = new System.Drawing.Point(136, 32);
             this.QuoteNo_TextBox.Name = "QuoteNo_TextBox";
-            this.QuoteNo_TextBox.Size = new System.Drawing.Size(124, 20);
+            this.QuoteNo_TextBox.Size = new System.Drawing.Size(135, 20);
             this.QuoteNo_TextBox.TabIndex = 28;
             // 
             // label60
@@ -586,36 +602,18 @@
             this.TestButton.UseVisualStyleBackColor = true;
             this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
             // 
-            // Address_upd_Button
-            // 
-            this.Address_upd_Button.Location = new System.Drawing.Point(277, 66);
-            this.Address_upd_Button.Name = "Address_upd_Button";
-            this.Address_upd_Button.Size = new System.Drawing.Size(75, 23);
-            this.Address_upd_Button.TabIndex = 24;
-            this.Address_upd_Button.Text = "Address";
-            this.Address_upd_Button.UseVisualStyleBackColor = true;
-            this.Address_upd_Button.Visible = false;
-            // 
-            // ProjectAddress
-            // 
-            this.ProjectAddress.FormattingEnabled = true;
-            this.ProjectAddress.Location = new System.Drawing.Point(6, 147);
-            this.ProjectAddress.Name = "ProjectAddress";
-            this.ProjectAddress.Size = new System.Drawing.Size(253, 21);
-            this.ProjectAddress.TabIndex = 23;
-            // 
             // ClientContact
             // 
             this.ClientContact.FormattingEnabled = true;
-            this.ClientContact.Location = new System.Drawing.Point(8, 230);
+            this.ClientContact.Location = new System.Drawing.Point(0, 251);
             this.ClientContact.Name = "ClientContact";
-            this.ClientContact.Size = new System.Drawing.Size(344, 21);
+            this.ClientContact.Size = new System.Drawing.Size(360, 21);
             this.ClientContact.TabIndex = 22;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(2, 214);
+            this.label17.Location = new System.Drawing.Point(2, 235);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 13);
             this.label17.TabIndex = 21;
@@ -624,30 +622,17 @@
             // ProjectClient
             // 
             this.ProjectClient.FormattingEnabled = true;
-            this.ProjectClient.Location = new System.Drawing.Point(6, 68);
+            this.ProjectClient.Location = new System.Drawing.Point(0, 68);
             this.ProjectClient.Name = "ProjectClient";
-            this.ProjectClient.Size = new System.Drawing.Size(253, 21);
+            this.ProjectClient.Size = new System.Drawing.Size(360, 21);
             this.ProjectClient.TabIndex = 20;
-            // 
-            // PushToJobPackButton
-            // 
-            this.PushToJobPackButton.BackColor = System.Drawing.Color.Transparent;
-            this.PushToJobPackButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.PushToJobPackButton.Location = new System.Drawing.Point(277, 105);
-            this.PushToJobPackButton.Name = "PushToJobPackButton";
-            this.PushToJobPackButton.Size = new System.Drawing.Size(75, 63);
-            this.PushToJobPackButton.TabIndex = 19;
-            this.PushToJobPackButton.Text = "Push to Job Pack";
-            this.PushToJobPackButton.UseVisualStyleBackColor = false;
-            this.PushToJobPackButton.Visible = false;
-            this.PushToJobPackButton.Click += new System.EventHandler(this.PushToJobPackButton_Click);
             // 
             // Shift_Tabs
             // 
             this.Shift_Tabs.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Shift_Tabs.Controls.Add(this.DSTab);
             this.Shift_Tabs.Controls.Add(this.NSTab);
-            this.Shift_Tabs.Location = new System.Drawing.Point(6, 257);
+            this.Shift_Tabs.Location = new System.Drawing.Point(6, 275);
             this.Shift_Tabs.Multiline = true;
             this.Shift_Tabs.Name = "Shift_Tabs";
             this.Shift_Tabs.SelectedIndex = 0;
@@ -1215,7 +1200,7 @@
             this.NSTab.Location = new System.Drawing.Point(4, 22);
             this.NSTab.Name = "NSTab";
             this.NSTab.Padding = new System.Windows.Forms.Padding(3);
-            this.NSTab.Size = new System.Drawing.Size(342, 336);
+            this.NSTab.Size = new System.Drawing.Size(342, 347);
             this.NSTab.TabIndex = 1;
             this.NSTab.Text = "Night Shift";
             this.NSTab.UseVisualStyleBackColor = true;
@@ -1665,15 +1650,15 @@
             // ProjectEndDate
             // 
             this.ProjectEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ProjectEndDate.Location = new System.Drawing.Point(267, 187);
+            this.ProjectEndDate.Location = new System.Drawing.Point(267, 215);
             this.ProjectEndDate.Name = "ProjectEndDate";
-            this.ProjectEndDate.Size = new System.Drawing.Size(85, 20);
+            this.ProjectEndDate.Size = new System.Drawing.Size(93, 20);
             this.ProjectEndDate.TabIndex = 15;
             // 
             // ProjectEndDateLabel
             // 
             this.ProjectEndDateLabel.AutoSize = true;
-            this.ProjectEndDateLabel.Location = new System.Drawing.Point(264, 171);
+            this.ProjectEndDateLabel.Location = new System.Drawing.Point(264, 199);
             this.ProjectEndDateLabel.Name = "ProjectEndDateLabel";
             this.ProjectEndDateLabel.Size = new System.Drawing.Size(52, 13);
             this.ProjectEndDateLabel.TabIndex = 14;
@@ -1682,15 +1667,15 @@
             // ProjectStartDate
             // 
             this.ProjectStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ProjectStartDate.Location = new System.Drawing.Point(171, 187);
+            this.ProjectStartDate.Location = new System.Drawing.Point(171, 215);
             this.ProjectStartDate.Name = "ProjectStartDate";
-            this.ProjectStartDate.Size = new System.Drawing.Size(78, 20);
+            this.ProjectStartDate.Size = new System.Drawing.Size(90, 20);
             this.ProjectStartDate.TabIndex = 13;
             // 
             // ProjectStartDateLabel
             // 
             this.ProjectStartDateLabel.AutoSize = true;
-            this.ProjectStartDateLabel.Location = new System.Drawing.Point(168, 171);
+            this.ProjectStartDateLabel.Location = new System.Drawing.Point(168, 199);
             this.ProjectStartDateLabel.Name = "ProjectStartDateLabel";
             this.ProjectStartDateLabel.Size = new System.Drawing.Size(55, 13);
             this.ProjectStartDateLabel.TabIndex = 12;
@@ -1698,15 +1683,15 @@
             // 
             // ProjectPONumber
             // 
-            this.ProjectPONumber.Location = new System.Drawing.Point(7, 187);
+            this.ProjectPONumber.Location = new System.Drawing.Point(3, 215);
             this.ProjectPONumber.Name = "ProjectPONumber";
-            this.ProjectPONumber.Size = new System.Drawing.Size(158, 20);
+            this.ProjectPONumber.Size = new System.Drawing.Size(162, 20);
             this.ProjectPONumber.TabIndex = 11;
             // 
             // ProjectPOLabel
             // 
             this.ProjectPOLabel.AutoSize = true;
-            this.ProjectPOLabel.Location = new System.Drawing.Point(2, 171);
+            this.ProjectPOLabel.Location = new System.Drawing.Point(2, 199);
             this.ProjectPOLabel.Name = "ProjectPOLabel";
             this.ProjectPOLabel.Size = new System.Drawing.Size(62, 13);
             this.ProjectPOLabel.TabIndex = 10;
@@ -1724,10 +1709,10 @@
             // PushAssignar_Button
             // 
             this.PushAssignar_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PushAssignar_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PushAssignar_Button.Location = new System.Drawing.Point(3, 625);
+            this.PushAssignar_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PushAssignar_Button.Location = new System.Drawing.Point(3, 637);
             this.PushAssignar_Button.Name = "PushAssignar_Button";
-            this.PushAssignar_Button.Size = new System.Drawing.Size(354, 35);
+            this.PushAssignar_Button.Size = new System.Drawing.Size(354, 23);
             this.PushAssignar_Button.TabIndex = 7;
             this.PushAssignar_Button.Text = "Schedule Job";
             this.PushAssignar_Button.UseVisualStyleBackColor = true;
@@ -1735,9 +1720,9 @@
             // 
             // ProjectName
             // 
-            this.ProjectName.Location = new System.Drawing.Point(6, 108);
+            this.ProjectName.Location = new System.Drawing.Point(0, 108);
             this.ProjectName.Name = "ProjectName";
-            this.ProjectName.Size = new System.Drawing.Size(253, 20);
+            this.ProjectName.Size = new System.Drawing.Size(360, 20);
             this.ProjectName.TabIndex = 6;
             // 
             // ProjectNameLabel
@@ -1760,9 +1745,9 @@
             // 
             // JobNumberSearch
             // 
-            this.JobNumberSearch.Location = new System.Drawing.Point(277, 29);
+            this.JobNumberSearch.Location = new System.Drawing.Point(277, 32);
             this.JobNumberSearch.Name = "JobNumberSearch";
-            this.JobNumberSearch.Size = new System.Drawing.Size(75, 23);
+            this.JobNumberSearch.Size = new System.Drawing.Size(83, 20);
             this.JobNumberSearch.TabIndex = 2;
             this.JobNumberSearch.Text = "Search";
             this.JobNumberSearch.UseVisualStyleBackColor = true;
@@ -3910,7 +3895,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox OutputTypeComboBox;
         private Microsoft.Web.WebView2.WinForms.WebView2 RecruitmentViewer;
-        private System.Windows.Forms.Button PushToJobPackButton;
         private System.Windows.Forms.StatusStrip StatusBar;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.ComboBox RepresentativeComboBox;
@@ -3943,7 +3927,6 @@
         private System.Windows.Forms.Button AdminProjButton;
         private System.Windows.Forms.TextBox AdminProjName;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox ProjectAddress;
         private System.Windows.Forms.SplitContainer Jobs_SplitContainer;
         private System.Windows.Forms.GroupBox Manual_Search_GroupBox;
         private System.Windows.Forms.TextBox Jobs_ProjectNumber;
@@ -3964,7 +3947,6 @@
         public  System.Windows.Forms.ToolStripStatusLabel MyobLabel;
         private System.Windows.Forms.Button TestButton;
         private System.Windows.Forms.CheckBox Local_Worker_Checkbox;
-        private System.Windows.Forms.Button Address_upd_Button;
         private System.Windows.Forms.NumericUpDown numericUpDown5;
         private System.Windows.Forms.Label TraAss_D;
         private System.Windows.Forms.NumericUpDown numericUpDown6;
@@ -4101,5 +4083,7 @@
         private System.Windows.Forms.Button AdminNewJobBtn;
         private System.Windows.Forms.DateTimePicker NewJobEnd;
         private System.Windows.Forms.DateTimePicker NewJobStart;
+        private System.Windows.Forms.ComboBox Predictions;
+        private System.Windows.Forms.TextBox ProjectAddress;
     }
 }

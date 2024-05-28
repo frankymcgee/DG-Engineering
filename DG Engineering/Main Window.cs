@@ -18,6 +18,7 @@ using Timer = System.Timers.Timer;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using Microsoft.Web.WebView2.WinForms;
+using System.Net.Http;
 
 namespace DG_Engineering
 {
@@ -28,6 +29,7 @@ namespace DG_Engineering
         public MainWindow()
         {
             InitializeComponent();
+            Predictions.TextChanged += ProjectAddress_TextChanged;
             if (!Debugger.IsAttached)
             {
                 TestButton.Visible = false;
@@ -129,86 +131,68 @@ namespace DG_Engineering
                 await AssignarProjectPost();                
             }
         }
-        private async Task Address_upd_Button_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(ProjectClient.Text)) return;
-            var request =
-                MyobConnect(Static.Companyfileuri + "/" + Static.Companyfileguid, "/Contact/Customer?$filter=CompanyName eq \'" + ProjectClient.Text + "\'", Method.Get).Content;
-            var result = JsonConvert.DeserializeObject<Customer.Root>(request);
-            ProjectAddress.Items.Clear();
-            foreach (var b in result.Items.SelectMany(a => a.Addresses))
-            {
-                ProjectAddress.Items.Add(b.Street + ", " + b.City + ", " + b.State + ", " + b.PostCode);
-            }
-            ClientContact.Items.Clear();
-            await AssignarAPIConnect("/contacts?company=" + ProjectClient.Text, Method.Get, null);
-            var contactsquery = Static.AssignarResponseContent;
-            var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
-            foreach (var a in contactsresult.Data)
-            {
-                ClientContact.Items.Add(a.FirstName + " " + a.LastName + " - " + a.JobTitle);
-            }
-        }
+        //private async Task Address_upd_Button_Click(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrEmpty(ProjectClient.Text)) return;
+        //    var request =
+        //        MyobConnect(Static.Companyfileuri + "/" + Static.Companyfileguid, "/Contact/Customer?$filter=CompanyName eq \'" + ProjectClient.Text + "\'", Method.Get).Content;
+        //    var result = JsonConvert.DeserializeObject<Customer.Root>(request);
+        //    ProjectAddress.Items.Clear();
+        //    foreach (var b in result.Items.SelectMany(a => a.Addresses))
+        //    {
+        //        ProjectAddress.Items.Add(b.Street + ", " + b.City + ", " + b.State + ", " + b.PostCode);
+        //    }
+        //    ClientContact.Items.Clear();
+        //    await AssignarAPIConnect("/contacts?company=" + ProjectClient.Text, Method.Get, null);
+        //    var contactsquery = Static.AssignarResponseContent;
+        //    var contactsresult = JsonConvert.DeserializeObject<Contacts.Root>(contactsquery);
+        //    foreach (var a in contactsresult.Data)
+        //    {
+        //        ClientContact.Items.Add(a.FirstName + " " + a.LastName + " - " + a.JobTitle);
+        //    }
+        //}
         private void PushToJobPackButton_Click(object sender, EventArgs e)
         {
             PushToJobPack();
         }
         #endregion
-
-        #region Jobs
-        private async void Job_MyobSearch_Click(object sender, EventArgs e)
+        #region Cover Page Generator
+        private void GenerateCover_Button_Click(object sender, EventArgs e)
         {
-            await MyobSearch(Jobs_ProjectNumber.Text);
+            Cover_Letter_Format();
         }
-        private void Jobs_GenerateCover_Click(object sender, EventArgs e)
+        private void AddToJobPack_Button_Click(object sender, EventArgs e)
         {
-            JobCoverLetterChecklist();
+            //DownloadDocumentFromUrl(Static.AssignarDashboardUrl + "projects/" + Static.ProjectNumber + "/documents/",Static.JwtToken);
+            DownloadFilesForJobPack(JobDocuments_ComboBox.Text);
         }
-        #endregion
-
-        #region Administration
-        private async void AdminProjButton_Click(object sender, EventArgs e)
+        private void GenerateJobPack_Button_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(AdminProjectNumber.Text))
+            switch (GenerateJobPack_Button.Text)
             {
-                MessageBox.Show(@"PLEASE ADD PROJECT NUMBER", @"Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                case @"GENERATE":
+                    CombineJobPackFiles();
+                    _filestep = 0;
+                    JobDocuments_ListBox.Items.Clear();
+                    break;
             }
-            else
-            {
-                await AdminProjSearch();
-            }
-        }
-
-        private async Task AdminProjSearch()
-        {
-            await AdminJobInformation("/projects/" + AdminProjectNumber.Text);
-            var url = @"https://dashboard.assignar.com.au/v1/#!/projects/detail/" + Static.AssignarInternalNumber + @"/edit";
-            AdminViewer.CoreWebView2.Navigate(url);
-        }
-
-        private async void AdminDispJobInfo_Click(object sender, EventArgs e)
-        {
-            AdminJobNo.Text = AdminJobComboBox.Text.Split(" | ".ToCharArray())[0];
-            await AssignarShiftInformation("/orders/" + AdminJobNo.Text);
-        }
-        private void WipeCleanButton_Click(object sender, EventArgs e)
-        {
 
         }
-
-        private async void AdminNewJobBtn_Click(object sender, EventArgs e)
+        private void JobDocuments_ComboBox_DropDown(object sender, EventArgs e)
         {
-            await AssignarNewShift();
+            var senderComboBox = (ComboBox)sender;
+            var width = senderComboBox.DropDownWidth;
+            var g = senderComboBox.CreateGraphics();
+            var font = senderComboBox.Font;
+            var vertScrollBarWidth =
+                (senderComboBox.Items.Count > senderComboBox.MaxDropDownItems)
+                    ? SystemInformation.VerticalScrollBarWidth : 0;
+
+            width = (from string s in ((ComboBox)sender).Items select (int)g.MeasureString(s, font).Width + vertScrollBarWidth).Prepend(width).Max();
+            senderComboBox.DropDownWidth = width;
         }
         #endregion
-
-        #region Schedule
-        #endregion
-
-        #region Clients
-        #endregion
-
-        #region Fieldworkers
+        #region Workers
         private async void CreateWorkerButton_Click(object sender, EventArgs e)
         {
             CreateWorkerBtn.Text = "GENERATING";
@@ -320,8 +304,9 @@ namespace DG_Engineering
             request.AddParameter("user_category", "Others");
             request.AddParameter("Send_welcome_email", "1");
             request.AddParameter("unsubscribed", "0");
+            request.AddParameter("user_type", "Website User");
             RestResponse response = await client.ExecuteAsync(request);
-            Console.WriteLine(response.Content);
+            Console.WriteLine("User Creation Result: " + response.Content);
             var update = new RestRequest("api/resource/User/" + fld_email.Text, Method.Put);
             update.AddHeader("Content-Type", "application/json");
             update.AddHeader("Accept", "application/json");
@@ -350,7 +335,7 @@ namespace DG_Engineering
  @"}";
             update.AddStringBody(body, DataFormat.Json);
             RestResponse updateresponse = await client.ExecuteAsync(update);
-            Console.WriteLine(updateresponse.Content);
+            Console.WriteLine("User Update Result: " + updateresponse.Content);
 
             var password = new RestRequest("api/resource/User/" + fld_email.Text, Method.Put);
             password.AddHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -359,50 +344,62 @@ namespace DG_Engineering
             password.AddHeader("Cookie", "full_name=Administrator; sid=" + cookie + "; system_user=yes; user_id=Administrator;");
             password.AddParameter("new_password", fld_first.Text.ToLower() + "." + fld_last.Text.ToLower());
             RestResponse passresponse = await client.ExecuteAsync(password);
-            Console.WriteLine(passresponse.Content);
+            Console.WriteLine("Password Reset Result: " + passresponse.Content);
             CreateWorkerBtn.Text = "Create Worker";
             MessageBox.Show(@"New Worker Added. SMS's can now be send for onboarding", @"Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         #endregion
 
-        #region Job Pack Compiler
-        private void GenerateCover_Button_Click(object sender, EventArgs e)
+        #region Administration - NOT USED
+        private async void AdminProjButton_Click(object sender, EventArgs e)
         {
-            Cover_Letter_Format();
-        }
-        private void AddToJobPack_Button_Click(object sender, EventArgs e)
-        {
-            //DownloadDocumentFromUrl(Static.AssignarDashboardUrl + "projects/" + Static.ProjectNumber + "/documents/",Static.JwtToken);
-            DownloadFilesForJobPack(JobDocuments_ComboBox.Text);
-        }
-        private void GenerateJobPack_Button_Click(object sender, EventArgs e)
-        {
-            switch (GenerateJobPack_Button.Text)
+            if (string.IsNullOrEmpty(AdminProjectNumber.Text))
             {
-                case @"GENERATE":
-                    CombineJobPackFiles();
-                    _filestep = 0;
-                    JobDocuments_ListBox.Items.Clear();
-                    break;
+                MessageBox.Show(@"PLEASE ADD PROJECT NUMBER", @"Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+            {
+                await AdminProjSearch();
+            }
+        }
+
+        private async Task AdminProjSearch()
+        {
+            await AdminJobInformation("/projects/" + AdminProjectNumber.Text);
+            var url = @"https://dashboard.assignar.com.au/v1/#!/projects/detail/" + Static.AssignarInternalNumber + @"/edit";
+            AdminViewer.CoreWebView2.Navigate(url);
+        }
+
+        private async void AdminDispJobInfo_Click(object sender, EventArgs e)
+        {
+            AdminJobNo.Text = AdminJobComboBox.Text.Split(" | ".ToCharArray())[0];
+            await AssignarShiftInformation("/orders/" + AdminJobNo.Text);
+        }
+        private void WipeCleanButton_Click(object sender, EventArgs e)
+        {
 
         }
-        private void JobDocuments_ComboBox_DropDown(object sender, EventArgs e)
-        {
-            var senderComboBox = (ComboBox)sender;
-            var width = senderComboBox.DropDownWidth;
-            var g = senderComboBox.CreateGraphics();
-            var font = senderComboBox.Font;
-            var vertScrollBarWidth =
-                (senderComboBox.Items.Count > senderComboBox.MaxDropDownItems)
-                    ? SystemInformation.VerticalScrollBarWidth : 0;
 
-            width = (from string s in ((ComboBox)sender).Items select (int)g.MeasureString(s, font).Width + vertScrollBarWidth).Prepend(width).Max();
-            senderComboBox.DropDownWidth = width;
+        private async void AdminNewJobBtn_Click(object sender, EventArgs e)
+        {
+            await AssignarNewShift();
         }
         #endregion
-
-        #region Recruitment
+        #region Jobs - NOT USED
+        private async void Job_MyobSearch_Click(object sender, EventArgs e)
+        {
+            await MyobSearch(Jobs_ProjectNumber.Text);
+        }
+        private void Jobs_GenerateCover_Click(object sender, EventArgs e)
+        {
+            JobCoverLetterChecklist();
+        }
+        #endregion
+        #region Schedule - NOT USED
+        #endregion
+        #region Clients - NOT USED
+        #endregion
+        #region Recruitment - NOT USED
         private void Generate_Contract_Button_Click(object sender, EventArgs e)
         {
             ProgressBar_Compiler.Value = 0;
@@ -422,8 +419,7 @@ namespace DG_Engineering
             ProgressBar_Compiler.Value = 100;
         }
         #endregion
-
-        #region Document Generator
+        #region Document Generator - NOT USED
         private void DocumentForComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(_documentref))
@@ -441,14 +437,12 @@ namespace DG_Engineering
         }
 
         #endregion
-
-        #region Client Signed Timesheet
+        #region Client Signed Timesheet - NOT USED
         private void Cst_btn_Click(object sender, EventArgs e)
         {
             //DownloadTimesheets(Static.AssignarDashboardUrl, "/v2/timesheets?project_id=" + cst_project.Text, Static.JwtToken);
         }
         #endregion
-
         #endregion
 
         #region Closing Form
@@ -484,5 +478,7 @@ namespace DG_Engineering
 " + ex, @"Error");
             }
         }
+
+       
     }
 }

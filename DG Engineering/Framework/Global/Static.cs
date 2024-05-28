@@ -20,6 +20,7 @@ namespace DG_Engineering
         public const string MyobSecretKey = "oOO87NlUi6aYxB35VkqeG8om";
         public const string Companyfileuri = "https://arl2.api.myob.com/accountright";
         public const string Companyfileguid = "2f384cc3-b74b-4ddc-bd30-f6699f2e9ac9";
+        public const string MapsApiKey = "AIzaSyCuYrJHH29V3ic-CaUAuTuQ7BgsKxjjcQY";
         public static string RefreshToken;
         public static string UrlCoded;
         public static string AccessToken;
@@ -56,14 +57,13 @@ namespace DG_Engineering
         private static readonly string Output = Path.GetTempPath();
         private static string _retrievedText;
         private static readonly string CoverLetterPath = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"),
-            "DG Engineering\\DG Engineering HUB - Human Resources\\4. Forms\\1. Job Packs\\Job Pack.dotx");
+            "DG Engineering\\DGE - Cloud Drive\\Document Control\\Form\\OPS-FRM Job Pack.dotx");
         private static readonly string JobCoverPath = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"),
-            "DG Engineering\\DG Engineering HUB - Health & Safety\\HSEQT\\12. Admin\\1. Forms\\DGE-HSEQ-ADM-FRM-010 Job Cover Letter & Checklist.dotx");
+            "DG Engineering\\DGE - Cloud Drive\\Document Control\\Form\\ADM-FRM Job Cover Letter & Checklist.dotx");
         private static readonly string EmploymentContracts = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"),
             "DG Engineering\\DG Engineering - Documents\\Document Control\\Corporate\\Form\\");
         private static readonly string CompilePath = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"),
             "DG Engineering\\DG Engineering HUB - Human Resources\\1. Employees\\8. Forms\\New Employment Form\\Documents\\");
-
         private static readonly string PreStartPath = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"),
             "DG Engineering\\DG Engineering HUB - Equipment & Maintenance\\Equipment and Maintenance\\Vehicle Pre-Start Checklist\\");
         private Application _wordApp;

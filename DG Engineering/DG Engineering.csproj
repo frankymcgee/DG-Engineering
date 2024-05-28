@@ -15,7 +15,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\SeanLong\DG Engineering\DG Engineering Team Document HUB - Documents\DG Engineering\Automation Files\</PublishUrl>
+    <PublishUrl>C:\Users\SeanLong\DG Engineering\DGE External - Drive\DG Engineering\Automation Files\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -28,7 +28,7 @@
     <SupportUrl>https://dgengineering.com.au/support</SupportUrl>
     <ProductName>DG Engineering Automation</ProductName>
     <PublisherName>DG Engineering</PublisherName>
-    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationRevision>22</ApplicationRevision>
     <ApplicationVersion>1.3.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -94,6 +94,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="GoogleApi, Version=5.2.2.0, Culture=neutral, PublicKeyToken=781851e053b06e74, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleApi.5.2.2\lib\net48\GoogleApi.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.11.46.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.46\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -135,6 +138,9 @@
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.7.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Http, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Http.7.0.0\lib\net462\Microsoft.Extensions.Http.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Logging, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Logging.7.0.0\lib\net462\Microsoft.Extensions.Logging.dll</HintPath>
@@ -287,6 +293,9 @@
     <Compile Include="Framework\Modules\Document Generator\Update Document.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Framework\Modules\Job Creation\Project Address Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Framework\Modules\Job Pack Creation\Download Document.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,13 +329,13 @@
     <Compile Include="Framework\Modules\ON LOAD\Download Role Descriptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Project Creation\Upload Docs to SimPRO.cs">
+    <Compile Include="Framework\Modules\Job Creation\Upload Docs to SimPRO.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Project Creation\Download Files for Job Pack.cs">
+    <Compile Include="Framework\Modules\Job Creation\Download Files for Job Pack.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Project Creation\Download Docs from SimPro.cs">
+    <Compile Include="Framework\Modules\Job Creation\Download Docs from SimPro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Modules\Recruitment\Combine Contract Files.cs">
@@ -344,22 +353,22 @@
     <Compile Include="Framework\Modules\Recruitment\Job Description Extract.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Project Creation\Company Extract.cs">
+    <Compile Include="Framework\Modules\Job Creation\Company Extract.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Project Creation\Create Task in Job.cs">
+    <Compile Include="Framework\Modules\Job Creation\Create Task in Job.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Project Creation\POST Job.cs">
+    <Compile Include="Framework\Modules\Job Creation\POST Job.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Project Creation\POST Project.cs">
+    <Compile Include="Framework\Modules\Job Creation\POST Project.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Project Creation\Push to Job Pack Creation.cs">
+    <Compile Include="Framework\Modules\Job Creation\Push to Job Pack Creation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Modules\Project Creation\Job Search.cs">
+    <Compile Include="Framework\Modules\Job Creation\Job Search.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
